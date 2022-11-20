@@ -195,6 +195,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/20/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To 姜寒">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Stay alive, Stay learning">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/20/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" class="post-title-link" itemprop="url">图的遍历算法复习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-20 16:21:06 / 修改时间：16:22:22" itemprop="dateCreated datePublished" datetime="2022-11-20T16:21:06+08:00">2022-11-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="图的遍历算法复习"><a href="#图的遍历算法复习" class="headerlink" title="图的遍历算法复习"></a>图的遍历算法复习</h1><h2 id="1-广度优先算法BFS"><a href="#1-广度优先算法BFS" class="headerlink" title="1. 广度优先算法BFS"></a>1. 广度优先算法BFS</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
+<li>主导函数，用于保证遍历所有节点</li>
+<li>功能函数，遍历所有连通分量</li>
+</ul>
+<h3 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h3><p>主导函数：</p>
+<ol>
+<li>初始化队列和访问矩阵</li>
+<li>循环调用功能函数对所有未访问节点调用功能函数</li>
+</ol>
+<p>功能函数：</p>
+<ol>
+<li>访问参数节点，将参数节点入队</li>
+<li>循环访问节点，循环结束条件为队列为空</li>
+<li>循环内部每次从队列出一个节点并进行判断，如果节点的邻接节点未被访问，就访问下一个邻接节点，并将这个节点入队继续循环。</li>
+</ol>
+<h3 id="广度优先生成树"><a href="#广度优先生成树" class="headerlink" title="广度优先生成树"></a>广度优先生成树</h3><p>一个给定图的邻接矩阵是唯一的，故其广度优先生成树也是唯一的；</p>
+<p>但是由于邻接表的存储表示不唯一，所以广度优先生成树是不唯一的。</p>
+<h2 id="2-深度优先搜索DFS"><a href="#2-深度优先搜索DFS" class="headerlink" title="2.深度优先搜索DFS"></a>2.深度优先搜索DFS</h2><p>深度优先算法是类似于树的先序遍历。</p>
+<h3 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h3><ul>
+<li>主导函数，用于保证遍历所有节点</li>
+<li>功能函数，遍历所有以该节点开始的连通分量</li>
+</ul>
+<h3 id="功能实现-1"><a href="#功能实现-1" class="headerlink" title="功能实现"></a>功能实现</h3><p>主导函数：</p>
+<ol>
+<li>初始化队列和访问矩阵</li>
+<li>循环调用功能函数对所有未访问节点调用功能函数</li>
+</ol>
+<p>功能函数：</p>
+<ol>
+<li>访问该节点</li>
+<li>标记该节点</li>
+<li>在循环中找其未访问的邻接顶点，并对这个节点进行递归访问</li>
+</ol>
+<h3 id="DFS算法性能分析"><a href="#DFS算法性能分析" class="headerlink" title="DFS算法性能分析"></a>DFS算法性能分析</h3><p>递归算法，空间复杂度为O(|V|)</p>
+<p>邻接矩阵表示时查找每个节点邻接点，每个的复杂度为O（|V|），所以总的时间复杂度为O（|V|^2^）。</p>
+<p>邻接表表示查找所有顶点，但是是并行执行，时间复杂度为O（|V|+|E|）。</p>
+<h3 id="深度优先生成树和生成森林"><a href="#深度优先生成树和生成森林" class="headerlink" title="深度优先生成树和生成森林"></a>深度优先生成树和生成森林</h3><p>只有对连通图才能生成深度优先搜索树，否则生成森林。</p>
+<p>基于邻接表存储的深度优先树是不唯一的。</p>
+<h2 id="3-图的遍历和图的连通性"><a href="#3-图的遍历和图的连通性" class="headerlink" title="3.图的遍历和图的连通性"></a>3.图的遍历和图的连通性</h2><p>对于无向图来说，如果无向图是联通的，从任何一个顶点出发都可以访问所有节点。</p>
+<p>对于有向图来说，如果从初始点到图中每个顶点都有路径，就能够访问到图中的所有顶点，否则不能访问。</p>
+<p>对于无向图，调用BFS（）和DFS（）的次数等于该图的连通分量数。</p>
+<p>对于有向图不一定这样，因为有向图有强连通和非强连通，非强连通分量是不能访问所有节点的。    <strong>如O—&gt;O&lt;—O</strong>                    </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -594,7 +703,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -607,7 +716,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

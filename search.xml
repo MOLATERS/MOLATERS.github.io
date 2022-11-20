@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>图的应用</title>
+      <link href="/2022/11/20/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+      <url>/2022/11/20/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图 </tag>
+            
+            <tag> 最小生成树 </tag>
+            
+            <tag> 最短路径 </tag>
+            
+            <tag> 拓扑排序 </tag>
+            
+            <tag> 关键路径 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图的遍历算法复习</title>
       <link href="/2022/11/20/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/"/>
       <url>/2022/11/20/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/</url>

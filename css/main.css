@@ -1224,7 +1224,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9cfc13;
+  background: #ff7434;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2593,10 +2593,10 @@ body {
   background-position: 13.5% 54%;
 }
 body {
-  background: url("https://source.unsplash.com/random/1600x900");
+  background: url("/images/background1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-position: 13.5% 54%;
 }
 .header-inner {
   background: #fff;

@@ -4,13 +4,27 @@
   
     
     <entry>
-      <title></title>
+      <title>树型查找</title>
       <link href="/2022/11/21/%E6%A0%91%E5%9E%8B%E6%9F%A5%E6%89%BE/"/>
       <url>/2022/11/21/%E6%A0%91%E5%9E%8B%E6%9F%A5%E6%89%BE/</url>
       
         <content type="html"><![CDATA[<h1 id="树型查找"><a href="#树型查找" class="headerlink" title="树型查找"></a>树型查找</h1><h2 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>二叉排序树（也称二叉查找树）或者是一个空树，或者：</p><ol><li>若左子树非空，则左子树上所有结点的值均小于根结点的值。</li><li>若右子树非空，则右子树上所有结点的值均大于根结点的值。</li><li>左右子树也分别是一个而二叉排序树。</li></ol><p>根据这个性质，对二叉排序树进行中序遍历，可以得到一个递增的有序序列。</p><h3 id="二叉排序树的查找"><a href="#二叉排序树的查找" class="headerlink" title="二叉排序树的查找"></a>二叉排序树的查找</h3><p>二叉排序树的查找是从根结点开始，沿着某个分支逐层向下比较的过程。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*二叉排序树的非递归查找算法*/</span></span><br><span class="line">BSTNode *<span class="title function_">BST_search</span><span class="params">(BiTree T,ElemType key)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">while</span>(T!=<span class="literal">NULL</span>&amp;&amp;key!=T-&gt;data)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(key&lt;T-&gt;data) T=T-&lt;lchild;</span><br><span class="line"><span class="keyword">else</span> T=T-&gt;rchild;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="二叉排序树的插入"><a href="#二叉排序树的插入" class="headerlink" title="二叉排序树的插入"></a>二叉排序树的插入</h3><p>插入的节点一定是一个新添加的叶子结点</p><p>描述算法如下：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">BST_Insert</span><span class="params">(BiTree &amp;T,KeyType k)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(T==<span class="literal">NULL</span>)<span class="comment">//原树为空，则将新加入的结点设置为根节点</span></span><br><span class="line">&#123;</span><br><span class="line">T=(BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BSTNode));</span><br><span class="line">T-&gt;data=k;</span><br><span class="line">T-&gt;lchild=T-&gt;rchild=<span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//返回1，插入成功</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(k==T-&gt;data)<span class="comment">//树中存在相同关键字的结点，插入失败</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(k&lt;T-&gt;data)<span class="comment">//插入到左子树</span></span><br><span class="line"><span class="keyword">return</span> BST_Insert(T-&gt;lchild,k);</span><br><span class="line"><span class="keyword">else</span> <span class="comment">//插入到右子树</span></span><br><span class="line"><span class="keyword">return</span> BST_Insert(T-&gt;rchild,k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="二叉排序树的构造"><a href="#二叉排序树的构造" class="headerlink" title="二叉排序树的构造"></a>二叉排序树的构造</h3><p>从一个空树出发，依次输入元素，将它们插入二叉排序树中的合适位置。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 查找 </tag>
+            
+            <tag> 树 </tag>
+            
+        </tags>
       
     </entry>
     

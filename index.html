@@ -194,6 +194,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/22/B+%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jeanatte">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/22/B+%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">B+树的基本概念</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-22 22:11:27 / 修改时间：22:34:06" itemprop="dateCreated datePublished" datetime="2022-11-22T22:11:27+08:00">2022-11-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/" itemprop="url" rel="index"><span itemprop="name">查找</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="B-树的基本概念"><a href="#B-树的基本概念" class="headerlink" title="B+树的基本概念"></a>B+树的基本概念</h1><p>B+树是应数据库所需而出现的一种B树的变形树。</p>
+<p>一棵m阶的B+树满足以下条件：</p>
+<ol>
+<li>每个分支结点最多有m棵子树（孩子节点）</li>
+<li>非叶根节点至少有两棵子树，其他分支结点至少有$\lceil m/2\rceil$棵子树。</li>
+<li>结点的子树个数与关键字个数相等。</li>
+<li>所有叶节点包含全部关键字及指向相应记录的指针，叶节点中将关键字按照大小顺序排列，并且相邻叶节点按照大小顺序相互链接起来。</li>
+<li>所有分支结点（可以视为索引的索引）中仅仅包含它的各个子结点（即下一级的索引块）中关键字的最大值及其指向其子结点的指针。</li>
+</ol>
+<h2 id="m阶的B-树和B树的主要差异："><a href="#m阶的B-树和B树的主要差异：" class="headerlink" title="m阶的B+树和B树的主要差异："></a>m阶的B+树和B树的<strong>主要差异</strong>：</h2><ol>
+<li>在B+树中，具有n个关键字的结点只含有n棵子树，即每一个关键字对应一个子树，而在B树中，具有n个关键字的结点含有n+1个子树。</li>
+<li>在B+树中，每个结点（非根内部节点）的关键字个数范围为$\lceil m/2\rceil\leq n\leq m$（根结点：$2\leq n\leq m-1$）。</li>
+<li>在B+树中叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应的存储地址。</li>
+<li>在B+树中，叶节点包含了全部关键字，即在非叶结点中出现的关键字也会出现在叶节点中;而在B树中，叶节点（最外层内部节点）包含的关键字和其他结点包含的关键字书不重复的。</li>
+</ol>
+<p>在B+树中，分支节点的某个关键字是其子树中<strong>最大关键字的副本</strong>。通常在B+树中有<strong>两个头指针</strong>；一个指向根节点，另一个指向关键字最小的叶节点。可以对B+树进行两种查找运算：一种是从最小关键字开始的<strong>顺序查找</strong>，另一种是从根节点开始的<strong>多路查找</strong>。B+树在查找是永远都是一条<strong>从根节点到叶节点的路径</strong>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/22/B%E6%A0%91%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,7 +312,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-11-22 14:26:15 / 修改时间：22:09:24" itemprop="dateCreated datePublished" datetime="2022-11-22T14:26:15+08:00">2022-11-22</time>
+              <time title="创建时间：2022-11-22 14:26:15 / 修改时间：22:31:50" itemprop="dateCreated datePublished" datetime="2022-11-22T14:26:15+08:00">2022-11-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +328,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%A4%8D%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">复习</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
                 </span>
             </span>
 
@@ -294,7 +387,7 @@
 <p><strong>实现分裂的原则：</strong>设插入之前终端结点p中已经由m-1个关键字，当再插入一个关键字后结点的状态为$(m,A_0,K_1,A_1,K_2,A_2,……K_m,A_m)$其中$K_i&lt;K_{i+1},i\leq i &lt;m$</p>
 <p>这时把结点p分裂为两个结点p和q，它们包含的信息分别为</p>
 <p>p:$(\lceil m/2 \rceil-1,A_0,K_1,A_1,……,K_{\lceil m/2\rceil-1},A_{\lceil m/2\rceil-1})$</p>
-<p>q:$(m-\lceil m/2 \rceil,A_{\lceil m/2\rceil},K_{\lceil m/2\rceil+1}),A_{\lceil m/2\rceil+1,……,K_m,A_m}$</p>
+<p>q:$(m-\lceil m/2 \rceil,A_{\lceil m/2\rceil},K_{\lceil m/2\rceil+1},A_{\lceil m/2\rceil+1,……,K_m,A_m}）$</p>
 <h2 id="B树的删除"><a href="#B树的删除" class="headerlink" title="B树的删除"></a>B树的删除</h2><p>B树的删除与插入操作类似，但是还是要复杂一些。要使得删除之后的关键字个数$\geq\lceil m/2\rceil-1$,因此将涉及合并问题。</p>
 <p>当被删除关键字k不在终端结点（最底层非叶结点）中时，可以用k的前驱（后继）k’来代替k,然后再相应的结点删除k‘,关键字k’必定落在某个终端结点中，则转换成了被删关键字在终端节点中的情形。</p>
 <ol>
@@ -349,7 +442,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-11-22 14:03:12 / 修改时间：14:18:31" itemprop="dateCreated datePublished" datetime="2022-11-22T14:03:12+08:00">2022-11-22</time>
+              <time title="创建时间：2022-11-22 14:03:12 / 修改时间：22:32:07" itemprop="dateCreated datePublished" datetime="2022-11-22T14:03:12+08:00">2022-11-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -365,7 +458,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%A4%8D%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">复习</span></a>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
                 </span>
             </span>
 
@@ -1249,131 +1342,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/20/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jeanatte">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/20/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" class="post-title-link" itemprop="url">图的遍历算法复习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-20 16:21:06" itemprop="dateCreated datePublished" datetime="2022-11-20T16:21:06+08:00">2022-11-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-22 08:51:17" itemprop="dateModified" datetime="2022-11-22T08:51:17+08:00">2022-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/" itemprop="url" rel="index"><span itemprop="name">图</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="图的遍历算法复习"><a href="#图的遍历算法复习" class="headerlink" title="图的遍历算法复习"></a>图的遍历算法复习</h1><h2 id="1-广度优先算法BFS"><a href="#1-广度优先算法BFS" class="headerlink" title="1. 广度优先算法BFS"></a>1. 广度优先算法BFS</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
-<li>主导函数，用于保证遍历所有节点</li>
-<li>功能函数，遍历所有连通分量</li>
-</ul>
-<h3 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h3><p>主导函数：</p>
-<ol>
-<li>初始化队列和访问矩阵</li>
-<li>循环调用功能函数对所有未访问节点调用功能函数</li>
-</ol>
-<p>功能函数：</p>
-<ol>
-<li>访问参数节点，将参数节点入队</li>
-<li>循环访问节点，循环结束条件为队列为空</li>
-<li>循环内部每次从队列出一个节点并进行判断，如果节点的邻接节点未被访问，就访问下一个邻接节点，并将这个节点入队继续循环。</li>
-</ol>
-<h3 id="广度优先生成树"><a href="#广度优先生成树" class="headerlink" title="广度优先生成树"></a>广度优先生成树</h3><p>一个给定图的邻接矩阵是唯一的，故其广度优先生成树也是唯一的；</p>
-<p>但是由于邻接表的存储表示不唯一，所以广度优先生成树是不唯一的。</p>
-<h2 id="2-深度优先搜索DFS"><a href="#2-深度优先搜索DFS" class="headerlink" title="2.深度优先搜索DFS"></a>2.深度优先搜索DFS</h2><p>深度优先算法是类似于树的先序遍历。</p>
-<h3 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h3><ul>
-<li>主导函数，用于保证遍历所有节点</li>
-<li>功能函数，遍历所有以该节点开始的连通分量</li>
-</ul>
-<h3 id="功能实现-1"><a href="#功能实现-1" class="headerlink" title="功能实现"></a>功能实现</h3><p>主导函数：</p>
-<ol>
-<li>初始化队列和访问矩阵</li>
-<li>循环调用功能函数对所有未访问节点调用功能函数</li>
-</ol>
-<p>功能函数：</p>
-<ol>
-<li>访问该节点</li>
-<li>标记该节点</li>
-<li>在循环中找其未访问的邻接顶点，并对这个节点进行递归访问</li>
-</ol>
-<h3 id="DFS算法性能分析"><a href="#DFS算法性能分析" class="headerlink" title="DFS算法性能分析"></a>DFS算法性能分析</h3><p>递归算法，空间复杂度为O(|V|)</p>
-<p>邻接矩阵表示时查找每个节点邻接点，每个的复杂度为O（|V|），所以总的时间复杂度为O（|V|^2^）。</p>
-<p>邻接表表示查找所有顶点，但是是并行执行，时间复杂度为O（|V|+|E|）。</p>
-<h3 id="深度优先生成树和生成森林"><a href="#深度优先生成树和生成森林" class="headerlink" title="深度优先生成树和生成森林"></a>深度优先生成树和生成森林</h3><p>只有对连通图才能生成深度优先搜索树，否则生成森林。</p>
-<p>基于邻接表存储的深度优先树是不唯一的。</p>
-<h2 id="3-图的遍历和图的连通性"><a href="#3-图的遍历和图的连通性" class="headerlink" title="3.图的遍历和图的连通性"></a>3.图的遍历和图的连通性</h2><p>对于无向图来说，如果无向图是联通的，从任何一个顶点出发都可以访问所有节点。</p>
-<p>对于有向图来说，如果从初始点到图中每个顶点都有路径，就能够访问到图中的所有顶点，否则不能访问。</p>
-<p>对于无向图，调用BFS（）和DFS（）的次数等于该图的连通分量数。</p>
-<p>对于有向图不一定这样，因为有向图有强连通和非强连通，非强连通分量是不能访问所有节点的。    <strong>如O—&gt;O&lt;—O</strong>                    </p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1481,7 +1449,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共19.5k字</span>
+  <span class="post-count">全站共20.1k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

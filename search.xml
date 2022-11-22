@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> 查找 </tag>
-            
             <tag> 树 </tag>
+            
+            <tag> 查找 </tag>
             
         </tags>
       
@@ -66,6 +66,8 @@
       <categories>
           
           <category> 数据结构 </category>
+          
+          <category> 笔记 </category>
           
       </categories>
       
@@ -117,12 +119,16 @@
           
           <category> 数据结构 </category>
           
+          <category> 笔记 </category>
+          
       </categories>
       
       
         <tags>
             
             <tag> 图 </tag>
+            
+            <tag> 树 </tag>
             
             <tag> 最小生成树 </tag>
             
@@ -150,6 +156,8 @@
           
           <category> 数据结构 </category>
           
+          <category> 笔记 </category>
+          
       </categories>
       
       
@@ -157,7 +165,7 @@
             
             <tag> 图 </tag>
             
-            <tag> 遍历算法 </tag>
+            <tag> 图的遍历 </tag>
             
         </tags>
       
@@ -177,10 +185,14 @@
           
           <category> 数据结构 </category>
           
+          <category> 作业 </category>
+          
       </categories>
       
       
         <tags>
+            
+            <tag> 树 </tag>
             
             <tag> 二叉树 </tag>
             
@@ -202,12 +214,16 @@
           
           <category> 数据结构 </category>
           
+          <category> 作业 </category>
+          
       </categories>
       
       
         <tags>
             
-            <tag> 二叉排序树 </tag>
+            <tag> 树 </tag>
+            
+            <tag> 二叉树 </tag>
             
             <tag> 堆 </tag>
             
@@ -230,6 +246,8 @@
       <categories>
           
           <category> 数据结构 </category>
+          
+          <category> 作业 </category>
           
       </categories>
       

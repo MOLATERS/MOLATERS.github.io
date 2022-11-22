@@ -209,7 +209,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/11/22/B%E6%A0%91%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2022/11/22/B%E6%A0%91%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">B树及其基本操作</a>
         </h2>
 
         <div class="post-meta">
@@ -220,7 +220,24 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-11-22 14:26:15 / 修改时间：14:26:16" itemprop="dateCreated datePublished" datetime="2022-11-22T14:26:15+08:00">2022-11-22</time>
+              <time title="创建时间：2022-11-22 14:26:15 / 修改时间：16:21:22" itemprop="dateCreated datePublished" datetime="2022-11-22T14:26:15+08:00">2022-11-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/" itemprop="url" rel="index"><span itemprop="name">查找</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%A4%8D%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">复习</span></a>
+                </span>
             </span>
 
           
@@ -234,7 +251,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <h1 id="B树及其基本操作"><a href="#B树及其基本操作" class="headerlink" title="B树及其基本操作"></a>B树及其基本操作</h1><p>B树，又称为多路平衡查找树，B树中所有结点的孩子个数的最大值称为B树的阶，通常用m表示。一棵m阶B树或为空树，或为满足如下特性的m叉树：</p>
+<ol>
+<li>树中每个结点至多有m颗子树，即最多有m-1个关键字。</li>
+<li>若根节点不是终端结点，则至少有两棵子树。</li>
+<li>除根节点之外左右的非叶结点至少有$\lceilm/2\rceil$颗子树，即至少有$\lceilm/2-1\rceil$个关键字。</li>
+<li>所有非叶节点的结构如下：</li>
+</ol>
+<blockquote>
+<p>n    P0    K1    P1    K2    P2    ……    Kn    Pn</p>
+</blockquote>
+<p>其中Ki为结点的关键字，且满足K1&lt;K2&lt;K3&lt;……&lt;Kn;</p>
+
       
     </div>
 
@@ -1412,7 +1440,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共18.3k字</span>
+  <span class="post-count">全站共18.4k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

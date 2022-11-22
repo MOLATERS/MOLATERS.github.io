@@ -4,13 +4,31 @@
   
     
     <entry>
-      <title></title>
+      <title>B树及其基本操作</title>
       <link href="/2022/11/22/B%E6%A0%91%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
       <url>/2022/11/22/B%E6%A0%91%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="B树及其基本操作"><a href="#B树及其基本操作" class="headerlink" title="B树及其基本操作"></a>B树及其基本操作</h1><p>B树，又称为多路平衡查找树，B树中所有结点的孩子个数的最大值称为B树的阶，通常用m表示。一棵m阶B树或为空树，或为满足如下特性的m叉树：</p><ol><li>树中每个结点至多有m颗子树，即最多有m-1个关键字。</li><li>若根节点不是终端结点，则至少有两棵子树。</li><li>除根节点之外左右的非叶结点至少有$\lceilm/2\rceil$颗子树，即至少有$\lceilm/2-1\rceil$个关键字。</li><li>所有非叶节点的结构如下：</li></ol><blockquote><p>n    P0    K1    P1    K2    P2    ……    Kn    Pn</p></blockquote><p>其中Ki为结点的关键字，且满足K1&lt;K2&lt;K3&lt;……&lt;Kn;</p>]]></content>
       
       
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 查找 </category>
+          
+          <category> 复习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> B树 </tag>
+            
+            <tag> 查找 </tag>
+            
+        </tags>
       
     </entry>
     

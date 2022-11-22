@@ -23,21 +23,21 @@
     var CONFIG = {"hostname":"molaters.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="二叉排序树定义二叉排序树（也称二叉查找树）或者是一个空树，或者：  若左子树非空，则左子树上所有结点的值均小于根结点的值。 若右子树非空，则右子树上所有结点的值均大于根结点的值。 左右子树也分别是一个而二叉排序树。  根据这个性质，对二叉排序树进行中序遍历，可以得到一个递增的有序序列。 二叉排序树的查找二叉排序树的查找是从根结点开始，沿着某个分支逐层向下比较的过程。 12345678910&#x2F;*二叉">
+  <meta name="description" content="散列表散列表的基本概念在线性表和树表中，查找的方法建立在“比较”的基础上，查找的效率取决于比较的次数。 散列函数：一个把查找表中的关键字映射成该关键字对应的地址的函数，记为Hash(key)&#x3D;Addr(这里的地址可以是数组下标、索引或者内存地址等)。 冲突：散列函数会将两个及以上的不同关键字映射到同一个地址，称这种情况为冲突；另一方面，由于这样的冲突总是不可避免的，所以还要设计处理冲突的方法。 散">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉排序树">
-<meta property="og:url" content="https://molaters.github.io/2022/11/21/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/index.html">
+<meta property="og:title" content="散列表">
+<meta property="og:url" content="https://molaters.github.io/2022/11/22/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="Molaters Blog">
-<meta property="og:description" content="二叉排序树定义二叉排序树（也称二叉查找树）或者是一个空树，或者：  若左子树非空，则左子树上所有结点的值均小于根结点的值。 若右子树非空，则右子树上所有结点的值均大于根结点的值。 左右子树也分别是一个而二叉排序树。  根据这个性质，对二叉排序树进行中序遍历，可以得到一个递增的有序序列。 二叉排序树的查找二叉排序树的查找是从根结点开始，沿着某个分支逐层向下比较的过程。 12345678910&#x2F;*二叉">
+<meta property="og:description" content="散列表散列表的基本概念在线性表和树表中，查找的方法建立在“比较”的基础上，查找的效率取决于比较的次数。 散列函数：一个把查找表中的关键字映射成该关键字对应的地址的函数，记为Hash(key)&#x3D;Addr(这里的地址可以是数组下标、索引或者内存地址等)。 冲突：散列函数会将两个及以上的不同关键字映射到同一个地址，称这种情况为冲突；另一方面，由于这样的冲突总是不可避免的，所以还要设计处理冲突的方法。 散">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-21T11:07:28.442Z">
-<meta property="article:modified_time" content="2022-11-22T01:58:01.823Z">
+<meta property="article:published_time" content="2022-11-22T14:35:38.360Z">
+<meta property="article:modified_time" content="2022-11-22T15:39:43.908Z">
 <meta property="article:author" content="Michael Slater">
-<meta property="article:tag" content="查找">
-<meta property="article:tag" content="树">
+<meta property="article:tag" content="排序">
+<meta property="article:tag" content="散列表">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://molaters.github.io/2022/11/21/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">
+<link rel="canonical" href="https://molaters.github.io/2022/11/22/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
 
 
 <script id="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>二叉排序树 | Molaters Blog</title>
+  <title>散列表 | Molaters Blog</title>
   
 
 
@@ -199,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/21/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/22/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -212,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          二叉排序树
+          散列表
         </h1>
 
         <div class="post-meta">
@@ -221,16 +221,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-11-21 19:07:28" itemprop="dateCreated datePublished" datetime="2022-11-21T19:07:28+08:00">2022-11-21</time>
+              <time title="创建时间：2022-11-22 22:35:38 / 修改时间：23:39:43" itemprop="dateCreated datePublished" datetime="2022-11-22T22:35:38+08:00">2022-11-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-22 09:58:01" itemprop="dateModified" datetime="2022-11-22T09:58:01+08:00">2022-11-22</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -267,40 +261,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>二叉排序树（也称二叉查找树）或者是一个空树，或者：</p>
+        <h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><h2 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h2><p>在线性表和树表中，查找的方法建立在“比较”的基础上，查找的效率取决于比较的次数。</p>
+<p><strong>散列函数：</strong>一个把查找表中的关键字映射成该关键字对应的地址的函数，记为Hash(key)=Addr(这里的地址可以是数组下标、索引或者内存地址等)。</p>
+<p><strong>冲突：</strong>散列函数会将两个及以上的不同关键字映射到同一个地址，称这种情况为冲突；另一方面，由于这样的冲突总是不可避免的，所以还要设计处理冲突的方法。</p>
+<p><strong>散列表：</strong>根据关键字而直接进行访问的数据结构。也就是说，<strong>散列表建立了关键字与存储地址之间的一种直接映射的关系</strong>。</p>
+<p>理想情况下，对散列表进行查找进行查找的时间复杂度为O（1），与表中的元素个数无关。下面分别介绍常用的散列函数和处理冲突的方法。</p>
+<h2 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h2><p>在构造散列函数时注意：</p>
 <ol>
-<li>若左子树非空，则左子树上所有结点的值均小于根结点的值。</li>
-<li>若右子树非空，则右子树上所有结点的值均大于根结点的值。</li>
-<li>左右子树也分别是一个而二叉排序树。</li>
+<li>散列函数的定义域必须包含全部需要存储的关键字，而值域的范围则依赖于散列表的大小或者地址范围。</li>
+<li>散列函数计算出来的地址应该能等概率、均匀地分布在整个地址空间中，从而减少冲突的发生。</li>
+<li>散列函数应尽量简单，能够在较短的时间内计算出任一关键字对应的散列地址。</li>
 </ol>
-<p>根据这个性质，对二叉排序树进行中序遍历，可以得到一个递增的有序序列。</p>
-<h2 id="二叉排序树的查找"><a href="#二叉排序树的查找" class="headerlink" title="二叉排序树的查找"></a>二叉排序树的查找</h2><p>二叉排序树的查找是从根结点开始，沿着某个分支逐层向下比较的过程。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*二叉排序树的非递归查找算法*/</span></span><br><span class="line">BSTNode *<span class="title function_">BST_search</span><span class="params">(BiTree T,ElemType key)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span>(T!=<span class="literal">NULL</span>&amp;&amp;key!=T-&gt;data)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(key&lt;T-&gt;data) T=T-&lt;lchild;</span><br><span class="line">		<span class="keyword">else</span> T=T-&gt;rchild;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="二叉排序树的插入"><a href="#二叉排序树的插入" class="headerlink" title="二叉排序树的插入"></a>二叉排序树的插入</h2><p>插入的节点一定是一个新添加的叶子结点</p>
-<p>描述算法如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">BST_Insert</span><span class="params">(BiTree &amp;T,KeyType k)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(T==<span class="literal">NULL</span>)<span class="comment">//原树为空，则将新加入的结点设置为根节点</span></span><br><span class="line">	&#123;</span><br><span class="line">		T=(BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BSTNode));</span><br><span class="line">		T-&gt;data=k;</span><br><span class="line">		T-&gt;lchild=T-&gt;rchild=<span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//返回1，插入成功</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(k==T-&gt;data)<span class="comment">//树中存在相同关键字的结点，插入失败</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(k&lt;T-&gt;data)<span class="comment">//插入到左子树</span></span><br><span class="line">	<span class="keyword">return</span> BST_Insert(T-&gt;lchild,k);</span><br><span class="line">	<span class="keyword">else</span> <span class="comment">//插入到右子树</span></span><br><span class="line">	<span class="keyword">return</span> BST_Insert(T-&gt;rchild,k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="二叉排序树的构造"><a href="#二叉排序树的构造" class="headerlink" title="二叉排序树的构造"></a>二叉排序树的构造</h3><p>从一个空树出发，依次输入元素，将它们插入二叉排序树中的合适位置。</p>
-<p>构造二叉树的算法描述如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Create_BST</span><span class="params">(BiTree &amp;T,KeyType str[],<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">	T=<span class="literal">NULL</span>;<span class="comment">//初始时T为空树</span></span><br><span class="line">	<span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;n)<span class="comment">//依次将每个关键字插入到二叉排序树中</span></span><br><span class="line">    &#123;</span><br><span class="line">    	BST_Insert(T,str[i]);</span><br><span class="line">    	i++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="二叉排序树的删除"><a href="#二叉排序树的删除" class="headerlink" title="二叉排序树的删除"></a>二叉排序树的删除</h2><p>在二叉排序树中删除一个结点时，不能把以该节点为根的子树上的结点都删除，必须把被删除结点从存储二叉树的链表上摘下，将因为删除结点而断开的二叉链表重新链接起来，同时确保二叉排序树的性质不会丢失。分三种情况：</p>
+<p>下面介绍常用的散列函数</p>
+<ul>
+<li><p>直接定址法</p>
+<p>直接取关键字的某个线性函数值为散列地址，散列函数为：<br>$$<br>H(key)=key或H(key)=a\times key+b<br>$$<br>式中，a和b是常数。这种方式计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
+</li>
+<li><p>除留余数法</p>
+<p>这是一种最简单、最常用的方法，假定散列表长为m，取一个不大于m但是最接近或者等于m的指数p,利用以下公式把关键字转换为散列地址。散列函数为：<br>$$<br>H(key)=key(mod(p))<br>$$<br>除留余数法的关键是选好p, 使得每个关键字通过该过该函数转换后等概率地映射到散列空间上的任意一个地址，从而尽可能减少冲突的可能性。</p>
+</li>
+<li><p>数字分析法</p>
+<p>设关键字数r进制数，而r个数码在各位出现的频率不同。选取数码分布均匀的若干位作为散列地址。这种方法适用于已知关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
+</li>
+<li><p>平方取中法</p>
+<p>顾名思义，这种方法取关键字的平方值的中间几位作为散列地址。具体取多少位要看实际情况而定。这种方法得到的散列地址与关键字每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+</li>
+</ul>
+<h2 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h2><ul>
+<li><p>开放定址法</p>
+<p>可存放新表项的空闲地址既向它的同义词表项开放，又同它的非同义词表项开放。其数学递推公式为<br>$$<br>H_i=(H(key)+d_i)%m<br>$$<br>式子中H（key）为散列函数：i=0,1,2,……，k($k\leq m-1$);</p>
 <ol>
-<li>若删除的结点为叶节点，直接删除。</li>
-<li>若结点z只有一颗左子树或者右子树，则让z的子树称为z父结点的子树，替代z.</li>
-<li>若结点有左右两颗子树，则令z的直接后继（或者前驱）替代z，然后从二叉排序树中删除这个直接后继（或前驱），这样就转换成了第一种或第二种情况。</li>
+<li><p>线性探测法。当$d_i=0,1,2,……，m-1$时，称为<strong>线性探测法</strong>。这种方法的特点是：冲突发生时，顺序查看表的下一个单元，直到找到一个空闲单元或者查遍全表。线性探测法可能会导致堆积，降低了查找效率。</p>
+</li>
+<li><p>平方探测法。当$d_i=0^2,1^2,-1^2,……，k^2,-k^2$,称为<strong>平方探测法</strong>。其中$k\leq m/2$散列表长度必须是一个可以表示称4k+3的素数，又称二次探测法。缺点是不饿能探测到散列表中的所有单元。</p>
+</li>
+<li><p>双散列表。当$d_i=Hash_2(key)$时，称为双散列法。需要使用两个散列函数，H(key)得到的地址发生冲突时，则利用第二个散列函数$Hash_2(key)$计算该关键字的地址增量。它的具体散列函数形式如下：$H_i=(H(key)+i\times Hash_2(key))%m$ 初始探测位置$H_0=H(key)%m$i是冲突的次数，初始值是0。</p>
+</li>
 </ol>
-<h2 id="二叉排序树的查找效率分析"><a href="#二叉排序树的查找效率分析" class="headerlink" title="二叉排序树的查找效率分析"></a>二叉排序树的查找效率分析</h2><p>​    二叉排序树的查找效率，主要取决于树的高度。如果排序树的左右子树的高度之差的绝对值不超过1，则这样的二叉排序树称为平衡二叉树，它的平均查找长度为O（log2(n))。若二叉排序树是只有右（左）孩子的单只树（类似于有序的单链表）则其平均查找长度为O（n）。</p>
-<p>​    在最坏的情况下，构造二叉排序树的输入序列是有序的，就会形成一个倾斜的单支树，此时二叉树的性能显著变坏。</p>
-<p>​    从查找过程看，二分查找树与二分查找相似。就时间性能而言，二叉排序树上的查找和二分查找差不多。但是二分查找树的判定树唯一，而二叉树的查找不唯一，相同关键字其插入的顺序不同可能生成不同的二叉排序树。</p>
-<p>​    就维护表的有序性而言，无需移动结点，只用修改指针就可以完成插入和删除操作，平均时间是O（log2(n))。二分查找的对象是有序顺序表，若有插入和删除节点的操作，所花的代价是O（n)。当有序表是静态链表时，应该用顺序表作为存储结构，而采用二分查找实现其查找操作；若有序表时动态查找表，则选择二叉排序树作为其逻辑结构。</p>
+</li>
+<li><p>拉链法</p>
+<p>可以把所有的同义词存储在一个线性链表中，这个线性链表由其散列地址唯一标识。</p>
+</li>
+</ul>
+<h2 id="散列查找及性能分析"><a href="#散列查找及性能分析" class="headerlink" title="散列查找及性能分析"></a>散列查找及性能分析</h2><p>散列表的查找过程与构造散列表的过程基本一致。对于一个给定的关键字key, 根据散列函数可以计算出散列地址，执行步骤为：</p>
+<ul>
+<li>初始化：Addr=Hash(key);<ol>
+<li>检测查找表中地址为Addr的位置上是否有记录，若没有记录，返回查找失败，若有记录，比较key值，若相等，就返回查找成功标志，执行2</li>
+<li>用给定的处理冲突的方式计算下一个散列地址，并把Addr设置为此地址，转为步骤1</li>
+</ol>
+</li>
+</ul>
+<p>对同一组关键字，设定相同的散列函数，则不同的处理冲突的方法得到的散列表不同，它们的平均查找长度也不同。</p>
+<p>从散列表的查找过程可见：</p>
+<ol>
+<li><p>需要以平均查找长度作为衡量散列表的查找效率的度量。</p>
+</li>
+<li><p>散列表的查找效率取决于三个因素：散列函数、处理冲突方法和装填因子</p>
+<p><strong>装填因子</strong>：散列表的装填因子一般记为$\alpha$定义一个表的装满程度，即：<br>$$<br>\alpha=\frac{表中记录数n}{散列表长度m}<br>$$<br>散列表的平均查找长度依赖于散列表的装填因子$\alpha$，而不直接依赖于n或者m。$\alpha$越大，能装填的记录越满，发生冲突的可能性就更大。</p>
+</li>
+</ol>
 
     </div>
 
@@ -326,7 +345,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://molaters.github.io/2022/11/21/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/" title="二叉排序树">https://molaters.github.io/2022/11/21/二叉排序树/</a>
+    <a href="https://molaters.github.io/2022/11/22/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="散列表">https://molaters.github.io/2022/11/22/散列表的基本概念/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -337,8 +356,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%9F%A5%E6%89%BE/" rel="tag"># 查找</a>
-              <a href="/tags/%E6%A0%91/" rel="tag"># 树</a>
+              <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"># 排序</a>
+              <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" rel="tag"># 散列表</a>
           </div>
 
         
@@ -347,13 +366,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/11/21/%E5%85%B3%E4%BA%8Egithub%20pages%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%97%A0%E6%B3%95%E8%A7%A3%E9%87%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="prev" title="使用公式无法解释的解决方法">
-      <i class="fa fa-chevron-left"></i> 使用公式无法解释的解决方法
+    <a href="/2022/11/22/B+%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" rel="prev" title="B+树的基本概念">
+      <i class="fa fa-chevron-left"></i> B+树的基本概念
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/11/22/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="next" title="平衡二叉树">
-      平衡二叉树 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -412,7 +428,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">二叉排序树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E6%9F%A5%E6%89%BE"><span class="nav-number">1.2.</span> <span class="nav-text">二叉排序树的查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E6%8F%92%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">二叉排序树的插入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-number">1.3.1.</span> <span class="nav-text">二叉排序树的构造</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-number">1.4.</span> <span class="nav-text">二叉排序树的删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">二叉排序树的查找效率分析</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">散列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">散列表的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">散列函数的构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%86%B2%E7%AA%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">处理冲突的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE%E5%8F%8A%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">1.4.</span> <span class="nav-text">散列查找及性能分析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

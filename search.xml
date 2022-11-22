@@ -15,6 +15,8 @@
           
           <category> 数据结构 </category>
           
+          <category> 查找 </category>
+          
           <category> 笔记 </category>
           
       </categories>
@@ -49,7 +51,7 @@
       
         <tags>
             
-            <tag> blog </tag>
+            <tag> 博客 </tag>
             
         </tags>
       
@@ -68,6 +70,8 @@
       <categories>
           
           <category> 数据结构 </category>
+          
+          <category> 查找 </category>
           
           <category> 笔记 </category>
           
@@ -96,6 +100,8 @@
           
           <category> 数据结构 </category>
           
+          <category> 查找 </category>
+          
           <category> 笔记 </category>
           
       </categories>
@@ -122,6 +128,8 @@
       <categories>
           
           <category> 数据结构 </category>
+          
+          <category> 图 </category>
           
           <category> 笔记 </category>
           
@@ -160,6 +168,8 @@
           
           <category> 数据结构 </category>
           
+          <category> 图 </category>
+          
           <category> 笔记 </category>
           
       </categories>
@@ -189,6 +199,8 @@
           
           <category> 数据结构 </category>
           
+          <category> 树 </category>
+          
           <category> 作业 </category>
           
       </categories>
@@ -217,6 +229,8 @@
       <categories>
           
           <category> 数据结构 </category>
+          
+          <category> 排序 </category>
           
           <category> 作业 </category>
           
@@ -250,6 +264,8 @@
       <categories>
           
           <category> 数据结构 </category>
+          
+          <category> 图 </category>
           
           <category> 作业 </category>
           

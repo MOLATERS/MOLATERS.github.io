@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>红黑树</title>
+      <link href="/2022/11/22/%E7%BA%A2%E9%BB%91%E6%A0%91/"/>
+      <url>/2022/11/22/%E7%BA%A2%E9%BB%91%E6%A0%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><h2 id="红黑树的定义"><a href="#红黑树的定义" class="headerlink" title="红黑树的定义"></a>红黑树的定义</h2><p>一棵红黑树满足以下的性质：</p><ol><li>每个结点时红色或者黑色的。</li><li>根节点是黑色的。</li><li>叶节点(虚构的外部结点/NULL结点)都是黑色的。</li><li>不存在两个相邻的红色结点（即红结点的父结点和孩子结点都是黑色的）。</li></ol><p><strong>结论1：从根节点到叶节点的最长路径不大于最短路径的两倍</strong></p><p><strong>结论2：右n个内部节点的红黑树高度为</strong><br>$$<br>h\leq2log_2(n+1)<br>$$</p><h2 id="红黑树的插入"><a href="#红黑树的插入" class="headerlink" title="红黑树的插入"></a>红黑树的插入</h2><p><strong>结论3：新插入红黑树的结点初始时为红色</strong></p><h2 id="红黑树的剔除"><a href="#红黑树的剔除" class="headerlink" title="红黑树的剔除"></a>红黑树的剔除</h2><p>有以下两种情况：</p><ul><li>待删除结点没有孩子<ul><li>没有孩子</li><li>有孩子</li></ul></li><li>待删除结点只有右子树或者左子树<ul><li>只有右子树</li><li>只有左子树</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 查找 </category>
+          
+          <category> 复习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 查找 </tag>
+            
+            <tag> 树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构第四次作业</title>
       <link href="/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A4/"/>
       <url>/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A4/</url>

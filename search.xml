@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>交换排序</title>
+      <link href="/2022/11/23/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/"/>
+      <url>/2022/11/23/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序的基本思想是：从前往后两两比较相邻元素的值，如果为逆序，就交换它们，直到序列比较完。</p><p>冒泡排序的性能分析：</p><ol><li>空间效率$O(1)$</li><li>时间效率$O(n^2)$比较次数=$\sum_{i-1}^{n-1}(n-i)=\frac{n(n-1)}{2}$，移动次数=$\sum_{3(i-1)}^{n-1}(n-i)=\frac{3n(n-1)}{2}$</li><li>稳定性：稳定</li></ol><p>注意冒泡排序所产生的有序子序列一定是全局有序的，也就是说，有序子序列中的所有元素的关键字一定小于或大于无序子序列中所有元素的关键字，这样每趟排序都会将一个元素放置到最终的位置上</p><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的基本思想是基于分治法的：在待排序表中任取一个元素作为枢轴（或基准，通常取首元素），将排序表划分为两个独立的部分，不断进行这个过程直到所有元素都放到正确的位置上。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">QuickSort</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(low&lt;high)&#123;</span><br><span class="line"><span class="comment">//Partition()划分操作</span></span><br><span class="line"><span class="type">int</span> pivotpos=Partition(A,low,high);<span class="comment">//划分</span></span><br><span class="line">QuickSort(A,low,pivotpos);<span class="comment">//依次对两个子表进行递归排序</span></span><br><span class="line">QuickSort(A,pivotpos+<span class="number">1</span>,high);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>从上方的代码不难看出快速排序算法的关键在于划分操作，同时快速排序算法的性能也主要取决于划分操作的好坏。假设每次总以当前表中的第一个元素作为枢轴来对表来进行划分，则将表中比枢轴大的元素向右移动，将比枢轴小的元素向左移动，使得一趟Partiton()操作后，表中的元素被枢轴一分为二。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Partition</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">ElemType pivot=A[low];<span class="comment">//将当前表中的第一个元素设为枢纽，对表进行划分</span></span><br><span class="line"><span class="keyword">while</span>(low&lt;high)<span class="comment">//循环跳出条件</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">while</span>(low&lt;high&amp;&amp;A[high]&gt;=pivot)--high;</span><br><span class="line">A[low]=A[high];<span class="comment">//将比枢轴小的元素移动早左端</span></span><br><span class="line"><span class="keyword">while</span>(low&lt;high&amp;&amp;A[high]&lt;=pivot)++low;</span><br><span class="line">A[high]=A[low];<span class="comment">//将比枢轴大的元素移动到右端</span></span><br><span class="line">&#125;</span><br><span class="line">A[low]=pivot;<span class="comment">//枢轴元素存放到最终位置</span></span><br><span class="line"><span class="keyword">return</span> low;<span class="comment">//返回存放枢轴的最终位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>快速排序的性能如下：</p><p>空间效率：由于快速排序是递归的，需要栈的空间，最好情况为$O(log_2(n))$;最坏情况下，因为要进行n-1次递归调用，所以栈的深度为$O(n)$;平均情况下，栈的深度为$O(log_2(n))$</p><p>时间效率：快速排序的运行时间与划分是否对称有关，快速排序的最坏情况发生在两个区域分别包含n-1个元素和0个元素时，这种最大限度的不对称性如果发生在每一次递归上，那么就是单纯的冒泡排序，时间复杂度为$O(n^2)$</p><p>稳定性：在划分算法中，若右端区间有两个关键字相同，且均小于基准值的记录，则在交换到左端区间，它们的相对位置会发生变化，即快速排序是一种不稳定的排序算法。</p><p><strong>注意：在快速排序算法中并不产生有序子序列，但是每趟排序后会将枢纽（基准）元素放到最终的位置上</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 排序 </category>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 交换排序 </tag>
+            
+            <tag> 排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>插入排序</title>
       <link href="/2022/11/23/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
       <url>/2022/11/23/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</url>

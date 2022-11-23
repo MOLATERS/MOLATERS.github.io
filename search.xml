@@ -84,9 +84,9 @@
       
         <tags>
             
-            <tag> 查找 </tag>
-            
             <tag> B+树 </tag>
+            
+            <tag> 查找 </tag>
             
         </tags>
       
@@ -448,11 +448,11 @@
             
             <tag> 树 </tag>
             
+            <tag> 排序 </tag>
+            
             <tag> 二叉树 </tag>
             
             <tag> 堆 </tag>
-            
-            <tag> 排序 </tag>
             
         </tags>
       

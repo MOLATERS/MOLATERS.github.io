@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>插入排序</title>
+      <link href="/2022/11/23/%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+      <url>/2022/11/23/%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><p>假设在排序过程中,待排序表L[1…i-1]在某次排序过程的某个时刻的状态,要将L(i)插入已有序的子序列中,需要执行以下操作:</p><ol><li>查找出L(i)在L[1…i-1]中的插入位置k</li><li>将L[k…i-1]中的所有元素依次向后移动一个位置.</li><li>将L(i)复制到L(k).</li></ol><p>为了实现对L[1…n]的排序,可以将L(2)~L(n)依次插入前面已经排好序的子序列,初始L[1]可以视为是一个已经排好序的子序列.上述执行n-1次就能得到一个有序的表</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InsertSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line"><span class="type">int</span> i,j;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)<span class="comment">//依次将A[2]~A[n]插入前面已经排序的序列</span></span><br><span class="line">&#123;<span class="comment">//若A[i]关键码小于其前驱,将A[i]插入有序表</span></span><br><span class="line"><span class="keyword">if</span>(A[i]&lt;A[i<span class="number">-1</span>])&#123;<span class="comment">//复制为哨兵,A[0]不存放元素</span></span><br><span class="line">A[<span class="number">0</span>]=A[i];</span><br><span class="line"><span class="keyword">for</span>(j=i<span class="number">-1</span>;A[<span class="number">0</span>]&lt;A[j];--j)<span class="comment">//从后往前查找待插入位置</span></span><br><span class="line">A[j+<span class="number">1</span>]=A[j];<span class="comment">//向后挪位</span></span><br><span class="line">A[j+<span class="number">1</span>]=A[<span class="number">0</span>];<span class="comment">//复制到插入位置</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>空间效率:$O(1)$</p><p>时间效率:$O(n^2)$</p><p>稳定性:稳定的排序方法</p><p>适用性:顺序存储和链式存储的线性表</p><h2 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h2><p>可以对查找进行优化,使用折半查找法:</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InsertSort</span><span class="params">(ElemType A[], <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="type">int</span> i,j,low,high,mid;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)<span class="comment">//依次将A[2]~A[n]插入前面的已排序序列</span></span><br><span class="line">&#123;</span><br><span class="line">A[<span class="number">0</span>]=A[i];<span class="comment">//将A[i]暂存到A[0]</span></span><br><span class="line">low=<span class="number">1</span>;high=i<span class="number">-1</span>;<span class="comment">//数值折半查找的范围</span></span><br><span class="line"><span class="keyword">while</span>(low&lt;=high)&#123;<span class="comment">//折半查找(默认递增有序)</span></span><br><span class="line">mid=(low+high)/<span class="number">2</span>;<span class="comment">//取中间点</span></span><br><span class="line"><span class="keyword">if</span>(A[mid]&gt;A[<span class="number">0</span>])high=mid<span class="number">-1</span>;<span class="comment">//查找左半子表</span></span><br><span class="line"><span class="keyword">else</span> low=mid<span class="number">-1</span>;<span class="comment">//查找右半子表</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(j=i<span class="number">-1</span>;j&gt;=high+<span class="number">1</span>;--j)</span><br><span class="line">A[j+<span class="number">1</span>]=A[j];</span><br><span class="line">A[high+<span class="number">1</span>]=A[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>从上述算法中,不难看出折半插入排序仅减少了比较元素的次数,约为$O(nlog_2(n))$,比较次数与待排序表的初始状态无关</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 排序 </category>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>散列表</title>
       <link href="/2022/11/22/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
       <url>/2022/11/22/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>

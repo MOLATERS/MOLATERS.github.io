@@ -194,6 +194,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jeanatte">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="post-title-link" itemprop="url">两数相加</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-01 21:54:29 / 修改时间：23:17:25" itemprop="dateCreated datePublished" datetime="2022-12-01T21:54:29+08:00">2022-12-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">-[刷题]</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h1><p><strong>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。请你将两个数相加，并以相同形式返回一个表示和的链表。你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</strong></p>
+<blockquote>
+<p>示例 1：<br>输入：l1 = [2,4,3], l2 = [5,6,4]<br>输出：[7,0,8]<br>解释：342 + 465 = 807.</p>
+<p>示例 2：<br>输入：l1 = [0], l2 = [0]<br>输出：[0]</p>
+<p>示例 3：<br>输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]<br>输出：[8,9,9,9,0,0,0,1]</p>
+<p>提示：<br>每个链表中的节点数在范围 [1, 100] 内<br>0 &lt;= Node.val &lt;= 9<br>题目数据保证列表表示的数字不含前导零</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">     <span class="type">int</span> val;</span><br><span class="line">     ListNode *next;</span><br><span class="line">     <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* num1=l1;</span><br><span class="line">        ListNode* num2=l2;</span><br><span class="line">        ListNode* answer;</span><br><span class="line">        ListNode* temp;</span><br><span class="line">        ListNode* tail;</span><br><span class="line">        <span class="type">int</span> bias=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> value;</span><br><span class="line">        <span class="type">int</span> flag=<span class="number">0</span>;<span class="comment">//进位</span></span><br><span class="line">        queue&lt;ListNode*&gt; stk1;</span><br><span class="line">        queue&lt;ListNode*&gt; stk2;</span><br><span class="line">        queue&lt;ListNode*&gt; stk3;</span><br><span class="line">        <span class="keyword">while</span>(num1!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            stk1.<span class="built_in">push</span>(num1);</span><br><span class="line">            num1=num1-&gt;next;</span><br><span class="line">        &#125;<span class="comment">//将一个链表内的结点进栈</span></span><br><span class="line">        <span class="keyword">while</span>(num2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            stk2.<span class="built_in">push</span>(num2);</span><br><span class="line">            num2=num2-&gt;next;</span><br><span class="line">        &#125;<span class="comment">//将另一个链表的结点进栈</span></span><br><span class="line">        <span class="keyword">while</span>(!stk1.<span class="built_in">empty</span>()&amp;&amp;!stk2.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            num1=stk1.<span class="built_in">front</span>();</span><br><span class="line">            num2=stk2.<span class="built_in">front</span>();</span><br><span class="line">            stk1.<span class="built_in">pop</span>();</span><br><span class="line">            stk2.<span class="built_in">pop</span>();</span><br><span class="line">            value=(num1-&gt;val+num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            temp=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            stk3.<span class="built_in">push</span>(temp);</span><br><span class="line">            bias=(num1-&gt;val+num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">        &#125;<span class="comment">//两数相加，考虑进位</span></span><br><span class="line">        <span class="keyword">while</span>(!stk1.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            num1=stk1.<span class="built_in">front</span>();stk1.<span class="built_in">pop</span>();</span><br><span class="line">            value=(num1-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            temp=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            stk3.<span class="built_in">push</span>(temp);</span><br><span class="line">            bias=(num1-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!stk2.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            num2=stk2.<span class="built_in">front</span>();stk2.<span class="built_in">pop</span>();</span><br><span class="line">            value=(num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            temp=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            stk3.<span class="built_in">push</span>(temp);</span><br><span class="line">            bias=(num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">        &#125;<span class="comment">//接后续结点</span></span><br><span class="line">        value=bias;</span><br><span class="line">        answer=stk3.<span class="built_in">front</span>();</span><br><span class="line">        stk3.<span class="built_in">pop</span>();</span><br><span class="line">        ListNode* head=answer;</span><br><span class="line">        <span class="keyword">while</span>(!stk3.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            temp=stk3.<span class="built_in">front</span>();</span><br><span class="line">            stk3.<span class="built_in">pop</span>();</span><br><span class="line">            answer-&gt;next=temp;</span><br><span class="line">            answer=answer-&gt;next;</span><br><span class="line">        &#125;<span class="comment">//总体队列出栈</span></span><br><span class="line">        <span class="keyword">if</span>(value!=<span class="number">0</span>)&#123;</span><br><span class="line">            tail=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer-&gt;next=tail;</span><br><span class="line">        &#125;<span class="comment">//将最后一次进位放最结尾</span></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：两个链表的长度之和$O(m+n)$</p>
+<p>空间复杂度：两个链表的队列使用是$O(m+n+max(m+n))$</p>
+<p>其实也可以不用队列</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">     <span class="type">int</span> val;</span><br><span class="line">     ListNode *next;</span><br><span class="line">     <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* num1=l1;</span><br><span class="line">        ListNode* num2=l2;</span><br><span class="line">        ListNode* answer;</span><br><span class="line">        ListNode* temp;</span><br><span class="line">        ListNode* tail;</span><br><span class="line">        <span class="type">int</span> bias=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> value;</span><br><span class="line">        <span class="type">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        ListNode* head;</span><br><span class="line">        <span class="keyword">while</span>(num1!=<span class="literal">NULL</span>&amp;&amp;num2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            value=(num1-&gt;val+num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            bias=(num1-&gt;val+num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(flag==<span class="number">0</span>)&#123;</span><br><span class="line">                answer=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">                head=answer;</span><br><span class="line">                flag=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                answer-&gt;next=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">                answer=answer-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            num1=num1-&gt;next;</span><br><span class="line">            num2=num2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(num1!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            value=(num1-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            bias=(num1-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">            answer-&gt;next=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer=answer-&gt;next;</span><br><span class="line">            num1=num1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(num2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            value=(num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            bias=(num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">            answer-&gt;next=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer=answer-&gt;next;</span><br><span class="line">            num2=num2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        value=bias;</span><br><span class="line">        <span class="keyword">if</span>(value!=<span class="number">0</span>)&#123;</span><br><span class="line">            tail=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer-&gt;next=tail;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度不变</p>
+<p>空间复杂度优化为$O(n^2)$</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E6%9C%89%E6%95%88%E6%95%B0%E7%8B%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -945,106 +1034,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jeanatte">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">存在重复元素</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-27 14:49:46" itemprop="dateCreated datePublished" datetime="2022-11-27T14:49:46+08:00">2022-11-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-28 14:02:10" itemprop="dateModified" datetime="2022-11-28T14:02:10+08:00">2022-11-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="存在重复元素"><a href="#存在重复元素" class="headerlink" title="存在重复元素"></a>存在重复元素</h1><p><strong>给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。</strong></p>
-<blockquote>
-<p>示例 1：<br>输入：nums = [1,2,3,1]<br>输出：true</p>
-<p>示例 2：<br>输入：nums = [1,2,3,4]<br>输出：false</p>
-<p>示例 3：<br>输入：nums = [1,1,1,3,3,4,3,2,4,2]<br>输出：true</p>
-<p>提示：<br>1 &lt;= nums.length &lt;= 105<br>-109 &lt;= nums[i] &lt;= 109</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> *num,<span class="type">int</span> i,<span class="type">int</span> j)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    temp=num[i];</span><br><span class="line">    num[i]=num[j];</span><br><span class="line">    num[j]=temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">heapAdjust</span><span class="params">(<span class="type">int</span>* num,<span class="type">int</span> i,<span class="type">int</span> size)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> left,right,large;</span><br><span class="line">    left=<span class="number">2</span>*i+<span class="number">1</span>;</span><br><span class="line">    right=<span class="number">2</span>*i+<span class="number">2</span>;</span><br><span class="line">    large=i;</span><br><span class="line">    <span class="keyword">if</span>(left&lt;size&amp;&amp;num[left]&gt;num[large])</span><br><span class="line">    large=left;</span><br><span class="line">    <span class="keyword">if</span>(right&lt;size&amp;&amp;num[right]&gt;num[large])</span><br><span class="line">    large=right;</span><br><span class="line">    <span class="keyword">if</span>(i!=large)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(num,i,large);</span><br><span class="line">        heapAdjust(num,large,size);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Buildheap</span><span class="params">(<span class="type">int</span> * num,<span class="type">int</span> size)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=size/<span class="number">2</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    &#123;</span><br><span class="line">        heapAdjust(num,i,size);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">bool</span> <span class="title function_">containsDuplicate</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize)</span>&#123;</span><br><span class="line">    Buildheap(nums,numsSize);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=numsSize<span class="number">-1</span>;i&gt;<span class="number">0</span>;--i)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(nums,<span class="number">0</span>,i);</span><br><span class="line">        heapAdjust(nums,<span class="number">0</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;numsSize<span class="number">-1</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1152,7 +1141,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共30.9k字</span>
+  <span class="post-count">全站共31.8k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

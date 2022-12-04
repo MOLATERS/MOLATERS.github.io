@@ -23,19 +23,20 @@
     var CONFIG = {"hostname":"molaters.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","width":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="平衡二叉树平衡二叉树的定义为避免树的高度增长过快，降低二叉排序树的性能，规定在插入和删除二叉树结点时，要保证任意节点的左右子树高度差绝对值不超过1，将这样的二叉树称为平衡二叉树，简称平衡树。定义结点左子树与右子树的高度差为该结点的平衡因子。定义结点左子树和右子树的高度差为该节点的平衡因子，则该平衡二叉树结点的平衡因子的值只可能是-1、0或者1。 因此，平衡二叉树可以定义为或者是一个空树，或者是具有">
+  <meta name="description" content="反转链表给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。  示例 1： 输入：head &#x3D; [1,2,3,4,5]输出：[5,4,3,2,1] 示例 2： 输入：head &#x3D; [1,2]输出：[2,1] 示例 3： 输入：head &#x3D; []输出：[] 提示： 链表中节点的数目范围是 [0, 5000]-5000 &lt;&#x3D; Node.val &lt;&#x3D; 5000  解决方法1：使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="平衡二叉树">
-<meta property="og:url" content="https://molaters.github.io/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="反转链表">
+<meta property="og:url" content="https://molaters.github.io/2022/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Molaters Blog">
-<meta property="og:description" content="平衡二叉树平衡二叉树的定义为避免树的高度增长过快，降低二叉排序树的性能，规定在插入和删除二叉树结点时，要保证任意节点的左右子树高度差绝对值不超过1，将这样的二叉树称为平衡二叉树，简称平衡树。定义结点左子树与右子树的高度差为该结点的平衡因子。定义结点左子树和右子树的高度差为该节点的平衡因子，则该平衡二叉树结点的平衡因子的值只可能是-1、0或者1。 因此，平衡二叉树可以定义为或者是一个空树，或者是具有">
+<meta property="og:description" content="反转链表给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。  示例 1： 输入：head &#x3D; [1,2,3,4,5]输出：[5,4,3,2,1] 示例 2： 输入：head &#x3D; [1,2]输出：[2,1] 示例 3： 输入：head &#x3D; []输出：[] 提示： 链表中节点的数目范围是 [0, 5000]-5000 &lt;&#x3D; Node.val &lt;&#x3D; 5000  解决方法1：使">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-22T02:18:41.743Z">
-<meta property="article:modified_time" content="2022-11-22T05:46:31.555Z">
+<meta property="article:published_time" content="2022-12-04T13:25:07.955Z">
+<meta property="article:modified_time" content="2022-12-04T13:58:13.872Z">
 <meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="链表">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://molaters.github.io/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
+<link rel="canonical" href="https://molaters.github.io/2022/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
 
 
 <script id="page-configurations">
@@ -48,7 +49,7 @@
   };
 </script>
 
-  <title>平衡二叉树 | Molaters Blog</title>
+  <title>反转链表 | Molaters Blog</title>
   
 
 
@@ -197,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -210,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          平衡二叉树
+          反转链表
         </h1>
 
         <div class="post-meta">
@@ -221,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-11-22 10:18:41 / 修改时间：13:46:31" itemprop="dateCreated datePublished" datetime="2022-11-22T10:18:41+08:00">2022-11-22</time>
+              <time title="创建时间：2022-12-04 21:25:07 / 修改时间：21:58:13" itemprop="dateCreated datePublished" datetime="2022-12-04T21:25:07+08:00">2022-12-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,11 +234,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
                 </span>
             </span>
 
@@ -259,35 +256,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="平衡二叉树的定义"><a href="#平衡二叉树的定义" class="headerlink" title="平衡二叉树的定义"></a>平衡二叉树的定义</h2><p>为避免树的高度增长过快，降低二叉排序树的性能，规定在插入和删除二叉树结点时，要保证任意节点的左右子树高度差绝对值不超过1，将这样的二叉树称为平衡二叉树，简称平衡树。定义结点左子树与右子树的高度差为该结点的平衡因子。定义结点左子树和右子树的高度差为该节点的平衡因子，则该平衡二叉树结点的平衡因子的值只可能是-1、0或者1。</p>
-<p>因此，平衡二叉树可以定义为或者是一个空树，或者是具有下列性质的二叉树：</p>
-<ol>
-<li>左右子树都是平衡树</li>
-<li>左右子树的高度差的绝对值不超过1.</li>
-</ol>
-<h2 id="平衡二叉树的插入"><a href="#平衡二叉树的插入" class="headerlink" title="平衡二叉树的插入"></a>平衡二叉树的插入</h2><p>二叉排序树保证平衡的基本思想如下：每当在二叉排序树中插入或者删除一个结点时，首先检查其插入路径上的结点是否因为此次操作导致了不平衡。若导致了不平衡，则先找到插入路径上离插入结点最近的平衡因子绝对值大于1的结点A，再对以A为根的子树，在保持二叉排序树特性的前提下，调整各结点的位置关系，使之重新达到平衡。</p>
-<ol>
-<li>LL平衡旋转（右单旋转）在结点A的左孩子（L）和左子树(L)上插入了新节点，A的平衡因子由1增加到2，导致以A为根的子树失去平衡，需要一次向右的旋转操作。将A的左孩子B向右上方旋转代替A成为根节点，将A结点向右下旋转成为B的右子树的根节点，而B的原右子树则作为A结点的左子树。</li>
-<li>RR平衡旋转与上相似</li>
-<li>LR平衡旋转（先左后右双旋转）。由于在A的左孩子（L）右子树（R）上插入了新结点，A的平衡因子由1增加为2，导致以A为根的子树失去平衡，需要两次旋转操作先左旋转再右旋转。先将A结点的左孩子B的右子树的根节点C向左上旋转提升到B结点的位置，然后把该C结点向右上旋转提升到A结点的位置。<strong>先左后右</strong></li>
-<li>RL平衡旋转。由于在A的右孩子（R）左子树（L）上插入了新节点，其余描述与上相似。<strong>满足先右后左</strong>。</li>
-</ol>
-<p><strong>注意：LR和RL旋转时，新节点究竟是插入了C的左子树还是插入C的右子树不影响旋转的过程</strong></p>
-<h2 id="平衡二叉树的删除"><a href="#平衡二叉树的删除" class="headerlink" title="平衡二叉树的删除"></a>平衡二叉树的删除</h2><p>以删除结点w为例来说明平衡二叉树删除操作的步骤：</p>
-<ol>
-<li>用二叉排序树的方法对结点w执行删除操作。</li>
-<li>从结点w开始，向上回溯，找到第一个不平衡的结点z(即最小不平衡子树)：y为结点z的高度最高的孩子结点；x是结点y的高度最高的孩子结点。</li>
-<li>然后对以z为根的子树机型平衡调整，其中x、y、z可能的位置由四种情况。</li>
-</ol>
-<ul>
-<li>y是z的左孩子，x是y的左孩子（LL, 右单旋转）；</li>
-<li>y是z的左孩子，x是y的右孩子（LR, 先左后右双旋转）；</li>
-<li>y是z的右孩子，x是y的右孩子（RL, 先右后左双旋转）；</li>
-<li>y是z的右孩子，x是y的左孩子（RL, 左单旋转）；</li>
-</ul>
-<p>这四种情况与插入操作的调整方式不一样。不同之处在于，插入操作仅需要对以z为根的子树进行平衡调整；而删除操作要先对以z为根的子树进行平衡调整，如果调整之后子树的高度减1，则可能需要对z的祖先结点进行平衡调整，甚至回溯到根结点（导致树的高度-1）</p>
-<h2 id="平衡二叉树的查找"><a href="#平衡二叉树的查找" class="headerlink" title="平衡二叉树的查找"></a>平衡二叉树的查找</h2><p>在平衡二叉树上查找的过程与二叉排序树相同。在查找过程中，查找的长度不会超过树的深度。因此平衡查找树的平均查找长度为O（log2(n))</p>
-<p><strong>注意：该结论可以用于求解给定节点数的平衡二叉树的查找所需的最多比较次数（或者树的最大高度）。在含有12个结点的平衡二叉树中查找某个节点最多的比较次数是多少？</strong></p>
+        <h1 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h1><p>给你单链表的头节点 <code>head</code> ，请你反转链表，并返回反转后的链表。</p>
+<blockquote>
+<p>示例 1：</p>
+<p>输入：<code>head</code> = [1,2,3,4,5]<br>输出：[5,4,3,2,1]</p>
+<p>示例 2：</p>
+<p>输入：<code>head</code> = [1,2]<br>输出：[2,1]</p>
+<p>示例 3：</p>
+<p>输入：<code>head</code> = []<br>输出：[]</p>
+<p>提示：</p>
+<p>链表中节点的数目范围是 [0, 5000]<br>-5000 &lt;= <code>Node.val </code>&lt;= 5000</p>
+</blockquote>
+<h3 id="解决方法1：使用栈进行辅助，利用栈的先入后出的特性使链表反转"><a href="#解决方法1：使用栈进行辅助，利用栈的先入后出的特性使链表反转" class="headerlink" title="解决方法1：使用栈进行辅助，利用栈的先入后出的特性使链表反转"></a>解决方法1：使用栈进行辅助，利用栈的先入后出的特性使链表反转</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        stack&lt;ListNode*&gt; stk;</span><br><span class="line">        ListNode* p=head;</span><br><span class="line">        <span class="keyword">while</span>(p!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            stk.<span class="built_in">push</span>(p);</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125; <span class="comment">//将所有结点入栈</span></span><br><span class="line">        <span class="keyword">if</span>(!stk.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        	ListNode* head_new=stk.<span class="built_in">top</span>();</span><br><span class="line">        	stk.<span class="built_in">pop</span>();</span><br><span class="line">        	p=head_new;</span><br><span class="line">        	<span class="keyword">while</span>(!stk.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            	p-&gt;next=stk.<span class="built_in">top</span>();stk.<span class="built_in">pop</span>();</span><br><span class="line">            	p=p-&gt;next;</span><br><span class="line">        	&#125;</span><br><span class="line">        	p-&gt;next=<span class="literal">nullptr</span>;</span><br><span class="line">        	<span class="keyword">return</span> head_new;<span class="comment">//将所有结点出栈，并将最后一个的next指针置为nullptr</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：使用了两次遍历链表，时间复杂度为<code>O(2n)</code></p>
+<p>空间复杂度：借助了栈的空间，栈的大小为n，所以空间复杂度为<code>O(n)</code></p>
+<h3 id="解决方法2：使用递归的方式，假定前部分的指针已经转换完成，向后继续转换指针"><a href="#解决方法2：使用递归的方式，假定前部分的指针已经转换完成，向后继续转换指针" class="headerlink" title="解决方法2：使用递归的方式，假定前部分的指针已经转换完成，向后继续转换指针"></a>解决方法2：使用递归的方式，假定前部分的指针已经转换完成，向后继续转换指针</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == null || head.next == null) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;<span class="comment">//终止条件</span></span><br><span class="line">        ListNode newHead = <span class="built_in">reverseList</span>(head.next);<span class="comment">//在head-&gt;next为头节点的链表已经转换完成的条件下，把head的位置更新</span></span><br><span class="line">        head.next.next = head;</span><br><span class="line">        head.next = null;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度： 需要进行<code>O(n)</code>次的循环</p>
+<p>空间复杂度： 需要进行<code>O(n)</code>次的函数调用，所以时间复杂度为<code>O(n)</code></p>
+<h3 id="解决方法3：使用双指针，通过不断交换的方式进行"><a href="#解决方法3：使用双指针，通过不断交换的方式进行" class="headerlink" title="解决方法3：使用双指针，通过不断交换的方式进行"></a>解决方法3：使用双指针，通过不断交换的方式进行</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span></span>&#123;</span><br><span class="line">            ListNode* curr=head;<span class="comment">//记录前一个链表节点位置</span></span><br><span class="line">            ListNode* prev=<span class="literal">nullptr</span>;<span class="comment">//记录后一个的链表节点位置</span></span><br><span class="line">            <span class="keyword">while</span>(curr!=<span class="literal">nullptr</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ListNode* temp=curr-&gt;next;<span class="comment">//记录curr的下一个节点</span></span><br><span class="line">                curr-&gt;next=prev;<span class="comment">//将prev的值更换为prev</span></span><br><span class="line">                prev=curr;<span class="comment">//将prev更新为当前curr结点</span></span><br><span class="line">                curr=temp;<span class="comment">//将curr更新为它的下一个节点</span></span><br><span class="line">            &#125;<span class="comment">//直到curr到达链表结尾结束</span></span><br><span class="line">            <span class="keyword">return</span> prev;<span class="comment">//返回prev所指代的头节点</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：只需要遍历一次，时间复杂度为<code>O(n)</code></p>
+<p>空间复杂度：只使用了循环，只有常数变量，时间复杂度为<code>O(1)</code></p>
 
     </div>
 
@@ -313,7 +304,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://molaters.github.io/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" title="平衡二叉树">https://molaters.github.io/2022/11/22/数据结构/查找/平衡二叉树/</a>
+    <a href="https://molaters.github.io/2022/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" title="反转链表">https://molaters.github.io/2022/12/04/数据结构/刷题/反转链表/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -323,6 +314,9 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag"># 链表</a>
+          </div>
 
         
 
@@ -330,12 +324,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/11/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/" rel="prev" title="二叉排序树">
-      <i class="fa fa-chevron-left"></i> 二叉排序树
+    <a href="/2022/12/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/" rel="prev" title="移除链表元素">
+      <i class="fa fa-chevron-left"></i> 移除链表元素
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BD%9C%E4%B8%9A/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BD%9C%E4%B8%9A4/" rel="next" title="数据结构第四次作业">
-      数据结构第四次作业 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" rel="next" title="删除排序链表中的重复元素">
+      删除排序链表中的重复元素 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -395,7 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.</span> <span class="nav-text">平衡二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">平衡二叉树的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%8F%92%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">平衡二叉树的插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-number">1.3.</span> <span class="nav-text">平衡二叉树的删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9F%A5%E6%89%BE"><span class="nav-number">1.4.</span> <span class="nav-text">平衡二叉树的查找</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">反转链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%951%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%A0%88%E8%BF%9B%E8%A1%8C%E8%BE%85%E5%8A%A9%EF%BC%8C%E5%88%A9%E7%94%A8%E6%A0%88%E7%9A%84%E5%85%88%E5%85%A5%E5%90%8E%E5%87%BA%E7%9A%84%E7%89%B9%E6%80%A7%E4%BD%BF%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC"><span class="nav-number">1.0.1.</span> <span class="nav-text">解决方法1：使用栈进行辅助，利用栈的先入后出的特性使链表反转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%952%EF%BC%9A%E4%BD%BF%E7%94%A8%E9%80%92%E5%BD%92%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%81%87%E5%AE%9A%E5%89%8D%E9%83%A8%E5%88%86%E7%9A%84%E6%8C%87%E9%92%88%E5%B7%B2%E7%BB%8F%E8%BD%AC%E6%8D%A2%E5%AE%8C%E6%88%90%EF%BC%8C%E5%90%91%E5%90%8E%E7%BB%A7%E7%BB%AD%E8%BD%AC%E6%8D%A2%E6%8C%87%E9%92%88"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决方法2：使用递归的方式，假定前部分的指针已经转换完成，向后继续转换指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%953%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%8F%8C%E6%8C%87%E9%92%88%EF%BC%8C%E9%80%9A%E8%BF%87%E4%B8%8D%E6%96%AD%E4%BA%A4%E6%8D%A2%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9B%E8%A1%8C"><span class="nav-number">1.0.3.</span> <span class="nav-text">解决方法3：使用双指针，通过不断交换的方式进行</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

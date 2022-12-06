@@ -702,9 +702,9 @@
       
         <tags>
             
-            <tag> 堆 </tag>
-            
             <tag> 排序 </tag>
+            
+            <tag> 堆 </tag>
             
         </tags>
       
@@ -733,9 +733,9 @@
       
         <tags>
             
-            <tag> 排序 </tag>
-            
             <tag> 交换排序 </tag>
+            
+            <tag> 排序 </tag>
             
         </tags>
       
@@ -1190,9 +1190,9 @@
             
             <tag> 二叉树 </tag>
             
-            <tag> 堆 </tag>
-            
             <tag> 排序 </tag>
+            
+            <tag> 堆 </tag>
             
         </tags>
       

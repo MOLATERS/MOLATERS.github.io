@@ -196,6 +196,381 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="post-title-link" itemprop="url">两数相加</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-01 21:54:29" itemprop="dateCreated datePublished" datetime="2022-12-01T21:54:29+08:00">2022-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-02 14:35:31" itemprop="dateModified" datetime="2022-12-02T14:35:31+08:00">2022-12-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h1><p><strong>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。请你将两个数相加，并以相同形式返回一个表示和的链表。你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</strong></p>
+<blockquote>
+<p>示例 1：<br>输入：l1 = [2,4,3], l2 = [5,6,4]<br>输出：[7,0,8]<br>解释：342 + 465 = 807.</p>
+<p>示例 2：<br>输入：l1 = [0], l2 = [0]<br>输出：[0]</p>
+<p>示例 3：<br>输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]<br>输出：[8,9,9,9,0,0,0,1]</p>
+<p>提示：<br>每个链表中的节点数在范围 [1, 100] 内<br>0 &lt;= Node.val &lt;= 9<br>题目数据保证列表表示的数字不含前导零</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">     <span class="type">int</span> val;</span><br><span class="line">     ListNode *next;</span><br><span class="line">     <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* num1=l1;</span><br><span class="line">        ListNode* num2=l2;</span><br><span class="line">        ListNode* answer;</span><br><span class="line">        ListNode* temp;</span><br><span class="line">        ListNode* tail;</span><br><span class="line">        <span class="type">int</span> bias=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> value;</span><br><span class="line">        <span class="type">int</span> flag=<span class="number">0</span>;<span class="comment">//进位</span></span><br><span class="line">        queue&lt;ListNode*&gt; stk1;</span><br><span class="line">        queue&lt;ListNode*&gt; stk2;</span><br><span class="line">        queue&lt;ListNode*&gt; stk3;</span><br><span class="line">        <span class="keyword">while</span>(num1!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            stk1.<span class="built_in">push</span>(num1);</span><br><span class="line">            num1=num1-&gt;next;</span><br><span class="line">        &#125;<span class="comment">//将一个链表内的结点进栈</span></span><br><span class="line">        <span class="keyword">while</span>(num2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            stk2.<span class="built_in">push</span>(num2);</span><br><span class="line">            num2=num2-&gt;next;</span><br><span class="line">        &#125;<span class="comment">//将另一个链表的结点进栈</span></span><br><span class="line">        <span class="keyword">while</span>(!stk1.<span class="built_in">empty</span>()&amp;&amp;!stk2.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            num1=stk1.<span class="built_in">front</span>();</span><br><span class="line">            num2=stk2.<span class="built_in">front</span>();</span><br><span class="line">            stk1.<span class="built_in">pop</span>();</span><br><span class="line">            stk2.<span class="built_in">pop</span>();</span><br><span class="line">            value=(num1-&gt;val+num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            temp=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            stk3.<span class="built_in">push</span>(temp);</span><br><span class="line">            bias=(num1-&gt;val+num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">        &#125;<span class="comment">//两数相加，考虑进位</span></span><br><span class="line">        <span class="keyword">while</span>(!stk1.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            num1=stk1.<span class="built_in">front</span>();stk1.<span class="built_in">pop</span>();</span><br><span class="line">            value=(num1-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            temp=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            stk3.<span class="built_in">push</span>(temp);</span><br><span class="line">            bias=(num1-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!stk2.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            num2=stk2.<span class="built_in">front</span>();stk2.<span class="built_in">pop</span>();</span><br><span class="line">            value=(num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            temp=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            stk3.<span class="built_in">push</span>(temp);</span><br><span class="line">            bias=(num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">        &#125;<span class="comment">//接后续结点</span></span><br><span class="line">        value=bias;</span><br><span class="line">        answer=stk3.<span class="built_in">front</span>();</span><br><span class="line">        stk3.<span class="built_in">pop</span>();</span><br><span class="line">        ListNode* head=answer;</span><br><span class="line">        <span class="keyword">while</span>(!stk3.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            temp=stk3.<span class="built_in">front</span>();</span><br><span class="line">            stk3.<span class="built_in">pop</span>();</span><br><span class="line">            answer-&gt;next=temp;</span><br><span class="line">            answer=answer-&gt;next;</span><br><span class="line">        &#125;<span class="comment">//总体队列出栈</span></span><br><span class="line">        <span class="keyword">if</span>(value!=<span class="number">0</span>)&#123;</span><br><span class="line">            tail=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer-&gt;next=tail;</span><br><span class="line">        &#125;<span class="comment">//将最后一次进位放最结尾</span></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：两个链表的长度之和$O(m+n)$</p>
+<p>空间复杂度：两个链表的队列使用是$O(m+n+max(m+n))$</p>
+<p>其实也可以不用队列</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">     <span class="type">int</span> val;</span><br><span class="line">     ListNode *next;</span><br><span class="line">     <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">     <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* num1=l1;</span><br><span class="line">        ListNode* num2=l2;</span><br><span class="line">        ListNode* answer;</span><br><span class="line">        ListNode* temp;</span><br><span class="line">        ListNode* tail;</span><br><span class="line">        <span class="type">int</span> bias=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> value;</span><br><span class="line">        <span class="type">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        ListNode* head;</span><br><span class="line">        <span class="keyword">while</span>(num1!=<span class="literal">NULL</span>&amp;&amp;num2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            value=(num1-&gt;val+num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            bias=(num1-&gt;val+num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(flag==<span class="number">0</span>)&#123;</span><br><span class="line">                answer=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">                head=answer;</span><br><span class="line">                flag=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                answer-&gt;next=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">                answer=answer-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            num1=num1-&gt;next;</span><br><span class="line">            num2=num2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(num1!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            value=(num1-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            bias=(num1-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">            answer-&gt;next=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer=answer-&gt;next;</span><br><span class="line">            num1=num1-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(num2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            value=(num2-&gt;val+bias)%<span class="number">10</span>;</span><br><span class="line">            bias=(num2-&gt;val+bias)/<span class="number">10</span>;</span><br><span class="line">            answer-&gt;next=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer=answer-&gt;next;</span><br><span class="line">            num2=num2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        value=bias;</span><br><span class="line">        <span class="keyword">if</span>(value!=<span class="number">0</span>)&#123;</span><br><span class="line">            tail=<span class="keyword">new</span> <span class="built_in">ListNode</span>(value);</span><br><span class="line">            answer-&gt;next=tail;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度不变</p>
+<p>空间复杂度优化为$O(1)$</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E6%9C%89%E6%95%88%E6%95%B0%E7%8B%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E6%9C%89%E6%95%88%E6%95%B0%E7%8B%AC/" class="post-title-link" itemprop="url">有效数独</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-01 10:24:00" itemprop="dateCreated datePublished" datetime="2022-12-01T10:24:00+08:00">2022-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-04 22:08:33" itemprop="dateModified" datetime="2022-12-04T22:08:33+08:00">2022-12-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="有效数独"><a href="#有效数独" class="headerlink" title="有效数独"></a>有效数独</h1><p><strong>请你判断一个 9 x 9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。<br>数字 1-9 在每一行只能出现一次。<br>数字 1-9 在每一列只能出现一次。<br>数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）<br>注意：一个有效的数独（部分已被填充）不一定是可解的。只需要根据以上规则，验证已经填入的数字是否有效即可。空白格用 ‘.’ 表示。</strong></p>
+<blockquote>
+<p>示例 1：<br>输入：board =<br>[[“5”,”3”,”.”,”.”,”7”,”.”,”.”,”.”,”.”]<br>,[“6”,”.”,”.”,”1”,”9”,”5”,”.”,”.”,”.”]<br>,[“.”,”9”,”8”,”.”,”.”,”.”,”.”,”6”,”.”]<br>,[“8”,”.”,”.”,”.”,”6”,”.”,”.”,”.”,”3”]<br>,[“4”,”.”,”.”,”8”,”.”,”3”,”.”,”.”,”1”]<br>,[“7”,”.”,”.”,”.”,”2”,”.”,”.”,”.”,”6”]<br>,[“.”,”6”,”.”,”.”,”.”,”.”,”2”,”8”,”.”]<br>,[“.”,”.”,”.”,”4”,”1”,”9”,”.”,”.”,”5”]<br>,[“.”,”.”,”.”,”.”,”8”,”.”,”.”,”7”,”9”]]<br>输出：true</p>
+<p>示例 2：<br>输入：board =<br>[[“8”,”3”,”.”,”.”,”7”,”.”,”.”,”.”,”.”]<br>,[“6”,”.”,”.”,”1”,”9”,”5”,”.”,”.”,”.”]<br>,[“.”,”9”,”8”,”.”,”.”,”.”,”.”,”6”,”.”]<br>,[“8”,”.”,”.”,”.”,”6”,”.”,”.”,”.”,”3”]<br>,[“4”,”.”,”.”,”8”,”.”,”3”,”.”,”.”,”1”]<br>,[“7”,”.”,”.”,”.”,”2”,”.”,”.”,”.”,”6”]<br>,[“.”,”6”,”.”,”.”,”.”,”.”,”2”,”8”,”.”]<br>,[“.”,”.”,”.”,”4”,”1”,”9”,”.”,”.”,”5”]<br>,[“.”,”.”,”.”,”.”,”8”,”.”,”.”,”7”,”9”]]<br>输出：false<br>解释：除了第一行的第一个数字从 5 改为 8 以外，空格内其他数字均与 示例1 相同。 但由于位于左上角的 3x3 宫内有两个 8 存在, 因此这个数独是无效的。</p>
+<p>提示：<br>board.length == 9<br>board[i].length == 9<br>board[i][j] 是一位数字（1-9）或者 ‘.’</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValidSudoku</span><span class="params">(vector&lt;vector&lt;<span class="type">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">col</span>(<span class="number">9</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">9</span>,<span class="number">0</span>));</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">row</span>(<span class="number">9</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">9</span>,<span class="number">0</span>));</span><br><span class="line">        vector&lt;vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&gt; <span class="built_in">squ</span>(<span class="number">3</span>,vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;(<span class="number">3</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">9</span>,<span class="number">0</span>)));</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;board.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;board[i].<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j]!=<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    index=board[i][j]-<span class="string">&#x27;0&#x27;</span><span class="number">-1</span>;</span><br><span class="line">                    col[i][index]++;</span><br><span class="line">                    row[j][index]++;</span><br><span class="line">                    squ[i/<span class="number">3</span>][j/<span class="number">3</span>][index]++;</span><br><span class="line">                    <span class="keyword">if</span>(col[i][index]&gt;<span class="number">1</span>||row[j][index]&gt;<span class="number">1</span>||squ[i/<span class="number">3</span>][j/<span class="number">3</span>][index]&gt;<span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度为$O(n^2)$</p>
+<p>空间复杂度为$O(n^2)$使用了辅助矩阵</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6/" class="post-title-link" itemprop="url">矩阵置零</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-01 10:09:18 / 修改时间：10:19:02" itemprop="dateCreated datePublished" datetime="2022-12-01T10:09:18+08:00">2022-12-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="矩阵置零"><a href="#矩阵置零" class="headerlink" title="矩阵置零"></a>矩阵置零</h1><p><strong>给定一个 <code>m x n</code> 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 <a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a> 算法。</strong></p>
+<blockquote>
+<p>示例 1:<br>输入：matrix = [[1,1,1],[1,0,1],[1,1,1]]<br>输出：[[1,0,1],[0,0,0],[1,0,1]]</p>
+<p>示例 2：<br>输入：matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]<br>输出：[[0,0,0,0],[0,4,5,0],[0,3,1,0]]</p>
+<p>提示：<br>$m == matrix.length$<br>$n == matrix[0].length$<br>$1 &lt;= m, n &lt;= 200$<br>$-231 &lt;= matrix[i][j] &lt;= 231 - 1$</p>
+<p>进阶：<br>一个直观的解决方案是使用  O(mn) 的额外空间，但这并不是一个好的解决方案。<br>一个简单的改进方案是使用 O(m + n) 的额外空间，但这仍然不是最好的解决方案。<br>你能想出一个仅使用常量空间的解决方案吗？</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">setZeroes</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; num;<span class="comment">//作为辅助空间，记录存在的零的位置</span></span><br><span class="line">        <span class="type">int</span> colSize=matrix.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> rowSize;</span><br><span class="line">        <span class="type">int</span> rowIndex;</span><br><span class="line">        <span class="type">int</span> colIndex;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;colSize;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            rowSize=matrix[i].<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;rowSize;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j]==<span class="number">0</span>)num.<span class="built_in">push_back</span>(&#123;i,j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;num.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            rowIndex=num[i][<span class="number">0</span>];</span><br><span class="line">            colIndex=num[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;matrix[rowIndex].<span class="built_in">size</span>();j++)</span><br><span class="line">            matrix[rowIndex][j]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;matrix.<span class="built_in">size</span>();k++)</span><br><span class="line">            matrix[k][colIndex]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度按照其中的两个循环，最高的是遍历矩阵的循环数量，所以复杂度为$O（mn)$</p>
+<p>空间复杂度上使用一个二维数组存储下标，空间复杂度为$O(n)$</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" class="post-title-link" itemprop="url">杨辉三角</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-30 22:13:36 / 修改时间：22:13:38" itemprop="dateCreated datePublished" datetime="2022-11-30T22:13:36+08:00">2022-11-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h1><p><strong>给定一个非负整数 numRows，生成「杨辉三角」的前 numRows 行。在「杨辉三角」中，每个数是它左上方和右上方的数的和。</strong></p>
+<blockquote>
+<p>示例 1:</p>
+<p>输入: numRows = 5<br>输出: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]<br>示例 2:</p>
+<p>输入: numRows = 1<br>输出: [[1]]</p>
+<p>提示:</p>
+<p>$1 &lt;= numRows &lt;= 30$</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">generate</span>(<span class="type">int</span> numRows) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; answer;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; temp;<span class="comment">//记录第一次与第二次的杨辉三角数组</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">first</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">        temp.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">        answer.<span class="built_in">push_back</span>(temp);</span><br><span class="line">        <span class="keyword">if</span>(numRows==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">        temp.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">        answer.<span class="built_in">push_back</span>(temp);</span><br><span class="line">        <span class="keyword">if</span>(numRows==<span class="number">2</span>)<span class="comment">//对1和2的输出和处理</span></span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;numRows;i++)<span class="comment">//错位相加</span></span><br><span class="line">        &#123;</span><br><span class="line">            answer.<span class="built_in">push_back</span>(first);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;i<span class="number">-1</span>;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                answer[i].<span class="built_in">push_back</span>(answer[i<span class="number">-1</span>][j]+answer[i<span class="number">-1</span>][j+<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            answer[i].<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%87%8D%E5%A1%91%E7%9F%A9%E9%98%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -697,515 +1072,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">存在重复元素</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-27 14:49:46" itemprop="dateCreated datePublished" datetime="2022-11-27T14:49:46+08:00">2022-11-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-28 14:02:10" itemprop="dateModified" datetime="2022-11-28T14:02:10+08:00">2022-11-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="存在重复元素"><a href="#存在重复元素" class="headerlink" title="存在重复元素"></a>存在重复元素</h1><p><strong>给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。</strong></p>
-<blockquote>
-<p>示例 1：<br>输入：nums = [1,2,3,1]<br>输出：true</p>
-<p>示例 2：<br>输入：nums = [1,2,3,4]<br>输出：false</p>
-<p>示例 3：<br>输入：nums = [1,1,1,3,3,4,3,2,4,2]<br>输出：true</p>
-<p>提示：<br>1 &lt;= nums.length &lt;= 105<br>-109 &lt;= nums[i] &lt;= 109</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> *num,<span class="type">int</span> i,<span class="type">int</span> j)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> temp;</span><br><span class="line">    temp=num[i];</span><br><span class="line">    num[i]=num[j];</span><br><span class="line">    num[j]=temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">heapAdjust</span><span class="params">(<span class="type">int</span>* num,<span class="type">int</span> i,<span class="type">int</span> size)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> left,right,large;</span><br><span class="line">    left=<span class="number">2</span>*i+<span class="number">1</span>;</span><br><span class="line">    right=<span class="number">2</span>*i+<span class="number">2</span>;</span><br><span class="line">    large=i;</span><br><span class="line">    <span class="keyword">if</span>(left&lt;size&amp;&amp;num[left]&gt;num[large])</span><br><span class="line">    large=left;</span><br><span class="line">    <span class="keyword">if</span>(right&lt;size&amp;&amp;num[right]&gt;num[large])</span><br><span class="line">    large=right;</span><br><span class="line">    <span class="keyword">if</span>(i!=large)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(num,i,large);</span><br><span class="line">        heapAdjust(num,large,size);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Buildheap</span><span class="params">(<span class="type">int</span> * num,<span class="type">int</span> size)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=size/<span class="number">2</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    &#123;</span><br><span class="line">        heapAdjust(num,i,size);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">bool</span> <span class="title function_">containsDuplicate</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize)</span>&#123;</span><br><span class="line">    Buildheap(nums,numsSize);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=numsSize<span class="number">-1</span>;i&gt;<span class="number">0</span>;--i)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(nums,<span class="number">0</span>,i);</span><br><span class="line">        heapAdjust(nums,<span class="number">0</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;numsSize<span class="number">-1</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="post-title-link" itemprop="url">串的模式匹配</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-11-24 19:40:43 / 修改时间：20:58:57" itemprop="dateCreated datePublished" datetime="2022-11-24T19:40:43+08:00">2022-11-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">串</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%B2/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="串的模式匹配"><a href="#串的模式匹配" class="headerlink" title="串的模式匹配"></a>串的模式匹配</h1><h2 id="简单的模式匹配算法"><a href="#简单的模式匹配算法" class="headerlink" title="简单的模式匹配算法"></a>简单的模式匹配算法</h2><p>暴力匹配算法：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index</span><span class="params">(SString S,SString T)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=S.length&amp;&amp;j&lt;=T.length)&#123;</span><br><span class="line">		<span class="keyword">if</span>(S.ch[i]==T.ch[j])&#123;</span><br><span class="line">		++i;</span><br><span class="line">		++j;<span class="comment">//继续比较后续字符</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			i=i-j+<span class="number">2</span>;j=<span class="number">1</span>;<span class="comment">//指针后退重新开始匹配</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">if</span>(j&gt;T.length)<span class="keyword">return</span> i-T.length;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="串的模式匹配算法——KMP算法"><a href="#串的模式匹配算法——KMP算法" class="headerlink" title="串的模式匹配算法——KMP算法"></a>串的模式匹配算法——KMP算法</h2><h3 id="字符串的前缀、后缀和部分匹配值"><a href="#字符串的前缀、后缀和部分匹配值" class="headerlink" title="字符串的前缀、后缀和部分匹配值"></a>字符串的前缀、后缀和部分匹配值</h3><p>前缀：除了最后一个字符之外，字符串的所有头部子串</p>
-<p>后缀：除了第一个字符串以外，字符串的所有尾部子串</p>
-<p>部分匹配值：字符串的前后缀最长相等的前后缀长度如‘ababa’的部分匹配值为00123。</p>
-<p><strong>匹配值的作用</strong></p>
-<table>
-<thead>
-<tr>
-<th>编号</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S</td>
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>a</td>
-<td>c</td>
-</tr>
-<tr>
-<td>PM</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody></table>
-<p>假设主串为a b a b c a b c a c b a b</p>
-<p><img src="/2022/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/image-20221124201055025.png" alt="image-20221124201055025"></p>
-<p>KMP<strong>算法的原理是什么</strong></p>
-<p><img src="/2022/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/image-20221124201200976.png" alt="image-20221124201200976"></p>
-<p>当c和b不匹配时，已经匹配的’abca’的前缀a和后缀a为最长公共元素，已知前缀a与b、c均不同，与后缀a相同，就无序比较，直接将子串移动<br>$$<br>已经匹配的字符数-对应的部分匹配值<br>$$<br>直接用子串进行比较就可以</p>
-<p><strong>对算法的改进方法</strong></p>
-<p>已知：$右移位数=已经匹配的字符数-对应的部分匹配值$</p>
-<p>写成：$Move=(j-1)-PM[j-1]$</p>
-<p>使用部分匹配值的时候，每当匹配失败，就去找它前一个元素的部分匹配值，这样使用起来有些不方便，所以将PM表右移一位，这样那个元素匹配失败就直接看自己的部分匹配值即可</p>
-<table>
-<thead>
-<tr>
-<th>编号</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S</td>
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>a</td>
-<td>c</td>
-</tr>
-<tr>
-<td>next</td>
-<td>-1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<ol>
-<li><p>第一个元素右移以后空缺的用﹣1来填充，因为若是第一个元素匹配失败，则需要将子串向右移动一位，而不需要计算子串移动的位数。</p>
-</li>
-<li><p>最后一个元素在右移的过程中溢出，因为原来的子串中，最后一个元素的部分匹配值是其下一个元素使用的，但显然已没有下一个元素，故可以舍去。这样，上式就改写为$ Move =( j -1)- next [ j ]$<br>相当于将子串的比较指针 j 回退到$ j = j - Move = j -(( j -1)- next [ j ])= next [ j ]+1$</p>
-<p>有时为了使公式更加简洁、计算简单，将 next 数组整体＋1。因此，上述子串的 next 数组也可以写成</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>编号</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>S</td>
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>a</td>
-<td>c</td>
-</tr>
-<tr>
-<td>next</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-</tr>
-</tbody></table>
-<p><strong>next[j]的含义是：在子串的第j个字符与主串发生失配时，则跳到子串的next[j]位置重新与主串当前位置比较。</strong></p>
-<p>next函数的公式为：<br>$$<br>next[j]=<br>\begin{cases}<br>0,&amp;\ j=1\<br>max{k|1&lt;k&lt;j且’p_1……p_{k-1}’}, &amp;\ 当此集合不为空时\<br>1,&amp;\ 其他情况<br>\end{cases}<br>$$<br>求next值的程序如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">get_next</span><span class="params">(String T, <span class="type">int</span> next)</span>&#123;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">0</span>;</span><br><span class="line">	next[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;T.length)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||T.ch[i]==T.ch[j])&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">			next[i]=j; <span class="comment">//若pi=pj则next[j+1]=next[j]+1</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		j=next[j];<span class="comment">//否则j=next[j]循环继续</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>KMP匹配算法：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index_KMP</span><span class="params">(String S,String T,<span class="type">int</span> next[])</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=S.length&amp;&amp;j&lt;=T.length)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||S.ch[i]==T.ch[j])&#123;</span><br><span class="line">		++i;++j;<span class="comment">//继续比较后续字符</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			j=next[j];<span class="comment">//模式串向右移动</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(j&gt;T.length)</span><br><span class="line">	<span class="keyword">return</span> i-T.length;<span class="comment">//匹配成功</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度为$O(m+n)$。</p>
-<p>优点是主串不回溯。</p>
-<h2 id="KMP算法的进一步优化"><a href="#KMP算法的进一步优化" class="headerlink" title="KMP算法的进一步优化"></a>KMP算法的进一步优化</h2><p>在进行匹配时，如果j和next[j]对应的是同一种元素，那么在匹配失败之后就不用next[j]来代替j,使用不断地迭代的方式找到不一样的元素来进行匹配，这样可以提高效率。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">get_nextval</span><span class="params">(String T,<span class="type">int</span> nextval[])</span>&#123;</span><br><span class="line">	<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">0</span>;</span><br><span class="line">	nextval[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;T.length)&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||T.ch[i]==T.ch[j])&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">			<span class="keyword">if</span>(T.ch[i]!=T.ch[j]) nextval[i]=j;</span><br><span class="line">			<span class="keyword">else</span> nextval[i]=nextval[j];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			j=nextval[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/24/%E5%85%B3%E4%BA%8Egithub%20pages%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%97%A0%E6%B3%95%E8%A7%A3%E9%87%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/24/%E5%85%B3%E4%BA%8Egithub%20pages%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%97%A0%E6%B3%95%E8%A7%A3%E9%87%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">使用公式无法解释的解决方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-24 19:06:27" itemprop="dateCreated datePublished" datetime="2022-11-24T19:06:27+08:00">2022-11-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-22 14:59:05" itemprop="dateModified" datetime="2022-11-22T14:59:05+08:00">2022-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%BB%8F%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">博客经验</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="关于github-pages使用公式无法解释的解决方法"><a href="#关于github-pages使用公式无法解释的解决方法" class="headerlink" title="关于github pages使用公式无法解释的解决方法"></a>关于github pages使用公式无法解释的解决方法</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/x-mathjax-config&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">MathJax</span>.<span class="property">Hub</span>.<span class="title class_">Config</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">tex2jax</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">skipTags</span>: [<span class="string">&#x27;script&#x27;</span>, <span class="string">&#x27;noscript&#x27;</span>, <span class="string">&#x27;style&#x27;</span>, <span class="string">&#x27;textarea&#x27;</span>, <span class="string">&#x27;pre&#x27;</span>],</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">inlineMath</span>: [[<span class="string">&#x27;$&#x27;</span>,<span class="string">&#x27;$&#x27;</span>]]</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E5%90%84%E7%A7%8D%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83%E4%B8%8E%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E5%90%84%E7%A7%8D%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83%E4%B8%8E%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">各种内部排序算法的比较与应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-24 11:36:25" itemprop="dateCreated datePublished" datetime="2022-11-24T11:36:25+08:00">2022-11-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-25 20:09:16" itemprop="dateModified" datetime="2022-11-25T20:09:16+08:00">2022-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="各种内部排序算法的比较与应用"><a href="#各种内部排序算法的比较与应用" class="headerlink" title="各种内部排序算法的比较与应用"></a>各种内部排序算法的比较与应用</h1><h2 id="内部排序算法的比较"><a href="#内部排序算法的比较" class="headerlink" title="内部排序算法的比较"></a>内部排序算法的比较</h2><p>基于三个因素来进行对比</p>
-<p><strong>时空复杂度</strong>，<strong>算法的稳定度</strong>，<strong>算法的过程特征</strong></p>
-<p>从时间复杂度来看：</p>
-<p>简单选择排序，直接插入排序，和冒泡排序的时间复杂度为$O(n^2)$，且实现过程简单，但是直接插入排序和冒泡排序的最好情况下的复杂度可以达到$O(n)$，而简单选择排序则与序列的初始状态无关。希尔排序对较大规模的排序可以达到很高的效率，但是目前没有得出其精确的渐进时间。堆排序利用了堆的数据结构，可以在线性时间内完成搭建，且在$O(nlog_2(n))$内完成排序过程。快速排序基于分治的思想，虽然最坏情况是$O(n^2)$，但是平均性能是$O(nlog_2(n))$，在实际应用中优于其他排序算法。归并排序同样基于分治的思想，但是由于其切割子序列与初始序列无关，因此它的最好、最坏和平均复杂度均$O(nlog_2(n))$。</p>
-<p>从空间复杂度看：</p>
-<p>简单选择排序、插入排序、冒泡排序、希尔排序和堆排序都仅需要借助常数个辅助空间。快速排序在空间上只使用一个小的辅助栈，用于实现递归，平均情况下大小为$O(log_2(n))$，当然在最坏情况下可能会增长到 $O (n)$。2路归并排序在合并操作中需要借助较多的辅助空间用于元素复制，大小为 $O (n)$，虽然有方法能克服这个缺点，但其代价是算法会很复杂而且时间复杂度会增加。</p>
-<p>从稳定性看：</p>
-<p>插入排序、冒泡排序、归并排序和基数排序是稳定的排序方法，而简单选择排序、快速排序、希尔排序和堆排序都是不稳定的排序方法。平均时间复杂度$O(nlog_2(n))$的稳定排序算法只有归并排序，对于不稳定的排序方法，只要举出一个不稳定的实例即可。</p>
-<p>从过程特征看：</p>
-<p>采用不同的排序算法，在一次循环或几次循环后的排序结果可能是不同的，考研题中经常出现给出一个待排序的初始序列和已经部分排序的序列，问其采用何种排序算法。这就要对各类排序算法的过程特征十分熟悉，如冒泡排序和堆排序在每趟处理后都能产生当前的最大值或最小值，而快速排序一趟处理就能确定一个元素的最终位置等。</p>
-<p>排序算法小结：</p>
-<ul>
-<li><p>若 n 较小，可采用直接插入排序或简单选择排序。由于直接插入排序所需的记录移动次数较简单选择排序的多，因而当记录本身信息量较大时，用简单选择排序较好。若文件的初始状态已按关键字基本有序，则选用直接插入或冒泡排序为宜。</p>
-</li>
-<li><p>若 n 较大，则应采用时间复杂度为 $O(nlog_2(n))$的排序方法：快速排序、堆排序或归并排序。快速排序被认为是目前基于比较的内部排序方法中最好的方法，当待排序的关键字随机分布时，快速排序的平均时间最短。堆排序所需的辅助空间少于快速排序，并且不会出现快速排序可能出现的最坏情况，这两种排序都是不稳定的。若要求排序稳定且时间复杂度为 $O(nlog_2(n))$，则可选用归并排序。从单个记录起进行两两归并的排序算法并不值得提倡，通常可以将它和直接插入排序结合在一起使用。先利用直接插入排序求得较长的有序子文件，然后两两归并。直接插入排序是稳定的，<br>因此改进后的归并排序仍是稳定的。</p>
-</li>
-<li><p>在基于比较的排序方法中，每次比较两个关键字的大小之后，仅出现两种可能的转移，因此可以用一棵二叉树来描述比较判定过程，由此可以证明：当文件的 n 个关键字随机分布时，任何借助于“比较”的排序算法，至少需要 $O(nlog_2(n))$的时间。</p>
-</li>
-<li><p>若 n 很大，记录的关键字位数较少且可以分解时，采用基数排序较好。</p>
-</li>
-<li><p>当记录本身信息量较大时，为避免耗费大量时间移动记录，可用链表作为存储结构。</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1309,7 +1179,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共45.1k字</span>
+  <span class="post-count">全站共46.3k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

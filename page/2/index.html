@@ -196,6 +196,218 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/" class="post-title-link" itemprop="url">合并区间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-12 17:04:42 / 修改时间：17:11:07" itemprop="dateCreated datePublished" datetime="2022-12-12T17:04:42+08:00">2022-12-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="合并区间"><a href="#合并区间" class="headerlink" title="合并区间"></a>合并区间</h1><p><strong>以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。</strong></p>
+<blockquote>
+<p>示例 1：</p>
+<p>输入：intervals = [[1,3],[2,6],[8,10],[15,18]]<br>输出：[[1,6],[8,10],[15,18]]<br>解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].</p>
+</blockquote>
+<blockquote>
+<p>示例 2：</p>
+<p>输入：intervals = [[1,4],[4,5]]<br>输出：[[1,5]]<br>解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= intervals.length &lt;= 104</li>
+<li>intervals[i].length == 2</li>
+<li>0 &lt;= starti &lt;= endi &lt;= 104</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">merge</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; intervals) &#123;</span><br><span class="line">        <span class="keyword">if</span> (intervals.<span class="built_in">size</span>() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(intervals.<span class="built_in">begin</span>(), intervals.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; merged;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; intervals.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="type">int</span> L = intervals[i][<span class="number">0</span>], R = intervals[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (!merged.<span class="built_in">size</span>() || merged.<span class="built_in">back</span>()[<span class="number">1</span>] &lt; L) &#123;</span><br><span class="line">                merged.<span class="built_in">push_back</span>(&#123;L, R&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                merged.<span class="built_in">back</span>()[<span class="number">1</span>] = <span class="built_in">max</span>(merged.<span class="built_in">back</span>()[<span class="number">1</span>], R);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> merged;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：$O(nlog_2n)$</p>
+<p>空间复杂度：$O(n)$</p>
+<p>[LeetCode][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-intervals/solution/he-bing-qu-jian-by-leetcode-solution/]%E8%A7%A3%E7%AD%94">https://leetcode.cn/problems/merge-intervals/solution/he-bing-qu-jian-by-leetcode-solution/]解答</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB/" class="post-title-link" itemprop="url">颜色分类</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-12 16:56:01 / 修改时间：17:03:40" itemprop="dateCreated datePublished" datetime="2022-12-12T16:56:01+08:00">2022-12-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="颜色分类"><a href="#颜色分类" class="headerlink" title="颜色分类"></a>颜色分类</h1><p><strong>给定一个包含红色、白色和蓝色、共 n 个元素的数组 nums ，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。</strong></p>
+<p><strong>我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。</strong></p>
+<p><strong>必须在不使用库内置的 sort 函数的情况下解决这个问题。</strong></p>
+<blockquote>
+<p>示例 1：</p>
+<p>输入：nums = [2,0,2,1,1,0]<br>输出：[0,0,1,1,2,2]</p>
+</blockquote>
+<blockquote>
+<p>示例 2：</p>
+<p>输入：nums = [2,0,1]<br>输出：[0,1,2]</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 300</code></li>
+<li><code>nums[i]</code> 为 <code>0</code>、<code>1</code> 或 <code>2</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">sortColors</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> high=nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> low=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(high&gt;low)&#123;</span><br><span class="line">            <span class="keyword">while</span>(nums[low]&lt;<span class="number">1</span>&amp;&amp;low&lt;high)low++;</span><br><span class="line">            <span class="keyword">while</span>(nums[high]&gt;=<span class="number">1</span>&amp;&amp;high&gt;low)high--;</span><br><span class="line">            <span class="keyword">if</span>(high&gt;low)<span class="built_in">swap</span>(nums,high,low);</span><br><span class="line">        &#125;</span><br><span class="line">        high=nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(high&gt;low)&#123;</span><br><span class="line">            <span class="keyword">while</span>(nums[low]==<span class="number">1</span>&amp;&amp;low&lt;high)low++;</span><br><span class="line">            <span class="keyword">while</span>(nums[high]&gt;<span class="number">1</span>&amp;&amp;low&lt;high)high--;</span><br><span class="line">            <span class="keyword">if</span>(high&gt;low)<span class="built_in">swap</span>(nums,high,low);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;nums,<span class="type">int</span> high,<span class="type">int</span> low)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> temp=nums[low];</span><br><span class="line">        nums[low]=nums[high];</span><br><span class="line">        nums[high]=temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度分析：遍历两次，但是为平行遍历，所以时间复杂度为$O(n)$</p>
+<p>空间复杂度：没有使用其他辅助空间，空间复杂度为$O(1)$</p>
+<p>[Leetcode][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-colors/solution/yan-se-fen-lei-by-leetcode-solution/]%E8%A7%A3%E7%AD%94">https://leetcode.cn/problems/sort-colors/solution/yan-se-fen-lei-by-leetcode-solution/]解答</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1089,212 +1301,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="post-title-link" itemprop="url">验证二叉搜索树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-10 19:13:27 / 修改时间：19:24:33" itemprop="dateCreated datePublished" datetime="2022-12-10T19:13:27+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="验证二叉搜索树"><a href="#验证二叉搜索树" class="headerlink" title="验证二叉搜索树"></a>验证二叉搜索树</h1><p><strong>给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。</strong></p>
-<p><strong>有效 二叉搜索树定义如下：</strong></p>
-<p><strong>节点的左子树只包含 小于 当前节点的数。</strong><br><strong>节点的右子树只包含 大于 当前节点的数。</strong><br><strong>所有左子树和右子树自身必须也是二叉搜索树。</strong></p>
-<blockquote>
-<p>示例 1：</p>
-<p>输入：root = [2,1,3]<br>输出：true<br>示例 2：</p>
-<p>输入：root = [5,1,4,null,null,3,6]<br>输出：false<br>解释：根节点的值是 5 ，但是右子节点的值是 4 。</p>
-<p>提示：</p>
-<p>树中节点数目范围在[1, 104] 内<br>-231 &lt;= Node.val &lt;= 231 - 1</p>
-</blockquote>
-<p>个人解法：使用递归的方式中序遍历二叉树得到一个有序序列，对序列的有序性进行分析</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; c;</span><br><span class="line">        <span class="built_in">insearch</span>(root,c);</span><br><span class="line">        <span class="type">int</span> size=c.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(c[i]&gt;=c[i+<span class="number">1</span>])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">insearch</span><span class="params">(TreeNode* root,vector&lt;<span class="type">int</span>&gt; &amp;c)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root)<span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">insearch</span>(root-&gt;left,c);</span><br><span class="line">        c.<span class="built_in">push_back</span>(root-&gt;val);</span><br><span class="line">        <span class="built_in">insearch</span>(root-&gt;right,c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>最坏情况下时间复杂度为$O(n)$</p>
-<p>此时空间复杂度为$O(n)$</p>
-<h3 id="Leedcode解法："><a href="#Leedcode解法：" class="headerlink" title="Leedcode解法："></a>Leedcode解法：</h3><h4 id="思路和算法（递归）"><a href="#思路和算法（递归）" class="headerlink" title="思路和算法（递归）"></a>思路和算法（递归）</h4><p>要解决这道题首先我们要了解二叉搜索树有什么性质可以给我们利用，由题目给出的信息我们可以知道：如果该二叉树的左子树不为空，则左子树上所有节点的值均小于它的根节点的值； 若它的右子树不空，则右子树上所有节点的值均大于它的根节点的值；它的左右子树也为二叉搜索树。</p>
-<p>这启示我们设计一个递归函数 helper(root, lower, upper) 来递归判断，函数表示考虑以 root 为根的子树，判断子树中所有节点的值是否都在 (l,r)(l,r) 的范围内（注意是开区间）。如果 root 节点的值 val 不在 (l,r)(l,r) 的范围内说明不满足条件直接返回，否则我们要继续递归调用检查它的左右子树是否满足，如果都满足才说明这是一棵二叉搜索树。</p>
-<p>那么根据二叉搜索树的性质，在递归调用左子树时，我们需要把上界 upper 改为 root.val，即调用 helper(root.left, lower, root.val)，因为左子树里所有节点的值均小于它的根节点的值。同理递归调用右子树时，我们需要把下界 lower 改为 root.val，即调用 helper(root.right, root.val, upper)。</p>
-<p>函数递归调用的入口为 helper(root, -inf, +inf)， inf 表示一个无穷大的值。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">helper</span><span class="params">(TreeNode* root, <span class="type">long</span> <span class="type">long</span> lower, <span class="type">long</span> <span class="type">long</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root -&gt; val &lt;= lower || root -&gt; val &gt;= upper) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">helper</span>(root -&gt; left, lower, root -&gt; val) &amp;&amp; <span class="built_in">helper</span>(root -&gt; right, root -&gt; val, upper);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">helper</span>(root, LONG_MIN, LONG_MAX);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode.cn/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-
-<p>复杂度分析</p>
-<p>时间复杂度：$O(n)$，其中 $n$ 为二叉树的节点个数。在递归调用的时候二叉树的每个节点最多被访问一次，因此时间复杂度为 $O(n)$。</p>
-<p>空间复杂度：$O(n)$，其中 $n$ 为二叉树的节点个数。递归函数在递归过程中需要为每一层递归函数分配栈空间，所以这里需要额外的空间且该空间取决于递归的深度，即二叉树的高度。最坏情况下二叉树为一条链，树的高度为 $n$ ，递归最深达到 $n$ 层，故最坏情况下空间复杂度为 $O(n)$ 。</p>
-<h4 id="思路与算法（中序遍历）"><a href="#思路与算法（中序遍历）" class="headerlink" title="思路与算法（中序遍历）"></a>思路与算法（中序遍历）</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        stack&lt;TreeNode*&gt; stack;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> inorder = (<span class="type">long</span> <span class="type">long</span>)INT_MIN - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (!stack.<span class="built_in">empty</span>() || root != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (root != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                stack.<span class="built_in">push</span>(root);</span><br><span class="line">                root = root -&gt; left;</span><br><span class="line">            &#125;</span><br><span class="line">            root = stack.<span class="built_in">top</span>();</span><br><span class="line">            stack.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="comment">// 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树</span></span><br><span class="line">            <span class="keyword">if</span> (root -&gt; val &lt;= inorder) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            inorder = root -&gt; val;</span><br><span class="line">            root = root -&gt; right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：LeetCode-Solution</span><br><span class="line">链接：https:<span class="comment">//leetcode.cn/problems/validate-binary-search-tree/solution/yan-zheng-er-cha-sou-suo-shu-by-leetcode-solution/</span></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-
-<p>有优化的部分，将时间复杂度的平均值有所降低。</p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C/" class="post-title-link" itemprop="url">路径总和</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-08 15:13:00 / 修改时间：19:20:46" itemprop="dateCreated datePublished" datetime="2022-12-08T15:13:00+08:00">2022-12-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="路径总和"><a href="#路径总和" class="headerlink" title="路径总和"></a>路径总和</h1><p><strong>给你二叉树的根节点 <code>root</code>和一个表示目标和的整数 <code>targetSum</code> 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 <code>targetSum</code> 。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。叶子节点 是指没有子节点的节点。</strong></p>
-<blockquote>
-<p>示例 1：<br>输入：root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22<br>输出：true<br>示例 2：<br>输入：root = [1,2,3], targetSum = 5<br>输出：false<br>解释：树中存在两条根节点到叶子节点的路径：<br>(1 –&gt; 2): 和为 3<br>(1 –&gt; 3): 和为 4<br>不存在 sum = 5 的根节点到叶子节点的路径。<br>示例 3：<br>输入：root = [], targetSum = 0<br>输出：false<br>解释：由于树是空的，所以不存在根节点到叶子节点的路径。<br>提示：<br>树中节点的数目在范围 [0, 5000] 内<br>-1000 &lt;= Node.val &lt;= 1000<br>-1000 &lt;= targetSum &lt;= 1000</p>
-</blockquote>
-<p>使用递归的方法，思考方式为：将遇到的节点分为三类，叶节点，空节点以及其他节点，在一个函数内进行递归操作</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode* root, <span class="type">int</span> targetSum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Sum</span>(root,targetSum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">Sum</span><span class="params">(TreeNode* root,<span class="type">int</span> targetSum)</span></span>&#123;</span><br><span class="line">        <span class="type">bool</span> answer=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(!root)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!root-&gt;left&amp;&amp;!root-&gt;right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> targetSum==root-&gt;val;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            targetSum-=root-&gt;val;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Sum</span>(root-&gt;left,targetSum)||<span class="built_in">Sum</span>(root-&gt;right,targetSum);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度：使用了一个栈，需要探查的路径数量为$log_2(n)$个，每一个需要的探查次数为$log_2(n)$次，所以递归最后的时间复杂度为$O((log_2n)^2)$</p>
-<p>空间复杂度：每次判断都调用的次数最多为$O(log_2n)$次</p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1402,7 +1408,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共47.1k字</span>
+  <span class="post-count">全站共48.2k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

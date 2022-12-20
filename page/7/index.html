@@ -196,6 +196,160 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">散列表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-11-22 22:35:38" itemprop="dateCreated datePublished" datetime="2022-11-22T22:35:38+08:00">2022-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-25 20:08:47" itemprop="dateModified" datetime="2022-11-25T20:08:47+08:00">2022-11-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/" itemprop="url" rel="index"><span itemprop="name">查找</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h1><h2 id="散列表的基本概念"><a href="#散列表的基本概念" class="headerlink" title="散列表的基本概念"></a>散列表的基本概念</h2><p>在线性表和树表中，查找的方法建立在“比较”的基础上，查找的效率取决于比较的次数。</p>
+<p><strong>散列函数：</strong>一个把查找表中的关键字映射成该关键字对应的地址的函数，记为Hash(key)=Addr(这里的地址可以是数组下标、索引或者内存地址等)。</p>
+<p><strong>冲突：</strong>散列函数会将两个及以上的不同关键字映射到同一个地址，称这种情况为冲突；另一方面，由于这样的冲突总是不可避免的，所以还要设计处理冲突的方法。</p>
+<p><strong>散列表：</strong>根据关键字而直接进行访问的数据结构。也就是说，<strong>散列表建立了关键字与存储地址之间的一种直接映射的关系</strong>。</p>
+<p>理想情况下，对散列表进行查找进行查找的时间复杂度为O（1），与表中的元素个数无关。下面分别介绍常用的散列函数和处理冲突的方法。</p>
+<h2 id="散列函数的构造方法"><a href="#散列函数的构造方法" class="headerlink" title="散列函数的构造方法"></a>散列函数的构造方法</h2><p>在构造散列函数时注意：</p>
+<ol>
+<li>散列函数的定义域必须包含全部需要存储的关键字，而值域的范围则依赖于散列表的大小或者地址范围。</li>
+<li>散列函数计算出来的地址应该能等概率、均匀地分布在整个地址空间中，从而减少冲突的发生。</li>
+<li>散列函数应尽量简单，能够在较短的时间内计算出任一关键字对应的散列地址。</li>
+</ol>
+<p>下面介绍常用的散列函数</p>
+<ul>
+<li><p>直接定址法</p>
+<p>直接取关键字的某个线性函数值为散列地址，散列函数为：<br>$$<br>H(key)=key或H(key)=a\times key+b<br>$$<br>式中，a和b是常数。这种方式计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</p>
+</li>
+<li><p>除留余数法</p>
+<p>这是一种最简单、最常用的方法，假定散列表长为m，取一个不大于m但是最接近或者等于m的指数p,利用以下公式把关键字转换为散列地址。散列函数为：<br>$$<br>H(key)=key(mod(p))<br>$$<br>除留余数法的关键是选好p, 使得每个关键字通过该过该函数转换后等概率地映射到散列空间上的任意一个地址，从而尽可能减少冲突的可能性。</p>
+</li>
+<li><p>数字分析法</p>
+<p>设关键字数r进制数，而r个数码在各位出现的频率不同。选取数码分布均匀的若干位作为散列地址。这种方法适用于已知关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
+</li>
+<li><p>平方取中法</p>
+<p>顾名思义，这种方法取关键字的平方值的中间几位作为散列地址。具体取多少位要看实际情况而定。这种方法得到的散列地址与关键字每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+</li>
+</ul>
+<h2 id="处理冲突的方法"><a href="#处理冲突的方法" class="headerlink" title="处理冲突的方法"></a>处理冲突的方法</h2><ul>
+<li><p>开放定址法</p>
+<p>可存放新表项的空闲地址既向它的同义词表项开放，又同它的非同义词表项开放。其数学递推公式为<br>$$<br>H_i=(H(key)+d_i)%m<br>$$<br>式子中H（key）为散列函数：i=0,1,2,……，k($k\leq m-1$);</p>
+<ol>
+<li><p>线性探测法。当$d_i=0,1,2,……，m-1$时，称为<strong>线性探测法</strong>。这种方法的特点是：冲突发生时，顺序查看表的下一个单元，直到找到一个空闲单元或者查遍全表。线性探测法可能会导致堆积，降低了查找效率。</p>
+</li>
+<li><p>平方探测法。当$d_i=0^2,1^2,-1^2,……，k^2,-k^2$,称为<strong>平方探测法</strong>。其中$k\leq m/2$散列表长度必须是一个可以表示称4k+3的素数，又称二次探测法。缺点是不饿能探测到散列表中的所有单元。</p>
+</li>
+<li><p>双散列表。当$d_i=Hash_2(key)$时，称为双散列法。需要使用两个散列函数，H(key)得到的地址发生冲突时，则利用第二个散列函数$Hash_2(key)$计算该关键字的地址增量。它的具体散列函数形式如下：$H_i=(H(key)+i\times Hash_2(key))%m$ 初始探测位置$H_0=H(key)%m$i是冲突的次数，初始值是0。</p>
+</li>
+</ol>
+</li>
+<li><p>拉链法</p>
+<p>可以把所有的同义词存储在一个线性链表中，这个线性链表由其散列地址唯一标识。</p>
+</li>
+</ul>
+<h2 id="散列查找及性能分析"><a href="#散列查找及性能分析" class="headerlink" title="散列查找及性能分析"></a>散列查找及性能分析</h2><p>散列表的查找过程与构造散列表的过程基本一致。对于一个给定的关键字key, 根据散列函数可以计算出散列地址，执行步骤为：</p>
+<ul>
+<li>初始化：Addr=Hash(key);<ol>
+<li>检测查找表中地址为Addr的位置上是否有记录，若没有记录，返回查找失败，若有记录，比较key值，若相等，就返回查找成功标志，执行2</li>
+<li>用给定的处理冲突的方式计算下一个散列地址，并把Addr设置为此地址，转为步骤1</li>
+</ol>
+</li>
+</ul>
+<p>对同一组关键字，设定相同的散列函数，则不同的处理冲突的方法得到的散列表不同，它们的平均查找长度也不同。</p>
+<p>从散列表的查找过程可见：</p>
+<ol>
+<li><p>需要以平均查找长度作为衡量散列表的查找效率的度量。</p>
+</li>
+<li><p>散列表的查找效率取决于三个因素：散列函数、处理冲突方法和装填因子</p>
+<p><strong>装填因子</strong>：散列表的装填因子一般记为$\alpha$定义一个表的装满程度，即：<br>$$<br>\alpha=\frac{表中记录数n}{散列表长度m}<br>$$<br>散列表的平均查找长度依赖于散列表的装填因子$\alpha$，而不直接依赖于n或者m。$\alpha$越大，能装填的记录越满，发生冲突的可能性就更大。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9F%A5%E6%89%BE/B+%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1235,171 +1389,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">图的应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-20 16:23:25" itemprop="dateCreated datePublished" datetime="2022-11-20T16:23:25+08:00">2022-11-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-24 17:21:17" itemprop="dateModified" datetime="2022-11-24T17:21:17+08:00">2022-11-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/" itemprop="url" rel="index"><span itemprop="name">图</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="图的应用"><a href="#图的应用" class="headerlink" title="图的应用"></a>图的应用</h1><h2 id="1-最小生成树"><a href="#1-最小生成树" class="headerlink" title="1.最小生成树"></a>1.最小生成树</h2><p>​    一个图的生成树包含图的所有顶点，并且只包含尽可能少的边。对于生成树来说，任意去掉一条边就会变成非连通图；增加一条边就会生成一个回路。</p>
-<p>​    最小生成树的集合构成R，若T为R中边权值最小的生成树，则称T为图G的最小生成树（MST）</p>
-<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
-<li>最小生成树不唯一。</li>
-<li>最小生成树的边的权值的和总是唯一的，虽然最小生成树唯一，但其对应的边的权值之和总是唯一的，而且是最小的。</li>
-<li><strong>最小生成树的边数为顶点数-1</strong>。</li>
-</ol>
-<p>实现方式：贪心算法。</p>
-<p>通用的最小生成树算法</p>
-<ol>
-<li>先设置树为空</li>
-<li>设置循环，循环条件是生成了一个树</li>
-<li>循环体内，找到最小代价边而且加入这条边之后不会形成回路</li>
-<li>条件满足就将这条边加入最小生成树</li>
-</ol>
-<h3 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h3><p>初始时任取一个顶点放入集合T，不断选择和当前点集合的距离最小的结点，并将这条边和点加入，直到所有点都被并入T集合。</p>
-<p>算法的简单实现如下：（示意表达）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Prim</span><span class="params">(G,T)</span></span><br><span class="line">&#123;</span><br><span class="line">	T=<span class="literal">NULL</span>;<span class="comment">//初始化空树</span></span><br><span class="line">	U=&#123;w&#125;;<span class="comment">//添加任一个顶点w</span></span><br><span class="line">	<span class="keyword">while</span>((V-U)!=<span class="literal">NULL</span>)<span class="comment">//若树中不含全部顶点，设（u,v）能满足是跨越一个在U内一个在U外，而且权值最小的边</span></span><br><span class="line">	&#123;</span><br><span class="line">		T=T+(u,v);<span class="comment">//边归入树</span></span><br><span class="line">		U=U+v;<span class="comment">//顶点归入树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h3><p>是一种按照权值的递增次序选择合适的边来构造最小生成树的方法。</p>
-<p>Kruskal算法构造最小生成树的过程</p>
-<ol>
-<li>初始时只有N个顶点但是没有边。</li>
-<li>按照边的权值由小到大的顺序，不断选取当前未被选取过且权值最小的边，若这条边连接两个未被连通的连通分量，就加入树的集合，否则选取下一个权值更小的边。</li>
-</ol>
-<p>算法的步骤如下：</p>
-<ol>
-<li>假设G=（V，E）是连通图，其最小生成树T=（U，Et)。</li>
-<li>初始化：U=V，Et=NULL。即每个顶点构成一棵独立的树，T此时是一个仅含|V|个顶点的森林。</li>
-<li>循环：按照G的边的权值递增顺序依次从E-Et中选择一条边，若这条边加入之后不构成回路，就加入Et, 否则丢弃，直到Et中含有N-1条边</li>
-</ol>
-<h2 id="2-最短路径"><a href="#2-最短路径" class="headerlink" title="2.最短路径"></a>2.最短路径</h2><h3 id="1-Dijkstra算法求单源最短路问题"><a href="#1-Dijkstra算法求单源最短路问题" class="headerlink" title="1.Dijkstra算法求单源最短路问题"></a>1.Dijkstra算法求单源最短路问题</h3><p>在构造的过程中设置两个辅助数组：</p>
-<ul>
-<li><p>dist[ ]:记录从源点v0到其他各个点的最短路径长度，它的初态为：若从v0到vi有弧，则dist[i]为弧上的权值，否则设置dist[i]为无穷大。</p>
-</li>
-<li><p>path[ ]:path[i]表示从源点到顶点i之间的最短的前驱节点。算法结束的时候可以从这个值追溯得到v0到顶点i的最短路径。</p>
-</li>
-</ul>
-<p>邻接矩阵内的值代表的是有向图中边的权值，如果不存在有向边&lt;i,j&gt;就置为无穷大。</p>
-<h4 id="Dijkstra算法的步骤如下："><a href="#Dijkstra算法的步骤如下：" class="headerlink" title="Dijkstra算法的步骤如下："></a>Dijkstra算法的步骤如下：</h4><ol>
-<li>初始化：集合S初始化为{0}，把邻接矩阵的一行放入dist数组中。</li>
-<li>从顶点集合V-S中选出v_[j],满足dist[j]=Min{dist[i]|v_[i]属于V-S}，这就是选出的从v0选出的从v0出发的最短路径的终点，令S=S+{j}.</li>
-<li>修改从v0出发的最短路径的最短路径长度：如果满足两边长小于实际的长度，更新这个值。</li>
-<li>重复选点的操作，直到所有的顶点都包含在S中</li>
-</ol>
-<p>显然Dijkstra也是基于贪心策略的。使用邻接矩阵和邻接表的时间复杂度为O（|V|^2^）</p>
-<h3 id="2-Floyd算法求各个顶点之间最短路的问题"><a href="#2-Floyd算法求各个顶点之间最短路的问题" class="headerlink" title="2.Floyd算法求各个顶点之间最短路的问题"></a>2.Floyd算法求各个顶点之间最短路的问题</h3><p>使用n-1个方阵序列，如果每次新加入的节点能够让两个点之间的距离减小，就更新方正中对应的权值，没迭代一次多考虑一个节点，这样在进行n次迭代之后得到的最终权值矩阵就是最短路径长度的矩阵。</p>
-<p>相当于按照每个顶点都执行了Dijstra算法，时间复杂度为O（|V|^3^）</p>
-<h2 id="3-有向无环图描述表达式"><a href="#3-有向无环图描述表达式" class="headerlink" title="3.有向无环图描述表达式"></a>3.有向无环图描述表达式</h2><p>有向无环图 DAG图</p>
-<p>​    描述含有公共子表达式的工具，通过共享表达式的方式实现相同表达式的存储空间节省的目的</p>
-<h2 id="4-拓扑排序"><a href="#4-拓扑排序" class="headerlink" title="4.拓扑排序"></a>4.拓扑排序</h2><p>AOV网：如果用DAG图中有向边&lt;Vi, Vj&gt;表示活动Vi必须先于Vj这样的关系，就将这种有向图称为顶点表示活动的网络，记为AOV网。</p>
-<p><strong>拓扑排序：</strong>在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时称为该图的一个拓扑排序：</p>
-<ol>
-<li>每个顶点出现且仅出现一次。</li>
-<li>若顶点A在序列中排在B的前面，则在图中不存在从顶点B到顶点A的路径。</li>
-</ol>
-<p>对一个AOV网进行拓扑排序的算法有很多，下面介绍比较常用的一种方法的步骤：</p>
-<ol>
-<li>从AOV网中选择一个没有前驱的顶点并输出。</li>
-<li>从网中删除该顶点和所有以它为起点的有向边。</li>
-<li>重复1和2步骤直到当前的AOV网为空或者当前网中不存在无前驱的顶点为止。后一种情况说明有向图中必定存在环。</li>
-</ol>
-<p>拓扑排序算法的实现如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">TopologicalSort</span><span class="params">(Graph G)</span></span><br><span class="line">&#123;</span><br><span class="line">	InitStack(S);			<span class="comment">//初始化栈，存储入度为0的结点</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;G.vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(indegree[i]==<span class="number">0</span>)</span><br><span class="line">			Push(S,i);		<span class="comment">//将所有入度为0的顶点进栈</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> count=<span class="number">0</span>;			<span class="comment">//计数，记录当前已经输出的顶点数</span></span><br><span class="line">	<span class="keyword">while</span>(!IsEmpty(S))		<span class="comment">//栈不空，则存在入度为0的顶点</span></span><br><span class="line">	&#123;</span><br><span class="line">		Pop(S,i);			<span class="comment">//栈顶元素出栈</span></span><br><span class="line">		print[count++]=i;	<span class="comment">//输出顶点i</span></span><br><span class="line">		<span class="keyword">for</span>(p=G.vertices[i].firstarc;p=p-&gt;nextarc)&#123;</span><br><span class="line">		<span class="comment">//将所有的i指向的顶点入读减一，并且将入度减为0的顶点压入栈S</span></span><br><span class="line">		v=p-&gt;adjvex;</span><br><span class="line">		<span class="keyword">if</span>(!--indegree[v])</span><br><span class="line">		&#123;</span><br><span class="line">			Push(S,v);		<span class="comment">//入度为0，则入栈</span></span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(count&lt;G.vexnum)</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;			<span class="comment">//排序失败，有向图中有回路</span></span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;			<span class="comment">//拓扑排序成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用同样的思想，可以将删除的节点更换为一个没有后继的结点，这样的排序方式叫做逆拓扑排序。</p>
-<p>用拓扑排序算法处理AOV网时，应该注意的问题：</p>
-<ol>
-<li>入度为0的结点，没有前驱活动的或前驱活动已经完成的节点，工程可以从这个顶点所代表的工程继续。</li>
-<li>若一个顶点有着很多直接后继，那么拓扑排序的结果通常不唯一，但是如果每个顶点已经放在一个线性有序的序列中，有唯一的前驱和后继关系，那么结果就是唯一的。</li>
-<li>由于 AOV网中各个顶点的地位平等，每个顶点的编号都是人为的，因此可以按照拓扑排序的结果来重新编号，生成的AOV的新的临界矩阵，这样的矩阵可以是三角矩阵；但是对于一般的图来说，如果邻接矩阵是三角矩阵，那么就存在拓扑序列；反之则不一定成立。</li>
-</ol>
-<h2 id="5-关键路径"><a href="#5-关键路径" class="headerlink" title="5.关键路径"></a>5.关键路径</h2><p>​    用边来表示活动的网络称为AOE网络，AOE网和AOV网都是有向无环图，不同之处在于它们的边和顶点所代表的含义是不同的，AOE网中的边有权值；而AOV网中的边无权值，仅仅表示顶点之间的前后关系。</p>
-<p>​    AOE存在入度为0的结点称为源点，出度为0的结点称为汇点。在AOE网中，工程师可以并行执行的；有多个有向路径，只有当所有路径上的活动都完成才能说整个工程已经完成，具有最大路径长度的路径就称为<strong>关键路径</strong>。</p>
-<p>​    求关键路径的算法步骤如下:</p>
-<ol>
-<li>从源点出发，令ve(源点)=0， 按照拓扑排序求其余顶点的最早发生时间ve（）。</li>
-<li>从汇点出发，令vl(汇点)=ve(汇点），按照逆拓扑排序求其余顶点的最迟发生时间vl（）。</li>
-<li>根据各个顶点的ve值求所有弧的最早开始时间e().</li>
-<li>根据各个顶点的vl值求所有弧的最迟开始时间l().</li>
-<li>求AOE网中所有活动的差额d(), 找出所有的d()=0的活动构成关键路径。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1507,7 +1496,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共51.7k字</span>
+  <span class="post-count">全站共52k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>划分字母区间</title>
+      <link href="/2022/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/"/>
+      <url>/2022/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="划分字母区间"><a href="#划分字母区间" class="headerlink" title="划分字母区间"></a>划分字母区间</h1><p>给你一个字符串 <code>s</code> 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。</p><p>注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 <code>s</code> 。</p><p>返回一个表示每个字符串片段的长度的列表。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ababcbacadefegdehijhklij&quot;</span><br><span class="line">输出：[9,7,8]</span><br><span class="line">解释：</span><br><span class="line">划分结果为 &quot;ababcbaca&quot;、&quot;defegde&quot;、&quot;hijhklij&quot; 。</span><br><span class="line">每个字母最多出现在一个片段中。</span><br><span class="line">像 &quot;ababcbacadefegde&quot;, &quot;hijhklij&quot; 这样的划分是错误的，因为划分的片段数较少。 </span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;eccbbbbdec&quot;</span><br><span class="line">输出：[10]</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= s.length &lt;= 500</code></li><li><code>s</code> 仅由小写英文字母组成</li></ul><p>使用双指针，将每个元素的最后一个位置的下标记录下来，实时进行更新</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">partitionLabels</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right=<span class="number">0</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; answer;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,<span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[s[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(right&lt;s.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">            right=map[s[left]];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=left;i&lt;right;i++)</span><br><span class="line">            right=right&gt;map[s[i]]?right:map[s[i]];</span><br><span class="line">            answer.<span class="built_in">push_back</span>(right-left+<span class="number">1</span>);</span><br><span class="line">            left=right+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>时间复杂度：<code>O(n)</code>只遍历了一次字符串</p><p>空间复杂度：<code>O(n)</code>使用了哈希表作为辅助</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题 </category>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哈希表 </tag>
+            
+            <tag> 贪心 </tag>
+            
+            <tag> 双指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>合并二叉树</title>
       <link href="/2022/12/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
       <url>/2022/12/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/</url>

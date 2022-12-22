@@ -196,6 +196,169 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/" class="post-title-link" itemprop="url">两个数组的交集</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-11-29 22:41:57" itemprop="dateCreated datePublished" datetime="2022-11-29T22:41:57+08:00">2022-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="两个数组的交集"><a href="#两个数组的交集" class="headerlink" title="两个数组的交集"></a>两个数组的交集</h1><p><strong>给你两个整数数组 nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。</strong></p>
+<blockquote>
+<p>示例 1：<br>输入：nums1 = [1,2,2,1], nums2 = [2,2]<br>输出：[2,2]</p>
+<p>示例 2:<br>输入：nums1 = [4,9,5], nums2 = [9,4,9,8,4]<br>输出：[4,9]</p>
+<p>提示：<br>1 &lt;= nums1.length, nums2.length &lt;= 1000<br>0 &lt;= nums1[i], nums2[i] &lt;= 1000</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">intersect</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; answer;</span><br><span class="line">        <span class="type">int</span> size;</span><br><span class="line">        <span class="type">int</span> temp1[<span class="number">1001</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="type">int</span> temp2[<span class="number">1001</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums1.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            temp1[nums1[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums2.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            temp2[nums2[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">1000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(temp1[i]!=<span class="number">0</span>&amp;&amp;temp2[i]!=<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                size=(temp1[i]&lt;temp2[i])?temp1[i]:temp2[i];</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;size;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    answer.<span class="built_in">push_back</span>(i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BC%98%E7%AD%96%E7%95%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E8%82%A1%E7%A5%A8%E6%9C%80%E4%BC%98%E7%AD%96%E7%95%A5/" class="post-title-link" itemprop="url">股票最优策略</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-29 22:37:20 / 修改时间：22:37:24" itemprop="dateCreated datePublished" datetime="2022-11-29T22:37:20+08:00">2022-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="股票最优策略"><a href="#股票最优策略" class="headerlink" title="股票最优策略"></a>股票最优策略</h1><p><strong>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。</strong></p>
+<blockquote>
+<p>示例 1：<br>输入：[7,1,5,3,6,4]<br>输出：5<br>解释：在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。</p>
+<p>示例 2：<br>输入：prices = [7,6,4,3,1]<br>输出：0<br>解释：在这种情况下, 没有交易完成, 所以最大利润为 0。</p>
+<p>提示：</p>
+<p>1 &lt;= prices.length &lt;= 105</p>
+<p>0 &lt;= prices[i] &lt;= 104</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">//贪心算法，如果最小价钱和新增最小元素的差值与最大价钱和新增最大元素的差值比较</span></span><br><span class="line"><span class="comment">//如果是大小最小的部分（应该小于加入的值）算出来的差值，如果后者更小，所得到的值为正数</span></span><br><span class="line"><span class="comment">//如果是大小最大的部分（应该大于新加入的值）算出来的差值，如果后者更大，所得到的的值为正数</span></span><br><span class="line"><span class="comment">//用大小来决定确定哪一边</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    如果min不准确，max准确，则执行前一个选择，更新min</span></span><br><span class="line"><span class="comment">    如果min不准确，max不准确，min的偏差大则更新min，反之更新max</span></span><br><span class="line"><span class="comment">    如果min准确，max准确，min的偏差小则更新min,反之更新max</span></span><br><span class="line"><span class="comment">    如果min准确，max不准确，左边小右边大，更新max</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxProfit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> min=prices[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> max=prices[prices.<span class="built_in">size</span>()<span class="number">-1</span>];</span><br><span class="line">        <span class="type">int</span> p,q;</span><br><span class="line">        <span class="keyword">for</span>(p=<span class="number">0</span>,q=prices.<span class="built_in">size</span>()<span class="number">-1</span>;p&lt;=q;)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(min-prices[p]&gt;prices[q]-max)</span><br><span class="line">            &#123;min=min&lt;prices[p]?min:prices[p];p++;&#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;max=max&gt;prices[q]?max:prices[q];q--;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max-min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1083,246 +1246,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">交换排序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-23 21:09:56" itemprop="dateCreated datePublished" datetime="2022-11-23T21:09:56+08:00">2022-11-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-25 20:09:24" itemprop="dateModified" datetime="2022-11-25T20:09:24+08:00">2022-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序的基本思想是：从前往后两两比较相邻元素的值，如果为逆序，就交换它们，直到序列比较完。</p>
-<p>冒泡排序的性能分析：</p>
-<ol>
-<li>空间效率$O(1)$</li>
-<li>时间效率$O(n^2)$比较次数=$\sum_{i-1}^{n-1}(n-i)=\frac{n(n-1)}{2}$，移动次数=$\sum_{3(i-1)}^{n-1}(n-i)=\frac{3n(n-1)}{2}$</li>
-<li>稳定性：稳定</li>
-</ol>
-<p>注意冒泡排序所产生的有序子序列一定是全局有序的，也就是说，有序子序列中的所有元素的关键字一定小于或大于无序子序列中所有元素的关键字，这样每趟排序都会将一个元素放置到最终的位置上</p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的基本思想是基于分治法的：在待排序表中任取一个元素作为枢轴（或基准，通常取首元素），将排序表划分为两个独立的部分，不断进行这个过程直到所有元素都放到正确的位置上。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">QuickSort</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(low&lt;high)&#123;</span><br><span class="line">	<span class="comment">//Partition()划分操作</span></span><br><span class="line">	<span class="type">int</span> pivotpos=Partition(A,low,high);<span class="comment">//划分</span></span><br><span class="line">	QuickSort(A,low,pivotpos);<span class="comment">//依次对两个子表进行递归排序</span></span><br><span class="line">	QuickSort(A,pivotpos+<span class="number">1</span>,high);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>从上方的代码不难看出快速排序算法的关键在于划分操作，同时快速排序算法的性能也主要取决于划分操作的好坏。假设每次总以当前表中的第一个元素作为枢轴来对表来进行划分，则将表中比枢轴大的元素向右移动，将比枢轴小的元素向左移动，使得一趟Partiton()操作后，表中的元素被枢轴一分为二。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Partition</span><span class="params">(ElemType A[],<span class="type">int</span> low,<span class="type">int</span> high)</span>&#123;</span><br><span class="line">	ElemType pivot=A[low];<span class="comment">//将当前表中的第一个元素设为枢纽，对表进行划分</span></span><br><span class="line">	<span class="keyword">while</span>(low&lt;high)<span class="comment">//循环跳出条件</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(low&lt;high&amp;&amp;A[high]&gt;=pivot)--high;</span><br><span class="line">		A[low]=A[high];<span class="comment">//将比枢轴小的元素移动早左端</span></span><br><span class="line">		<span class="keyword">while</span>(low&lt;high&amp;&amp;A[high]&lt;=pivot)++low;</span><br><span class="line">		A[high]=A[low];<span class="comment">//将比枢轴大的元素移动到右端</span></span><br><span class="line">	&#125;</span><br><span class="line">	A[low]=pivot;<span class="comment">//枢轴元素存放到最终位置</span></span><br><span class="line">	<span class="keyword">return</span> low;<span class="comment">//返回存放枢轴的最终位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>快速排序的性能如下：</p>
-<p>空间效率：由于快速排序是递归的，需要栈的空间，最好情况为$O(log_2(n))$;最坏情况下，因为要进行n-1次递归调用，所以栈的深度为$O(n)$;平均情况下，栈的深度为$O(log_2(n))$</p>
-<p>时间效率：快速排序的运行时间与划分是否对称有关，快速排序的最坏情况发生在两个区域分别包含n-1个元素和0个元素时，这种最大限度的不对称性如果发生在每一次递归上，那么就是单纯的冒泡排序，时间复杂度为$O(n^2)$</p>
-<p>稳定性：在划分算法中，若右端区间有两个关键字相同，且均小于基准值的记录，则在交换到左端区间，它们的相对位置会发生变化，即快速排序是一种不稳定的排序算法。</p>
-<p><strong>注意：在快速排序算法中并不产生有序子序列，但是每趟排序后会将枢纽（基准）元素放到最终的位置上</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">插入排序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-23 09:02:32" itemprop="dateCreated datePublished" datetime="2022-11-23T09:02:32+08:00">2022-11-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-25 20:09:07" itemprop="dateModified" datetime="2022-11-25T20:09:07+08:00">2022-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%8E%92%E5%BA%8F/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><p>假设在排序过程中,待排序表L[1…i-1]在某次排序过程的某个时刻的状态,要将L(i)插入已有序的子序列中,需要执行以下操作:</p>
-<ol>
-<li>查找出L(i)在L[1…i-1]中的插入位置k</li>
-<li>将L[k…i-1]中的所有元素依次向后移动一个位置.</li>
-<li>将L(i)复制到L(k).</li>
-</ol>
-<p>为了实现对L[1…n]的排序,可以将L(2)~L(n)依次插入前面已经排好序的子序列,初始L[1]可以视为是一个已经排好序的子序列.上述执行n-1次就能得到一个有序的表</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InsertSort</span><span class="params">(ElemType A[],<span class="type">int</span> n)</span>&#123;</span><br><span class="line">	<span class="type">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)<span class="comment">//依次将A[2]~A[n]插入前面已经排序的序列</span></span><br><span class="line">	&#123;<span class="comment">//若A[i]关键码小于其前驱,将A[i]插入有序表</span></span><br><span class="line">		<span class="keyword">if</span>(A[i]&lt;A[i<span class="number">-1</span>])&#123;<span class="comment">//复制为哨兵,A[0]不存放元素</span></span><br><span class="line">		A[<span class="number">0</span>]=A[i];</span><br><span class="line">		<span class="keyword">for</span>(j=i<span class="number">-1</span>;A[<span class="number">0</span>]&lt;A[j];--j)<span class="comment">//从后往前查找待插入位置</span></span><br><span class="line">			A[j+<span class="number">1</span>]=A[j];<span class="comment">//向后挪位</span></span><br><span class="line">		A[j+<span class="number">1</span>]=A[<span class="number">0</span>];<span class="comment">//复制到插入位置</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>空间效率:$O(1)$</p>
-<p>时间效率:$O(n^2)$</p>
-<p>稳定性:稳定的排序方法</p>
-<p>适用性:顺序存储和链式存储的线性表</p>
-<h2 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h2><p>可以对查找进行优化,使用折半查找法:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InsertSort</span><span class="params">(ElemType A[], <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i,j,low,high,mid;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)<span class="comment">//依次将A[2]~A[n]插入前面的已排序序列</span></span><br><span class="line">	&#123;</span><br><span class="line">		A[<span class="number">0</span>]=A[i];<span class="comment">//将A[i]暂存到A[0]</span></span><br><span class="line">		low=<span class="number">1</span>;high=i<span class="number">-1</span>;<span class="comment">//数值折半查找的范围</span></span><br><span class="line">		<span class="keyword">while</span>(low&lt;=high)&#123;<span class="comment">//折半查找(默认递增有序)</span></span><br><span class="line">			mid=(low+high)/<span class="number">2</span>;<span class="comment">//取中间点</span></span><br><span class="line">			<span class="keyword">if</span>(A[mid]&gt;A[<span class="number">0</span>])high=mid<span class="number">-1</span>;<span class="comment">//查找左半子表</span></span><br><span class="line">			<span class="keyword">else</span> low=mid<span class="number">-1</span>;<span class="comment">//查找右半子表</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(j=i<span class="number">-1</span>;j&gt;=high+<span class="number">1</span>;--j)</span><br><span class="line">		A[j+<span class="number">1</span>]=A[j];</span><br><span class="line">		A[high+<span class="number">1</span>]=A[<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>从上述算法中,不难看出折半插入排序仅减少了比较元素的次数,约为$O(nlog_2(n))$,比较次数与待排序表的初始状态无关，仅取决于表中的元素个数n,而元素的移动次数并未改变，它依赖于待排序表的初始状态。因此，折半插入排序的时间复杂度仍为$O(n^2)$,但是对于数据量不是很大的排序表，折半插入排序往往能表现出很好的性能。</p>
-<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>直接插入排序算法的时间复杂度为$O(n^2)$,如果排列顺序为“正序”时，其时间复杂度可以提高至$O(n)$。希尔排序正是利用了这些优点对插入排序改进之后得来，称为，<strong>缩小增量排序</strong>。</p>
-<p>希尔排序的基本思想是：先将待排序表分割成若干形如$L[i,i+d,i+2d,……,i+kd]$的特殊子表，即把相隔某个增量的记录组成一个子表，对各个子表分别进行直接插入排序，当整个表中的元素已呈“基本有序”时，再对全体记录进行一次直接插入排序。</p>
-<p>希尔排序的过程：</p>
-<ol>
-<li>取一个小于n的步长$d_1$,把表中的全部记录分成$d_1$组，所有距离为$d_1$倍数的记录放在同一组，在各组内进行直接插入排序</li>
-<li>然后取第二个步长$d_2&lt;d_1$,重复上述过程，直到$d_1=1$所有记录已放在同一组中，在进行直接插入排序，由于此时已经有了较好的局部有序性，所以能很快得到结果。</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">ShellSort</span><span class="params">(ElemType A[], <span class="type">int</span> n)</span></span><br><span class="line">&#123;<span class="comment">//A[0]作为暂存单元</span></span><br><span class="line">	<span class="keyword">for</span>(dk=n/<span class="number">2</span>;dk&gt;=<span class="number">1</span>;dk=dk/<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=dk+<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(A[i]&lt;A[i-dk])&#123;<span class="comment">//需要将A[i]插入有序增量子表</span></span><br><span class="line">				A[<span class="number">0</span>]=A[i];<span class="comment">//暂存在A[0]</span></span><br><span class="line">				<span class="keyword">for</span>(j=i-dk;j&gt;<span class="number">0</span>&amp;&amp;A[<span class="number">0</span>]&lt;A[j];j-=dk)</span><br><span class="line">					A[j+dk]=A[j];<span class="comment">//记录后移，查找插入的位置</span></span><br><span class="line">				A[j+dk]=A[<span class="number">0</span>];<span class="comment">//插入</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>性能分析：</p>
-<p>空间效率：$O(1)$</p>
-<p>时间效率：当n在某个特定的范围内时复杂度为$O(n^{1.3})$,最坏情况为$O(n^2)$</p>
-<p>稳定性：当相同关键字被划分到不同的子表时，可能会改变它们之间的相对次序，因此是一个不稳定的排序方法。</p>
-<p>实用性：希尔排序算法只适用于顺序存储。</p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1430,7 +1353,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共52k字</span>
+  <span class="post-count">全站共52.9k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

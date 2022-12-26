@@ -196,6 +196,196 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/01%E7%9F%A9%E9%98%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/01%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">01矩阵</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-22 15:06:03 / 修改时间：15:08:57" itemprop="dateCreated datePublished" datetime="2022-12-22T15:06:03+08:00">2022-12-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="01矩阵"><a href="#01矩阵" class="headerlink" title="01矩阵"></a>01矩阵</h1><p>给定一个由 <code>0</code> 和 <code>1</code> 组成的矩阵 <code>mat</code> ，请输出一个大小相同的矩阵，其中每一个格子是 <code>mat</code> 中对应位置元素到最近的 <code>0</code> 的距离。</p>
+<p>两个相邻元素间的距离为 <code>1</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://pic.leetcode-cn.com/1626667201-NCWmuP-image.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：mat = [[0,0,0],[0,1,0],[0,0,0]]</span><br><span class="line">输出：[[0,0,0],[0,1,0],[0,0,0]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<p><img src="https://pic.leetcode-cn.com/1626667205-xFxIeK-image.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：mat = [[0,0,0],[0,1,0],[1,1,1]]</span><br><span class="line">输出：[[0,0,0],[0,1,0],[1,2,1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>m == mat.length</code></li>
+<li><code>n == mat[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 104</code></li>
+<li><code>1 &lt;= m * n &lt;= 104</code></li>
+<li><code>mat[i][j] is either 0 or 1.</code></li>
+<li><code>mat</code> 中至少有一个 <code>0 </code></li>
+</ul>
+<p>使用广度优先算法将此图转换为四叉树来解决，每一次都遍历一层对应一个数值</p>
+<p>算法实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">updateMatrix</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mat) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">flag</span>(mat.<span class="built_in">size</span>(),<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(mat[<span class="number">0</span>].<span class="built_in">size</span>(),<span class="number">0</span>));</span><br><span class="line">        queue&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; que;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; dir=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;mat.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;mat[i].<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(mat[i][j]==<span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag[i][j]=<span class="number">1</span>;</span><br><span class="line">                    que.<span class="built_in">emplace</span>(i,j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">                <span class="keyword">auto</span> [i,j]=que.<span class="built_in">front</span>();que.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> d=<span class="number">0</span>;d&lt;<span class="number">4</span>;d++)&#123;</span><br><span class="line">                    <span class="type">int</span> row=i+dir[d];</span><br><span class="line">                    <span class="type">int</span> col=j+dir[d+<span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span>(row&gt;=<span class="number">0</span>&amp;&amp;col&gt;=<span class="number">0</span></span><br><span class="line">                       &amp;&amp;row&lt;mat.<span class="built_in">size</span>()</span><br><span class="line">                       &amp;&amp;col&lt;mat[<span class="number">0</span>].<span class="built_in">size</span>()</span><br><span class="line">                       &amp;&amp;!flag[row][col])&#123;</span><br><span class="line">                        mat[row][col]=mat[i][j]+<span class="number">1</span>;</span><br><span class="line">                        que.<span class="built_in">emplace</span>(row,col);</span><br><span class="line">                        flag[row][col]=<span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> mat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度为：<code>O(mn)</code></p>
+<p>空间复杂度为：<code>O(mn)</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/" class="post-title-link" itemprop="url">划分字母区间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-20 12:29:44 / 修改时间：12:33:26" itemprop="dateCreated datePublished" datetime="2022-12-20T12:29:44+08:00">2022-12-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="划分字母区间"><a href="#划分字母区间" class="headerlink" title="划分字母区间"></a>划分字母区间</h1><p>给你一个字符串 <code>s</code> 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。</p>
+<p>注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 <code>s</code> 。</p>
+<p>返回一个表示每个字符串片段的长度的列表。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ababcbacadefegdehijhklij&quot;</span><br><span class="line">输出：[9,7,8]</span><br><span class="line">解释：</span><br><span class="line">划分结果为 &quot;ababcbaca&quot;、&quot;defegde&quot;、&quot;hijhklij&quot; 。</span><br><span class="line">每个字母最多出现在一个片段中。</span><br><span class="line">像 &quot;ababcbacadefegde&quot;, &quot;hijhklij&quot; 这样的划分是错误的，因为划分的片段数较少。 </span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;eccbbbbdec&quot;</span><br><span class="line">输出：[10]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 500</code></li>
+<li><code>s</code> 仅由小写英文字母组成</li>
+</ul>
+<p>使用双指针，将每个元素的最后一个位置的下标记录下来，实时进行更新</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">partitionLabels</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right=<span class="number">0</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; answer;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,<span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[s[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(right&lt;s.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">            right=map[s[left]];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=left;i&lt;right;i++)</span><br><span class="line">            right=right&gt;map[s[i]]?right:map[s[i]];</span><br><span class="line">            answer.<span class="built_in">push_back</span>(right-left+<span class="number">1</span>);</span><br><span class="line">            left=right+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：<code>O(n)</code>只遍历了一次字符串</p>
+<p>空间复杂度：<code>O(n)</code>使用了哈希表作为辅助</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -980,229 +1170,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%99%A4%E8%87%AA%E8%BA%AB%E4%B9%8B%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%99%A4%E8%87%AA%E8%BA%AB%E4%B9%8B%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/" class="post-title-link" itemprop="url">除自身以外数组的乘积</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-17 12:14:00 / 修改时间：12:23:55" itemprop="dateCreated datePublished" datetime="2022-12-17T12:14:00+08:00">2022-12-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="除自身之外数组的乘积"><a href="#除自身之外数组的乘积" class="headerlink" title="除自身之外数组的乘积"></a>除自身之外数组的乘积</h1><p>给你一个整数数组 <code>nums</code>，返回 <em>数组 <code>answer</code> ，其中 <code>answer[i]</code> 等于 <code>nums</code> 中除 <code>nums[i]</code> 之外其余各元素的乘积</em> 。</p>
-<p>题目数据 <strong>保证</strong> 数组 <code>nums</code>之中任意元素的全部前缀元素和后缀的乘积都在 <strong>32 位</strong> 整数范围内。</p>
-<p>请<strong>不要使用除法，</strong>且在 <code>O(n)</code> 时间复杂度内完成此题。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,2,3,4]</span><br><span class="line">输出: [24,12,8,6]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,1,0,-3,3]</span><br><span class="line">输出: [0,0,9,0,0]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>2 &lt;= nums.length &lt;= 105</code></li>
-<li><code>-30 &lt;= nums[i] &lt;= 30</code></li>
-<li><strong>保证</strong> 数组 <code>nums</code>之中任意元素的全部前缀元素和后缀的乘积都在 <strong>32 位</strong> 整数范围内</li>
-</ul>
-<p><strong>进阶：</strong>你可以在 <code>O(1)</code> 的额外空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组<strong>不被视为</strong>额外空间。）</p>
-<h2 id="使用两个列表辅助计算"><a href="#使用两个列表辅助计算" class="headerlink" title="使用两个列表辅助计算"></a>使用两个列表辅助计算</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">productExceptSelf</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> size=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">left</span><span class="params">(size,<span class="number">0</span>)</span></span>;</span><br><span class="line">        left[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">right</span><span class="params">(size,<span class="number">0</span>)</span></span>;</span><br><span class="line">        right[size<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;size;i++)&#123;</span><br><span class="line">            left[i]=left[i<span class="number">-1</span>]*nums[i<span class="number">-1</span>];</span><br><span class="line">            right[size<span class="number">-1</span>-i]=right[size-i]*nums[size-i];</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; answer;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">            answer.<span class="built_in">push_back</span>(left[i]*right[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>将数组中每个元素的左和右分为两个数组，每一个元素的更新都和列表的前一个有关，所以可以在线性时间内构建出合适的两个列表，并再使用线性的时间将两个列表合并为对应的答案。</p>
-<p>时间复杂度由上面的分析： $O(n)$使用线性时间构建列表，用线性的时间遍历列表。</p>
-<p>空间复杂度：$O(n)$使用了两个线性列表来存储，使用的空间大小为<code>n</code>的数量级。</p>
-<h2 id="使用同一个列表进行动态更新"><a href="#使用同一个列表进行动态更新" class="headerlink" title="使用同一个列表进行动态更新"></a>使用同一个列表进行动态更新</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">productExceptSelf</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> size=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">answer</span><span class="params">(size,<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;size;i++)&#123;</span><br><span class="line">            answer[i]=answer[i<span class="number">-1</span>]*nums[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> temp=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=size<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            answer[i]=answer[i]*temp;</span><br><span class="line">            temp=temp*nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>使用了答案数组来进行动态更新，不需要其他的辅助空间，遍历的次数没有改变，但是优化了空间上的使用</p>
-<p>时间复杂度：$O(n)$</p>
-<p>空间复杂度：$O(1)$</p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">和为K的子数组</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-17 12:05:53 / 修改时间：18:53:09" itemprop="dateCreated datePublished" datetime="2022-12-17T12:05:53+08:00">2022-12-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-<h1 id="和为K的子数组"><a href="#和为K的子数组" class="headerlink" title="和为K的子数组"></a>和为K的子数组</h1><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 <em>该数组中和为 <code>k</code> 的连续子数组的个数</em> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,1,1], k = 2</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,2,3], k = 3</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 2 * 104</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
-<li><code>-107 &lt;= k &lt;= 107</code></li>
-</ul>
-<h2 id="暴力算法：遍历所有可能的数组组合"><a href="#暴力算法：遍历所有可能的数组组合" class="headerlink" title="暴力算法：遍历所有可能的数组组合"></a>暴力算法：遍历所有可能的数组组合</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">subarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> start=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;start&lt;nums.<span class="built_in">size</span>();start++)&#123;</span><br><span class="line">        <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> end=start;end&gt;=<span class="number">0</span>;end--)&#123;</span><br><span class="line">            sum+=nums[end];</span><br><span class="line">            <span class="keyword">if</span>(sum==k)count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：$O(n^2)$，其中 n为数组的长度。枚举子数组开头和结尾需要 $O(n^2)$的时间，其中求和需要 O(1)的时间复杂度，因此总时间复杂度为$O(n^2)$。</li>
-<li>空间复杂度：O(1)。只需要常数空间存放若干变量。</li>
-</ul>
-<h2 id="使用哈希表和前缀法进行优化："><a href="#使用哈希表和前缀法进行优化：" class="headerlink" title="使用哈希表和前缀法进行优化："></a>使用哈希表和前缀法进行优化：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">subarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="type">int</span> pre=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        map[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            pre=pre+nums[i];</span><br><span class="line">            <span class="keyword">if</span>(map.<span class="built_in">find</span>(pre-k)!=map.<span class="built_in">end</span>())&#123;</span><br><span class="line">                count+=map[pre-k];</span><br><span class="line">            &#125;</span><br><span class="line">            map[pre]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>复杂度分析</strong></p>
-<ul>
-<li>时间复杂度：O(n)，其中 n为数组的长度。我们遍历数组的时间复杂度为 O(n)，中间利用哈希表查询删除的复杂度均为 O(1)，因此总时间复杂度为 O(n)。</li>
-<li>空间复杂度：O(n)，其中 n为数组的长度。哈希表在最坏情况下可能有 n个不同的键值，因此需要 O(n)的空间复杂度。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1310,7 +1277,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共55.7k字</span>
+  <span class="post-count">全站共56.4k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

@@ -196,6 +196,200 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">重排链表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-26 22:22:28 / 修改时间：22:24:22" itemprop="dateCreated datePublished" datetime="2022-12-26T22:22:28+08:00">2022-12-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="重排链表"><a href="#重排链表" class="headerlink" title="重排链表"></a>重排链表</h1><p>给定一个单链表 <code>L</code> 的头节点 <code>head</code> ，单链表 <code>L</code> 表示为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L0 → L1 → … → Ln - 1 → Ln</span><br></pre></td></tr></table></figure>
+
+<p>请将其重新排列后变为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …</span><br></pre></td></tr></table></figure>
+
+<p>不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+<p> <strong>示例 1：</strong></p>
+<p><img src="https://pic.leetcode-cn.com/1626420311-PkUiGI-image.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4]</span><br><span class="line">输出：[1,4,2,3]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<p><img src="https://pic.leetcode-cn.com/1626420320-YUiulT-image.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5]</span><br><span class="line">输出：[1,5,2,4,3]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表的长度范围为 <code>[1, 5 * 104]</code></li>
+<li><code>1 &lt;= node.val &lt;= 1000</code></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">reorderList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        stack&lt;ListNode*&gt; stk;</span><br><span class="line">        ListNode* pointer1=head;</span><br><span class="line">        ListNode* pointer2=head;</span><br><span class="line">        <span class="keyword">while</span>(pointer2!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            stk.<span class="built_in">push</span>(pointer2);</span><br><span class="line">            pointer2=pointer2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(pointer1!=<span class="literal">nullptr</span>&amp;&amp;pointer1-&gt;next!=<span class="literal">nullptr</span>&amp;&amp;pointer1!=pointer2&amp;&amp;pointer1-&gt;next!=pointer2)&#123;</span><br><span class="line">            pointer2=stk.<span class="built_in">top</span>();stk.<span class="built_in">pop</span>();</span><br><span class="line">            stk.<span class="built_in">top</span>()-&gt;next=<span class="literal">nullptr</span>;</span><br><span class="line">            <span class="built_in">insert</span>(pointer1,pointer2);</span><br><span class="line">            pointer1=pointer1-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ListNode*&amp;target,ListNode*&amp;insert)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(target-&gt;next==<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            target-&gt;next=insert;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ListNode* temp=target-&gt;next;</span><br><span class="line">            target-&gt;next=insert;</span><br><span class="line">            insert-&gt;next=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(n)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Michael Slater">
+      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molaters">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">K个一组翻转链表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-26 22:19:32 / 修改时间：22:21:57" itemprop="dateCreated datePublished" datetime="2022-12-26T22:19:32+08:00">2022-12-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="K个一组翻转链表"><a href="#K个一组翻转链表" class="headerlink" title="K个一组翻转链表"></a>K个一组翻转链表</h1><p>给你链表的头节点 <code>head</code> ，每 <code>k</code> 个节点一组进行翻转，请你返回修改后的链表。</p>
+<p><code>k</code> 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 <code>k</code> 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p>你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/10/03/reverse_ex1.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5], k = 2</span><br><span class="line">输出：[2,1,4,3,5]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/10/03/reverse_ex2.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5], k = 3</span><br><span class="line">输出：[3,2,1,4,5]</span><br></pre></td></tr></table></figure>
+
+<p> <strong>提示：</strong></p>
+<ul>
+<li>链表中的节点数目为 <code>n</code></li>
+<li><code>1 &lt;= k &lt;= n &lt;= 5000</code></li>
+<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+<p> <strong>进阶：</strong>你可以设计一个只用 <code>O(1)</code> 额外内存空间的算法解决此问题吗？</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseKGroup</span><span class="params">(ListNode* head, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="literal">nullptr</span>)<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode* a;</span><br><span class="line">    ListNode* b;</span><br><span class="line">    a=b=head;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b==<span class="literal">nullptr</span>)<span class="keyword">return</span> head;</span><br><span class="line">        b=b-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode* newhead=<span class="built_in">reverse</span>(a,b);</span><br><span class="line">    a-&gt;next=<span class="built_in">reverseKGroup</span>(b,k);</span><br><span class="line">    <span class="keyword">return</span> newhead;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverse</span><span class="params">(ListNode* a,ListNode* b)</span></span>&#123;</span><br><span class="line">        ListNode* cur=a;</span><br><span class="line">        ListNode* pre=<span class="literal">nullptr</span>;</span><br><span class="line">        ListNode* nxt=a;</span><br><span class="line">        <span class="keyword">while</span>(cur!=b)&#123;</span><br><span class="line">            nxt=cur-&gt;next;</span><br><span class="line">            cur-&gt;next=pre;</span><br><span class="line">            pre=cur;</span><br><span class="line">            cur=nxt;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(1)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1011,196 +1205,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/01%E7%9F%A9%E9%98%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/01%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">01矩阵</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-22 15:06:03 / 修改时间：15:08:57" itemprop="dateCreated datePublished" datetime="2022-12-22T15:06:03+08:00">2022-12-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="01矩阵"><a href="#01矩阵" class="headerlink" title="01矩阵"></a>01矩阵</h1><p>给定一个由 <code>0</code> 和 <code>1</code> 组成的矩阵 <code>mat</code> ，请输出一个大小相同的矩阵，其中每一个格子是 <code>mat</code> 中对应位置元素到最近的 <code>0</code> 的距离。</p>
-<p>两个相邻元素间的距离为 <code>1</code> 。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://pic.leetcode-cn.com/1626667201-NCWmuP-image.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：mat = [[0,0,0],[0,1,0],[0,0,0]]</span><br><span class="line">输出：[[0,0,0],[0,1,0],[0,0,0]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<p><img src="https://pic.leetcode-cn.com/1626667205-xFxIeK-image.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：mat = [[0,0,0],[0,1,0],[1,1,1]]</span><br><span class="line">输出：[[0,0,0],[0,1,0],[1,2,1]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>m == mat.length</code></li>
-<li><code>n == mat[i].length</code></li>
-<li><code>1 &lt;= m, n &lt;= 104</code></li>
-<li><code>1 &lt;= m * n &lt;= 104</code></li>
-<li><code>mat[i][j] is either 0 or 1.</code></li>
-<li><code>mat</code> 中至少有一个 <code>0 </code></li>
-</ul>
-<p>使用广度优先算法将此图转换为四叉树来解决，每一次都遍历一层对应一个数值</p>
-<p>算法实现：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">updateMatrix</span>(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mat) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">flag</span>(mat.<span class="built_in">size</span>(),<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(mat[<span class="number">0</span>].<span class="built_in">size</span>(),<span class="number">0</span>));</span><br><span class="line">        queue&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; que;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; dir=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;mat.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;mat[i].<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(mat[i][j]==<span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag[i][j]=<span class="number">1</span>;</span><br><span class="line">                    que.<span class="built_in">emplace</span>(i,j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(!que.<span class="built_in">empty</span>())&#123;</span><br><span class="line">                <span class="keyword">auto</span> [i,j]=que.<span class="built_in">front</span>();que.<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> d=<span class="number">0</span>;d&lt;<span class="number">4</span>;d++)&#123;</span><br><span class="line">                    <span class="type">int</span> row=i+dir[d];</span><br><span class="line">                    <span class="type">int</span> col=j+dir[d+<span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span>(row&gt;=<span class="number">0</span>&amp;&amp;col&gt;=<span class="number">0</span></span><br><span class="line">                       &amp;&amp;row&lt;mat.<span class="built_in">size</span>()</span><br><span class="line">                       &amp;&amp;col&lt;mat[<span class="number">0</span>].<span class="built_in">size</span>()</span><br><span class="line">                       &amp;&amp;!flag[row][col])&#123;</span><br><span class="line">                        mat[row][col]=mat[i][j]+<span class="number">1</span>;</span><br><span class="line">                        que.<span class="built_in">emplace</span>(row,col);</span><br><span class="line">                        flag[row][col]=<span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> mat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度为：<code>O(mn)</code></p>
-<p>空间复杂度为：<code>O(mn)</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://molaters.github.io/2022/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Michael Slater">
-      <meta itemprop="description" content="For you, my love, I can devote everything.   -To Jianghan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molaters">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%88%B7%E9%A2%98/%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/" class="post-title-link" itemprop="url">划分字母区间</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-20 12:29:44 / 修改时间：12:33:26" itemprop="dateCreated datePublished" datetime="2022-12-20T12:29:44+08:00">2022-12-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="划分字母区间"><a href="#划分字母区间" class="headerlink" title="划分字母区间"></a>划分字母区间</h1><p>给你一个字符串 <code>s</code> 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。</p>
-<p>注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 <code>s</code> 。</p>
-<p>返回一个表示每个字符串片段的长度的列表。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ababcbacadefegdehijhklij&quot;</span><br><span class="line">输出：[9,7,8]</span><br><span class="line">解释：</span><br><span class="line">划分结果为 &quot;ababcbaca&quot;、&quot;defegde&quot;、&quot;hijhklij&quot; 。</span><br><span class="line">每个字母最多出现在一个片段中。</span><br><span class="line">像 &quot;ababcbacadefegde&quot;, &quot;hijhklij&quot; 这样的划分是错误的，因为划分的片段数较少。 </span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;eccbbbbdec&quot;</span><br><span class="line">输出：[10]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= s.length &lt;= 500</code></li>
-<li><code>s</code> 仅由小写英文字母组成</li>
-</ul>
-<p>使用双指针，将每个元素的最后一个位置的下标记录下来，实时进行更新</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">partitionLabels</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right=<span class="number">0</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; answer;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,<span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[s[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(right&lt;s.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">            right=map[s[left]];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=left;i&lt;right;i++)</span><br><span class="line">            right=right&gt;map[s[i]]?right:map[s[i]];</span><br><span class="line">            answer.<span class="built_in">push_back</span>(right-left+<span class="number">1</span>);</span><br><span class="line">            left=right+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度：<code>O(n)</code>只遍历了一次字符串</p>
-<p>空间复杂度：<code>O(n)</code>使用了哈希表作为辅助</p>
-
-      
-    </div>
-
-    
-    
-    
-
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1308,7 +1312,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共55.7k字</span>
+  <span class="post-count">全站共56.4k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

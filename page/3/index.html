@@ -1,1244 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  
+
   
   <title>SlaterXu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="canonical" href="https://molaters.github.io/page/3/">
+  
   <meta name="description" content="this is a personal notion keeper">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SlaterXu">
-<meta property="og:url" content="https://molaters.github.io/page/3/index.html">
-<meta property="og:site_name" content="SlaterXu">
-<meta property="og:description" content="this is a personal notion keeper">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Molaters Lee">
-<meta property="article:tag" content="Develope">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="SlaterXu" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+  <meta name="keywords" content="Develope">
+  
+  <meta name="author" content="Molaters Lee">
   
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <meta property="og:image" content="https://molaters.github.io/images/thumbnail.jpg">
+  
+  
+  <meta property="og:site_name" content="SlaterXu" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="SlaterXu" />
+  
+  <meta property="og:description" content="this is a personal notion keeper">
+  
+  <meta property="og:url" content="https://molaters.github.io/page/3/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SlaterXu">
+  
+  <meta name="twitter:description" content="this is a personal notion keeper">
+  
+  
+  
+  <meta name="twitter:image" content="https://molaters.github.io/images/thumbnail.jpg">
+  
+  
+  <meta name="twitter:url" content="https://molaters.github.io/page/3/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
 
   
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/skeleton.css">
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/custom.css">
 
   
+<link rel="stylesheet" href="/css/prism-dark.css">
+
   
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+  <script src="/js/search.min.js" defer></script>
+  
+
 <meta name="generator" content="Hexo 7.0.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SlaterXu</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Micheal Slater Lee</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi Folks.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          <a href="/Works" class="ml">Works</a>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          <a href="/About" class="ml">About</a>
+          
         
-      </nav>
-      <nav id="sub-nav">
         
+          
+            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
+          
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://molaters.github.io"></form>
       </div>
     </div>
+    <hr style="margin-bottom: 2.6rem">
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main">
+        <div class="trans">
+          <div class="row">
+  <div class="column">
+    <!-- Main information, edit it on theme/_config.yml -->
+    <h2 class="mb-2">I am Adi Sakti Jrs</h2>
+    <p>A student and web developer from Indonesia 🇮🇩</p>
+    <p>This is Minima, an undoubtedly simple and lightweight dark/light mode theme for Hexo. I created this from scratch using Skeleton CSS boilerplate. It only uses CSS and Vanilla JS, without using unnecessary third-party &#39;render-blocking&#39; libraries! 😁</p>
+  </div>
+</div>
+
+<h3>Recent Posts</h3>
+
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/" >
+      
+        CN-随机访问MAC协议
+      
+    </a>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/" >
+      
+        CN-轮转访问MAC协议
+      
+    </a>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/" >
+      
+        CN-链路状态路由算法
+      
+    </a>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" >
+      
+        CN-路由器的工作原理
+      
+    </a>
+  </div>
+</div>
+
+
+<h4> <a href="/archives">All Posts</a></h4>
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
   
-    <article id="post-计算机网络/CN-应用层学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%BA%94%E7%94%A8%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.391Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
         
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-865d4a368698489cbba9b97d55086785" target="_blank" itemprop="url">CN-应用层学习笔记</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 应用层 
-[[计算机网络]]
-
-<h2 id="章节分段"><a href="#章节分段" class="headerlink" title="章节分段"></a>章节分段</h2><ol>
-<li><p>C&#x2F;S模式，P2P模式</p>
-</li>
-<li><p>讨论客户-服务器模式的概念以及这个模式是如何为英特网用户提供服务的</p>
-</li>
-<li><p>讨论客户-服务器模式的预定义和标准应用。（万维网、文件传输、电子邮件）</p>
-</li>
-<li><p>对等模式中的概念以及协议。以及协议的流行应用</p>
-</li>
-<li><p>给出在客户-服务器模式下怎么通过C语言编写两个程序创建一个新的应用</p>
-</li>
-</ol>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以把应用层的功能看作是两个应用层之间假设存在一个<code>假想的直接连接</code>，通过这个链接可以发送和接收报文。</p>
-<p>因特网为全世界用户提供服务。<code>层次结构</code>使得因特网比其他网络更加灵活，在一层增加协议的时候要观察是不是使用了底层提供的服务；在一层删去协议的时候要关注上层是不是使用了该协议，并改写上一层的协议。</p>
-
-      
+        at <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noreferrer">Earth</a>.</p>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%BA%94%E7%94%A8%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clpbznkz100c8kkis2x1x30q0" data-title="CN-应用层学习笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
       
+      <a class="ml-0 footer-link icon" href="https://github.com/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-差错编码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%B7%AE%E9%94%99%E7%BC%96%E7%A0%81/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.389Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%B7%AE%E9%94%99%E7%BC%96%E7%A0%81/">CN-差错编码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<h2 id="差错检测：差错编码"><a href="#差错检测：差错编码" class="headerlink" title="差错检测：差错编码"></a>差错检测：差错编码</h2><p>差错编码基本原理：</p>
-<p>$D \to DR$ 其中R为差错检测和纠正bit（冗余bit）</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030135954.png" alt="image.png"></p>
-<p>如果是没有出错的就直接还原就好</p>
-<p>但是即便判断出当前的R一致，也不能保证一定可靠</p>
-<h3 id="差错编码的检错能力"><a href="#差错编码的检错能力" class="headerlink" title="差错编码的检错能力"></a>差错编码的检错能力</h3><p>差错编码可以分为检错码和纠错码</p>
-<p>对于检错码，如果编码集的汉明距离$d_s &#x3D; r+1$ 那么差错编码可以检测r位的差错。</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030141008.png" alt="image.png"></p>
-<p>例如，编码集{0000,0101,1010,1111}的汉明距离$d_s$&#x3D;2，可以100%检测1比特差错</p>
-<p>对于纠错码，如果编码集的汉明距离$d_s$&#x3D;2r+1，则该差错编码可以纠正r位的差错</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030141157.png" alt="image.png"><br>例如，编码集{000000,010101,101010,111111} 的汉明距离$d_s$&#x3D;3可以纠正1比特差错，如100010纠正为101010。</p>
-<h2 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h2><p>1bit校验位：</p>
-<ul>
-<li>检测奇数位差错</li>
-</ul>
-<p>编码的效率很高</p>
-<p>二维奇偶校验</p>
-<p>检测奇数位的差错：部分偶数位的差错</p>
-<p>纠正同一行&#x2F;列的奇数位错误</p>
-<h2 id="Internet校验和"><a href="#Internet校验和" class="headerlink" title="Internet校验和"></a>Internet校验和</h2><h3 id="发送端"><a href="#发送端" class="headerlink" title="发送端:"></a>发送端:</h3><p>将数据（校验内容）划分为16位的二进制整数序列</p>
-<p>求和</p>
-<p>校验和</p>
-<p>放入分组</p>
-<h3 id="接收端："><a href="#接收端：" class="headerlink" title="接收端："></a>接收端：</h3><p>和发送端相同的算法进行计算</p>
-<p>计算得到checksum</p>
-<h2 id="循环冗余校验码"><a href="#循环冗余校验码" class="headerlink" title="循环冗余校验码"></a>循环冗余校验码</h2><p>检错能力更强大的校验编码</p>
-<p>将数据bit，D，视为一个二进制数</p>
-<p>选择一个r+1位的比特模式（生成bit模式）</p>
-<p>目标：选择r位的CRCbit，R，满足</p>
-<ul>
-<li><p>&lt;D,R&gt; 刚好可以被G整除</p>
-</li>
-<li><p>接收端检错：利用G除&lt;D,R&gt;,余式全为0，无错；否则，有错！</p>
-</li>
-<li><p>可以检测所有突发长度小于r+1位差错</p>
-</li>
-</ul>
-<h3 id="广泛应用于实际网络-以太网，802-11-WIFI，ATM"><a href="#广泛应用于实际网络-以太网，802-11-WIFI，ATM" class="headerlink" title="广泛应用于实际网络(以太网，802.11 WIFI，ATM)"></a>广泛应用于实际网络(以太网，802.11 WIFI，ATM)</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030142849.png" alt="image.png"></p>
-<p>期望：</p>
-<p>$D \cdot 2^r \ XOR &#x3D; \ nG$</p>
-<p>相当于如果利用G去去除$D \cdot 2^r$，则余式即为R：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030143054.png" alt="image.png"></p>
 
       
+      <a class="ml-0 footer-link icon" href="https://linkedin.com/in/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://instagram.com/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Instagram">
+        <svg class="instagram svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://stackoverflow.com/story/tobiasreithmeier" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="StackOverflow">
+        <svg class="stackoverflow svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>
+      </a>
+      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%B7%AE%E9%94%99%E7%BC%96%E7%A0%81/" data-id="clpbznkz100cbkkis8u6r9brm" data-title="CN-差错编码" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
+</div>
 
-
-
-  
-    <article id="post-计算机网络/CN-分组交换网络中的时延、丢包和吞吐量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E6%97%B6%E5%BB%B6%E3%80%81%E4%B8%A2%E5%8C%85%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.388Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E6%97%B6%E5%BB%B6%E3%80%81%E4%B8%A2%E5%8C%85%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F/">CN-分组交换网络中的时延、丢包和吞吐量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<p>分组交换网络的时延最重要的是 <strong>节点处理时延</strong>，<strong>排队时延</strong>，<strong>传输时延</strong>，<strong>传播时延</strong></p>
-<p>这些时延加起来的总和就是 <strong>节点总时延</strong></p>
-<h2 id="处理时延"><a href="#处理时延" class="headerlink" title="处理时延"></a>处理时延</h2><p>检查分组首部和决定该分组到向何处所需要的时间是处理时延的一部分。<br>也包括其他因素，比如检查 <strong>比特级别的差错</strong><br>高速路由器的处理时延通常是微秒或者更低的数量级。</p>
-<h2 id="排队时延"><a href="#排队时延" class="headerlink" title="排队时延"></a>排队时延</h2><p>在队列中，分组在链路上等待传输的时候，它经受排队时延。</p>
-<p>一个特定分组的排队时延长度将取决于先期到达的正在排队等待向链路传输的分组数量</p>
-<p>到达分组期待发现的返祖数量是到达该队列的流量的强度和性质的函数。实际的排队时延可以是毫秒到微妙量级</p>
-<h2 id="传输时延"><a href="#传输时延" class="headerlink" title="传输时延"></a>传输时延</h2><p>假定分组以先到先服务的方式传输——这在分组交换网中是常见的方式，仅当所有已经到达的分组被传输之后，才能传输刚到到达的分组。</p>
-<h2 id="传播时延"><a href="#传播时延" class="headerlink" title="传播时延"></a>传播时延</h2><p>传播时延是信号通过的路程的长度，为$d&#x2F;s$</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E6%97%B6%E5%BB%B6%E3%80%81%E4%B8%A2%E5%8C%85%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F/" data-id="clpbznkz000c1kkiscbzygy6k" data-title="CN-分组交换网络中的时延、丢包和吞吐量" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-层次化路由" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%B1%82%E6%AC%A1%E5%8C%96%E8%B7%AF%E7%94%B1/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.388Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-51457159d7fa4b24943a7ed0319ca06e" target="_blank" itemprop="url">CN-层次化路由</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<p>将任意规模的网络抽象为一个图计算路由-过于理想化</p>
-<ul>
-<li><p>表示所有的路由器</p>
-</li>
-<li><p>“扁平”网络</p>
-</li>
-</ul>
-<p>——在实际的网络中不可行！</p>
-<p>网络规模：考虑6个亿的结点的网络</p>
-<p>路由表几乎无法存储</p>
-<p>路由计算过程的信息</p>
-<p>链路状态分组，交换量巨大，会淹没链路</p>
-<p><strong>管理自治</strong>：每个网络的管理可能都期望自主控制其网内的路由。</p>
-<p>互联网（internet）&#x3D; 网络之网络</p>
-<h2 id="层次路由"><a href="#层次路由" class="headerlink" title="层次路由"></a>层次路由</h2><p>聚合路由器为每一个区域：自治系统AS(autonomous systems)</p>
-<p>同一AS内的路由器运行相同的路由算法</p>
-<p><strong>自治系统内部路由协议</strong></p>
-<p>不同的额自治系统内的路由器可以运行不同的AS内部路由协议</p>
-<h3 id="网关路由器"><a href="#网关路由器" class="headerlink" title="网关路由器"></a>网关路由器</h3><p>位于AS边缘</p>
-<p>通过链路连接其他AS网关路由器 可以和其他的网关路由器之间交换信息</p>
-<h3 id="互联的AS"><a href="#互联的AS" class="headerlink" title="互联的AS"></a>互联的AS</h3><p>一方面要通过自治系统来决定AS间的路由算法来共同配置</p>
-<ul>
-<li>AS内部的路由算法设置AS内部目的网络路由入口(entries) </li>
-<li>AS内部路由算法和AS间的路由算法共同设置AS外部网络路由入口</li>
-</ul>
-<h2 id="自治系统内的路由任务"><a href="#自治系统内的路由任务" class="headerlink" title="自治系统内的路由任务"></a>自治系统内的路由任务</h2><p>假设AS1内部的某个路由器收到一个目的地址在AS1之外的数据报：</p>
-<ul>
-<li>路由器应该将该数据包转发给哪个网关路由器呢？</li>
-</ul>
-<h3 id="AS1（其中一个自治系统）必须："><a href="#AS1（其中一个自治系统）必须：" class="headerlink" title="AS1（其中一个自治系统）必须："></a>AS1（其中一个自治系统）必须：</h3><ol>
-<li><p>学习到哪些目的网络可以通过AS2到达，哪些可以通过AS3到达</p>
-</li>
-<li><p>将这些网络可达性信息传播给AS1内部路由器</p>
-</li>
-<li><p>自治系统间的路由任务！</p>
-</li>
-</ol>
-<p>路由器1d的转发表设置</p>
-<p>假设AS1学习到(通过AS间的路由协议)：子网X可以通过AS3（网关1C）到达，但是不呢个通过AS2到达</p>
-<ul>
-<li>AS间路由协议向所有内部路由器传播可达性信息</li>
-</ul>
-<p>路由器1d：利用AS内部路由信息，确定其到达1c的最小费用路径接口</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231029222810.png" alt="image.png"></p>
-<h2 id="在多个AS之间选择"><a href="#在多个AS之间选择" class="headerlink" title="在多个AS之间选择"></a>在多个AS之间选择</h2><p>假设AS1通过AS间的路由协议学习到：子网X通过AS3和AS2均可以到达</p>
-<p>为了配置转发表，路由器1d必须确定应该将去往子网X的数据包转发给哪个网关？</p>
-<ul>
-<li>这个任务也是由AS之间的路由协议完成！</li>
-</ul>
-<p><strong>热土豆路由</strong>：将分组发送给最近的网关路由器</p>
-<blockquote>
-<p>[!过程]</p>
-<ol>
-<li>通过AS间的路由协议学习到：子网X可以通过多个网关到达</li>
-<li>利用通过AS内路由协议获得的路悠悠喜喜确定到达每个网关的最小费用的费用</li>
-<li>热土豆路由：选择最小费用路径的费用最小的网关</li>
-<li>通过转发表，确定去往最小费用网关的接口&#x2F;.在转发表中增加入口：（x,l）</li>
-</ol>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%B1%82%E6%AC%A1%E5%8C%96%E8%B7%AF%E7%94%B1/" data-id="clpbznkz000c4kkis3io79l5j" data-title="CN-层次化路由" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-传输层学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.386Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-394ea335ddca47ff9ff5c17a2d916a21" target="_blank" itemprop="url">CN-传输层学习笔记</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>传输层位于应用层和网络层之间。在两个<code>应用层之间</code>提供进程到进程服务，一个进程在<strong>本地主机</strong>，另一个在<strong>远程主机</strong>，使用逻辑链接提供通信。</p>
-<h3 id="传输层服务"><a href="#传输层服务" class="headerlink" title="传输层服务"></a>传输层服务</h3><p><strong>传输层负责向应用层提供服务</strong></p>
-<h4 id="进程到进程通信"><a href="#进程到进程通信" class="headerlink" title="进程到进程通信"></a>进程到进程通信</h4><p><strong>首要任务</strong>：进程到进程通信（process-to-process communicaiton）</p>
-<p><strong>进程</strong>：使用传输层服务的应用层实体（运行的程序）</p>
-<p><strong>主机到主机 vs 进程到进程</strong>：</p>
-<ul>
-<li><code>网络层</code>可以负责主机到主机的通信。网络层协议只把报文传递给目的计算机，但是这不是完整的传输。</li>
-<li>报文要递交给正确的进程  $\rightarrow$ <em><u>传输层接管的部分</u></em></li>
-</ul>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694499016606.png" alt="1694499016606" style="zoom:67%;" />
-
-<h4 id="寻址：端口号"><a href="#寻址：端口号" class="headerlink" title="寻址：端口号"></a>寻址：端口号</h4><p>最常用的方式实现进程到进程通信：<strong>客户-服务器模式</strong></p>
-<p>两个进程有相同的名字: </p>
-<p>ex. (client)Daytime $\iff$ (remote)Daytime </p>
-<p>远程计算机可以<code>运行多个服务器程序</code>，就像许多本地计算机可以在同一时间运行一个或者多个客户应用程序一样。</p>
-<p>通信：需要 <strong>本地主机</strong>、<strong>本地进程</strong>、<strong>远程主机</strong>、<strong>远程进程</strong></p>
-<p><em>Chapter 4 mention</em>: 用<code>IP地址</code>来定义本地主机和远程主机</p>
-<p>服务器进程必须用一个<code>端口号</code>定义自己。端口号 &#x3D; 0~65535之间的16位整数</p>
-<p>客户程序用端口号来定义自己，称为<strong>临时端口号</strong>。临时是因为客户的生命周期通常很短。临时端口号大于1023。</p>
-<p><strong>熟知端口号</strong>：全局端口号</p>
-<p>每一个客户进程都知道相应服务器进程的数值端口号。</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694500506986.png" alt="1694500506986"></p>
-<h4 id="ICANN范围"><a href="#ICANN范围" class="headerlink" title="ICANN范围"></a>ICANN范围</h4><p>把端口号划分成为三种范围：熟知的、注册的、动态的（或者私有的）</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694502306396.png" alt="1694502306396"></p>
-<p><strong>熟知端口</strong>：端口号范围是1~1023，<strong>由ICANN分配和控制</strong>，这些事熟知的端口号</p>
-<p><strong>注册端口</strong>：端口号的范围是1024~49151。<strong>ICANN不分配也不控制</strong>，它们可以在ICANN注册以免重复。</p>
-<p><strong>动态端口</strong>：可以由任何进程使用，是临时或者私有端口号。</p>
-<p><em>套接字地址</em></p>
-<p>TCP协议簇中的传输层协议需要IP地址和端口号，它们各在一端建立一条连接。一个IP地址和一个端口号结合起来就称为<strong>套接字地址</strong>（socket address），<strong>客户套接字地址</strong><code>唯一</code>定义了<code>客户的进程</code>，而<strong>服务器套接字地址</strong>唯一的定义了<code>服务器进程</code>。</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694502647464.png" alt="1694502647464"></p>
-<p><strong>一对套接字地址</strong>：客户套接字地址和服务器套接字地址。这四条信息是网络层分组头部和传输层分组头部的组成部分。</p>
-<p>这四条信息是网络层分组头部和传输层分组头部的组成部分。第一个头部包含IP地址，第二个头部包含端口号。</p>
-<h3 id="封装和解封装"><a href="#封装和解封装" class="headerlink" title="封装和解封装"></a>封装和解封装</h3><p>将报文从一个进程发送到另一个进程，传输层协议负责封装报文。</p>
-<p>传输层的分组称为<code>用户数据报</code>、<code>段</code>、<code>分组</code></p>
-<p>在一般讨论中，将传输层有效载荷称为分组。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clpbznkyz00bxkkis6cvrcv55" data-title="CN-传输层学习笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-以太网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BB%A5%E5%A4%AA%E7%BD%91/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.385Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BB%A5%E5%A4%AA%E7%BD%91/">CN-以太网</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<p>”统治地位“的有线LAN技术</p>
-<p>造价低廉</p>
-<p>应用最广泛的LAN技术</p>
-<p>比令牌局域网和ATM等更简单、便宜</p>
-<p>满足网络速率需求：10Mbps ~ 10Gbps</p>
-<h2 id="以太网：物理拓扑"><a href="#以太网：物理拓扑" class="headerlink" title="以太网：物理拓扑"></a>以太网：物理拓扑</h2><h3 id="总线（bus）"><a href="#总线（bus）" class="headerlink" title="总线（bus）"></a>总线（bus）</h3><p>总线：上世纪90奶奶带中期之前流行</p>
-<p>所有节点在同一个冲突域内（可能产生冲突）</p>
-<h3 id="星型（star）"><a href="#星型（star）" class="headerlink" title="星型（star）"></a>星型（star）</h3><p>中心交换机</p>
-<p>每个节点一个单独的冲突域（结点之间彼此不冲突）</p>
-<h2 id="以太网：不可靠无连接服务"><a href="#以太网：不可靠无连接服务" class="headerlink" title="以太网：不可靠无连接服务"></a>以太网：不可靠无连接服务</h2><p><strong>无连接</strong>：发送帧的网课和接收帧的网卡之间没有”握手“过程</p>
-<p><strong>不可靠</strong>：接收网课不向发送网卡进行确认</p>
-<ul>
-<li>差错帧直接丢弃，丢弃帧中的数据恢复依靠高层协议（TCP），否则，发生数据丢失</li>
-</ul>
-<p>以太网的MAC协议：采用二进制指数退避算法的CSMA&#x2F;CD</p>
-<h2 id="以太网的CSMA-CD算法"><a href="#以太网的CSMA-CD算法" class="headerlink" title="以太网的CSMA&#x2F;CD算法"></a>以太网的CSMA&#x2F;CD算法</h2><ol>
-<li>NIC从网络层接收数据报，创建数据帧；</li>
-<li>监听信道：<br>如果NIC监听到信道空闲，就开始发送数据帧</li>
-<li>NIC发送完整个帧，而没有检测到其他结点的数据发送，则NIC确认帧发送成功</li>
-<li>如果NIC检测到其他结点传输数据，则中止发送并发送堵塞信号 (jamsignal)</li>
-<li>中止发送后，NIC进入二进制指数退避:<ul>
-<li>第m次连续冲突之后：<ul>
-<li>n &#x3D; Max(m,10)</li>
-<li>NIC 从{}0，1，2，……，$2^n$-1}中随机的选择一个数K</li>
-<li>NIC等待K·512比特的传输延迟时间，再返回第2步</li>
-</ul>
-</li>
-<li>连续冲突次数越多，平均等待时间越长。</li>
-</ul>
-</li>
-</ol>
-<p>发送端</p>
-<h2 id="以太网的帧结构"><a href="#以太网的帧结构" class="headerlink" title="以太网的帧结构"></a>以太网的帧结构</h2><p>发送端网卡将IP数据报(或其他网络层协议分组)封装到以太网帧中：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101213538.png" alt="image.png"></p>
-<h3 id="前导码-Preamble-8B"><a href="#前导码-Preamble-8B" class="headerlink" title="前导码(Preamble)(8B)"></a>前导码(Preamble)(8B)</h3><p>7个字节的10101010，第8字节为10101011<br>用于发送端与接收端的时钟同步</p>
-<h3 id="目的MAC地址、源MAC地址-各6B"><a href="#目的MAC地址、源MAC地址-各6B" class="headerlink" title="目的MAC地址、源MAC地址(各6B)"></a>目的MAC地址、源MAC地址(各6B)</h3><p>如果网卡的MAC地址与收到的倾的目的MAC地址匹配，或者顿的目的MAC地址为广播地址(FF-FF-FF-FF-FF-FF)，则网卡接收该帧，并将其封装的网络层分组交给相应的网络层协议。</p>
-<h3 id="类型-Type-2B"><a href="#类型-Type-2B" class="headerlink" title="类型(Type)(2B)"></a>类型(Type)(2B)</h3><p>指示中封装的是哪种高层协议的分组(如，IP数据报、Novell IPX数据报、AppleTalk数据报等)</p>
-<h3 id="数据-Data-46-1500B-指上层协议载荷"><a href="#数据-Data-46-1500B-指上层协议载荷" class="headerlink" title="数据(Data)(46-1500B): 指上层协议载荷"></a>数据(Data)(46-1500B): 指上层协议载荷</h3><p>R&#x3D;10Mbps，RTTmax&#x3D;512$\mu s$，Lmin &#x2F; R &#x3D; RTTmax<br>in&#x3D;512bits&#x3D;64B，Datamin&#x3D;Lmin-18&#x3D;46B</p>
-<h3 id="CRC-4B-循环余校验码"><a href="#CRC-4B-循环余校验码" class="headerlink" title="CRC(4B): 循环余校验码"></a>CRC(4B): 循环余校验码</h3><p>丢弃差错帧</p>
-<h2 id="802-3以太网标准：链路和物理层"><a href="#802-3以太网标准：链路和物理层" class="headerlink" title="802.3以太网标准：链路和物理层"></a>802.3以太网标准：链路和物理层</h2><p>许多不同的以太网标准</p>
-<ul>
-<li>相同的MAC协议和帧格式</li>
-<li>不同速率: 2 Mbps,10 Mbps,100 Mbps，1 Gbps, 10 Gbps</li>
-<li>不同物理介质: 光纤,线缆</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BB%A5%E5%A4%AA%E7%BD%91/" data-id="clpbznkyy00brkkisdl56990u" data-title="CN-以太网" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-Week9-Class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week9-Class/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.383Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week9-Class/">CN-Week9-Class</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<p>以太网中采用二进制指数后推算法处理冲突问题。</p>
-<p>链路层能够提供的可能服务有哪些？其中可靠传输服务，在传输层也同样提供，那么链路层的可靠传输服务是不是必要？传输层的可靠传输理论以及方法是否适用于链路层？ </p>
-<p>链路层能够提供的可能服务包括以下几个方面：</p>
-<ol>
-<li><p>提供透明可靠的数据传输服务：链路层向网络层提供了透明可靠的数据传输服务，确保数据能够从发送方传输到接收方。</p>
-</li>
-<li><p>差错检测和纠正：链路层通过使用差错检测和纠正方法，对传输过程中可能出现的错误进行检测和纠正，从而保证数据传输的可靠性。</p>
-</li>
-<li><p>帧同步和流量控制：链路层在数据传输过程中能够进行帧同步和流量控制，确保数据的顺序和速率统一。</p>
-</li>
-</ol>
-<p>传输层也可以提供可靠传输服务，但链路层的可靠传输服务并不是必要的。传输层的可靠传输服务更加高级和复杂，可以处理端到端的可靠传输问题。</p>
-<p>传输层的可靠传输理论和方法并不一定适用于链路层。链路层的可靠传输服务更加专注于在链路层中处理数据传输的可靠性，与传输层的可靠传输服务有所不同。链路层使用的纠错方法和协议可能与传输层不同，具体取决于传输介质和网络需求。</p>
-<p>为什么同时使用MAC地址和IP地址？为什么不止使用MAC地址或者只使用IP地址？</p>
-<p>如何实现差错控制(差错纠正策略)？可以采用哪些协议？ </p>
-<p>差错控制是为了处理在数据传输过程中可能发生的差错，包括差错检测和差错纠正。可以采用以下策略实现差错控制：</p>
-<ol>
-<li><p>差错检测：通过添加冗余信息来判断数据是否遭到损坏。</p>
-<ul>
-<li><p>校验和：将数据划分为多个块，并计算每个块的和，将和值附加到数据中。</p>
-</li>
-<li><p>循环冗余检验 (CRC)：使用多项式除法来计算校验码，并将其附加到数据中。</p>
-</li>
-</ul>
-</li>
-<li><p>差错纠正：不仅能检测出差错，还能进行纠正。</p>
-<ul>
-<li><p>汉明码：通过在数据中添加冗余位来纠正错误，并检测出多位错误。</p>
-</li>
-<li><p>奇偶校验：通过添加一个奇偶位来检测和纠正单个比特错误。</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>差错控制可以应用于不同的协议和通信网络中，包括：</p>
-<ul>
-<li><p>TCP (传输控制协议)：在数据通信过程中通过使用序列号、确认应答和重传机制来实现差错控制。</p>
-</li>
-<li><p>UDP (用户数据报协议)：提供差错检测功能，但不支持差错纠正。</p>
-</li>
-<li><p>ARQ (自动重传请求)：一种协议，通过请求重传错误的数据包来实现差错控制。</p>
-</li>
-</ul>
-<p>来源：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/16382947">TCP、UDP与ARQ错误控制</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/abbcdc/article/details/108737703#pn%EF%BC%81M">差错控制的方法与技术</a></p>
-</li>
-</ul>
-<p>随机访问MAC怎么检测冲突？ </p>
-<p>要检测随机访问MAC的冲突，可以采取以下方法：</p>
-<ol>
-<li><p>使用MAC地址检测工具：可以使用专门的MAC地址检测工具来检测MAC冲突。这些工具可以扫描局域网上的设备，并检查是否有重复的MAC地址。一旦发现重复的MAC地址，就可以确定发生了冲突。</p>
-</li>
-<li><p>查看网络设备日志：路由器或交换机上的日志记录可能会显示有关MAC地址冲突的信息。通过查看日志，可以了解到是否发生了冲突以及冲突的具体信息。</p>
-</li>
-<li><p>使用网络分析工具：可以使用网络分析工具来监测网络流量和活动。这些工具可以检测到连续的MAC冲突，通过分析网络流量，可以确定冲突的设备和触发冲突的原因。</p>
-</li>
-</ol>
-<p>以上是一些常见的检测随机访问MAC冲突的方法，可以根据具体的需求和网络环境选择合适的方法进行检测。</p>
-<p>总结两个轮转访问MAC协议，轮询和令牌传递的共同点和不同点，并设计一个轮转访问的MAC协议？ </p>
-<p>轮询和令牌传递是两种常见的轮转访问MAC协议。它们的共同点是都采用了轮流访问的方式来协调多个设备之间的数据传输。然而，它们在实现细节和工作原理上有一些区别。</p>
-<p>共同点：</p>
-<ol>
-<li><p>轮询和令牌传递都是使用轮流访问的方式，按照特定的顺序依次控制设备的访问，使每个设备都能有机会传输数据。</p>
-</li>
-<li><p>两种协议都能避免设备之间的冲突和碰撞，提高网络的效率。</p>
-</li>
-</ol>
-<p>不同点：</p>
-<ol>
-<li><p>轮询协议是由一个中心设备（通常是主机或主控器）负责控制访问顺序，按照预定的顺序对每个设备进行轮询。而令牌传递协议则是通过传递令牌的方式来控制设备的访问顺序，只有拥有令牌的设备才能传输数据。</p>
-</li>
-<li><p>在轮询协议中，当一个设备完成数据传输后，控制权会立即转移到下一个设备。而在令牌传递协议中，只有拥有令牌的设备才能传输数据，其他设备需要等待令牌传递到自己才能进行传输。</p>
-</li>
-<li><p>轮询协议可以更灵活地控制设备的访问顺序，可以根据设备的优先级或其他因素来调整轮询顺序。而令牌传递协议的访问顺序是固定的，由令牌的传递顺序决定。</p>
-</li>
-</ol>
-<p>设计一个轮转访问的MAC协议：</p>
-<p>以下是一个简单的轮转访问的MAC协议设计示例：</p>
-<ol>
-<li><p>定义一个主控设备，负责控制轮询顺序。</p>
-</li>
-<li><p>所有参与传输的设备按照预定顺序排列，每个设备分配一个唯一的标识符。</p>
-</li>
-<li><p>主控设备按照设备的顺序轮询，依次给每个设备分配传输时间窗口。</p>
-</li>
-<li><p>在每个时间窗口内，设备可以传输数据或请求传输数据。</p>
-</li>
-<li><p>设备根据自己的需求在分配的时间窗口内进行数据传输。</p>
-</li>
-<li><p>主控设备根据轮询顺序不断循环，确保每个设备都有机会传输数据。</p>
-</li>
-<li><p>如果有新设备接入或有设备离开，主控设备需要更新轮询顺序。</p>
-</li>
-</ol>
-<p>这个设计示例基于轮询的方式，通过主控设备控</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week9-Class/" data-id="clpbznkyy00bkkkisga1d3c90" data-title="CN-Week9-Class" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-交换机" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BA%A4%E6%8D%A2%E6%9C%BA/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.383Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BA%A4%E6%8D%A2%E6%9C%BA/">CN-交换机</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<p>链路层设备</p>
-<ul>
-<li>存储-转发以太网帧</li>
-<li>检验到达帧的目的MAC地址，选择性(selectively) 向一个或多个输出链路转发帧</li>
-<li>利用CSMA&#x2F;CD访问链路，发送帧</li>
-</ul>
-<p>透明(transparent)</p>
-<ul>
-<li>主机感知不到交换机的存在</li>
-</ul>
-<p>即插即用(plug-and-play)</p>
-<p>自学习(self-learning)</p>
-<ul>
-<li>交换机无需配置</li>
-</ul>
-<h2 id="交换机：多端口之间同时传输"><a href="#交换机：多端口之间同时传输" class="headerlink" title="交换机：多端口之间同时传输"></a>交换机：多端口之间同时传输</h2><p>主机利用独享(dedicated)链路直接连接交换机</p>
-<p>交换机缓存帧</p>
-<p>交换机在每段链路上利用CSMA&#x2F;CD收发帧，但无冲突，且可以全双工</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101214415.png" alt="image.png"></p>
-<p><strong>交换(switching)</strong>:A-A’与B-B’的传输可以同时进行，没有冲突</p>
-<h2 id="交换机转发表：交换表"><a href="#交换机转发表：交换表" class="headerlink" title="交换机转发表：交换表"></a>交换机转发表：交换表</h2><p>Q: 交换机怎么知道A’可以通过接口4到达，而B’可以通过接口5到达?</p>
-<p>A: 每个交换机有一个交换表(switch table), 每个入口(entry):</p>
-<ol>
-<li>(主机的MAC地址，到达主机的接口,时间戳)</li>
-<li>看起来很像路由表!</li>
-</ol>
-<p>Q: 交换表入口信息如何创建和维护的?类似于路由协议?</p>
-<h2 id="交换机：自学习"><a href="#交换机：自学习" class="headerlink" title="交换机：自学习"></a>交换机：自学习</h2><p>交换机通过自学习，获知到达主机的接口信息</p>
-<ul>
-<li><p>当收到顿时，交换机“学习”到发送顿的主机(通过顿的源MAC地址)，位于收到该顿的接口所连接的LAN网段</p>
-</li>
-<li><p>将发送主机MAC地址&#x2F;接口信息记录到交换表中</p>
-</li>
-</ul>
-<h2 id="交换机：帧过滤-转发"><a href="#交换机：帧过滤-转发" class="headerlink" title="交换机：帧过滤&#x2F;转发"></a>交换机：帧过滤&#x2F;转发</h2><p>当交换机收到帧:</p>
-<ol>
-<li><p>记录帧的源MAC地址与输入链路接口</p>
-</li>
-<li><p>利用目的MAC地址检索交换表</p>
-</li>
-<li><p>if 在交换表中检索到与目的MAC地址匹配的入口(entry)<br>then {<br>if 目的主机位于收到帧的网段<br>then 丢弃帧<br>else 将帧转发到该入口指向的接口<br>}<br> else 泛洪(flood)</p>
-</li>
-</ol>
-<h2 id="自学习和转发过程举例"><a href="#自学习和转发过程举例" class="headerlink" title="自学习和转发过程举例"></a>自学习和转发过程举例</h2><p>假设交换表初始的时候为空。</p>
-<p>目的MAC地址A’，位置未知:泛洪</p>
-<p>目的MAC地址A，位置已知:选择性转发</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101215158.png" alt="image.png"></p>
-<h2 id="交换机互联"><a href="#交换机互联" class="headerlink" title="交换机互联"></a>交换机互联</h2><p>交换机可以互联</p>
-<p>层级结构</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101215252.png" alt="image.png"></p>
-<p>交换机可以互联</p>
-<p>Q: 当A向G发送帧时，S1怎么知道通过S4转发?S4又怎么知道通过S3,转发?</p>
-<p>A：自学习!(工作过程与单一交换机情形相同!)</p>
-<p>Q: 请给出S,S,S,S的交换表，并说明帧的转发过程?</p>
-<h2 id="组织机构-Institutional-网络"><a href="#组织机构-Institutional-网络" class="headerlink" title="组织机构(Institutional)网络"></a>组织机构(Institutional)网络</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101215459.png" alt="image.png"></p>
-<p>称这个IP子网为广播域</p>
-<h2 id="交换机-vs-路由器"><a href="#交换机-vs-路由器" class="headerlink" title="交换机 vs 路由器"></a>交换机 vs 路由器</h2><p>两者均为存储-转发设备：<br>路由器: 网络层设备(检测网络层分组首部)<br>交换机: 链路层设备(检测链路层帧的首部)</p>
-<p>二者均使用转发表:<br>路由器: 利用路由算法(路由协议)计算(设置), 依据IP地址<br>交换机: 利用自学习、泛洪构建转发表，依据MAC地址</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220011.png" alt="image.png"></p>
-<h2 id="网络设备对比"><a href="#网络设备对比" class="headerlink" title="网络设备对比"></a>网络设备对比</h2><table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">集线器</th>
-<th align="left">交换机</th>
-<th align="left">网桥</th>
-<th align="left">路由器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">层次</td>
-<td align="left">1</td>
-<td align="left">2</td>
-<td align="left">3</td>
-<td align="left">4</td>
-</tr>
-<tr>
-<td align="left">流量</td>
-<td align="left">no</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-</tr>
-<tr>
-<td align="left">广播域隔离</td>
-<td align="left">no</td>
-<td align="left">no</td>
-<td align="left">no</td>
-<td align="left">yes</td>
-</tr>
-<tr>
-<td align="left">即插即用</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-</tr>
-<tr>
-<td align="left">优化路由</td>
-<td align="left">no</td>
-<td align="left">no</td>
-<td align="left">no</td>
-<td align="left">yes</td>
-</tr>
-<tr>
-<td align="left">直通传输</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left">no</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BA%A4%E6%8D%A2%E6%9C%BA/" data-id="clpbznkyz00bukkis34fmc93q" data-title="CN-交换机" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-Week8-Class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week8-Class/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.381Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week8-Class/">CN-Week8-Class</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<p><strong>通过DHCP动态分配IP地址过程中需要交换哪些DHCP报文？这些报文直接封装到哪个协议的数据包中？封装这些报文的IP数据包的目的IP是什么？为什么？</strong> </p>
-<p>在DHCP动态分配IP地址过程中，需要交换以下几种DHCP报文：</p>
-<ol>
-<li>DHCP发现报文（DHCP Discover）：客户端发送此报文以发现可用的DHCP服务器。</li>
-<li>DHCP提供报文（DHCP Offer）：DHCP服务器在收到DHCP发现报文后，向客户端发送此报文，提供可用的IP地址租约。</li>
-<li>DHCP请求报文（DHCP Request）：客户端在收到DHCP提供报文后，向选定的DHCP服务器发送此报文，请求分配给自己的IP地址。</li>
-<li>DHCP确认报文（DHCP Acknowledgement）：DHCP服务器在收到DHCP请求报文后，向客户端发送此报文，确认分配给客户端的IP地址租约。<br>这些DHCP报文被封装在IP数据包中，使用的是UDP协议。UDP协议位于IP协议之上，为DHCP报文提供可靠的数据传输。<br>封装这些DHCP报文的IP数据包的目的IP是广播地址（255.255.255.255），因为客户端在初始化阶段没有分配的IP地址，所以只能使用广播地址发送DHCP报文，以便DHCP服务器能够接收并回复。通过使用广播地址，确保DHCP服务器能够接收到相应的报文，进而进行IP地址的分配和交换。</li>
-</ol>
-<p><strong>一个路由器在转发IP分组的时候IP分组的哪些字段会发生修改？如何修改？</strong> </p>
-<p>在转发IP分组时，路由器会根据目标IP地址和路由表进行转发决策，并且可能会修改IP分组的一些字段。被修改的字段包括：</p>
-<ol>
-<li>TTL字段：TTL（Time to Live）字段表示IP分组在网络中能够经过的最大跳数，每经过一个路由器，TTL字段的值会减一。路由器在转发IP分组时，会将TTL减一，并重新计算校验和。</li>
-<li>源IP地址字段：通常情况下，路由器不会修改源IP地址字段，它会保留原始的源IP地址。</li>
-<li>目标IP地址字段：路由器会根据目标IP地址进行转发决策，并将目标IP地址字段更新为下一跳路由器的IP地址。</li>
-<li>校验和字段：路由器在转发IP分组时，会重新计算校验和字段，以保证数据完整性。<br>以上是常见的修改字段的情况，实际上，路由器在转发IP分组时可能还会修改其他字段，具体修改方式取决于路由器的配置和网络环境。</li>
-</ol>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231019110039.png" alt="image.png" style="zoom:50%;" />
-
-<p><strong>如果两个均使用私有IP地址的主机需要进行P2P通信？可能会遇到什么问题？怎么解决？</strong> </p>
-<p>如果两个均使用私有IP地址的主机需要进行P2P通信，可能会遇到以下问题：</p>
-<ol>
-<li>NAT（网络地址转换）阻止了直接的通信：私有IP地址不能在Internet上直接路由。当两个主机试图通过NAT网关进行通信时，通常会被NAT阻止。</li>
-<li>防火墙阻塞了P2P连接：防火墙可能会屏蔽P2P连接，以保护网络的安全性。</li>
-</ol>
-<p>为了解决这些问题，可以采取以下方法：</p>
-<ol>
-<li>使用UPnP（通用即插即用）：通过启用UPnP功能，可以自动配置NAT设备，允许P2P通信。</li>
-<li>使用端口映射：将P2P应用程序使用的端口映射到NAT设备上。这样，P2P通信的数据包就可以正确地路由到私有IP地址的主机。</li>
-<li>使用中继服务器：如果两个主机无法直接通信，可以借助第三方中继服务器来中转通信。中继服务器将两个主机之间的数据包进行转发，使得通信得以建立。</li>
-<li>穿越防火墙：使用一些特殊技术和协议，如STUN、TURN和ICE等，可以在防火墙后建立P2P连接，使得私有IP地址的主机能够直接通信。</li>
-</ol>
-<p>请注意，每种方法的适用性和实施方式可能因网络环境和设备配置而异。具体的实施需要根据实际情况进行调整。</p>
-<h2 id="NAT穿透问题"><a href="#NAT穿透问题" class="headerlink" title="NAT穿透问题"></a>NAT穿透问题</h2><p>一定会有在外面有公网地址，在支持NAT的另一端，这时候需要转换。但是这是一个一对多的问题，因为私网IP是可以重复的，所以需要端口来辅助完成区别。静态配置：端口映射。</p>
-<p>某校园网有两个局域网，通过路由器R1&#x2F;R2&#x2F;R3互联之后接入Internet,S1和S2为以太网交换机，局域网采用静态IP地址配置。</p>
-<ol>
-<li>为了让H2和H3能够访问Web服务器，R2需要进行什么配置？</li>
-</ol>
-<p><strong>可以利用ICMP协议实现哪些网络监测功能？怎么实现？</strong> </p>
-<p>ICMP协议可以实现以下网络监测功能：</p>
-<ol>
-<li><p><strong>Ping（网络连通性测试）</strong>：使用ICMP Echo请求消息来检测目标主机是否在线。Ping命令发送ICMP Echo请求消息到目标主机，目标主机接收到请求后返回ICMP Echo应答消息。</p>
-</li>
-<li><p><strong>Traceroute（路径追踪）</strong>：通过使用ICMP的Time-to-Live（TTL）字段，从源主机向目标主机发送一系列的UDP数据包。每个数据包在传输过程中的路由器都会将TTL减少，直到它达到0并被丢弃。源主机通过检测收到的ICMP TTL超时消息来确定数据包传输路径。</p>
-</li>
-<li><p><strong>ICMP Jitter（延迟测量）</strong>：利用ICMP消息的传输延迟来测量网络性能。通过发送ICMP Echo请求消息并记录请求发送和接收之间的时间差来获取延迟信息。</p>
-</li>
-</ol>
-<p>实现上述功能的方法如下：</p>
-<ul>
-<li><p>Ping：使用ping命令或编写程序发送ICMP Echo请求消息，并接收目标主机的ICMP Echo应答消息。</p>
-</li>
-<li><p>Traceroute：使用traceroute命令或编写程序发送一系列的UDP数据包，并监听接收到的ICMP TTL超时消息，记录路由路径。</p>
-</li>
-<li><p>ICMP Jitter：通过编写程序发送ICMP Echo请求消息，并记录请求发送和接收之间的时间差，计算延迟值。</p>
-</li>
-</ul>
-<p>参考来源：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://info.support.huawei.com/info-finder/encyclopedia/zh/ICMP.html">ICMP协议简介</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/369623317">ICMP协议的应用</a></p>
-</li>
-</ul>
-<p>距离向量路由算法可能产生什么问题，怎么会发生这样的问题？怎么消除这个问题？  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week8-Class/" data-id="clpbznkyx00bgkkishbcw7r0u" data-title="CN-Week8-Class" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-Week5-Class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week5-Class/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.380Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week5-Class/">CN-Week5-Class</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<blockquote>
-<p>[!QUEATION]<br>TCP如何进行流量控制，可能存在什么问题？</p>
-<ul>
-<li><strong>糊涂窗口综合症</strong>（ <em>Sillly Window Syndrome</em> ）<ul>
-<li>是发送方引起的</li>
-<li>telnet 远程登陆，执行一种远程的终端，过程当中计算机只是作为终端来给远程的服务器交换数据。</li>
-<li>Nagle算法：报文段一定长度之后再发送</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p><strong>TCP协议为什么要用三次握手建立连接？四次挥手断开连接？连接建立和断开的过程的序号怎么变化？</strong> </p>
-<p>TCP协议使用三次握手建立连接的主要原因是为了确保双方能够正常通信并同步序号和确认号。三次握手的过程包括：</p>
-<ol>
-<li><p>客户端发送一个SYN包到服务器，其中包含一个初始化的序号（ISN）。</p>
-</li>
-<li><p>服务器收到SYN包后，回复一个SYN-ACK包给客户端，确认连接请求，并为自己建立连接。</p>
-</li>
-<li><p>客户端收到SYN-ACK包后，再发送一个ACK包给服务器，确认收到服务器的确认，并建立连接。</p>
-</li>
-</ol>
-<p>四次挥手用于断开连接时，是因为在客户端请求断开时，服务器可能还有数据未发完，所以需要分开操作：</p>
-<ol>
-<li><p>客户端发送一个FIN包到服务器，请求关闭连接。</p>
-</li>
-<li><p>服务器收到FIN包后，回复一个ACK包给客户端，表示同意对方关闭连接，但服务器可能还有数据需要发送。</p>
-</li>
-<li><p>服务器发送完未发送的数据后，发送一个FIN包给客户端，表示自己也请求关闭连接。</p>
-</li>
-<li><p>客户端收到FIN包后，回复一个ACK包给服务器，确认关闭连接。</p>
-</li>
-</ol>
-<p>在连接建立和断开的过程中，序号的变化如下：</p>
-<ul>
-<li><p>连接建立时，客户端和服务器分别使用随机的初始序号（ISN）作为起始序号。</p>
-</li>
-<li><p>在数据传输过程中，序号根据发送和接收的数据包数量以及数据包的长度进行递增。</p>
-</li>
-<li><p>在连接断开时，通过发送和确认FIN包，最后一个的确认号（ACK）将成为下一个会话的初始序号。</p>
-</li>
-</ul>
-<p>来源：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108504297">TCP三次握手，四次挥手的原理及过程</a></p>
-<p><strong>网络拥塞控制可以有哪些策略？</strong> </p>
-<p>网络拥塞控制可以采用以下策略：</p>
-<ol>
-<li><p>慢开始：慢开始算法的思路是当主机开始发送数据时，先试探一下，即由小到大逐渐增大发送窗口，也就是由小到大逐渐增大拥塞窗口数值。<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27198345/article/details/107848405#:~:text=1%20%E6%85%A2%E5%BC%80%E5%A7%8B%20%EF%BC%9A%E6%85%A2%E5%BC%80%E5%A7%8B%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%B7%AF%E6%98%AF%E5%BD%93%E4%B8%BB%E6%9C%BA%E5%BC%80%E5%A7%8B%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%E6%97%B6%EF%BC%8C%E5%A6%82%E6%9E%9C%E7%AB%8B%E5%8D%B3%E6%8A%8A%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5%E5%88%B0%E7%BD%91%E7%BB%9C%EF%BC%8C%E9%82%A3%E4%B9%88%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%BC%95%E8%B5%B7%E7%BD%91%E7%BB%9C%E6%8B%A5%E5%A1%9E%EF%BC%8C%E5%9B%A0%E4%B8%BA%E7%8E%B0%E5%9C%A8%E8%BF%98%E4%B8%8D%E7%9F%A5%E9%81%93%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9E%E9%99%85%E6%83%85%E5%86%B5%E3%80%82%E7%BB%8F%E9%AA%8C%E8%A1%A8%E6%98%8E%EF%BC%8C%E8%BE%83%E5%A5%BD%E7%9A%84%E6%96%B9%E6%B3%95%E6%98%AF%E5%85%88%E8%AF%95%E6%8E%A2%E7%B4%A2%EF%BC%8C%E5%8D%B3%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E9%80%90%E6%AC%A1%E5%A2%9E%E5%A4%A7%E6%8B%A5%E5%A1%9E%E7%AA%97%E5%8F%A3%E6%95%B0%E5%80%BC%E3%80%82">来源</a></p>
-</li>
-<li><p>拥塞避免：拥塞避免算法的思路是让拥塞窗口cwnd缓慢增大，即每经过一个往返时间RTT就把发送方的cwnd加1。<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/97709686">来源</a></p>
-</li>
-<li><p>快重传与快恢复：快重传（Fast Retransmit）是一种拥塞控制算法，能够快速恢复丢失的数据包。快恢复（Fast Recovery）算法用于在拥塞控制时快速恢复拥塞窗口的值。<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27198345/article/details/107848405#:~:text=4%20%E5%BF%AB%E5%8E%9F%E5%A4%8D%E5%8E%9F%EF%BC%88Fast%20Recovery%EF%BC%89%E6%98%AF%E4%B8%80%E7%A7%8D%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%EF%BC%8C%E5%AE%83%E8%83%BD%E5%BF%AB%E9%80%9F%E6%81%A2%E5%A4%8D%E4%B8%A2%E5%A4%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85%E3%80%82">来源</a></p>
-</li>
-<li><p>拥塞检测与拥塞通知：拥塞检测与拥塞通知算法用于检测网络中的拥塞和通知相关主机降低数据发送速率。这可以通过网络设备或协议来实现。<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28593966">来源</a></p>
-</li>
-</ol>
-<p>请注意，以上策略不是所有的拥塞控制算法都会使用，具体的具体拥塞控制算法有不同的实现方式和策略。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week5-Class/" data-id="clpbznkyw00b9kkis9m4jf7m5" data-title="CN-Week5-Class" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GPU%E8%AE%A1%E7%AE%97/">GPU计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/">高分子物理</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU%E8%AE%BE%E8%AE%A1/" rel="tag">CPU设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU%E8%AE%A1%E7%AE%97/" rel="tag">GPU计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" rel="tag">并行计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" rel="tag">指令系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" rel="tag">指令集并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" rel="tag">流水线技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" rel="tag">知识卡片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">计算机体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag">计算理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" rel="tag">高分子物理</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">CPU设计</a> <a href="/tags/Cookie/" style="font-size: 11.25px;">Cookie</a> <a href="/tags/GPU%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">GPU计算</a> <a href="/tags/HTTP/" style="font-size: 13.75px;">HTTP</a> <a href="/tags/Web%E5%BA%94%E7%94%A8/" style="font-size: 18.75px;">Web应用</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" style="font-size: 16.25px;">传输层</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">作业</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">实验</a> <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">并行计算</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">指令系统</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">指令集并行</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" style="font-size: 11.25px;">数据链路层</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.75px;">模板</a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">流水线技术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" style="font-size: 12.5px;">知识卡片</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" style="font-size: 16.25px;">网络层</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" style="font-size: 10px;">计算机体系结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" style="font-size: 17.5px;">计算机网络概述</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 10px;">计算理论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" style="font-size: 10px;">高分子物理</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/">CN-链路状态路由算法</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/">CN-路由和转发</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 Molaters Lee<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
 
   </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
 </body>
+
 </html>

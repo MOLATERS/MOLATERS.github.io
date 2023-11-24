@@ -1,1325 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  
+
   
   <title>SlaterXu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="canonical" href="https://molaters.github.io/page/2/">
+  
   <meta name="description" content="this is a personal notion keeper">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SlaterXu">
-<meta property="og:url" content="https://molaters.github.io/page/2/index.html">
-<meta property="og:site_name" content="SlaterXu">
-<meta property="og:description" content="this is a personal notion keeper">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Molaters Lee">
-<meta property="article:tag" content="Develope">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="SlaterXu" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+  <meta name="keywords" content="Develope">
+  
+  <meta name="author" content="Molaters Lee">
   
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <meta property="og:image" content="https://molaters.github.io/images/thumbnail.jpg">
+  
+  
+  <meta property="og:site_name" content="SlaterXu" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="SlaterXu" />
+  
+  <meta property="og:description" content="this is a personal notion keeper">
+  
+  <meta property="og:url" content="https://molaters.github.io/page/2/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SlaterXu">
+  
+  <meta name="twitter:description" content="this is a personal notion keeper">
+  
+  
+  
+  <meta name="twitter:image" content="https://molaters.github.io/images/thumbnail.jpg">
+  
+  
+  <meta name="twitter:url" content="https://molaters.github.io/page/2/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
 
   
-  
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/skeleton.css">
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/custom.css">
 
   
+<link rel="stylesheet" href="/css/prism-dark.css">
+
   
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  
+  <script src="/js/pic.min.js" defer></script>
+  
+
+  
+  <script src="/js/search.min.js" defer></script>
+  
+
 <meta name="generator" content="Hexo 7.0.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SlaterXu</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Micheal Slater Lee</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi Folks.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          <a href="/Works" class="ml">Works</a>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          <a href="/About" class="ml">About</a>
+          
         
-      </nav>
-      <nav id="sub-nav">
         
+          
+            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
+          
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://molaters.github.io"></form>
       </div>
     </div>
+    <hr style="margin-bottom: 2.6rem">
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main">
+        <div class="trans">
+          <div class="row">
+  <div class="column">
+    <!-- Main information, edit it on theme/_config.yml -->
+    <h2 class="mb-2">I am Adi Sakti Jrs</h2>
+    <p>A student and web developer from Indonesia 🇮🇩</p>
+    <p>This is Minima, an undoubtedly simple and lightweight dark/light mode theme for Hexo. I created this from scratch using Skeleton CSS boilerplate. It only uses CSS and Vanilla JS, without using unnecessary third-party &#39;render-blocking&#39; libraries! 😁</p>
+  </div>
+</div>
+
+<h3>Recent Posts</h3>
+
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/" >
+      
+        CN-随机访问MAC协议
+      
+    </a>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/" >
+      
+        CN-轮转访问MAC协议
+      
+    </a>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/" >
+      
+        CN-链路状态路由算法
+      
+    </a>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="three columns left lit">
+    <p class="bottom">2023年11月24日</p>
+  </div>
+  <div class="nine columns left mb-3">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" >
+      
+        CN-路由器的工作原理
+      
+    </a>
+  </div>
+</div>
+
+
+<h4> <a href="/archives">All Posts</a></h4>
+
+        </div>
+        <div class="row mt-2">
+  <h3>Search</h3>
+  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
+  <div style="margin-top: 1.5rem;">
+    <ul id="result"></ul>
+  </div>
+</div>
+        <div class="row mt-2">
   
-    <article id="post-计算机网络/CN-虚电路网络" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E7%94%B5%E8%B7%AF%E7%BD%91%E7%BB%9C/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.400Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
         
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-f5c9c96722ea41699b58098dad87dd07" target="_blank" itemprop="url">CN-虚电路网络</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<h2 id="连接服务和无连接服务"><a href="#连接服务和无连接服务" class="headerlink" title="连接服务和无连接服务"></a>连接服务和无连接服务</h2><p>数据报网络和虚电路网络是典型两类 <strong>分组交换网络</strong></p>
-<p>数据报网络提供网络层无连接服务</p>
-<p>虚电路网络日工网络层的连接服务</p>
-<p>类似于传输层的无连接服务(<code>UDP</code>)和面向连接服务(<code>TCP</code>)，但是网络层服务：</p>
-<ol>
-<li>主机到主机服务(而前者是端到端的连接)</li>
-<li>网络核心实现</li>
-</ol>
-<h2 id="虚电路-Virtual-circuits-VC"><a href="#虚电路-Virtual-circuits-VC" class="headerlink" title="虚电路(Virtual circuits) VC"></a>虚电路(Virtual circuits) VC</h2><p><strong>虚电路</strong>：一条从源主机到目的主机， <em>类似于电路</em>的路径(逻辑链接)</p>
-<ul>
-<li><p>分组交换 （和电路交换的建立的电路网络不相同）</p>
-</li>
-<li><p>每个分组的传输利用链路的全部带宽</p>
-</li>
-<li><p>源到目的路径经过的网络层设备共同完成虚电路的功能</p>
-</li>
-</ul>
-<p><strong>通信过程：</strong></p>
-<ul>
-<li>呼叫建立（call setup） $\to$ 数据传输 $\to$ 拆除呼叫</li>
-</ul>
-<p><code>VCID</code> 每个分组携带虚电路标识<code>VCID</code>, 而不是目的主机地址</p>
-<p>虚电路经过的每个网络设备(如路由器)，维护 <strong>每条</strong> 经过它的虚电路连接状态</p>
-<p>链路、网络设备资源（如带宽、缓存等）可以面向VC进行预分配</p>
-<ul>
-<li>预分配资源 &#x3D; 可预期服务性能</li>
-<li>如ATM 的电路仿真</li>
-</ul>
-<h2 id="VC的具体实现"><a href="#VC的具体实现" class="headerlink" title="VC的具体实现"></a>VC的具体实现</h2><h3 id="每条虚电路包括"><a href="#每条虚电路包括" class="headerlink" title="每条虚电路包括"></a>每条虚电路包括</h3><ol>
-<li>源主机到目的主机的<strong>一条路径</strong></li>
-<li>虚电路号（VCID），沿路每段链路的一个编号，有多少的链路就表现出网络的性能</li>
-<li>沿路每个网络层设备（路由器等），<strong>利用转发表记录经过的每条虚电路</strong></li>
-</ol>
-<p><strong>沿某条虚电路传输的分组，携带对应虚电路的VCID，而不是目的地址</strong></p>
-<p>同一条VC，在每段链路上的VCID通常不同</p>
-<ul>
-<li>路由器转发分组的时候根据转发表改写&#x2F;替换虚电路号</li>
-</ul>
-<h2 id="VC转发表"><a href="#VC转发表" class="headerlink" title="VC转发表"></a>VC转发表</h2><p>每一个网络设备都要参与记录转发表</p>
-<p>路由器R1的VC转发表</p>
-<table>
-<thead>
-<tr>
-<th>输入接口</th>
-<th>输入VC #</th>
-<th>输出接口</th>
-<th>输出VC #</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>12</td>
-<td>3</td>
-<td>22</td>
-</tr>
-<tr>
-<td>2</td>
-<td>63</td>
-<td>1</td>
-<td>18</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-</tr>
-</tbody></table>
-<p><strong>VC路径上每个路由器都需要维护VC连接的状态信息</strong></p>
-<h2 id="虚电路信令协议（signal-protocols）"><a href="#虚电路信令协议（signal-protocols）" class="headerlink" title="虚电路信令协议（signal protocols）"></a>虚电路信令协议（signal protocols）</h2><p>用于VC的建立维护和拆除</p>
-<ul>
-<li>路径选择</li>
-</ul>
-<p>应用于虚电路网络</p>
-<ul>
-<li>如ATM、帧中继网络等</li>
-</ul>
-<p><strong>目前的Internet不再采用</strong></p>
-<ol>
-<li>初始呼叫(通过路由)</li>
-<li>呼叫到达</li>
-</ol>
-<p><strong>虚电路俩连接之后，就开始下一段的行动，进行连接的建立和数据的传输</strong></p>
-<ol start="3">
-<li><p>接收呼叫</p>
-</li>
-<li><p>呼叫建立</p>
-</li>
-<li><p>数据流开始</p>
-</li>
-<li><p>接收数据</p>
-</li>
-</ol>
-
-      
+        at <a href="https://en.wikipedia.org/wiki/Earth" target="_blank" rel="noreferrer">Earth</a>.</p>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E7%94%B5%E8%B7%AF%E7%BD%91%E7%BB%9C/" data-id="clpbznkz800dekkis64w7da14" data-title="CN-虚电路网络" class="article-share-link"><span class="fa fa-share">分享</span></a>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
       
+      <a class="ml-0 footer-link icon" href="https://github.com/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
       
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-虚拟局域网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.399Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/">CN-虚拟局域网</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<h2 id="VLANs：动机"><a href="#VLANs：动机" class="headerlink" title="VLANs：动机"></a>VLANs：动机</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220617.png" alt="image.png"></p>
-<p>考虑一下情形:CS用户迁移到EE，但是希望连接至CS交换机，怎么办?</p>
-<p>单一广播域:</p>
-<p>所有第2层广播流量(ARPDHCP,未知目的MAC地址位置)必须穿越整个LAN</p>
-<p>安全&#x2F;隐私，效率问题</p>
-<h3 id="虚拟局域网-VirtualLocal-Area-Network"><a href="#虚拟局域网-VirtualLocal-Area-Network" class="headerlink" title="虚拟局域网(VirtualLocal Area Network)"></a>虚拟局域网(VirtualLocal Area Network)</h3><p>支持VLAN划分的交换机，可以在一个物理LAN架构上配置定义多个VLAN</p>
-<p>基于端口的VLAN: 分组交换机端口(通过交换机管理软件)，于是，单一的物理交换机 …..</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220735.png" alt="image.png"></p>
-<p><strong>流量隔离(traffic isolation)</strong>:去往&#x2F;来自端口1-8的倾只到达端口1-8</p>
-<ul>
-<li>也可以基于MAC地址定义VLAN,而不是交换端口</li>
-</ul>
-<p><strong>动态成员</strong>: 端口可以动态分配给不同VLAN</p>
-<p><strong>在VLAN间转发: 通过路由(就像在独立的交换机之间)</strong></p>
-<p>实践中，厂家会将交换机与路由器集成在一起</p>
-<h2 id="跨越多交换机的VLAN"><a href="#跨越多交换机的VLAN" class="headerlink" title="跨越多交换机的VLAN"></a>跨越多交换机的VLAN</h2><p><strong>多线缆连接</strong></p>
-<ul>
-<li>每个线缆连接一个VLAN</li>
-</ul>
-<p><strong>中继端口(trunk port)</strong>: 在跨越多个物理交换机定义的VLAN承载帧</p>
-<ul>
-<li><p>为多VLAN转发802.1顿容易产生歧义(必须携带VLAN ID信息)</p>
-</li>
-<li><p>802.1q协议为经过中继端口转发的顿增加&#x2F;去除额外的首部域</p>
-</li>
-</ul>
-<h2 id="802-1Q-VLAN帧格式"><a href="#802-1Q-VLAN帧格式" class="headerlink" title="802.1Q VLAN帧格式"></a>802.1Q VLAN帧格式</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101221243.png" alt="image.png"></p>
 
       
+      <a class="ml-0 footer-link icon" href="https://linkedin.com/in/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
+        <svg class="linkedin svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://twitter.com/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Twitter">
+        <svg class="twitter svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://instagram.com/adisaktijrs" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Instagram">
+        <svg class="instagram svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+      </a>
+      
+
+      
+      <a class="ml-0 footer-link icon" href="https://stackoverflow.com/story/tobiasreithmeier" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="StackOverflow">
+        <svg class="stackoverflow svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>
+      </a>
+      
+
     </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/" data-id="clpbznkz700d7kkis6las5021" data-title="CN-虚拟局域网" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
   
-</article>
+</div>
 
-
-
-  
-    <article id="post-计算机网络/CN-网络应用的体系结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.398Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-fcc8ba0a4d9f4dccb46106ece1c74593" target="_blank" itemprop="url">CN-网络应用的体系结构</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 网络应用的体系结构
-
-<h1 id="你使用过哪些网络应用？"><a href="#你使用过哪些网络应用？" class="headerlink" title="你使用过哪些网络应用？"></a>你使用过哪些网络应用？</h1><p>百度 QQ alipay weixin ……</p>
-<h1 id="网络应用有哪些特点呢？"><a href="#网络应用有哪些特点呢？" class="headerlink" title="网络应用有哪些特点呢？"></a>网络应用有哪些特点呢？</h1><p><strong>🤔和单机应用有什么不同？</strong></p>
-<p><strong>🤔网络应用应该有什么样的结构呢？</strong></p>
-<h1 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h1><p><code>**客户机、服务器**</code>结构（Client-Server,C）</p>
-<p><code>**点对点**</code>结构（Peer-to-peer,P2P）</p>
-<p><code>**混合**</code>结构</p>
-<h2 id="客户机-服务器结构"><a href="#客户机-服务器结构" class="headerlink" title="客户机&#x2F;服务器结构"></a>客户机&#x2F;服务器结构</h2><p><strong><strong><strong>客户机：</strong></strong></strong></p>
-<ul>
-<li>和服务器通信</li>
-<li><strong>间歇性</strong>接入网络</li>
-<li>可能有<strong>动态的IP地址</strong></li>
-<li>不会和其他的客户机通信</li>
-</ul>
-<p><strong>服务器：</strong></p>
-<ul>
-<li>需要不断提供服务</li>
-<li><code>永久性</code>的访问地址</li>
-<li>利用<strong>大量服务器</strong>实现可扩展性</li>
-</ul>
-<p><strong>例子</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p>
-<h2 id="纯P2P结构"><a href="#纯P2P结构" class="headerlink" title="纯P2P结构"></a>纯P2P结构</h2><p>基本上看不出来明显的服务器和客户机的差别了</p>
-<aside>
-🪶 **特点**
-
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png" alt="Untitled"></p>
-<ul>
-<li>没有永远在线的服务器</li>
-<li>任意端或者节点之间都可以直接通讯</li>
-<li>节点间歇性的接入网络</li>
-<li>节点可能改变IP地址</li>
-</ul>
-<p><strong>优点</strong></p>
-<p><strong>高度可伸缩的</strong></p>
-<p><strong>缺点</strong></p>
-<p><strong>难以管理</strong></p>
-</aside>
-
-<h2 id="混合结构"><a href="#混合结构" class="headerlink" title="混合结构"></a>混合结构</h2><p>🤔<strong>能否将两种结构混合在一起呢？并能够结合两者的优点？</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png" alt="可以避免服务器的资源过度使用"></p>
-<p>可以避免服务器的资源过度使用</p>
-<ul>
-<li><em><strong>Napster应用</strong></em><ul>
-<li><strong>文件传输</strong>使用P2P结构</li>
-<li><strong>文件的搜索</strong>采用C&#x2F;S结构——<code>**集中式**</code><ul>
-<li>每个节点<em>向中央服务器登记自己的内容</em></li>
-<li>每个节点向中央服务器<em>提交查询要求</em>，查找感兴趣的内容</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p><strong>每种网络体系结构找出5种以上的网络应用</strong></p>
-<p><strong>从多个方面&#x2F;角度对比三种体系结构的优缺点</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" data-id="clpbznkz600cwkkis6vwp3c2a" data-title="CN-网络应用的体系结构" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-网络应用进程通信" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.398Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-6f3b0216555145d0925a2c657cdeb889" target="_blank" itemprop="url">CN-网络应用进程通信</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[2023-09-17]]
-# 网络应用进程通信
-
-<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a><strong><code>进程</code></strong></h2><ul>
-<li>主机上运行的程序</li>
-</ul>
-<h2 id="同一主机上运行的进程之间如何进行通信"><a href="#同一主机上运行的进程之间如何进行通信" class="headerlink" title="同一主机上运行的进程之间如何进行通信"></a>同一主机上运行的进程之间如何进行通信</h2><ul>
-<li>进程间的<code>**通讯机制**</code></li>
-<li>操作系统来提供</li>
-</ul>
-<h2 id="不同主机上运行的进程之间如何通信"><a href="#不同主机上运行的进程之间如何通信" class="headerlink" title="不同主机上运行的进程之间如何通信"></a>不同主机上运行的进程之间如何通信</h2><ul>
-<li><strong><code>消息交换</code></strong></li>
-</ul>
-<p><strong>客户机进程：发起通信的进程</strong></p>
-<p><strong>服务器进程：等待通信请求的进程</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p>
-<h2 id="套接字：Socket"><a href="#套接字：Socket" class="headerlink" title="套接字：Socket"></a>套接字：<em>Socket</em></h2><p>进程之间通信利用Socket发送和接受消息实现</p>
-<h3 id="类似于寄信"><a href="#类似于寄信" class="headerlink" title="类似于寄信"></a>类似于寄信</h3><ul>
-<li><strong>发送方</strong>将消息送到<strong>门外的邮箱</strong></li>
-<li><strong>发送方</strong>以来（门外的）传输基础设施将消息传输到<strong>接收方所在的主机</strong>，并且送到<strong>接受方的门外</strong></li>
-<li><strong>接收方从门外获取消息</strong></li>
-</ul>
-<h3 id="传输基础设施向进程提供API"><a href="#传输基础设施向进程提供API" class="headerlink" title="传输基础设施向进程提供API"></a>传输基础设施向进程提供API</h3><ul>
-<li>传输协议的选择</li>
-<li>参数的设置</li>
-</ul>
-<p>很自然的问题，底层的设施怎么就能正确无误的接收到传输到的进程呢？</p>
-<h2 id="如何寻址进程"><a href="#如何寻址进程" class="headerlink" title="如何寻址进程"></a>如何寻址进程</h2><h3 id="不同主机上的进程之间通信，那么每个进程都必须拥有标识符"><a href="#不同主机上的进程之间通信，那么每个进程都必须拥有标识符" class="headerlink" title="不同主机上的进程之间通信，那么每个进程都必须拥有标识符"></a>不同主机上的进程之间通信，那么每个进程都必须拥有标识符</h3><h3 id="如何寻址主机？——IP地址"><a href="#如何寻址主机？——IP地址" class="headerlink" title="如何寻址主机？——IP地址"></a>如何寻址主机？——IP地址</h3><ul>
-<li>Q：主机有了IP地址之后，是否<code>**足以</code> 定位进程？**</li>
-<li>A：不是，同一个主机可能同时有多个进程需要通信</li>
-</ul>
-<p><strong>端口号&#x2F;<em>Port Number</em></strong></p>
-<ul>
-<li>是主机上每个需要通信的进程都分配一个端口号</li>
-<li>HTTP Server：80</li>
-<li>Mail Server：25</li>
-</ul>
-<h3 id="进程的标识符"><a href="#进程的标识符" class="headerlink" title="进程的标识符"></a>进程的标识符</h3><ul>
-<li>IP地址+端口号</li>
-</ul>
-<h2 id="应用层的协议"><a href="#应用层的协议" class="headerlink" title="应用层的协议"></a>应用层的协议</h2><h3 id="网络应用都应该需要遵循应用层协议"><a href="#网络应用都应该需要遵循应用层协议" class="headerlink" title="网络应用都应该需要遵循应用层协议"></a>网络应用都应该需要遵循应用层协议</h3><h3 id="公开协议"><a href="#公开协议" class="headerlink" title="公开协议"></a>公开协议</h3><ul>
-<li>由RFC（<em><strong>Request For Comments</strong></em>）定义</li>
-<li>允许互相操作</li>
-<li>HTTP，SMTP，……</li>
-</ul>
-<h3 id="私有协议"><a href="#私有协议" class="headerlink" title="私有协议"></a>私有协议</h3><ul>
-<li>多数P2P文件共享应用</li>
-</ul>
-<h2 id="应用层协议的内容"><a href="#应用层协议的内容" class="headerlink" title="应用层协议的内容"></a>应用层协议的内容</h2><h3 id="消息的类型（type）"><a href="#消息的类型（type）" class="headerlink" title="消息的类型（type）"></a>消息的类型（type）</h3><ul>
-<li>请求消息</li>
-<li>响应消息</li>
-</ul>
-<h3 id="消息的语法（syntax）格式"><a href="#消息的语法（syntax）格式" class="headerlink" title="消息的语法（syntax）格式"></a>消息的语法（syntax）格式</h3><ul>
-<li>消息中由哪些字段</li>
-<li>每个字段如何描述</li>
-</ul>
-<h3 id="字段的语义（semantics）"><a href="#字段的语义（semantics）" class="headerlink" title="字段的语义（semantics）"></a>字段的语义（semantics）</h3><ul>
-<li>字段中信息的含义</li>
-</ul>
-<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
-<li>进程应该何时、如何发送消息</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/" data-id="clpbznkz700d3kkis6r3og9ky" data-title="CN-网络应用进程通信" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-网络应用层概述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.397Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/">CN-网络应用层概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 网络应用层概述
-
-<h2 id="本讲内容"><a href="#本讲内容" class="headerlink" title="本讲内容"></a>本讲内容</h2><h2 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h2><ul>
-<li>客户机和服务器</li>
-<li>P2P</li>
-<li>混合结构</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>application</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>transport</td>
-</tr>
-<tr>
-<td>network</td>
-</tr>
-<tr>
-<td>link</td>
-</tr>
-<tr>
-<td>physical</td>
-</tr>
-</tbody></table>
-<h2 id="网络应用的服务需求"><a href="#网络应用的服务需求" class="headerlink" title="网络应用的服务需求"></a>网络应用的服务需求</h2><ul>
-<li>可靠性</li>
-<li>带宽</li>
-<li>时延</li>
-</ul>
-<h2 id="Internet传输层服务模型"><a href="#Internet传输层服务模型" class="headerlink" title="Internet传输层服务模型"></a>Internet传输层服务模型</h2><ul>
-<li>TCP</li>
-<li>UDP</li>
-</ul>
-<h2 id="特定协议网络模型"><a href="#特定协议网络模型" class="headerlink" title="特定协议网络模型"></a>特定协议网络模型</h2><ul>
-<li>HTTP</li>
-<li>SMTP POP IMAP</li>
-<li>DNS</li>
-<li>P2P应用</li>
-</ul>
-<h2 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h2><ul>
-<li>TCP</li>
-<li>UDP</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/" data-id="clpbznkz600d0kkis1v77cc3k" data-title="CN-网络应用层概述" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-网络层服务" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%9C%8D%E5%8A%A1/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.396Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CN-a7d9eaf00f9c454aad1c10c050d97151" target="_blank" itemprop="url">CN-网络层服务</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>从发送主机像接受主机传送数据段</p>
-<p><strong>发送主机</strong>： 将数据段封装到数据报中</p>
-<p><strong>接收主机</strong>：向传输层交付数据段</p>
-<p><em><strong>每个</strong></em>主机和路由器都运行网络层协议</p>
-<p>路由器检验所有穿越它的IP数据报的头部域</p>
-<h2 id="网络层的核心功能-——-转发和路由"><a href="#网络层的核心功能-——-转发和路由" class="headerlink" title="网络层的核心功能 —— 转发和路由"></a>网络层的核心功能 —— 转发和路由</h2><p>路由器怎么把数据包转发到数据端口上最终送到目的地？</p>
-<blockquote>
-<p>[!转发（forwarding）]<br>将分组从路由器的输入端口转移到合适的输出端口</p>
-</blockquote>
-<p>转发表： 转发表确定在本路由器如何转发分组</p>
-<p>每一个地址来对应一个输出链路，通过转发表来进行寻找路线。</p>
-<p>必须事先建立起转发表，才能进行传输数据。</p>
-<blockquote>
-<p>[!路由(routing)]<br>确定分组从源到目的经过的路径</p>
-</blockquote>
-<p><strong>路由算法</strong> （routing algorithms）</p>
-<ul>
-<li><em>确定通过网络的端到端路径</em></li>
-</ul>
-<h2 id="网络层核心功能-——-连接建立"><a href="#网络层核心功能-——-连接建立" class="headerlink" title="网络层核心功能 —— 连接建立"></a>网络层核心功能 —— 连接建立</h2><p>某些网络的重要功能：</p>
-<ul>
-<li>ATM 帧中继 X.25</li>
-</ul>
-<p>数据分组传输之前两端主机需要<strong>首先</strong>建立虚拟&#x2F;逻辑连接</p>
-<ul>
-<li>网络设备（如路由器）参与连接的建立</li>
-</ul>
-<p>网络层连接和传输层连接的<strong>对比</strong></p>
-<ul>
-<li>网络层连接：两个主机之间（<em>路径上的路由器等网络设备参与其中</em>）</li>
-<li>传输层连接：两个应用进程之间（<em>对中间网络设备透明</em>）</li>
-</ul>
-<h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><p>Q： 网络层为发送端到接收端的数据包传送通道( channel )提供什么样的服务模型(service model)？</p>
-<p>Internet 网络层中提供的模型 Best effort model <code>尽力服务</code></p>
-<p>作为网络层，不需要进行拥塞控制或者拥塞信息的处理</p>
-<p><em>通过是否发生数据丢失来确定是否发生了数据的拥塞</em></p>
-<p>ATM 网络 :</p>
-<ul>
-<li>CBR  constant rate 固定比特率 所以带宽是保障的，不会出现拥塞。</li>
-<li>VBR  guaranteed rate 再拥塞的时候只能提供最低的传输数据带宽</li>
-<li>ABR</li>
-</ul>
-<h3 id="无连接服务-connection-less-service"><a href="#无连接服务-connection-less-service" class="headerlink" title="无连接服务 (connection-less service)"></a>无连接服务 (connection-less service)</h3><ul>
-<li>不事先为系列分组的传输确定传输路径</li>
-<li>每个分组独立确定传输路径（根据网络状况来动态的选择）</li>
-<li>不同的分组可能传输路径不相同<ul>
-<li>所以发到的数据顺序可能是不一样的</li>
-</ul>
-</li>
-<li><strong>数据报网络(datagram network)</strong></li>
-</ul>
-<h3 id="连接服务-connection-service"><a href="#连接服务-connection-service" class="headerlink" title="连接服务(connection service)"></a>连接服务(connection service)</h3><ul>
-<li>首先 为系列分组传输确定从源到目的的经过的路径(建立连接)</li>
-<li>然后沿该路径(连接)传输系列分组</li>
-<li>系列分组传输路径相同</li>
-<li>传输结束之后拆除连接</li>
-<li><strong>虚电路网络(virtual-sircuit network)</strong></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%9C%8D%E5%8A%A1/" data-id="clpbznkz500cpkkisexmrha8n" data-title="CN-网络层服务" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-网络层例题讲解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.395Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/">CN-网络层例题讲解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<p>某网络拓扑如下图所示，路由器R1通过接口E1、E2分别连接局域网1、局域网2，通过接口LO连接路由器R2，并通过路由器R2连接域名服务器与互联网。R1的LO接口的IP地址是202.118.2.1;R2的LO接口的IP地址是202.118.2.2，L1接口的IP地址是130.11.120.1，EO接口的IP地址是202.118.3.1;域名服务器的IP地址是202.118.3.2。</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030134252.png" alt="image.png"></p>
-<p>R1和R2的路由表结构为：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030134326.png" alt="image.png"></p>
-<p>(1)将IP地址空间202.118.1.0&#x2F;24划分为2个子网，分别分配给局域网1、局域网2，每个局域网需分配的IP地址数不少于120个。请给出子网划分结果，说明理由或给出必要的计算过程</p>
-<blockquote>
-<p>可以看出是标准的C网，202.118.1.0 ~ 202.118.1.254<br>划分结果为：<br>子网1：202.118.1.0，子网掩码为255.255.255.128<br>（202.118.1.0&#x2F;25）<br>子网2：202.118.1.128，子网掩码为255.255.255.128<br>（202.118.1.128&#x2F;25）</p>
-</blockquote>
-<p>(2)请给出R1的路由表，使其明确包括到局域网1的路由、局域网2的路由、域名服务器的主机路由和互联网的路由。</p>
-<table>
-<thead>
-<tr>
-<th align="center">目的网络IP地址</th>
-<th align="center">子网掩码</th>
-<th align="center">下一跳IP地址</th>
-<th align="center">接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">202.118.1.0</td>
-<td align="center">255.255.255.128</td>
-<td align="center">-</td>
-<td align="center">E1</td>
-</tr>
-<tr>
-<td align="center">202.118.1.128</td>
-<td align="center">255.255.255.128</td>
-<td align="center">-</td>
-<td align="center">E2</td>
-</tr>
-<tr>
-<td align="center"><div>202.118.3.2</div></td>
-<td align="center"><div>255.255.255.255</div></td>
-<td align="center">202.118.2.2</td>
-<td align="center">L0</td>
-</tr>
-<tr>
-<td align="center">0.0.0.0</td>
-<td align="center">0.0.0.0</td>
-<td align="center">202.118.2.2</td>
-<td align="center">L0</td>
-</tr>
-</tbody></table>
-<p>(3)请采用路由聚合技术，给出R2到局域网1和局域网2的路由。</p>
-<table>
-<thead>
-<tr>
-<th align="center">目的IP地址</th>
-<th align="center">子网掩码</th>
-<th align="center">下一跳IP地址</th>
-<th align="center">L0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">202.118.1.0</td>
-<td align="center">255.255.255.0</td>
-<td align="center">202.118.2.1</td>
-<td align="center">L0</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/" data-id="clpbznkz500ctkkis19nbfovp" data-title="CN-网络层例题讲解" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-有类IP地址" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.394Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/">CN-有类IP地址</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<p>IP子网 [[CourseNotes&#x2F;计算机体系结构&#x2F;CN-IP编址|CN-IP编址]]</p>
-<h2 id="IP地址（Addresses"><a href="#IP地址（Addresses" class="headerlink" title="IP地址（Addresses)"></a>IP地址（Addresses)</h2><p>“有类”编址</p>
-<p><strong>A类地址</strong>：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015202955.png" alt="image.png"></p>
-<p>0.0.0.0 ~ 127.255.255.255</p>
-<p><strong>B类地址</strong>：<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015203137.png" alt="image.png"><br>128.0.0.0 ~ 191.255.255.255.255</p>
-<p><strong>C类地址</strong>：<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015203302.png" alt="image.png"><br>192.0.0.0 ~ 233.255.255.255</p>
-<p>定义C类地址前八位用于网络号，后面八位用于主机号</p>
-<p>对于剩余的八分之一的地址空间进行最后一次的二分，D类地址不再确认网络号和主机号，用于特殊的目的：</p>
-<p>用于标识一组主机，理论上可以在互联网中的所有地方。称为<strong>多播地址</strong>。</p>
-<p>E类地址保留作为研究使用	</p>
-<h2 id="特殊的IP地址"><a href="#特殊的IP地址" class="headerlink" title="特殊的IP地址"></a>特殊的IP地址</h2><table>
-<thead>
-<tr>
-<th align="center">NetID</th>
-<th align="center">HostID</th>
-<th align="center">作为IP分组源地址</th>
-<th align="center">作为IP分组目的地址</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">全0</td>
-<td align="center">全0</td>
-<td align="center">可以</td>
-<td align="center">不可以</td>
-<td>在本网范围内表示本机; 在路由表中用于表示默认路由相当于表示整个Internet网络</td>
-</tr>
-<tr>
-<td align="center">全0</td>
-<td align="center">特定值</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>标识本网内某个特定的主机</td>
-</tr>
-<tr>
-<td align="center">全1</td>
-<td align="center">全1</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>本网的广播地址（路由器不转发）  <strong>受限网络地址</strong></td>
-</tr>
-<tr>
-<td align="center">特定值</td>
-<td align="center">全0</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>网络地址，表示一个网络</td>
-</tr>
-<tr>
-<td align="center">特定值</td>
-<td align="center">全1</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>直接广播地址，对特定网络上的所有主机进行广播</td>
-</tr>
-<tr>
-<td align="center">127</td>
-<td align="center">非全0或者非全1的任何数</td>
-<td align="center">可以</td>
-<td align="center">可以</td>
-<td>用于本地软件环回测试</td>
-</tr>
-</tbody></table>
-<h2 id="私有（pivate）IP地址"><a href="#私有（pivate）IP地址" class="headerlink" title="私有（pivate）IP地址"></a>私有（pivate）IP地址</h2><p>只用于私有网络，在公共网络上这种地址是无效的</p>
-<table>
-<thead>
-<tr>
-<th align="center">Class</th>
-<th align="center">NetIDs</th>
-<th align="center">Blocks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">A</td>
-<td align="center">10</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">B</td>
-<td align="center">172.16 to 172.31</td>
-<td align="center">16</td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td align="center">192.168.0 to 192.168.255</td>
-<td align="center">256</td>
-</tr>
-</tbody></table>
-<p>这部分的私有地址使得IPv4的网络还能正常运行</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/" data-id="clpbznkz400cmkkis4kmk9bun" data-title="CN-有类IP地址" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-数据链路层服务" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.393Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/">CN-数据链路层服务</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[[CN-NotesView]]</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>术语：</p>
-<ul>
-<li><p>主机和路由器：结点（nodes）</p>
-</li>
-<li><p>连接相邻结点的通信信道：链路(links)</p>
-<ul>
-<li>有线链路(wired links)</li>
-<li>无线链路(wireless links)</li>
-<li>局域网(LANs)</li>
-</ul>
-</li>
-<li><p>链路层(第2层)数据分组：帧(frame),封装网络层数据报</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>数据链路层</strong>负责实现通过一条链路从一个结点向另一个物理链路直接相连的相邻结点传输数据报</p>
-</blockquote>
-<h2 id="链路层服务"><a href="#链路层服务" class="headerlink" title="链路层服务"></a>链路层服务</h2><p>组帧(framing)</p>
-<ul>
-<li><p>封装数据报文构成数据帧，加上首部和尾部</p>
-</li>
-<li><p>帧同步</p>
-</li>
-</ul>
-<p>在数据帧的首位加上特殊的字符</p>
-<p>链路接入(link access)</p>
-<p>如果是共享介质，需要解决信道接入(channel access)</p>
-<p>帧首部中的”MAC”地址，用于标识帧的源和目的</p>
-<ul>
-<li>不同于IP地址！</li>
-</ul>
-<p>相邻结点之间可靠交付</p>
-<p>无线链路: 误码率高，需要可靠交付</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/" data-id="clpbznkz300cikkish0v61pvl" data-title="CN-数据链路层服务" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机网络/CN-数据报网络" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%BD%91%E7%BB%9C/" class="article-date">
-  <time class="dt-published" datetime="2023-11-24T02:13:28.392Z" itemprop="datePublished">2023-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  <h1 itemprop="name">
-    <a class="p-name article-title" href="https://www.notion.so/CA-4f5aa4bd5af342218478658a40aa0c6a" target="_blank" itemprop="url">CN-数据报网络</a>
-  </h1>
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<h2 id="数据报网络"><a href="#数据报网络" class="headerlink" title="数据报网络"></a>数据报网络</h2><p>数据报网络和虚电路网络的最大区别就是有连接和无连接</p>
-<p>网络层无连接</p>
-<p>每个分组携带目的地址</p>
-<h3 id="路由器根据分组的目的地址转发分组"><a href="#路由器根据分组的目的地址转发分组" class="headerlink" title="路由器根据分组的目的地址转发分组"></a><strong>路由器根据分组的目的地址转发分组</strong></h3><ul>
-<li>基于路由协议&#x2F;算法构建转发表</li>
-<li>检索转发表</li>
-<li>每个分组独立选路<ol>
-<li>发送数据报</li>
-<li>接收数据报</li>
-</ol>
-</li>
-</ul>
-<h2 id="数据报转发表"><a href="#数据报转发表" class="headerlink" title="数据报转发表"></a>数据报转发表</h2><p>路由算法（协议）<strong>确定通过网络的端到端路径</strong></p>
-<p>转发表确定在本路由器如何转发分组</p>
-<p>:question: 但是有一个问题:question:</p>
-<p>IP地址是一个32位的2进制的数，所以可能的IP地址有40多亿</p>
-<p><strong>针对地址范围</strong></p>
-<p>意味着之在一个地址范围内的数据报在一个输出链路上进行展示，将列表的地址进行了聚合</p>
-<p>不同的IP地址通过不同的范围来确定不同的链路接口</p>
-<p><strong>在实际的网络中地址的划分其实并不完美</strong></p>
-<h2 id="最长前缀匹配优先"><a href="#最长前缀匹配优先" class="headerlink" title="最长前缀匹配优先"></a>最长前缀匹配优先</h2><p>例如</p>
-<table>
-<thead>
-<tr>
-<th align="center">目的地址范围</th>
-<th align="center">链路接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">11001000 00010111 00010### #########</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">11001000 00010111 00011000 #########</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">11001000 00010111 00011### #########</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">其他</td>
-<td align="center">3</td>
-</tr>
-</tbody></table>
-<p>DA： 11001000 00010111 00010&#x3D;&#x3D;110 10100001&#x3D;&#x3D; <strong>从哪个接口转发？</strong>&#x3D;&#x3D;A : 0&#x3D;&#x3D;</p>
-<p>只有所有的入口都匹配不成功的时候才会进入默认路径  </p>
-<p>DA:   11001000 00010111 00011&#x3D;&#x3D;000 10101010&#x3D;&#x3D; <strong>从哪个接口转发？</strong> &#x3D;&#x3D;A ：1&#x3D;&#x3D;</p>
-<p>匹配前面的前缀越多，越长，描述的范围就越小，网络就越小；匹配前面的前缀越短，网络就越大。所以我们应该将数据报送到更具体的端口上。<strong>所以就应该选择1号接口进行转发</strong>。</p>
-<p>称之为： <strong>最长前缀匹配优先原则</strong></p>
-<blockquote>
-<p>[!最长前缀匹配优先原则]</p>
-<p>在检索转发表的时候，优先选择和分组目的地址匹配前缀最长的入口(entry)</p>
-</blockquote>
-<h2 id="数据报网络-or-VC网络"><a href="#数据报网络-or-VC网络" class="headerlink" title="数据报网络 or VC网络"></a>数据报网络 or VC网络</h2><h3 id="Internet-数据报网络"><a href="#Internet-数据报网络" class="headerlink" title="Internet 数据报网络"></a>Internet 数据报网络</h3><h4 id="简化网络-复杂“边缘”"><a href="#简化网络-复杂“边缘”" class="headerlink" title="简化网络 复杂“边缘”"></a>简化网络 复杂“边缘”</h4><p><strong>计算机之间的数据交换</strong></p>
-<p>“弹性”服务，没有严格的时间需求</p>
-<p>链路类型众多</p>
-<ul>
-<li><p>特点性能各异</p>
-</li>
-<li><p>统一服务比较困难</p>
-</li>
-</ul>
-<p>	</p>
-<hr>
-<h3 id="ATM-VC网络"><a href="#ATM-VC网络" class="headerlink" title="ATM VC网络"></a>ATM VC网络</h3><h4 id="简化“边缘”，复杂网络"><a href="#简化“边缘”，复杂网络" class="headerlink" title="简化“边缘”，复杂网络"></a>简化“边缘”，复杂网络</h4><p><strong>电话网络演变而来</strong></p>
-<p>核心业务是实时对话：</p>
-<ul>
-<li>严格的时间、可靠性需求</li>
-<li>需要有保障的服务</li>
-</ul>
-<p>“哑（dumb）”端系统（非智能）</p>
-<ul>
-<li>电话机</li>
-<li>传真机</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%BD%91%E7%BB%9C/" data-id="clpbznkz200cfkkis8attbmqk" data-title="CN-数据报网络" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GPU%E8%AE%A1%E7%AE%97/">GPU计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/">高分子物理</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU%E8%AE%BE%E8%AE%A1/" rel="tag">CPU设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU%E8%AE%A1%E7%AE%97/" rel="tag">GPU计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" rel="tag">并行计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" rel="tag">指令系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" rel="tag">指令集并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" rel="tag">流水线技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" rel="tag">知识卡片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">计算机体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag">计算理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" rel="tag">高分子物理</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">CPU设计</a> <a href="/tags/Cookie/" style="font-size: 11.25px;">Cookie</a> <a href="/tags/GPU%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">GPU计算</a> <a href="/tags/HTTP/" style="font-size: 13.75px;">HTTP</a> <a href="/tags/Web%E5%BA%94%E7%94%A8/" style="font-size: 18.75px;">Web应用</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" style="font-size: 16.25px;">传输层</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">作业</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">实验</a> <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">并行计算</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">指令系统</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">指令集并行</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" style="font-size: 11.25px;">数据链路层</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.75px;">模板</a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">流水线技术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" style="font-size: 12.5px;">知识卡片</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" style="font-size: 16.25px;">网络层</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" style="font-size: 10px;">计算机体系结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" style="font-size: 17.5px;">计算机网络概述</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 10px;">计算理论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" style="font-size: 10px;">高分子物理</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/">CN-链路状态路由算法</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/">CN-路由和转发</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 Molaters Lee<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
 
   </div>
+  <script src="/js/nanobar.min.js"></script>
+
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
 </body>
+
 </html>

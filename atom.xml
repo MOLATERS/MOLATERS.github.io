@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Molaters</title>
+  
+  <subtitle>Michael Slater Lee</subtitle>
+  <link href="https://molaters.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://molaters.github.io/"/>
+  <updated>2023-11-01T12:05:22.075Z</updated>
+  <id>https://molaters.github.io/</id>
+  
+  <author>
+    <name>Michael Slater</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CN-随机访问MAC协议</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/</id>
+    <published>2023-11-24T02:14:50.099Z</published>
+    <updated>2023-11-01T12:05:22.075Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><h2 id="多路访问控制-MAC-协议"><a href="#多路访问控制-MAC-协议" class="headerlink" title="多路访问控制(MAC)协议"></a>多路访问控制(MAC)协议</h2><p>两类的链路：</p><ul><li>点对点链路：<ol><li>拨号接入的PPP</li><li>以太网交换机和主机之间的点对点链路</li></ol></li><li>广播链路（共享介质）<ol><li>早期的总线以太网</li><li>HFC的上行链路</li><li>802.11无线局域网</li></ol></li></ul><p>单一共享广播信道</p><p>两个或者两个以上的结点同时传输：干扰(interface)</p><p><strong>冲突</strong></p><p>结点同时接收到两个或者多个信号 $\to$ 接收失败！</p><h3 id="多路访问控制协议"><a href="#多路访问控制协议" class="headerlink" title="多路访问控制协议"></a>多路访问控制协议</h3><p>采用分布式算法决定结点怎么共享信道，也就是决策结点什么时候可以传输数据</p><p>必须基于信道本身，通信信道共享协调信息！</p><h2 id="理想的MAC协议"><a href="#理想的MAC协议" class="headerlink" title="理想的MAC协议"></a>理想的MAC协议</h2><p><strong>给定</strong>：速率为Rbos的广播信道</p><p><strong>期望</strong>：</p><ol><li>如果只有一个结点：R</li><li>M个结点发送：R&#x2F;M</li><li>完全分散控制：<ol><li>不用特定协调</li><li>不用时钟，时隙同步</li></ol></li><li>简单</li></ol><h2 id="MAC协议的分类"><a href="#MAC协议的分类" class="headerlink" title="MAC协议的分类"></a>MAC协议的分类</h2><p>三大类：</p><h3 id="信道划分MAC协议"><a href="#信道划分MAC协议" class="headerlink" title="信道划分MAC协议"></a>信道划分MAC协议</h3><p>多路复用技术</p><p>TDMA、FDMA、CDMA、WDMA等</p><h3 id="随机访问MAC协议"><a href="#随机访问MAC协议" class="headerlink" title="随机访问MAC协议"></a>随机访问MAC协议</h3><p>信道不划分，允许冲突</p><p>冲突的恢复机制</p><h3 id="轮转协议"><a href="#轮转协议" class="headerlink" title="轮转协议"></a>轮转协议</h3><p>结点轮流使用信道</p><h2 id="信道划分MAC协议：TDMA、FDMA"><a href="#信道划分MAC协议：TDMA、FDMA" class="headerlink" title="信道划分MAC协议：TDMA、FDMA"></a>信道划分MAC协议：TDMA、FDMA</h2><p>time division multiple access</p><p>周期性的使用信道</p><p>每个站点在每个周期占用固定长度的时隙</p><p>未用的时隙空间</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101192728.png" alt="image.png"></p><p>同理：FDMA (frequency division multiple access)</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101192815.png" alt="image.png"></p><p>网络资源</p><h2 id="随机访问MAC协议-1"><a href="#随机访问MAC协议-1" class="headerlink" title="随机访问MAC协议"></a>随机访问MAC协议</h2><p>当结点要发送分组的时候：</p><ul><li>利用信道全部数据速率R发送分组</li><li>没有实现的结点协调</li></ul><p>两个或者多个结点同时传输 ： 冲突</p><p><strong>随机访问MAC协议</strong>需要定义：</p><ul><li><p>如何检测冲突</p></li><li><p>如何从冲突中恢复（延迟重传）</p></li></ul><p>典型的随机访问MAC协议：</p><p>ALOHA CSMA&#x2F;CA 等</p><h2 id="时隙ALOHA协议"><a href="#时隙ALOHA协议" class="headerlink" title="时隙ALOHA协议"></a>时隙ALOHA协议</h2><p><strong>假定</strong>：</p><p>所有帧的大小相同<br>时间被划分为等长度的时隙<br>结点只能在时隙的开始时刻发送帧<br>结点之间时钟同步<br>如果两个或者两个以上的结点在同一个时隙发送帧，节点就检测到冲突</p><p><strong>运行</strong>：</p><p>当结点有新的帧的时候，在下一个时隙(slot)发送<br><u>如果冲突</u> 以概率p重传这个帧</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101193527.png" alt="image.png"></p><p><strong>优点</strong>:<br>单个结点活动时，可以连续以信道全部速率传输数据<br>高度分散化: 只需同步时隙<br>简单</p><p><strong>缺点</strong>:<br>冲突，浪费时隙<br>空闲时隙<br>结点也许能以远小于分组传输时间检测到冲突</p><p><strong>效率</strong>：成功发送帧的时隙占的比例</p><p>假设：N个结点有很多的帧需要传输，每个结点在每个时隙均以概率p发送数据</p><p><strong>效率</strong>：最大的效率为0.37</p><h3 id="纯ALOHA协议"><a href="#纯ALOHA协议" class="headerlink" title="纯ALOHA协议"></a>纯ALOHA协议</h3><p>更简单，不用时钟同步</p><p>当有新的数据帧构成的时候立刻发送数据帧</p><ul><li>立即发送</li></ul><p>冲突的可能性增大</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101194041.png" alt="image.png"></p><p>比时隙ALOHA协议更差，效率为0.18</p><h2 id="CSMA协议"><a href="#CSMA协议" class="headerlink" title="CSMA协议"></a>CSMA协议</h2><p>载波监听多路访问协议</p><p>发送帧之前，监听信道(载波)：</p><ul><li><p>信道空闲：发送完整帧</p></li><li><p>信道忙：推迟发送</p><ul><li>1-坚持CSMA</li><li>非坚持CSMA</li><li>P-坚持CSMA</li></ul></li></ul><p><strong>冲突可能仍然发生</strong>：信号传播延迟</p><p>继续发送冲突帧：浪费信道资源</p><h2 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA&#x2F;CD协议"></a>CSMA&#x2F;CD协议</h2><p>带有冲突检测的载波多路访问协议</p><p>短时间内内可以检测到冲突</p><p>冲突之后传输中止，减少信道的浪费</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101195328.png" alt="image.png"></p><p>冲突检测：</p><ul><li>有线局域网易于实现：测量信号强度，比较发送信号和接收信号</li><li>无线局域网很难实现：接收信号强度淹没在本地发射信号强度下</li></ul><p>“边发边听，不发不听”</p><h2 id="CSMA-CD协议-1"><a href="#CSMA-CD协议-1" class="headerlink" title="CSMA&#x2F;CD协议"></a>CSMA&#x2F;CD协议</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101200020.png" alt="image.png"></p><p>在一个采用CSMA&#x2F;CD协议的网络中，传输介质是一根完整的电缆，传输速率为1 Gbps，电缆中的信号传播速度是200 000 km&#x2F;s。若最小数据帧长度减少800比特，则最远的两个站点之间的距离至少需要减少</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101200343.png" alt="image.png"></p><p>$T_{prop} &#x3D; LAN中两个结点之间的最大传播延迟$</p><p>$t_{trans} &#x3D; 最长帧传输延迟$</p><p>$效率 &#x3D; \frac{1}{1+5 t_{prop}&#x2F;t_{trans}}$</p><p>远优于ALOHA并且简单分散</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;h2 id=&quot;多路访问控制-MAC-协议&quot;&gt;&lt;a href=&quot;#多路访问控制-MAC-协议&quot; class=&quot;headerlink&quot; title=&quot;多路访问控制(MAC)协议&quot;&gt;&lt;/a&gt;多路访问控制(MAC)协议&lt;/h2&gt;&lt;p&gt;两类</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-链路状态路由算法</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/</id>
+    <published>2023-11-24T02:14:50.098Z</published>
+    <updated>2023-10-30T02:39:34.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><p>链路状态路由算法</p><h2 id="网络抽象：图"><a href="#网络抽象：图" class="headerlink" title="网络抽象：图"></a>网络抽象：图</h2><p>图： G &#x3D; （N，E）</p><h2 id="链路状态路由算法"><a href="#链路状态路由算法" class="headerlink" title="链路状态路由算法"></a>链路状态路由算法</h2><p><em><strong>Dijstra算法</strong></em></p><p>所有节点（路由器）掌握网络拓扑和链路费用</p><p>要求每一个路由器都构造一个链路状态分组，并广播出去</p><ul><li>通过“链路状态广播”</li></ul><p>链路状态路由算法里面利用扩散或者泛洪的方法来进行发送</p><p>任何一个路由器都会收集全了所有路由器的链路状态分组</p><ul><li>所有节点拥有相同信息</li></ul><p>计算从一个节点（“源”）到达所有其他节点的最短路径</p><ul><li>获得该节点的传发表</li></ul><p>迭代：k次迭代之后，得到到达k个目的节点的最短路径</p><p><em><strong>符号</strong></em></p><p>c(x,y):结点x到结点y链路费用；如果x和y不直接相连，则为无穷大</p><p>D(v): 从源到目的v的当前路径费用值</p><p>p(v): 沿从源到v的当前路径，v的前序节点</p><p>N‘ ：已经找到费用最小路径的结点集合</p><p>Dijstra 算法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">初始化</span><br><span class="line">N’ = &#123;u&#125;</span><br><span class="line">for 所有结点</span><br><span class="line">if v和u相邻</span><br><span class="line">then D(v) = c(u,v)</span><br><span class="line">else D(v) = 无穷</span><br><span class="line"></span><br><span class="line">Loop </span><br><span class="line">找出不再N’中的w，满足D（w）最小</span><br><span class="line">将w加入N‘</span><br><span class="line">更新w的所有不在N’中的邻居v的D（v）:</span><br><span class="line">D(v) = min(D(v),D(w) + c(w,v))</span><br><span class="line">//已知的到达w的最短路径费用加上w到v的费用</span><br><span class="line">until 所有的结点都在N‘中了</span><br></pre></td></tr></table></figure><p>u 的最终最短路径树：</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022143149.png" alt="image.png"></p><p>u 的最终转发表：</p><p>根据上面的内容进行计算最终转发表</p><h2 id="Dijstra-算法"><a href="#Dijstra-算法" class="headerlink" title="Dijstra 算法"></a>Dijstra 算法</h2><p>算法复杂性： O($n^2$)</p><p>每一次迭代：需要检测所有不在结合N’中的结点<br>n(n+1)&#x2F;2次的比较：O($n^2$)<br>更高效的实现：O(nlogn)</p><p>存在震荡的可能：<br>假设链路费用是该链路承载的通信量</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022143800.png" alt="image.png"></p><p>很有可能导致数据包在DCB之间反复震荡无法传送到A，最终会因为TTL被丢弃。</p><p>所以会使用一些机制来避免这样的情况</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;p&gt;链路状态路由算法&lt;/p&gt;
+&lt;h2 id=&quot;网络抽象：图&quot;&gt;&lt;a href=&quot;#网络抽象：图&quot; class=&quot;headerlink&quot; title=&quot;网络抽象：图&quot;&gt;&lt;/a&gt;网络抽象：图&lt;/h2&gt;&lt;p&gt;图： G &amp;#x3D; （N</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-轮转访问MAC协议</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/</id>
+    <published>2023-11-24T02:14:50.098Z</published>
+    <updated>2023-11-01T12:22:04.250Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><p>信道划分MAC协议：</p><ul><li><p>网络负载重的时候，共享信道的效率高，而且公平</p></li><li><p>网络负载轻的时候，信道的效率低！</p></li></ul><p>随机访问MAC协议：</p><ul><li><p>网络负载重的时候产生冲突开销</p></li><li><p>网络负载轻的时候，产生冲突开销</p></li></ul><p>轮转访问MAC协议：</p><ul><li>综合两者的优点！</li></ul><h2 id="轮询-polling"><a href="#轮询-polling" class="headerlink" title="轮询(polling)"></a>轮询(polling)</h2><p>主节点轮流的“邀请”从属结点发送数据</p><p>典型应用：“哑”从属设备</p><p>问题：</p><ul><li>轮询开销</li><li>等待延迟</li><li>单点故障</li></ul><h2 id="令牌传递"><a href="#令牌传递" class="headerlink" title="令牌传递"></a>令牌传递</h2><p>控制令牌依次从一个结点传递到下一个结点</p><p>令牌：<strong>特殊帧</strong></p><p>令牌网络会构成环形网络</p><p>问题：</p><ul><li><p>令牌的开销</p></li><li><p>等待延迟</p></li><li><p>单点故障问题</p></li></ul><h2 id="MAC协议总结"><a href="#MAC协议总结" class="headerlink" title="MAC协议总结"></a>MAC协议总结</h2><p>信道划分MAC协议：TDMA、FDMA、CDMA<br>随机访问MAC协议：ALOHA,S-ALOHA，CSMA&#x2F;CD,CSMA&#x2F;CA<br>轮转访问MAC协议：<br>主结点轮询：令牌传递<br>蓝牙&#x2F;FDDI</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;p&gt;信道划分MAC协议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;网络负载重的时候，共享信道的效率高，而且公平&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;网络负载轻的时候，信道的效率低！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;随机访问MAC协议：</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-路由器的工作原理</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</id>
+    <published>2023-11-24T02:14:50.097Z</published>
+    <updated>2023-10-12T09:09:00.057Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[计算机网络]]<p>网络层的<strong>转发功能</strong></p><p>简要的转发问题：编址和&#x3D;&#x3D;最长前缀匹配问题&#x3D;&#x3D;</p><p>关键术语： 转发、交换</p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231012120717.png" alt="image.png" style="zoom:67%;" />转发功能通常称为**路由器转发平面**<p>数据报流水线必须以N倍速率运行</p><p><strong>路由器控制平面</strong>通常用软件实现并在路由选择处理器上执行</p><p>最重要的路由器部件：入口路和入口站 $\to$ 输入端口</p><p>环形交叉路 $\to$ 交换结构</p><p>环状交叉路出口 $\to$ 输出端口</p><p>Q：</p><ol><li>车站服务人员很慢会发生什么情况？（查询速度慢）</li><li>服务人员必须要多快才能确保在入口路上没有车辆拥堵？（查询速度的最低值）</li><li>对于极快的服务人员，如果汽车在环状交叉路上开的很慢将会发生什么情况？（交换结构内数据传输慢）</li><li>如果大多数进入的汽车都要在相同的出口离开会发生什么情况？（拥塞控制）</li><li>如果要为不同的汽车分配优先权，或者阻挡某些汽车进入环状交叉路，应该怎么运行？（如何让数据报有控制的进行转发）</li></ol><h2 id="路由器的输入端口"><a href="#路由器的输入端口" class="headerlink" title="路由器的输入端口"></a>路由器的输入端口</h2><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231012123351.png" alt="image.png" style="zoom: 80%;" />查找 **根据转发表**<p>TCAM <strong>三态内容可寻址存储器</strong></p><p>确定了输出端口之后分组就能够发送进入交换结构。如果正在使用交换结构就会被阻塞。因此需要在输入端口的位置排队。</p><p>必须采取的动作：</p><ol><li>物理层和链路层处理</li><li>检查分组的版本号、检验和</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-路由和转发</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/</id>
+    <published>2023-11-24T02:14:50.096Z</published>
+    <updated>2023-10-30T02:39:34.362Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><h2 id="路由与转发"><a href="#路由与转发" class="headerlink" title="路由与转发"></a>路由与转发</h2><p>路由算法（协议）确定去往目的网络的最佳路径</p><p>转发表确定在本路由器如何转发分组</p><h2 id="网络抽象：图"><a href="#网络抽象：图" class="headerlink" title="网络抽象：图"></a>网络抽象：图</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022135040.png" alt="image.png"></p><p>图：G &#x3D; （N,E）<br>N &#x3D; 路由器集合 &#x3D; {u,v,w,x,y,z}<br>E &#x3D; 链路集合 &#x3D; {(u,v),(u,x)}</p><p>图的抽象在网络领域很广泛</p><p>N是peers集合，E是TCP的集合</p><h2 id="图抽象：费用（Costs）"><a href="#图抽象：费用（Costs）" class="headerlink" title="图抽象：费用（Costs）"></a>图抽象：费用（Costs）</h2><p>c(x,x’)链路(x,x’)的费用</p><p>e.g c(w,z) &#x3D; 5</p><p>每段链路的费用可以总是1，描述一个链路或者路径的大小的时候称为段数；或者是，带宽的倒数、拥塞程度等。</p><p>路径费用：(x1,x2,x3,,,xp) &#x3D; c(x1,x2) + c(x2,x3) + … + c(xp-1,xp)</p><blockquote><p>[!关键问题]<br>源到目的的最小费用的路径是什么？</p></blockquote><p><strong>路由算法</strong>：在网络的抽象图中寻找最小路径的算法</p><h2 id="路由算法分类"><a href="#路由算法分类" class="headerlink" title="路由算法分类"></a>路由算法分类</h2><h3 id="静态路由-vs-动态路由？"><a href="#静态路由-vs-动态路由？" class="headerlink" title="静态路由 vs 动态路由？"></a>静态路由 vs 动态路由？</h3><p>静态路由：</p><ul><li><p>手工配置</p></li><li><p>路由更新的速度慢</p></li><li><p>优先级高（<strong>在路由信息中同等条件下首选</strong>）</p></li></ul><p>动态路由：</p><ul><li><p>路由更新快</p><ul><li><p>定期更新</p></li><li><p>及时响应链路费用或者网络拓扑变化</p></li></ul></li></ul><h3 id="全局信息-vs-分散信息？"><a href="#全局信息-vs-分散信息？" class="headerlink" title="全局信息 vs 分散信息？"></a>全局信息 vs 分散信息？</h3><p>全局信息：所有路由器掌握完整的网络拓扑和链路费用信息</p><p>e.g. 链路状态(LS)路由算法</p><p>分散信息（decentralized）:</p><p>路由器只掌握物理项链的邻居以及链路费用</p><p>链路之间信息交换、运算的迭代过程</p><p>e.g. 距离向量9(DV)路由算法</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;h2 id=&quot;路由与转发&quot;&gt;&lt;a href=&quot;#路由与转发&quot; class=&quot;headerlink&quot; title=&quot;路由与转发&quot;&gt;&lt;/a&gt;路由与转发&lt;/h2&gt;&lt;p&gt;路由算法（协议）确定去往目的网络的最佳路径&lt;/p&gt;
+&lt;p&gt;转发表确定</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-距离向量路由算法</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/</id>
+    <published>2023-11-24T02:14:50.095Z</published>
+    <updated>2023-10-30T02:39:34.328Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><h2 id="距离向量-Distance-Vector-路由算法"><a href="#距离向量-Distance-Vector-路由算法" class="headerlink" title="距离向量(Distance Vector)路由算法"></a>距离向量(Distance Vector)路由算法</h2><p>Bellman-Ford方程(动态规划)</p><p>令：dx(y):从x到y最短路径的费用(距离)</p><p>dx(y) &#x3D; min {c(x,y) + dv(y)}</p><p><code>c(x,y)</code> 代表的是x到邻居v的费用</p><p><code>dv(y)</code> 代表从邻居v到达目的y的费用（距离）</p><p>在x的所有邻居v中取最小值</p><h2 id="Bellman-Ford举例"><a href="#Bellman-Ford举例" class="headerlink" title="Bellman-Ford举例"></a>Bellman-Ford举例</h2><p><strong>重点</strong>结点获得最短路径的下一跳，该信息用于转发表中。</p><h2 id="距离向量路由算法"><a href="#距离向量路由算法" class="headerlink" title="距离向量路由算法"></a>距离向量路由算法</h2><p>$D_x(y)$ &#x3D; 从节点x到结点y的最小费用估计</p><ul><li>维护距离向量（DV) : $D_x &#x3D; [D_x(y): y \in N]$</li></ul><p>结点x：</p><ul><li>已知到达每个邻居的费用：c(x,y)</li><li>维护其所有邻居的距离向量: $D_v$ &#x3D; $D_v(y) : y \in N$</li></ul><p>核心思想：</p><ul><li>每个结点不定时的将其自身的DV估计发送给其邻居</li><li>x当收到另据的新的DV估计的时候，根据B-F方程来更新自身的距离向量估计</li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022144901.png" alt="image.png"></p><p>将最终收敛于实际的最小费用</p><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><h3 id="异步迭代"><a href="#异步迭代" class="headerlink" title="异步迭代"></a>异步迭代</h3><p>引发每次局部迭代的因素</p><ul><li>局部链路费用改变</li><li>来自邻居的DV更新</li></ul><h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><p>每个结点只当DV变化的时候才通告给邻居</p><p>邻居在必要的时候（其DV更新后发生改变）</p><ul><li>邻居在必要的时候(其DV更新后发生改变)再通告它们的邻居</li></ul><h3 id="每个节点："><a href="#每个节点：" class="headerlink" title="每个节点："></a>每个节点：</h3><p><strong>等待</strong>本地局部链路费用变化或者收到邻居的DV的更新</p><p><strong>重新计算</strong>DV估计</p><p>如果DV中到达任一目的的距离发生改变，<strong>通告</strong>所有邻居</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022145726.png" alt="image.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;h2 id=&quot;距离向量-Distance-Vector-路由算法&quot;&gt;&lt;a href=&quot;#距离向量-Distance-Vector-路由算法&quot; class=&quot;headerlink&quot; title=&quot;距离向量(Distance Vect</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-距离向量链路算法2</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%952/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%952/</id>
+    <published>2023-11-24T02:14:50.095Z</published>
+    <updated>2023-11-01T15:29:24.680Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><p>Bellman-Ford方程（动态规划）</p><p>令：</p><p>$d_x(y) &#x3D; min_distance(x \to y) &#x3D; min{c(x,v) + d_v(y)}$</p><p><code>c(x,v)</code> 代表的是x到v的费用</p><p><code>$dv(y)$</code> 从邻居v到目的y的费用</p><h2 id="Bellman-Ford举例"><a href="#Bellman-Ford举例" class="headerlink" title="Bellman-Ford举例"></a>Bellman-Ford举例</h2><p>显然：$d_v(z) &#x3D; 5,\ \ \ d_x &#x3D; 3,\ \ \ d_w(z)&#x3D;3$</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231029203659.png" alt="image.png"></p><p>根据B-F方程：</p><p>$d_u(z) &#x3D; min {c(u,v) + d_v(z), \ \ c(u,x) + d_x(z), \ \ c(u,w) + d_w (z)} \ &#x3D; min{\ 2+5,\ 1+3,\ 5+3} &#x3D; 4$</p><p>重点: 结点获得最短路径的下一跳,该信息用于转发表中</p><h2 id="距离向量路由算法"><a href="#距离向量路由算法" class="headerlink" title="距离向量路由算法"></a>距离向量路由算法</h2><p>$D_x(y) &#x3D;$ 从结点x到结点y的最小费用估计</p><ul><li>x 维护距离向量(DV) ： $D_x &#x3D; [D_x(y): y \in N]$</li></ul><p>结点x:</p><ul><li>已知到达每个邻居的费用: c(x,y)</li><li>维护其所有邻居的距离向量：$D_v &#x3D; [D_v(y): y \in N]$</li></ul><h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p>每个结点不定时的把其自身的DV估计发送给其邻居</p><p>当接收到邻居的新的DV估计的时候，也就是根据B-F更新其自身的路由向量估计：</p><p>$D_x(y) \leftarrow min{c(x,y) \ + \ D_v(y)} \ for \ each \ node\  y \in N$</p><p>最后$D_x(y)$将会收敛到最小值。</p><h3 id="异步迭代"><a href="#异步迭代" class="headerlink" title="异步迭代"></a>异步迭代</h3><p>引发每次局部迭代的因素</p><ul><li>局部链路费用改变</li><li>来自邻居的DV更新</li></ul><h3 id="分布式算法"><a href="#分布式算法" class="headerlink" title="分布式算法"></a>分布式算法</h3><p>每个结点只有当DV变化的时候才通告邻居</p><ul><li>邻居在必要的时候再通告它们的邻居</li></ul><h3 id="每个节点的阶段："><a href="#每个节点的阶段：" class="headerlink" title="每个节点的阶段："></a>每个节点的阶段：</h3><p><strong>等待</strong>：每个路由器在没有发生变化的时候就保持这种状态（邻居DV没有发生更新）</p><p><strong>重新计算</strong> DV估计</p><p>如果DV中到达任一一个目的距离发生改变，<strong>通告</strong>所有的邻居</p><p>然后再次进入<strong>等待</strong>状态</p><h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>初始的距离向量为：</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231029205246.png" alt="image.png"></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231029205707.png" alt="image.png"></p><h2 id="距离向量DV：链路费用变化"><a href="#距离向量DV：链路费用变化" class="headerlink" title="距离向量DV：链路费用变化"></a>距离向量DV：链路费用变化</h2><p><strong>链路费用的变化</strong>：</p><ul><li><p>结点检测本地链路费用的变化</p></li><li><p>更新路由信息，重新计算距离向量</p></li><li><p>如果DV改变，通告所有的邻居</p></li></ul><p>$t_0$ : y检测到链路费用的改变，更新DV，通告其邻居</p><p>$t_1$ : z收到y的DV更新，更新其距离向量表，计算到达x的最新最小费用，更新其DV，并发送其所有的邻居。</p><p>$t_2$ ：y收到z的DV更新，更新其距离向量表，重新计算y的DV，未发生改变，不再像z发送DV</p><p>“<strong>好消息传播的快</strong>”</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231029214707.png" alt="image.png"></p><p>但是可能出现无穷计数问题（如上所示）</p><h3 id="毒性逆转"><a href="#毒性逆转" class="headerlink" title="毒性逆转"></a>毒性逆转</h3><p>如果一个结点(e.g.z)到达某目的(e.g.X)的最小费用路径是通过某个邻居(e.g.Y)，则:</p><ul><li>通告给该邻居结点到达该目的的距离为无穷大</li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/d94597c651cb7c7656f0260d56b858d.jpg" alt="d94597c651cb7c7656f0260d56b858d.jpg"></p><p>毒性逆转是不是能够彻底的消除无穷计数问题？</p><p>简单的环路是可以消除的，更复杂的环境其实未必可以满足。</p><p><strong>定义最大的一个距离度量值(maximum metric)</strong></p><p>定义一个最大的有效费用值，比如15跳步，16跳步标识无穷</p><p>如果一直不可达，就会在有效费用值耗尽的时候结束传输</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;p&gt;Bellman-Ford方程（动态规划）&lt;/p&gt;
+&lt;p&gt;令：&lt;/p&gt;
+&lt;p&gt;$d_x(y) &amp;#x3D; min_distance(x &#92;to y) &amp;#x3D; min{c(x,v) + d_v(y)}$&lt;/p&gt;
+&lt;p&gt;&lt;c</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-计算机网络分层结构</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84/</id>
+    <published>2023-11-24T02:14:50.094Z</published>
+    <updated>2023-10-12T09:07:19.670Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[计算机网络]]<p>在计算机网络体系结构的各个层次里面，每个报文都分为两个部分：一是数据部分，SDU； 二是控制信息部分，即PCI；它们共同构成<code>PDU</code></p><p>数据服务单元（SDU）：为完成用户所要求的功能二应该传送的数据<br>协议控制单元（PCI）：控制协议操作的信息，第n层的协议控制信息记为n-PCI<br>协议数据单元（PDU）：对等层次之间传送的数据单位就是PDU。</p><p>物理层的PDU是<em>比特</em>，数据链路层的PDU是<em>帧</em>，网络层的PDU称为<em>分组</em>，传输层的PDU称为<em>报文段</em></p><h3 id="计算机网络协议、接口、服务的概念"><a href="#计算机网络协议、接口、服务的概念" class="headerlink" title="计算机网络协议、接口、服务的概念"></a>计算机网络协议、接口、服务的概念</h3><p>为进行网络中的数据交换而建立的规则、标准或者约定就成为<em>网络协议</em></p><p>同一结点内相邻两层之间的交换信息的连接点叫做<em>接口</em></p><p>SAP（服务访问点）是一个逻辑接口而不是物理接口</p><p><em>服务</em>是指下层为紧邻的上层提供的功能调用，它是垂直的。</p><p>协议和服务的概念是不一样的，协议的实现保证了服务，上层通过调用下层的服务构造协议。</p><p>并非在一层内完成的全部功能都称为服务，只有那些看得见的功能才能叫做服务。</p><p>提供的服务可以分为三类：</p><ol><li>面向连接服务和无连接服务<ol><li><strong>面向连接服务</strong>：必须先建立连接，分配相应的资源，传输结束之后会释放连接和所占用的资源。</li><li><strong>无连接服务</strong>：不需要先建立连接，发送数据的时候可以直接发送。</li></ol></li><li>可靠服务和不可靠服务<ol><li><strong>可靠服务</strong>：指的是网络具有纠错、检错、应答机制，能够保证数据正确、可靠的传送到目的地</li><li><strong>不可靠服务</strong>：尽量准确的可靠的传输，但是不能保证数据正确，是一种尽力而为的服务。</li></ol></li><li>有应答服务和无应答服务<ol><li><strong>有应答服务</strong>：接收方在收到数据后向发送方给出的应答</li><li><strong>无应答服务</strong>：指的是接收方收到数据之后不自动给出应答，如果要应答就用高层实现。</li></ol></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-计算机网络传输层</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82/</id>
+    <published>2023-11-24T02:14:50.093Z</published>
+    <updated>2023-10-12T09:05:47.646Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head># 计算机网络传输层<h2 id="传输层服务概述"><a href="#传输层服务概述" class="headerlink" title="传输层服务概述"></a>传输层服务概述</h2><h3 id="传输层服务和协议"><a href="#传输层服务和协议" class="headerlink" title="传输层服务和协议"></a>传输层服务和协议</h3><p>传输层协议为运行在不同的host上的进程提供了一种<strong>逻辑通信机制</strong></p><p>端系统运行传输层协议</p><ul><li><p><strong>发送方</strong>：将应用递交的消息分成一个或者多个的Segment,并向下传递给网络层</p></li><li><p><strong>接收方</strong>：将接收到的Segment组装成消息，并上交给应用层</p></li></ul><p>传输层可以为应用提供<em><strong>多种协议</strong></em></p><ul><li><p>Internet上的TCP</p></li><li><p>Internet上的UDP</p></li></ul><h3 id="传输层-vs-网络层"><a href="#传输层-vs-网络层" class="headerlink" title="传输层 vs 网络层"></a>传输层 vs 网络层</h3><p><strong>网络层</strong>： 提供主机之间的逻辑通信机制</p><p><strong>传输层</strong>：提供应用进程之间的逻辑通信机制</p><ul><li><p>位于网络层之上</p></li><li><p>依赖于网络服务</p></li><li><p>对网络层服务进行（可能的）增强</p></li></ul><p><u>家庭类比</u></p><ul><li>12个孩子给12个孩子写信</li><li>应用进程 &#x3D; 孩子</li><li>应用消息 &#x3D; 信封里面的信</li><li>主机 &#x3D; 房子</li><li>传输层协议 &#x3D; 李雷和韩梅梅</li><li>网络层协议 &#x3D; 邮政服务</li></ul><h3 id="Internet传输层协议"><a href="#Internet传输层协议" class="headerlink" title="Internet传输层协议"></a>Internet传输层协议</h3><ul><li><p><code>可靠</code>、<code>按序</code>的交付服务(TCP)</p><ul><li>拥塞控制</li><li>流量控制</li><li>连接建立</li></ul></li><li><p><code>不可靠的</code>交付服务(UDP)</p><ul><li>基于 <em>“尽力而为(Best-effort)”</em> 的网路，没有做可靠性方面的拓展</li></ul></li><li><p>两种服务均不保证</p><ul><li>延迟</li><li>带宽</li></ul></li></ul><hr><h2 id="多路复用和多路分用"><a href="#多路复用和多路分用" class="headerlink" title="多路复用和多路分用"></a>多路复用和多路分用</h2><p>Why? $\rightarrow$ 如果<strong>某层的一个协议对应直接上层的多个协议&#x2F;实体</strong>，那么就需要<code>复用/分用</code></p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694605856597.png" alt="1694605856597" style="zoom:67%;" /><p><u>接收端进行多路分用</u></p><p>传输层依据头部信息将收到的Segment交给正确的Socket，即不同的进程</p><p><u>发送端进行多路复用</u></p><p>从多个Socket接受数据，为每块数据封装上头部信息，交给网络层</p><h3 id="分用如何工作"><a href="#分用如何工作" class="headerlink" title="分用如何工作"></a>分用如何工作</h3><ul><li><p>主机接收到<code>IP数据报（datagram）</code></p><ul><li><p>每个数据报携带<code>源IP地址</code>、<code>目的IP地址</code></p></li><li><p>每个数据报携带一个<u>传输层的端</u>（Segment）</p></li><li><p>每个段携带<code>源端口号</code>和<code>目的端口号</code></p></li></ul></li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607845406.png" alt="1694607845406" style="zoom:67%;" /></p><ul><li>主机收到Segment之后，传输层协议提取IP地址和端口号信息，将Segment导向相应的Socket</li></ul><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694606950930.png" alt="1694606950930" style="zoom:67%;" /><h3 id="无连接分用"><a href="#无连接分用" class="headerlink" title="无连接分用"></a>无连接分用</h3><ul><li><input checked="" disabled="" type="checkbox"> 利用端口号创建Socket  [completion:: 2023-09-26]</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket mySocket1 = <span class="keyword">new</span> <span class="built_in">DatagramSocket</span>(<span class="number">99111</span>);</span><br><span class="line">DatagramSocket mySocket2 = <span class="keyword">new</span> <span class="built_in">DatagramSocket</span>(<span class="number">99222</span>);</span><br></pre></td></tr></table></figure><ul><li><input disabled="" type="checkbox"> UDP的Socket用二元组标识<ul><li>UDP的Socket用二元组标识</li></ul></li></ul><p>主机收到UDP段之后</p><ul><li><p>检查段中的目的端口号</p></li><li><p>将UDP段导向绑定在该端口号的Socket</p></li></ul><p>来自不同源IP地址和&#x2F;或源端口号的IP数据包被导向同一个<code>Socket</code></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket serverSocket = <span class="keyword">new</span> <span class="built_in">DatagramSocket</span>(<span class="number">6428</span>);</span><br></pre></td></tr></table></figure><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607649470.png" alt="1694607649470" style="zoom:67%;" /><p><strong>SP</strong>提供<code>返回地址</code></p><h3 id="面向连接的分用"><a href="#面向连接的分用" class="headerlink" title="面向连接的分用"></a>面向连接的分用</h3><p> <code>TCP</code>的Socket用四元组标识<br>    - 源IP地址<br>    - 源端口号<br>    - 目的IP地址<br>    - 目的端口号</p><p> 接收端利用所有的四个值将Segment导向合适的Socket</p><p> 服务器可能同时支持多个TCPSocket<br>    - 每个人Socket用自己的四元组标识</p><p><strong>Web服务器</strong>为每个客户端开不同的<code>Socket</code></p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609096055.png" alt="1694609096055" style="zoom:67%;" /><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609108885.png" alt="1694609108885" style="zoom:67%;" /><h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h3 id="UDP-User-Datagram-Protocol-RFC-768"><a href="#UDP-User-Datagram-Protocol-RFC-768" class="headerlink" title="UDP :User Datagram Protocol [RFC 768]"></a>UDP :User Datagram Protocol [RFC 768]</h3><ul><li><p>基于Internet IP协议</p><ul><li><p>复用&#x2F;分用</p></li><li><p>简单的错误校验</p></li></ul></li><li><p>“Best effort”服务，UDP段可能</p><ul><li><p><strong>丢失</strong></p></li><li><p><strong>非按序到达</strong></p></li></ul></li><li><p><code>无连接</code></p><ul><li><p>UDP发送方和接收方之间不需要握手</p></li><li><p>每个UDP段的处理独立于其他段</p></li></ul></li><li><p>常用于<strong>流媒体应用</strong></p><ul><li><p>容忍丢失</p></li><li><p>速率敏感</p></li></ul></li><li><p>UDP还用于</p><ul><li><p>DNS</p></li><li><p>SNMP</p></li></ul></li><li><p>在UDP上实现<code>可靠数据传输</code></p><ul><li><p>在应用层增加可靠性机制</p></li><li><p>应用特定的错误恢复机制</p></li></ul></li></ul><h3 id="UDP检验和-Checksum"><a href="#UDP检验和-Checksum" class="headerlink" title="UDP检验和(Checksum)"></a>UDP检验和(Checksum)</h3><p>目的:<strong>检测UDP段是否发生错误,比如位翻转</strong></p><ul><li><p><strong>发送方</strong></p><ul><li><p>将段的内容视为16-bit整数</p></li><li><p><strong>检验和计算</strong>:计算所有整数的和,进位加在和的后面,将得到得知安慰囚犯,得到校验和</p></li><li><p>发送方将校验和放入校验和字段</p></li></ul></li><li><p><strong>接收方</strong></p><ul><li>计算所受到段的校验和</li><li>将其与校验和字段进行对比<ul><li>不相等:<strong>检测出错误</strong></li><li>相等:<strong>没有检测出错误</strong></li></ul></li></ul></li></ul><h3 id="校验和计算实例"><a href="#校验和计算实例" class="headerlink" title="校验和计算实例"></a>校验和计算实例</h3><p>注意: <strong>最高位必须被加进去</strong></p><p>示例:</p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694611617018.png" alt="1694611617018" style="zoom:67%;" /><h2 id="可靠数据传输原理"><a href="#可靠数据传输原理" class="headerlink" title="可靠数据传输原理"></a>可靠数据传输原理</h2><p>❓什么是可靠<br>    - 不错,不乱,不丢</p><p><strong>可靠数据传输协议</strong></p><ul><li>可靠数据传输对应用层&#x2F;传输层&#x2F;链路层都很重要</li><li>网络的Top10问题</li><li>信道的不可靠特性决定了可靠数据传输协议(rdt)的复杂性</li></ul><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612237418.png" alt="1694612237418" style="zoom: 80%;" /><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612260649.png" alt="1694612260649" style="zoom: 80%;" /><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612273475.png" alt="1694612273475" style="zoom:80%;" /><h3 id="可靠数据传输协议基本结构-接口"><a href="#可靠数据传输协议基本结构-接口" class="headerlink" title="可靠数据传输协议基本结构:接口"></a>可靠数据传输协议基本结构:接口</h3><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612283387.png" alt="1694612283387" style="zoom:80%;" /><h3 id="可靠数据传输协议"><a href="#可靠数据传输协议" class="headerlink" title="可靠数据传输协议"></a>可靠数据传输协议</h3><ul><li>渐进的设计可靠数据传输协议的<strong>发送方</strong>和<strong>接收方</strong></li><li>只考虑单项数据传输</li><li>但是控制信息双向流动</li><li>利用状态机(Fnite State Machine,FSM)刻画传输协议</li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612449445.png" alt="1694612449445"></p><p>Rdt1.0:可靠信道上的可靠数据传输</p><p>底层信道<strong>完全可靠</strong></p><ul><li>不会发生错误(bit error)</li><li>不会丢弃分组<br>发送方和接收方的FSM独立</li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612519572.png" alt="1694612519572"></p><h2 id="Rdt-2-0"><a href="#Rdt-2-0" class="headerlink" title="Rdt 2.0"></a>Rdt 2.0</h2><h4 id="Rdt-2-0-产生位错误的信道"><a href="#Rdt-2-0-产生位错误的信道" class="headerlink" title="Rdt 2.0: 产生位错误的信道"></a>Rdt 2.0: 产生位错误的信道</h4><p>底层信道可能反转分组中的位</p><ul><li>利用<strong>校验</strong>和检测为错误</li></ul><p>如何从错误中回复？</p><ul><li><p>**确认机制(Acknowledgements,ACK):**接收方<code>显式的</code>告知发送方分组已经正确接收</p></li><li><p>NAK：接收方<code>显式的</code>告知发送方的分组有错误</p></li><li><p>发送方收到NAK之后，<code>重发</code>分组</p></li></ul><p>基于这种重传机制的rdt协议称为<em>ARQ(Automatic Repeat reQuest)</em> 协议</p><p>Rdt 2.0中引入的新机制</p><ul><li><p>差错检测(校验和的方式)</p></li><li><p>接收方反馈控制信息：<strong>ACK&#x2F;NAK</strong></p></li><li><p>重传</p></li></ul><p>Rdt 2.0:<code>FSM规约</code></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736520687.png" alt="1694736520687"></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736529915.png" alt="1694736529915"></p><h2 id="Rdt-2-1-和-2-2"><a href="#Rdt-2-1-和-2-2" class="headerlink" title="Rdt 2.1 和 2.2"></a>Rdt 2.1 和 2.2</h2><p>对Rst 2.0的改进，先要知道Rdt 2.0有什么缺陷？</p><p><strong>如果ACK和NAK消息发生错误了怎么办</strong>？</p><p><code>Solution 1</code>:为NAK和NCK增加校验和，检错并纠错</p><p><code>Solution 2</code>:发送方收到被破坏的ACK&#x2F;NAK的时候不知道接收方发生了什么，添加额外的<code>控制消息</code> </p><p><code>Solution 3</code>:如果ACK&#x2F;NAK坏掉，就重传。但是不能简单的重传，因为会产生重复分组。</p><p><strong>怎么解决重复分组问题</strong>？</p><p><strong>序列号(Sequance number)</strong>:发送方给每个分组增加序列号</p><p>接收方丢弃重复分组</p><p><strong>stop and wait</strong>:<br>  Sender sends one packet, then waits for reciever response.</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764764860.png" alt="1694764764860"></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764776396.png" alt="1694764776396"></p><h3 id="Rdt-2-1-vs-Rdt-2-0"><a href="#Rdt-2-1-vs-Rdt-2-0" class="headerlink" title="Rdt 2.1 vs Rdt 2.0"></a>Rdt 2.1 vs Rdt 2.0</h3><h4 id="发送方"><a href="#发送方" class="headerlink" title="发送方"></a>发送方</h4><p>为每个分组增加了序列号</p><p>两个序号（0，1）就够用，为什么？</p><p>需要检验ACK&#x2F;NAK消息是否发生错误</p><p>状态数量翻倍<br>  状态必须<strong>记住</strong>当前的分组序列号</p><h4 id="接收方"><a href="#接收方" class="headerlink" title="接收方"></a>接收方</h4><p>需要判断分组<code>是不是重复</code><br>  当前所处的状态提供了<u><em>期望收到分组的序列号</em></u></p><p>注意：接收方无法知道ACK&#x2F;NAK是否被正确接收到</p><h4 id="Rdt-2-2-无NAK消息协议"><a href="#Rdt-2-2-无NAK消息协议" class="headerlink" title="Rdt 2.2: 无NAK消息协议"></a>Rdt 2.2: 无NAK消息协议</h4><p>我们真的需要两种确认消息(<code>ACK</code>+<code>NAK</code>)?</p><p>和rdt2.1 的功能相同，但是只使用NAK</p><p>🧐怎么实现？</p><ul><li><p>接收方通过ACK告知最后一个被正确接收的分组</p></li><li><p>在<strong>ACK</strong>消息中<strong>显式的加入被确认分组的序列号</strong></p></li></ul><p>发送方收到重复的ACK之后，采取与收到NAK消息相同的动作</p><ul><li>重传当前的分组</li></ul><h3 id="Rdt-2-2-FSM片段"><a href="#Rdt-2-2-FSM片段" class="headerlink" title="Rdt 2.2 FSM片段"></a>Rdt 2.2 FSM片段</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694765185191.png" alt="1694765185191"></p><h2 id="Rdt-3-0"><a href="#Rdt-3-0" class="headerlink" title="Rdt 3.0"></a>Rdt 3.0</h2><p>如果信道极可能发生错误，也可能丢失分组，怎么办</p><p>“校验和+序列号+ACK+重传”<strong>够用吗</strong>？</p><p>方法：发送方等待”<code>合理</code>“时间</p><p>如果timeout，有没有收到ACK就可以采取动作了 $\rightarrow$ <strong>重传</strong></p><p>☹但是时间是很难设定的，如果只是延迟了，就会引起重复的问题</p><ul><li>但是序列号能够处理</li><li>接收方需要在ACK中显式的告知所确认的分组</li><li>需要<strong>定时器</strong></li></ul><h3 id="Rdt-3-0-发送方FSM"><a href="#Rdt-3-0-发送方FSM" class="headerlink" title="Rdt 3.0 发送方FSM"></a>Rdt 3.0 <strong>发送方FSM</strong></h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766165886.png" alt="1694766165886"></p><h3 id="Rdt-3-0-运行实例"><a href="#Rdt-3-0-运行实例" class="headerlink" title="Rdt 3.0 运行实例"></a>Rdt 3.0 运行实例</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766219749.png" alt="1694766219749"></p><p>⬆ 发送方和接收方在传输过程中没有丢包的存在</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766226555.png" alt="1694766226555"></p><p>⬆ 在发送过程当中发生丢失的情况，执行停-等协议，造成超时，所以重新传输分组</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766471113.png" alt="1694766471113"></p><p>⬆ 标识收到了两个分组（相同序列号），那就丢掉一个然后进行传输ACK</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766548272.png" alt="1694766548272"></p><p>⬆ 标识两次都发送了，表明第一次正确接收了，但是返回ACK的过程当中触发执行停等协议然后重新发送了一次。收到了ACK1之后会传换成发送pkt0，第二次发的ACK1到达的时候正好有了ACK0。<br>称之为<code>计时器时间过短</code>、<code>timeout早熟</code></p><h3 id="Rdt-3-0-性能分析"><a href="#Rdt-3-0-性能分析" class="headerlink" title="Rdt 3.0 性能分析"></a>Rdt 3.0 性能分析</h3><p>Rdt 3.0能够正常工作，但是性能很差</p><p>示例：1Gbps链路，15ms端到端传输延迟，1kB分组</p><p>$T_{transmit}&#x3D;\frac{L(packet \ length \ in \ bits)}{R(transmission \  rate, \ bps)}&#x3D;\frac{8kb&#x2F;pkt}{10^9b&#x2F;sec}&#x3D;8 ms$</p><p>发送方的利用率：发送方发送时间百分比</p><p>$U_{sender}&#x3D;\frac{L&#x2F;R}{RTT+L&#x2F;R}&#x3D;0.008&#x2F;30.008&#x3D;0.00027$</p><p>在1Gbps链路上每30毫秒才能发送一个分组 $\Rightarrow$ 33KB&#x2F;s</p><p><strong>网络协议限制了物理资源的利用</strong></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694767041067.png" alt="1694767041067"></p><p>$U_{sender}&#x3D;\frac{L&#x2F;R}{RTT+L&#x2F;R}&#x3D;0.008&#x2F;30.008&#x3D;0.00027$</p><h2 id="流水线的机制和滑动窗口协议"><a href="#流水线的机制和滑动窗口协议" class="headerlink" title="流水线的机制和滑动窗口协议"></a>流水线的机制和滑动窗口协议</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768215316.png" alt="1694768215316"></p><p>回顾最初的Rdt 3.0操作</p><p>可以更改为同时发多个分组，这样就能有更好的性能</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768312234.png" alt="1694768312234"></p><p>$U_{sender}&#x3D;\frac{3*L&#x2F;R}{RTT+L&#x2F;R}&#x3D;\frac{0.024}{30.008}&#x3D; 0.0008$</p><p>允许发送方在收到ACK之前连续发送多个分组</p><ul><li><p>更大的序列号范围</p></li><li><p>发送方和&#x2F;或接收方需要更大的存储空间以<strong>缓存分组</strong></p></li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768451060.png" alt="1694768451060"></p><p>很明显可以看出效率有明显提高</p><h3 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h3><p><strong>滑动窗口协议</strong>：Sliding-window protocol</p><ul><li><p>窗口</p><ul><li>允许使用的序列号范围      </li><li>窗口尺寸为N：最多有N个等待确认的消息</li></ul></li><li><p><strong>滑动窗口</strong></p><ul><li>随着协议的运行，窗口在序列号空间内向前滑动</li></ul></li></ul><p><strong>滑动窗口协议</strong>：GBN，SR</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768609208.png" alt="1694768609208"></p><h2 id="GBN-Go-Back-N"><a href="#GBN-Go-Back-N" class="headerlink" title="GBN(Go-Back-N)"></a>GBN(Go-Back-N)</h2><h3 id="发送方-1"><a href="#发送方-1" class="headerlink" title="发送方"></a>发送方</h3><ul><li>分组头部包含k-bit序列号</li><li>窗口尺寸为<strong>N</strong>，最多允许<strong>N</strong>个分组未确认</li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768789786.png" alt="1694768789786"></p><ul><li><p>ACK(n):确认到序列号n(包含n)的分组<code>均已经被正确接收</code></p><ul><li>可能收到重复的ACK</li></ul></li><li><p>为空中的分组设置计时器</p></li><li><p>超时<strong>Timeout</strong>事件：重传序列号<strong>大于等于n</strong>，还没有收到ACK的所有分组</p></li></ul><h3 id="GBN：发送方扩展FSM"><a href="#GBN：发送方扩展FSM" class="headerlink" title="GBN：发送方扩展FSM"></a>GBN：发送方扩展FSM</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769021950.png" alt="1694769021950"></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nextseqnum &lt; base + N)&#123; <span class="comment">//意味着还有可用的seqnum意味着还可以接着发送分组</span></span><br><span class="line">  sndpkt[nextseqnum]=<span class="built_in">make_pkt</span>(nextseqnum.data.chksum);</span><br><span class="line">  <span class="built_in">udt_send</span>(sndpkt[nextseqnum]);</span><br><span class="line">  <span class="keyword">if</span> (base == nextseqnum)&#123;<span class="comment">//如果base和nextseqnum相等的话，就启动定时器</span></span><br><span class="line">    <span class="built_in">start_timer</span>();</span><br><span class="line">    nextseqnum++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">    <span class="built_in">refuse_data</span>(data);<span class="comment">//如果窗口里面的序列号已经用光了，就可以refuse掉当前的数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="Timeout事件出现的操作"><a href="#Timeout事件出现的操作" class="headerlink" title="Timeout事件出现的操作"></a>Timeout事件出现的操作</h4><p>Timeout $\rightarrow$ start_timer()<br>udt_send(sndpkt[base])<br>……<br>udt_send(sndpkt[nextseqsum-1])</p><h3 id="GBN：接收方扩展FSM"><a href="#GBN：接收方扩展FSM" class="headerlink" title="GBN：接收方扩展FSM"></a>GBN：接收方扩展FSM</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769484914.png" alt="1694769484914"></p><ul><li>ACK机制：发送拥有最高序列号的、已经被正确的接收的分组的ACK<ul><li>可能产生重复的ACK</li><li>只需要记住唯一的expectedseqnum</li></ul></li><li>乱序到达的分组：<ul><li>直接丢弃 $\rightarrow$ 接收方<code>没有缓存</code></li><li>重新确认<code>序列号最大</code>的<code>按照序列到达</code>的分组</li></ul></li></ul><h3 id="GBN的实例"><a href="#GBN的实例" class="headerlink" title="GBN的实例"></a>GBN的实例</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769749622.png" alt="1694769749622"></p><h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p>数据量链路层采用后退N帧的协议，发送方已经发送了编号为0~7的帧，当计时器超市的时候，如果发送方只收到了0，2，3号帧的确认，那么发送方需要重发的帧数是多少，分别是哪几个帧？</p><blockquote><p>根据GBN的工作原理，GBN协议的确认是累计确认，所以此时发送端需要重发的帧数是4个，依次次分别是4、5、6、7</p></blockquote><h2 id="SR协议"><a href="#SR协议" class="headerlink" title="SR协议"></a>SR协议</h2><h3 id="Select-Repeat协议"><a href="#Select-Repeat协议" class="headerlink" title="Select Repeat协议"></a>Select Repeat协议</h3><p>GBN有什么缺陷？</p><ul><li>不使用累积确认机制，接收方对每个分组单独进行确认<ul><li><strong>设置缓存机制</strong>，缓存乱序到达的分组</li></ul></li><li>发送方只用重传哪些没收到ACK的分组<ul><li>为每个分组设置计时器</li></ul></li><li><strong>发送方窗口</strong><ul><li>N个连续的序列号</li><li>限制已经发送且未发送的分组</li></ul></li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770256143.png" alt="1694770256143"></p><p><strong>分布式系统的网络</strong></p><h4 id="Sender"><a href="#Sender" class="headerlink" title="Sender"></a>Sender</h4><ul><li><strong>data from above</strong>:<ul><li>if next available seq # in window, send pkt</li></ul></li><li><strong>timeout (n)</strong>:<ul><li>resend pkt n, restart timer</li></ul></li><li><strong>ACK(n) in [sendbase,sendBase+N]</strong>:<ul><li>mark pkt n as recieved</li><li>if n smallest unACKed pkt, advanced window base to next unACKed seq #</li></ul></li></ul><h4 id="recevier"><a href="#recevier" class="headerlink" title="recevier"></a>recevier</h4><ul><li><strong>pkt n in [revbase, revbase+N-1]</strong><ul><li>send ACK(n)</li><li>out-of-order:buffer</li><li>in-order:deliver(also deliver buffered, in-order pkts), advance window to next not-yet-recieved pkt</li></ul></li><li><strong>pkt n in [rcvbase-N,rcvbase-1]</strong><ul><li>ACK(n)</li></ul></li><li><strong>otherwise:</strong><ul><li>ignore</li></ul></li></ul><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770984071.png" alt="1694770984071"></p><h3 id="SR协议：困境"><a href="#SR协议：困境" class="headerlink" title="SR协议：困境"></a>SR协议：困境</h3><ul><li>序列号：0，1，2，3</li><li>窗口尺寸：3</li><li>接收方能够区分开两种不同的场景吗？<ul><li>(a)中发送方重发<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771172608.png" alt="1694771172608"></li><li>(b)中发送了第五个分组<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771259880.png" alt="1694771259880"></li></ul></li></ul><h4 id="问题：序列号空间大小和窗口尺寸需要满足什么关系？"><a href="#问题：序列号空间大小和窗口尺寸需要满足什么关系？" class="headerlink" title="问题：序列号空间大小和窗口尺寸需要满足什么关系？"></a>问题：序列号空间大小和窗口尺寸需要满足什么关系？</h4><blockquote><p>$N_S+N_R \leq 2^k$</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="传输层" scheme="https://molaters.github.io/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-虚电路网络</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E7%94%B5%E8%B7%AF%E7%BD%91%E7%BB%9C/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E7%94%B5%E8%B7%AF%E7%BD%91%E7%BB%9C/</id>
+    <published>2023-11-24T02:14:50.092Z</published>
+    <updated>2023-10-12T09:08:43.456Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[计算机网络]]<h2 id="连接服务和无连接服务"><a href="#连接服务和无连接服务" class="headerlink" title="连接服务和无连接服务"></a>连接服务和无连接服务</h2><p>数据报网络和虚电路网络是典型两类 <strong>分组交换网络</strong></p><p>数据报网络提供网络层无连接服务</p><p>虚电路网络日工网络层的连接服务</p><p>类似于传输层的无连接服务(<code>UDP</code>)和面向连接服务(<code>TCP</code>)，但是网络层服务：</p><ol><li>主机到主机服务(而前者是端到端的连接)</li><li>网络核心实现</li></ol><h2 id="虚电路-Virtual-circuits-VC"><a href="#虚电路-Virtual-circuits-VC" class="headerlink" title="虚电路(Virtual circuits) VC"></a>虚电路(Virtual circuits) VC</h2><p><strong>虚电路</strong>：一条从源主机到目的主机， <em>类似于电路</em>的路径(逻辑链接)</p><ul><li><p>分组交换 （和电路交换的建立的电路网络不相同）</p></li><li><p>每个分组的传输利用链路的全部带宽</p></li><li><p>源到目的路径经过的网络层设备共同完成虚电路的功能</p></li></ul><p><strong>通信过程：</strong></p><ul><li>呼叫建立（call setup） $\to$ 数据传输 $\to$ 拆除呼叫</li></ul><p><code>VCID</code> 每个分组携带虚电路标识<code>VCID</code>, 而不是目的主机地址</p><p>虚电路经过的每个网络设备(如路由器)，维护 <strong>每条</strong> 经过它的虚电路连接状态</p><p>链路、网络设备资源（如带宽、缓存等）可以面向VC进行预分配</p><ul><li>预分配资源 &#x3D; 可预期服务性能</li><li>如ATM 的电路仿真</li></ul><h2 id="VC的具体实现"><a href="#VC的具体实现" class="headerlink" title="VC的具体实现"></a>VC的具体实现</h2><h3 id="每条虚电路包括"><a href="#每条虚电路包括" class="headerlink" title="每条虚电路包括"></a>每条虚电路包括</h3><ol><li>源主机到目的主机的<strong>一条路径</strong></li><li>虚电路号（VCID），沿路每段链路的一个编号，有多少的链路就表现出网络的性能</li><li>沿路每个网络层设备（路由器等），<strong>利用转发表记录经过的每条虚电路</strong></li></ol><p><strong>沿某条虚电路传输的分组，携带对应虚电路的VCID，而不是目的地址</strong></p><p>同一条VC，在每段链路上的VCID通常不同</p><ul><li>路由器转发分组的时候根据转发表改写&#x2F;替换虚电路号</li></ul><h2 id="VC转发表"><a href="#VC转发表" class="headerlink" title="VC转发表"></a>VC转发表</h2><p>每一个网络设备都要参与记录转发表</p><p>路由器R1的VC转发表</p><table><thead><tr><th>输入接口</th><th>输入VC #</th><th>输出接口</th><th>输出VC #</th></tr></thead><tbody><tr><td>1</td><td>12</td><td>3</td><td>22</td></tr><tr><td>2</td><td>63</td><td>1</td><td>18</td></tr><tr><td>……</td><td>……</td><td>……</td><td>……</td></tr></tbody></table><p><strong>VC路径上每个路由器都需要维护VC连接的状态信息</strong></p><h2 id="虚电路信令协议（signal-protocols）"><a href="#虚电路信令协议（signal-protocols）" class="headerlink" title="虚电路信令协议（signal protocols）"></a>虚电路信令协议（signal protocols）</h2><p>用于VC的建立维护和拆除</p><ul><li>路径选择</li></ul><p>应用于虚电路网络</p><ul><li>如ATM、帧中继网络等</li></ul><p><strong>目前的Internet不再采用</strong></p><ol><li>初始呼叫(通过路由)</li><li>呼叫到达</li></ol><p><strong>虚电路俩连接之后，就开始下一段的行动，进行连接的建立和数据的传输</strong></p><ol start="3"><li><p>接收呼叫</p></li><li><p>呼叫建立</p></li><li><p>数据流开始</p></li><li><p>接收数据</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="网络层" scheme="https://molaters.github.io/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-计算机网络传输层-2</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82-2/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82-2/</id>
+    <published>2023-11-24T02:14:50.092Z</published>
+    <updated>2023-10-12T09:07:02.774Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[计算机网络]]<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>可靠数据传输原理 -&gt; TCP</p><h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p>TCP是面向连接的，这是因为在一个应用进程可以开始向另一个应用进程发送数据之前，两个进程必须先相互握手。</p><p>连接的双方都将初始化和TCP连接相关的许多TCP状态变量</p><p><strong>全双工服务（full-duplex service）</strong></p><p><strong>点对点(point-to-point)</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-网络应用进程通信</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/</id>
+    <published>2023-11-24T02:14:50.090Z</published>
+    <updated>2023-10-12T09:06:00.955Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[2023-09-17]]# 网络应用进程通信<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a><strong><code>进程</code></strong></h2><ul><li>主机上运行的程序</li></ul><h2 id="同一主机上运行的进程之间如何进行通信"><a href="#同一主机上运行的进程之间如何进行通信" class="headerlink" title="同一主机上运行的进程之间如何进行通信"></a>同一主机上运行的进程之间如何进行通信</h2><ul><li>进程间的<code>**通讯机制**</code></li><li>操作系统来提供</li></ul><h2 id="不同主机上运行的进程之间如何通信"><a href="#不同主机上运行的进程之间如何通信" class="headerlink" title="不同主机上运行的进程之间如何通信"></a>不同主机上运行的进程之间如何通信</h2><ul><li><strong><code>消息交换</code></strong></li></ul><p><strong>客户机进程：发起通信的进程</strong></p><p><strong>服务器进程：等待通信请求的进程</strong></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p><h2 id="套接字：Socket"><a href="#套接字：Socket" class="headerlink" title="套接字：Socket"></a>套接字：<em>Socket</em></h2><p>进程之间通信利用Socket发送和接受消息实现</p><h3 id="类似于寄信"><a href="#类似于寄信" class="headerlink" title="类似于寄信"></a>类似于寄信</h3><ul><li><strong>发送方</strong>将消息送到<strong>门外的邮箱</strong></li><li><strong>发送方</strong>以来（门外的）传输基础设施将消息传输到<strong>接收方所在的主机</strong>，并且送到<strong>接受方的门外</strong></li><li><strong>接收方从门外获取消息</strong></li></ul><h3 id="传输基础设施向进程提供API"><a href="#传输基础设施向进程提供API" class="headerlink" title="传输基础设施向进程提供API"></a>传输基础设施向进程提供API</h3><ul><li>传输协议的选择</li><li>参数的设置</li></ul><p>很自然的问题，底层的设施怎么就能正确无误的接收到传输到的进程呢？</p><h2 id="如何寻址进程"><a href="#如何寻址进程" class="headerlink" title="如何寻址进程"></a>如何寻址进程</h2><h3 id="不同主机上的进程之间通信，那么每个进程都必须拥有标识符"><a href="#不同主机上的进程之间通信，那么每个进程都必须拥有标识符" class="headerlink" title="不同主机上的进程之间通信，那么每个进程都必须拥有标识符"></a>不同主机上的进程之间通信，那么每个进程都必须拥有标识符</h3><h3 id="如何寻址主机？——IP地址"><a href="#如何寻址主机？——IP地址" class="headerlink" title="如何寻址主机？——IP地址"></a>如何寻址主机？——IP地址</h3><ul><li>Q：主机有了IP地址之后，是否<code>**足以</code> 定位进程？**</li><li>A：不是，同一个主机可能同时有多个进程需要通信</li></ul><p><strong>端口号&#x2F;<em>Port Number</em></strong></p><ul><li>是主机上每个需要通信的进程都分配一个端口号</li><li>HTTP Server：80</li><li>Mail Server：25</li></ul><h3 id="进程的标识符"><a href="#进程的标识符" class="headerlink" title="进程的标识符"></a>进程的标识符</h3><ul><li>IP地址+端口号</li></ul><h2 id="应用层的协议"><a href="#应用层的协议" class="headerlink" title="应用层的协议"></a>应用层的协议</h2><h3 id="网络应用都应该需要遵循应用层协议"><a href="#网络应用都应该需要遵循应用层协议" class="headerlink" title="网络应用都应该需要遵循应用层协议"></a>网络应用都应该需要遵循应用层协议</h3><h3 id="公开协议"><a href="#公开协议" class="headerlink" title="公开协议"></a>公开协议</h3><ul><li>由RFC（<em><strong>Request For Comments</strong></em>）定义</li><li>允许互相操作</li><li>HTTP，SMTP，……</li></ul><h3 id="私有协议"><a href="#私有协议" class="headerlink" title="私有协议"></a>私有协议</h3><ul><li>多数P2P文件共享应用</li></ul><h2 id="应用层协议的内容"><a href="#应用层协议的内容" class="headerlink" title="应用层协议的内容"></a>应用层协议的内容</h2><h3 id="消息的类型（type）"><a href="#消息的类型（type）" class="headerlink" title="消息的类型（type）"></a>消息的类型（type）</h3><ul><li>请求消息</li><li>响应消息</li></ul><h3 id="消息的语法（syntax）格式"><a href="#消息的语法（syntax）格式" class="headerlink" title="消息的语法（syntax）格式"></a>消息的语法（syntax）格式</h3><ul><li>消息中由哪些字段</li><li>每个字段如何描述</li></ul><h3 id="字段的语义（semantics）"><a href="#字段的语义（semantics）" class="headerlink" title="字段的语义（semantics）"></a>字段的语义（semantics）</h3><ul><li>字段中信息的含义</li></ul><h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul><li>进程应该何时、如何发送消息</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Web应用" scheme="https://molaters.github.io/tags/Web%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-虚拟局域网</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</id>
+    <published>2023-11-24T02:14:50.090Z</published>
+    <updated>2023-11-01T14:13:13.794Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><h2 id="VLANs：动机"><a href="#VLANs：动机" class="headerlink" title="VLANs：动机"></a>VLANs：动机</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220617.png" alt="image.png"></p><p>考虑一下情形:CS用户迁移到EE，但是希望连接至CS交换机，怎么办?</p><p>单一广播域:</p><p>所有第2层广播流量(ARPDHCP,未知目的MAC地址位置)必须穿越整个LAN</p><p>安全&#x2F;隐私，效率问题</p><h3 id="虚拟局域网-VirtualLocal-Area-Network"><a href="#虚拟局域网-VirtualLocal-Area-Network" class="headerlink" title="虚拟局域网(VirtualLocal Area Network)"></a>虚拟局域网(VirtualLocal Area Network)</h3><p>支持VLAN划分的交换机，可以在一个物理LAN架构上配置定义多个VLAN</p><p>基于端口的VLAN: 分组交换机端口(通过交换机管理软件)，于是，单一的物理交换机 …..</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220735.png" alt="image.png"></p><p><strong>流量隔离(traffic isolation)</strong>:去往&#x2F;来自端口1-8的倾只到达端口1-8</p><ul><li>也可以基于MAC地址定义VLAN,而不是交换端口</li></ul><p><strong>动态成员</strong>: 端口可以动态分配给不同VLAN</p><p><strong>在VLAN间转发: 通过路由(就像在独立的交换机之间)</strong></p><p>实践中，厂家会将交换机与路由器集成在一起</p><h2 id="跨越多交换机的VLAN"><a href="#跨越多交换机的VLAN" class="headerlink" title="跨越多交换机的VLAN"></a>跨越多交换机的VLAN</h2><p><strong>多线缆连接</strong></p><ul><li>每个线缆连接一个VLAN</li></ul><p><strong>中继端口(trunk port)</strong>: 在跨越多个物理交换机定义的VLAN承载帧</p><ul><li><p>为多VLAN转发802.1顿容易产生歧义(必须携带VLAN ID信息)</p></li><li><p>802.1q协议为经过中继端口转发的顿增加&#x2F;去除额外的首部域</p></li></ul><h2 id="802-1Q-VLAN帧格式"><a href="#802-1Q-VLAN帧格式" class="headerlink" title="802.1Q VLAN帧格式"></a>802.1Q VLAN帧格式</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101221243.png" alt="image.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;h2 id=&quot;VLANs：动机&quot;&gt;&lt;a href=&quot;#VLANs：动机&quot; class=&quot;headerlink&quot; title=&quot;VLANs：动机&quot;&gt;&lt;/a&gt;VLANs：动机&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://typo</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-网络应用的体系结构</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/</id>
+    <published>2023-11-24T02:14:50.089Z</published>
+    <updated>2023-10-12T09:05:56.327Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head># 网络应用的体系结构<h1 id="你使用过哪些网络应用？"><a href="#你使用过哪些网络应用？" class="headerlink" title="你使用过哪些网络应用？"></a>你使用过哪些网络应用？</h1><p>百度 QQ alipay weixin ……</p><h1 id="网络应用有哪些特点呢？"><a href="#网络应用有哪些特点呢？" class="headerlink" title="网络应用有哪些特点呢？"></a>网络应用有哪些特点呢？</h1><p><strong>🤔和单机应用有什么不同？</strong></p><p><strong>🤔网络应用应该有什么样的结构呢？</strong></p><h1 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h1><p><code>**客户机、服务器**</code>结构（Client-Server,C）</p><p><code>**点对点**</code>结构（Peer-to-peer,P2P）</p><p><code>**混合**</code>结构</p><h2 id="客户机-服务器结构"><a href="#客户机-服务器结构" class="headerlink" title="客户机&#x2F;服务器结构"></a>客户机&#x2F;服务器结构</h2><p><strong><strong><strong>客户机：</strong></strong></strong></p><ul><li>和服务器通信</li><li><strong>间歇性</strong>接入网络</li><li>可能有<strong>动态的IP地址</strong></li><li>不会和其他的客户机通信</li></ul><p><strong>服务器：</strong></p><ul><li>需要不断提供服务</li><li><code>永久性</code>的访问地址</li><li>利用<strong>大量服务器</strong>实现可扩展性</li></ul><p><strong>例子</strong></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p><h2 id="纯P2P结构"><a href="#纯P2P结构" class="headerlink" title="纯P2P结构"></a>纯P2P结构</h2><p>基本上看不出来明显的服务器和客户机的差别了</p><aside>🪶 **特点**<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png" alt="Untitled"></p><ul><li>没有永远在线的服务器</li><li>任意端或者节点之间都可以直接通讯</li><li>节点间歇性的接入网络</li><li>节点可能改变IP地址</li></ul><p><strong>优点</strong></p><p><strong>高度可伸缩的</strong></p><p><strong>缺点</strong></p><p><strong>难以管理</strong></p></aside><h2 id="混合结构"><a href="#混合结构" class="headerlink" title="混合结构"></a>混合结构</h2><p>🤔<strong>能否将两种结构混合在一起呢？并能够结合两者的优点？</strong></p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png" alt="可以避免服务器的资源过度使用"></p><p>可以避免服务器的资源过度使用</p><ul><li><em><strong>Napster应用</strong></em><ul><li><strong>文件传输</strong>使用P2P结构</li><li><strong>文件的搜索</strong>采用C&#x2F;S结构——<code>**集中式**</code><ul><li>每个节点<em>向中央服务器登记自己的内容</em></li><li>每个节点向中央服务器<em>提交查询要求</em>，查找感兴趣的内容</li></ul></li></ul></li></ul><h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p><strong>每种网络体系结构找出5种以上的网络应用</strong></p><p><strong>从多个方面&#x2F;角度对比三种体系结构的优缺点</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Web应用" scheme="https://molaters.github.io/tags/Web%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-网络应用层概述</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/</id>
+    <published>2023-11-24T02:14:50.088Z</published>
+    <updated>2023-10-12T09:05:51.806Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head># 网络应用层概述<h2 id="本讲内容"><a href="#本讲内容" class="headerlink" title="本讲内容"></a>本讲内容</h2><h2 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h2><ul><li>客户机和服务器</li><li>P2P</li><li>混合结构</li></ul><table><thead><tr><th>application</th></tr></thead><tbody><tr><td>transport</td></tr><tr><td>network</td></tr><tr><td>link</td></tr><tr><td>physical</td></tr></tbody></table><h2 id="网络应用的服务需求"><a href="#网络应用的服务需求" class="headerlink" title="网络应用的服务需求"></a>网络应用的服务需求</h2><ul><li>可靠性</li><li>带宽</li><li>时延</li></ul><h2 id="Internet传输层服务模型"><a href="#Internet传输层服务模型" class="headerlink" title="Internet传输层服务模型"></a>Internet传输层服务模型</h2><ul><li>TCP</li><li>UDP</li></ul><h2 id="特定协议网络模型"><a href="#特定协议网络模型" class="headerlink" title="特定协议网络模型"></a>特定协议网络模型</h2><ul><li>HTTP</li><li>SMTP POP IMAP</li><li>DNS</li><li>P2P应用</li></ul><h2 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h2><ul><li>TCP</li><li>UDP</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Web应用" scheme="https://molaters.github.io/tags/Web%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-网络层服务</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%9C%8D%E5%8A%A1/</id>
+    <published>2023-11-24T02:14:50.087Z</published>
+    <updated>2023-10-12T09:08:37.024Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[计算机网络]]<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>从发送主机像接受主机传送数据段</p><p><strong>发送主机</strong>： 将数据段封装到数据报中</p><p><strong>接收主机</strong>：向传输层交付数据段</p><p><em><strong>每个</strong></em>主机和路由器都运行网络层协议</p><p>路由器检验所有穿越它的IP数据报的头部域</p><h2 id="网络层的核心功能-——-转发和路由"><a href="#网络层的核心功能-——-转发和路由" class="headerlink" title="网络层的核心功能 —— 转发和路由"></a>网络层的核心功能 —— 转发和路由</h2><p>路由器怎么把数据包转发到数据端口上最终送到目的地？</p><blockquote><p>[!转发（forwarding）]<br>将分组从路由器的输入端口转移到合适的输出端口</p></blockquote><p>转发表： 转发表确定在本路由器如何转发分组</p><p>每一个地址来对应一个输出链路，通过转发表来进行寻找路线。</p><p>必须事先建立起转发表，才能进行传输数据。</p><blockquote><p>[!路由(routing)]<br>确定分组从源到目的经过的路径</p></blockquote><p><strong>路由算法</strong> （routing algorithms）</p><ul><li><em>确定通过网络的端到端路径</em></li></ul><h2 id="网络层核心功能-——-连接建立"><a href="#网络层核心功能-——-连接建立" class="headerlink" title="网络层核心功能 —— 连接建立"></a>网络层核心功能 —— 连接建立</h2><p>某些网络的重要功能：</p><ul><li>ATM 帧中继 X.25</li></ul><p>数据分组传输之前两端主机需要<strong>首先</strong>建立虚拟&#x2F;逻辑连接</p><ul><li>网络设备（如路由器）参与连接的建立</li></ul><p>网络层连接和传输层连接的<strong>对比</strong></p><ul><li>网络层连接：两个主机之间（<em>路径上的路由器等网络设备参与其中</em>）</li><li>传输层连接：两个应用进程之间（<em>对中间网络设备透明</em>）</li></ul><h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><p>Q： 网络层为发送端到接收端的数据包传送通道( channel )提供什么样的服务模型(service model)？</p><p>Internet 网络层中提供的模型 Best effort model <code>尽力服务</code></p><p>作为网络层，不需要进行拥塞控制或者拥塞信息的处理</p><p><em>通过是否发生数据丢失来确定是否发生了数据的拥塞</em></p><p>ATM 网络 :</p><ul><li>CBR  constant rate 固定比特率 所以带宽是保障的，不会出现拥塞。</li><li>VBR  guaranteed rate 再拥塞的时候只能提供最低的传输数据带宽</li><li>ABR</li></ul><h3 id="无连接服务-connection-less-service"><a href="#无连接服务-connection-less-service" class="headerlink" title="无连接服务 (connection-less service)"></a>无连接服务 (connection-less service)</h3><ul><li>不事先为系列分组的传输确定传输路径</li><li>每个分组独立确定传输路径（根据网络状况来动态的选择）</li><li>不同的分组可能传输路径不相同<ul><li>所以发到的数据顺序可能是不一样的</li></ul></li><li><strong>数据报网络(datagram network)</strong></li></ul><h3 id="连接服务-connection-service"><a href="#连接服务-connection-service" class="headerlink" title="连接服务(connection service)"></a>连接服务(connection service)</h3><ul><li>首先 为系列分组传输确定从源到目的的经过的路径(建立连接)</li><li>然后沿该路径(连接)传输系列分组</li><li>系列分组传输路径相同</li><li>传输结束之后拆除连接</li><li><strong>虚电路网络(virtual-sircuit network)</strong></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="网络层" scheme="https://molaters.github.io/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-网络层例题讲解</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/</id>
+    <published>2023-11-24T02:14:50.087Z</published>
+    <updated>2023-10-30T05:58:16.515Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><p>某网络拓扑如下图所示，路由器R1通过接口E1、E2分别连接局域网1、局域网2，通过接口LO连接路由器R2，并通过路由器R2连接域名服务器与互联网。R1的LO接口的IP地址是202.118.2.1;R2的LO接口的IP地址是202.118.2.2，L1接口的IP地址是130.11.120.1，EO接口的IP地址是202.118.3.1;域名服务器的IP地址是202.118.3.2。</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030134252.png" alt="image.png"></p><p>R1和R2的路由表结构为：</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030134326.png" alt="image.png"></p><p>(1)将IP地址空间202.118.1.0&#x2F;24划分为2个子网，分别分配给局域网1、局域网2，每个局域网需分配的IP地址数不少于120个。请给出子网划分结果，说明理由或给出必要的计算过程</p><blockquote><p>可以看出是标准的C网，202.118.1.0 ~ 202.118.1.254<br>划分结果为：<br>子网1：202.118.1.0，子网掩码为255.255.255.128<br>（202.118.1.0&#x2F;25）<br>子网2：202.118.1.128，子网掩码为255.255.255.128<br>（202.118.1.128&#x2F;25）</p></blockquote><p>(2)请给出R1的路由表，使其明确包括到局域网1的路由、局域网2的路由、域名服务器的主机路由和互联网的路由。</p><table><thead><tr><th align="center">目的网络IP地址</th><th align="center">子网掩码</th><th align="center">下一跳IP地址</th><th align="center">接口</th></tr></thead><tbody><tr><td align="center">202.118.1.0</td><td align="center">255.255.255.128</td><td align="center">-</td><td align="center">E1</td></tr><tr><td align="center">202.118.1.128</td><td align="center">255.255.255.128</td><td align="center">-</td><td align="center">E2</td></tr><tr><td align="center"><div>202.118.3.2</div></td><td align="center"><div>255.255.255.255</div></td><td align="center">202.118.2.2</td><td align="center">L0</td></tr><tr><td align="center">0.0.0.0</td><td align="center">0.0.0.0</td><td align="center">202.118.2.2</td><td align="center">L0</td></tr></tbody></table><p>(3)请采用路由聚合技术，给出R2到局域网1和局域网2的路由。</p><table><thead><tr><th align="center">目的IP地址</th><th align="center">子网掩码</th><th align="center">下一跳IP地址</th><th align="center">L0</th></tr></thead><tbody><tr><td align="center">202.118.1.0</td><td align="center">255.255.255.0</td><td align="center">202.118.2.1</td><td align="center">L0</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;p&gt;某网络拓扑如下图所示，路由器R1通过接口E1、E2分别连接局域网1、局域网2，通过接口LO连接路由器R2，并通过路由器R2连接域名服务器与互联网。R1的LO接口的IP地址是202.118.2.1;R2的LO接口的IP地址是20</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="网络层" scheme="https://molaters.github.io/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-有类IP地址</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/</id>
+    <published>2023-11-24T02:14:50.086Z</published>
+    <updated>2023-10-15T12:51:45.753Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head>[[计算机网络]]<p>IP子网 [[CourseNotes&#x2F;计算机体系结构&#x2F;CN-IP编址|CN-IP编址]]</p><h2 id="IP地址（Addresses"><a href="#IP地址（Addresses" class="headerlink" title="IP地址（Addresses)"></a>IP地址（Addresses)</h2><p>“有类”编址</p><p><strong>A类地址</strong>：</p><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015202955.png" alt="image.png"></p><p>0.0.0.0 ~ 127.255.255.255</p><p><strong>B类地址</strong>：<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015203137.png" alt="image.png"><br>128.0.0.0 ~ 191.255.255.255.255</p><p><strong>C类地址</strong>：<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015203302.png" alt="image.png"><br>192.0.0.0 ~ 233.255.255.255</p><p>定义C类地址前八位用于网络号，后面八位用于主机号</p><p>对于剩余的八分之一的地址空间进行最后一次的二分，D类地址不再确认网络号和主机号，用于特殊的目的：</p><p>用于标识一组主机，理论上可以在互联网中的所有地方。称为<strong>多播地址</strong>。</p><p>E类地址保留作为研究使用</p><h2 id="特殊的IP地址"><a href="#特殊的IP地址" class="headerlink" title="特殊的IP地址"></a>特殊的IP地址</h2><table><thead><tr><th align="center">NetID</th><th align="center">HostID</th><th align="center">作为IP分组源地址</th><th align="center">作为IP分组目的地址</th><th>用途</th></tr></thead><tbody><tr><td align="center">全0</td><td align="center">全0</td><td align="center">可以</td><td align="center">不可以</td><td>在本网范围内表示本机; 在路由表中用于表示默认路由相当于表示整个Internet网络</td></tr><tr><td align="center">全0</td><td align="center">特定值</td><td align="center">不可以</td><td align="center">可以</td><td>标识本网内某个特定的主机</td></tr><tr><td align="center">全1</td><td align="center">全1</td><td align="center">不可以</td><td align="center">可以</td><td>本网的广播地址（路由器不转发）  <strong>受限网络地址</strong></td></tr><tr><td align="center">特定值</td><td align="center">全0</td><td align="center">不可以</td><td align="center">可以</td><td>网络地址，表示一个网络</td></tr><tr><td align="center">特定值</td><td align="center">全1</td><td align="center">不可以</td><td align="center">可以</td><td>直接广播地址，对特定网络上的所有主机进行广播</td></tr><tr><td align="center">127</td><td align="center">非全0或者非全1的任何数</td><td align="center">可以</td><td align="center">可以</td><td>用于本地软件环回测试</td></tr></tbody></table><h2 id="私有（pivate）IP地址"><a href="#私有（pivate）IP地址" class="headerlink" title="私有（pivate）IP地址"></a>私有（pivate）IP地址</h2><p>只用于私有网络，在公共网络上这种地址是无效的</p><table><thead><tr><th align="center">Class</th><th align="center">NetIDs</th><th align="center">Blocks</th></tr></thead><tbody><tr><td align="center">A</td><td align="center">10</td><td align="center">1</td></tr><tr><td align="center">B</td><td align="center">172.16 to 172.31</td><td align="center">16</td></tr><tr><td align="center">C</td><td align="center">192.168.0 to 192.168.255</td><td align="center">256</td></tr></tbody></table><p>这部分的私有地址使得IPv4的网络还能正常运行</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-数据链路层服务</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/</id>
+    <published>2023-11-24T02:14:50.085Z</published>
+    <updated>2023-10-30T02:39:34.315Z</updated>
+    
+    <content type="html"><![CDATA[<p>[[CN-NotesView]]</p><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>术语：</p><ul><li><p>主机和路由器：结点（nodes）</p></li><li><p>连接相邻结点的通信信道：链路(links)</p><ul><li>有线链路(wired links)</li><li>无线链路(wireless links)</li><li>局域网(LANs)</li></ul></li><li><p>链路层(第2层)数据分组：帧(frame),封装网络层数据报</p></li></ul><blockquote><p><strong>数据链路层</strong>负责实现通过一条链路从一个结点向另一个物理链路直接相连的相邻结点传输数据报</p></blockquote><h2 id="链路层服务"><a href="#链路层服务" class="headerlink" title="链路层服务"></a>链路层服务</h2><p>组帧(framing)</p><ul><li><p>封装数据报文构成数据帧，加上首部和尾部</p></li><li><p>帧同步</p></li></ul><p>在数据帧的首位加上特殊的字符</p><p>链路接入(link access)</p><p>如果是共享介质，需要解决信道接入(channel access)</p><p>帧首部中的”MAC”地址，用于标识帧的源和目的</p><ul><li>不同于IP地址！</li></ul><p>相邻结点之间可靠交付</p><p>无线链路: 误码率高，需要可靠交付</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;[[CN-NotesView]]&lt;/p&gt;
+&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;术语：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;主机和路由器：结点（nodes）&lt;/p&gt;
+&lt;/li&gt;</summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CN-应用层学习笔记</title>
+    <link href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%BA%94%E7%94%A8%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%BA%94%E7%94%A8%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-11-24T02:14:50.084Z</published>
+    <updated>2023-10-24T00:46:50.409Z</updated>
+    
+    <content type="html"><![CDATA[<head>    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>    <script type="text/x-mathjax-config">        MathJax.Hub.Config({            tex2jax: {            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],            inlineMath: [['$','$']]            }        });    </script></head># 应用层 [[计算机网络]]<h2 id="章节分段"><a href="#章节分段" class="headerlink" title="章节分段"></a>章节分段</h2><ol><li><p>C&#x2F;S模式，P2P模式</p></li><li><p>讨论客户-服务器模式的概念以及这个模式是如何为英特网用户提供服务的</p></li><li><p>讨论客户-服务器模式的预定义和标准应用。（万维网、文件传输、电子邮件）</p></li><li><p>对等模式中的概念以及协议。以及协议的流行应用</p></li><li><p>给出在客户-服务器模式下怎么通过C语言编写两个程序创建一个新的应用</p></li></ol><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以把应用层的功能看作是两个应用层之间假设存在一个<code>假想的直接连接</code>，通过这个链接可以发送和接收报文。</p><p>因特网为全世界用户提供服务。<code>层次结构</code>使得因特网比其他网络更加灵活，在一层增加协议的时候要观察是不是使用了底层提供的服务；在一层删去协议的时候要关注上层是不是使用了该协议，并改写上一层的协议。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;head&gt;
+    &lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+   </summary>
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Web应用" scheme="https://molaters.github.io/tags/Web%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+</feed>

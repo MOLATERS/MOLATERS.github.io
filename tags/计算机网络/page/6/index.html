@@ -1,571 +1,543 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: 计算机网络 - SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="this is a personal notion keeper"><meta property="og:type" content="blog"><meta property="og:title" content="SlaterXu"><meta property="og:url" content="https://molaters.github.io/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="this is a personal notion keeper"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://molaters.github.io/img/og_image.png"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="Develope"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://molaters.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io"},"headline":"SlaterXu","image":["https://molaters.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"this is a personal notion keeper"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-          const id = '#' + CSS.escape(location.hash.substring(1));
-          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
-          if (!$tabMenu) {
-            return;
-          }
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/tags/计算机网络/page/6/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Molaters">
+<meta property="og:url" content="https://molaters.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/6/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="Lee">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            标签: 计算机网络 -
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(id);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">计算机网络</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.061Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-30T02:39:34.169Z" title="2023/10/30 10:39:34">2023-10-30</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">1 分钟读完 (大约113个字)</span></div></div><div class="content"><p>[[CN-NotesView]]</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[Open File] --&gt; B&#123;File Empty?&#125;</span><br><span class="line">    B -- No --&gt; C[Read Data from File]</span><br><span class="line">    C --&gt; D&#123;Window Not Full?&#125;</span><br><span class="line">    D -- Yes --&gt; E[Send Data]</span><br><span class="line">    E --&gt; F&#123;Data Sent Successfully?&#125;</span><br><span class="line">    F -- Yes --&gt; G[Start Timer]</span><br><span class="line">    F -- No --&gt; H&#123;Wait and Retry?&#125;</span><br><span class="line">    H -- Yes --&gt; D</span><br><span class="line">    H -- No --&gt; J[Receive Acknowledgment]</span><br><span class="line">    J -- Updated Window --&gt; K&#123;End of File?&#125;</span><br><span class="line">    K -- Yes --&gt; L[Stop Sending]</span><br><span class="line">    K -- No --&gt; D</span><br><span class="line">    B -- Yes --&gt; L</span><br><span class="line">    J -- Lost Acknowledgment --&gt; M&#123;Resend Data&#125;</span><br><span class="line">    M -- Data Resent --&gt; F</span><br><span class="line">    J -- Data Received --&gt; N[Write Data to File]</span><br><span class="line">    N --&gt; O&#123;Window Not Empty?&#125;</span><br><span class="line">    O -- Yes --&gt; P[Update Base]</span><br><span class="line">    O -- No --&gt; Q&#123;Continue Receiving?&#125;</span><br><span class="line">    Q -- Yes --&gt; J</span><br><span class="line">    Q -- No --&gt; R[Stop Sending and Receiving]</span><br></pre></td></tr></table></figure>
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
 
+    
 
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.059Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-15T12:36:54.152Z" title="2023/10/15 20:36:54">2023-10-15</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约420个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E7%BC%96%E5%9D%80/">CN-IP编址</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
 </head>
-[[计算机网络]]
-
-<p>IP分组：</p>
-<p>源地址（SA）- 从哪里来</p>
-<p>目的地址（DA）- 到哪里去</p>
-<p>接口（interface）：主机&#x2F;路由器和物理链路的连接</p>
-<ul>
-<li>实现网络层的功能</li>
-<li>路由器通常有多个接口</li>
-<li>主机通常只有一个或者两个接口（e.g 有限的以太网接口，无线的802.11接口）</li>
-</ul>
-<h2 id="IP编址"><a href="#IP编址" class="headerlink" title="IP编址"></a>IP编址</h2><p>IP地址：32bit（IPv4）</p>
-<p>编号标识主机、路由器的<strong>接口</strong></p>
-<p>IP地址和每个接口关联</p>
-<p>怎样为接口分配IP地址？</p>
-<h2 id="IP子网-subnets"><a href="#IP子网-subnets" class="headerlink" title="IP子网 subnets"></a>IP子网 <code>subnets</code></h2><p>IP地址：</p>
-<p>网络号（NETID）高位比特</p>
-<p>主机号（HOSTID）低位比特</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015201817985.png" alt="image-20231015201817985" style="zoom:67%;" />
-
-<p>实际上的网络的标识方式如下：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015201905891.png" alt="image-20231015201905891" style="zoom:67%;" />
-
-<p>可以用相同的网络号来描述相同区域的网络，称为IP<strong>子网</strong></p>
-<p><strong>子网</strong>的IP地址的网络号是相同的，在所有网络里面所有的接口不超过三个网络设备就可以物理联通</p>
-<p><strong>不跨越路由器</strong> （第三以及上层网络设备）可以彼此物理联通的接口</p>
-<p>在存储向哪个网络转发数据的时候，只用知道子网地址就可以</p>
-<p>可以用一个地址来描述子网：<strong>IP子网地址</strong></p>
-<p>图中网络有多少个IP子网? 通过IP地址就能够描述一个个的描述地址和子网</p>
-<p>一个个IP子网互联而形成的互联网络</p>
-<p>接口对应的IP地址保留之后可以看到有一些网络是孤岛（也就是IP子网）</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.059Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:08:32.976Z" title="2023/10/12 17:08:32">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约481个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Lab1/">CN-Lab1</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<h1 id="实验-1"><a href="#实验-1" class="headerlink" title="实验 1"></a>实验 1</h1><p><strong>HTTP 代理服务器的设计与实现代理服务器的设计与实现代理服务器的设计与实现</strong> </p>
-<h2 id="1-1-1-实验⽬的"><a href="#1-1-1-实验⽬的" class="headerlink" title="1.1.1.实验⽬的"></a>1.1.1.实验⽬的</h2><p><strong>实验⽬的</strong> </p>
-<p>熟悉并掌握 Socket ⽹络编程的过程与技术；</p>
-<p>深⼊理解 HTTP 协议， 掌握 HTTP 代理服务器的基本⼯作原理；</p>
-<p>掌握 HTTP 代理服务器设计与 编程实现的基本技能。 </p>
-<h2 id="2-2-2-实验环境实验环境实验环境"><a href="#2-2-2-实验环境实验环境实验环境" class="headerlink" title="2.2.2.实验环境实验环境实验环境"></a>2.2.2.实验环境实验环境实验环境</h2><ul>
-<li><p>接⼊ Internet 的实验主机； </p>
-</li>
-<li><p>Windows 操作系统； </p>
-</li>
-<li><p>开发语⾔：C&#x2F;C++（或 Java）等。</p>
-</li>
-</ul>
-<h2 id="3-3-3-实验内容实验内容实验内容"><a href="#3-3-3-实验内容实验内容实验内容" class="headerlink" title="3.3.3.实验内容实验内容实验内容"></a>3.3.3.实验内容实验内容实验内容</h2><p>(1) 设计并实现⼀个基本 HTTP 代理服务器。要求在指定端⼝（例如 8080）接收来⾃客户的 HTTP 请求并且根据其中的 URL 地址访问该地址 所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报⽂，并 将响应报⽂转发给对应的客户进⾏浏览。 </p>
-<p>(2) 设计并实现⼀个⽀持 Cache 功能的 HTTP 代理服务器。要求能缓 存原服务器响应的对象，并能够通过修改请求报⽂（添加 if-modified-since 头⾏），向原服务器确认缓存对象是否是最新版本。（选作内容，加分项 ⽬，可以当堂完成或课下完成） </p>
-<p>(3) 扩展 HTTP 代理服务器，⽀持如下功能：（选作内容，加分项⽬， 可以当堂完成或课下完成） </p>
-<p>a) ⽹站过滤：允许&#x2F;不允许访问某些⽹站； </p>
-<p>b) ⽤户过滤：⽀持&#x2F;不⽀持某些⽤户访问外部⽹站； </p>
-<p>c) ⽹站引导：将⽤户对某个⽹站的访问引导⾄⼀个模拟⽹站（钓⻥）。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.058Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:08:51.595Z" title="2023/10/12 17:08:51">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">5 分钟读完 (大约681个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-IP-90ed2951f5554e349c2ff14ccf3f87de">CN-IP数据报</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<h2 id="Internet-网络层"><a href="#Internet-网络层" class="headerlink" title="Internet 网络层"></a>Internet 网络层</h2><p><strong>主机、路由器网络层主要功能：</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231011104748.png" alt="image.png"></p>
-<p>计算机网络层的协议：</p>
-<p><strong>1. 路由协议</strong>：路径选择；RIP,OSPF,BGP；<br><strong>2. 转发表（路由表）</strong><br><strong>3. IP协议</strong>：寻址规约（conventions) ；数据报（分组）格式；分组处理规约<br><strong>4. ICMP协议</strong>：差错报告；路由器信令 —— IP协议的伴随协议</p>
-<h2 id="IP数据报（分组）格式"><a href="#IP数据报（分组）格式" class="headerlink" title="IP数据报（分组）格式"></a>IP数据报（分组）格式</h2><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231011105155.png" alt="image.png" style="zoom:67%;" />
-
-<p>将IP数据报展开得到的是：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231011105216.png" alt="image.png" style="zoom:50%;" />
-固定部分有20个字节
-
-<h3 id="版本号：4bit-IP协议的版本号"><a href="#版本号：4bit-IP协议的版本号" class="headerlink" title="版本号：4bit IP协议的版本号"></a><strong>版本号</strong>：4bit IP协议的版本号</h3><h3 id="首部长度：4bit-IP分组的首部长度"><a href="#首部长度：4bit-IP分组的首部长度" class="headerlink" title="首部长度：4bit IP分组的首部长度"></a><strong>首部长度</strong>：4bit IP分组的首部长度</h3><blockquote>
-<p>4bit $\to$ 0 ~ 15  <strong>所以没有办法给出20的大小的</strong><br>所以以4字节为单位才能标识全；所以在计算的时候需要乘上4</p>
-</blockquote>
-<p>最典型的前面两段分别是 4 和 5</p>
-<h3 id="服务类型（TOS）字段：-8bit-指示期望获得哪种类型的服务"><a href="#服务类型（TOS）字段：-8bit-指示期望获得哪种类型的服务" class="headerlink" title="服务类型（TOS）字段： 8bit 指示期望获得哪种类型的服务"></a><strong>服务类型（TOS）字段</strong>： 8bit 指示期望获得哪种类型的服务</h3><p>这个字段改名为 <strong>区分服务</strong></p>
-<p>只有在网络提供区分服务（DiffDev）的时候使用</p>
-<p>一般情况下这个字段都是00H</p>
-<h3 id="总长度字段：16bit-IP分组的总字节数（首部-数据）"><a href="#总长度字段：16bit-IP分组的总字节数（首部-数据）" class="headerlink" title="总长度字段：16bit IP分组的总字节数（首部+数据）"></a><strong>总长度字段</strong>：16bit IP分组的总字节数（首部+数据）</h3><p>最大IP分组的总长度：65535B</p>
-<p>最小的IP分组首部：20B</p>
-<p>IP分组可以封装的最大数据：65535 -20 &#x3D; 65515B</p>
-<h3 id="生存时间（TTL）字段占8位：IP分组在网络中可以通过的路由器数量"><a href="#生存时间（TTL）字段占8位：IP分组在网络中可以通过的路由器数量" class="headerlink" title="生存时间（TTL）字段占8位：IP分组在网络中可以通过的路由器数量"></a><strong>生存时间（TTL）字段</strong>占8位：IP分组在网络中可以通过的路由器数量</h3><p>路由器转发一次分组，TTL减1</p>
-<p>如果TTL&#x3D;0，路由器丢弃该IP分组</p>
-<h3 id="协议字段占8位：指示IP分组封装的是哪个协议的数据包"><a href="#协议字段占8位：指示IP分组封装的是哪个协议的数据包" class="headerlink" title="协议字段占8位：指示IP分组封装的是哪个协议的数据包"></a><strong>协议字段</strong>占8位：指示IP分组封装的是哪个协议的数据包</h3><p>实现了复用&#x2F;分解</p>
-<p>Eg 6为TCP，表示封装的是TCP段；17为UDP，表示封装的是UDP数据报</p>
-<h3 id="首部校验和字段占16位：实现对IP分组首部的差错检测"><a href="#首部校验和字段占16位：实现对IP分组首部的差错检测" class="headerlink" title="首部校验和字段占16位：实现对IP分组首部的差错检测"></a><strong>首部校验和字段</strong>占16位：实现对IP分组首部的差错检测</h3><p>计算校验和的时候，该字段设置为全0</p>
-<p>采用反码算数运算求和，和的反码作为首部校验和字段</p>
-<p>逐跳计算、逐跳检验</p>
-<h3 id="源IP地址、目的IP地址字段各占32位：分别表示发送分组的源主机-路由器（网络接口）和接受分组的目的主机-路由器（网路接口）的IP地址"><a href="#源IP地址、目的IP地址字段各占32位：分别表示发送分组的源主机-路由器（网络接口）和接受分组的目的主机-路由器（网路接口）的IP地址" class="headerlink" title="源IP地址、目的IP地址字段各占32位：分别表示发送分组的源主机&#x2F;路由器（网络接口）和接受分组的目的主机&#x2F;路由器（网路接口）的IP地址"></a><strong>源IP地址、目的IP地址字段</strong>各占32位：分别表示发送分组的源主机&#x2F;路由器（网络接口）和接受分组的目的主机&#x2F;路由器（网路接口）的IP地址</h3><h3 id="选项字段占用长度可变，范围在1-40B之间；携带安全、源选路径、时间戳和路由记录等内容"><a href="#选项字段占用长度可变，范围在1-40B之间；携带安全、源选路径、时间戳和路由记录等内容" class="headerlink" title="选项字段占用长度可变，范围在1~40B之间；携带安全、源选路径、时间戳和路由记录等内容"></a><strong>选项字段</strong>占用长度可变，范围在1~40B之间；携带安全、源选路径、时间戳和路由记录等内容</h3><p>实际上很少被使用</p>
-<h3 id="填充字段占长度可变，范围在0-3B之间；目的是不起整个首部符合32位对齐"><a href="#填充字段占长度可变，范围在0-3B之间；目的是不起整个首部符合32位对齐" class="headerlink" title="填充字段占长度可变，范围在0~3B之间；目的是不起整个首部符合32位对齐"></a><strong>填充字段</strong>占长度可变，范围在0~3B之间；目的是不起整个首部符合32位对齐</h3></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.057Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-15T13:13:20.517Z" title="2023/10/15 21:13:20">2023-10-15</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约514个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/">CN-IP子网划分和子网掩码</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<p>A类网络的网络数量很少，C类网络的网络数量太多，B类网络编址的网络也容易被浪费掉。</p>
-<h2 id="子网划分（Subnetting）？"><a href="#子网划分（Subnetting）？" class="headerlink" title="子网划分（Subnetting）？"></a>子网划分（Subnetting）？</h2><p>有类地址在描述的过程中会出现的问题</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205436105.png" alt="image-20231015205436105" style="zoom: 50%;" />
-
-<p>在实际网络中A类网络和B类网络肯定不可能</p>
-<p>就需要对大的网络区分成更小的网络范围：<strong>子网划分</strong></p>
-<p>怎么划分？  – <strong>IP地址上做文章</strong></p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205608325.png" alt="image-20231015205608325" style="zoom: 67%;" />
-
-<p>使用主机里面的IP比特之间进行划分</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205750642.png" alt="image-20231015205750642" style="zoom:67%;" />
-
-<p>其他的子网就不会受到通信的影响</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205827679.png" alt="image-20231015205827679" style="zoom:67%;" />
-
-<p>通过<strong>路由器</strong>来进行转发</p>
-<h3 id="Q：如何确定是否划分了子网？利用多少位来划分子网？"><a href="#Q：如何确定是否划分了子网？利用多少位来划分子网？" class="headerlink" title="Q：如何确定是否划分了子网？利用多少位来划分子网？"></a>Q：如何确定是否划分了子网？利用多少位来划分子网？</h3><p>区分的越多，地址空间就会小，所以子网的方式也很重要。</p>
-<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>形如IP地址：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015210018797.png" alt="image-20231015210018797"></p>
-<p>32位</p>
-<p>点分十进制形式</p>
-<p>取值：</p>
-<p>NetID、SubID位全部取1</p>
-<p>HostID位全取0</p>
-<p>例如：</p>
-<p>A网的默认子网掩码为：255.0.0.0</p>
-<p>B网的默认子网掩码为：255.255.0.0</p>
-<p>C网的默认子网掩码为：255.255.255.0</p>
-<p>借用3bit划分子网的B网的子网掩码为255.255.224.0</p>
-<blockquote>
-<p>[!子网地址 + 子网掩码]</p>
-<p>准确确定子网大小</p>
-</blockquote>
-<p><strong>For example</strong></p>
-<p>子网：201.2.3.0，255.255.255.0</p>
-<p>划分为登场的4个子网</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015210455295.png" alt="image-20231015210455295" style="zoom:67%;" />
-
-<p>利用路由器来互联在一起</p>
-<p><strong>路由器怎么确定应该将IP分组进行转发</strong>?</p>
-<blockquote>
-<p>将IP分组的目的IP地址和子网掩码 按位与运算，提取紫菀地址子网地址</p>
-</blockquote>
-<p>例如：</p>
-<ul>
-<li>目的IP地址：172.32.1.112，子网掩码：255.255.254.0</li>
-</ul>
-<p>172.32.1.112 &#x3D; 10101100 001000000 00000001 01110000<br>255.255.255.254.0 &#x3D; 11111111 11111111 11111110 00000000</p>
-<p>子网地址：172.32.0.0（子网掩码：255.255.254.0）<br>地址范围：172.32.0.0 ~ 172.32.1.255<br>可分配地址范围：172.32.0.1 ~ 172.32.1.254<br>广播地址：172.32.1.255</p>
-<p><strong>一个C类网络划分子网举例</strong>：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015211156.png" alt="image.png" style="zoom:67%;" />
-
-<p>最左侧的列对应的是每一侧子网的子网地址，最右侧代表的是广播地址</p>
-<p>会造成一部分的浪费</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.056Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-30T02:39:34.078Z" title="2023/10/30 10:39:34">2023-10-30</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">6 分钟读完 (大约894个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-IPv6-d34c23f298f44ddfadb20d07a247bfd6">CN-IPv6</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<h2 id="IPv6：-动机"><a href="#IPv6：-动机" class="headerlink" title="IPv6： 动机"></a>IPv6： 动机</h2><p>最初动机：32位的IPv4的地址空间已经分配殆尽</p>
-<p>其他动机：改进首部格式</p>
-<ul>
-<li>快速处理&#x2F;转发数据报</li>
-<li>支持QoS</li>
-</ul>
-<p><strong>IPv6的数据报格式</strong>：</p>
-<ul>
-<li>固定长度的40字节基本首部</li>
-<li>不允许分片 路由器不再支持分片，如果发生IP数据包的分片的话，需要在主机分片。</li>
-</ul>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022124955.png" alt="image.png"></p>
-<p>基本的首部</p>
-<p>其他的首部称为选项首部（大部分情况下路由器是不需要处理的）</p>
-<p>路由处理只需要处理40字节的基本头</p>
-<p>这些选项首部和数据部分称为<strong>载荷</strong></p>
-<h2 id="IPv6数据报的格式"><a href="#IPv6数据报的格式" class="headerlink" title="IPv6数据报的格式"></a>IPv6数据报的格式</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022125154.png" alt="image.png"></p>
-<p><code>优先级</code>（priority）:标识数据报文的优先级<br><code>流标签</code>（flow Label）：标识同一流中的标签</p>
-<blockquote>
-<p>更详细的定义还在讨论当中</p>
-</blockquote>
-<p>载荷的长度一共是16bit，可以表示65535的长度范围</p>
-<p><code>下一个首部</code>指向的是第一个扩展首部，每一个扩展首部都指向下一个首部</p>
-<p>也就是每个首部之间互相连接</p>
-<p>跳步限制：对应了数据报在转发过程中能够通过的路由器总数</p>
-<h2 id="IPv6和IPv4相比的改变"><a href="#IPv6和IPv4相比的改变" class="headerlink" title="IPv6和IPv4相比的改变"></a>IPv6和IPv4相比的改变</h2><p>校验和：彻底移除，以较少每跳处理时间，减少数据包的处理时间</p>
-<p>选项(options)：允许，但是从基本首部移除，定义多个选项首部，通过下一个首部字段来指示</p>
-<p>ICMPv6：新版的ICMP：</p>
-<ul>
-<li>附加报文类型 <code>Packet too big</code></li>
-<li>多播组管理功能</li>
-</ul>
-<p>发送Packet too big报文转发给主机，让主机来进行分片</p>
-<p><code>IGMP协议</code> 也就是多播组的协议，这个被集成到了IPv6之中了</p>
-<h2 id="IPv6地址表示形式"><a href="#IPv6地址表示形式" class="headerlink" title="IPv6地址表示形式"></a>IPv6地址表示形式</h2><p>地址相当庞大，所以不能使用IPv4的点分十进制的方法</p>
-<p>IPv6地址表示形式：冒号分割的十六进制的表示形式</p>
-<p>一般形式：1080：0：FF：0：8：800：200C：417A</p>
-<p>压缩形式：不能连续的两次使用连接的冒号，只用使用一次连续的冒号</p>
-<p>IPv4的嵌入形式：0：0：0：0：0：FFFF：13.1.68.3 后面就是IPv4的嵌入形式，后面可以使用点分十进制</p>
-<p>地址前缀：2002：43C：476b：：&#x2F;48</p>
-<p>IPv6已经不再使用掩码的方式 利用一个斜杠加网络前缀的方式表示</p>
-<p>URLs：http:&#x2F;&#x2F;[3FFE::1:800:200C:417A]:8000 表示形式不出现歧义</p>
-<h2 id="IPv6基本地址类型"><a href="#IPv6基本地址类型" class="headerlink" title="IPv6基本地址类型"></a>IPv6基本地址类型</h2><p>单播地址(unicast):一对一通信</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022130656.png" alt="image.png"></p>
-<p>多播地址(unicast):一对多通信</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022130704.png" alt="image.png"></p>
-<p>没有单独的广播地址，广播地址被定义为特殊的多播地址</p>
-<p>又定义了一种全新的数据类型：</p>
-<p>任意播（anycast）：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022130825.png" alt="image.png"></p>
-<p>发送到最近的接口上去</p>
-<h2 id="IPv4向IPv6过渡"><a href="#IPv4向IPv6过渡" class="headerlink" title="IPv4向IPv6过渡"></a>IPv4向IPv6过渡</h2><p>不可能在某个时刻所有路由器同时被更新位IPv6</p>
-<ul>
-<li><p>不会有“标志性的日期”</p>
-</li>
-<li><p>IPv4和IPv6路由器共存的网络如何运行？</p>
-</li>
-</ul>
-<p><strong>隧道</strong>：IPv6数据包作为IPv4数据包的载荷进行封装</p>
-<h2 id="Tunneling-隧道"><a href="#Tunneling-隧道" class="headerlink" title="Tunneling 隧道"></a>Tunneling 隧道</h2><p>逻辑隧道：利用IPv4隧道，连接IPv6路由器</p>
-<p>物理视角：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231022131114.png" alt="image.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.056Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-13T13:28:43.007Z" title="2023/10/13 21:28:43">2023-10-13</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">4 分钟读完 (大约542个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%88%86%E7%89%87/">CN-IP分片</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-
-<p><strong>最大传输单元</strong></p>
-<p>数据帧 IP分组</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231013111455.png" alt="image.png" style="zoom:67%;" />
-
-<p>网络链路存在MTU（最大传输单元）——  链路层数据帧可以封装数据的上限</p>
-<p>不同链路的MTU<strong>不相同</strong></p>
-<p>IP分片和重组问题，大IP分组向较小的MTU链路进行转发的时候，可以被分片(fragmented) <strong>也不是一定要进行分片</strong></p>
-<p>大IP分组分片为多个小分组</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231013112045421.png" alt="image-20231013112045421" style="zoom:67%;" />
-
-<p>IP分组的分片只分不装</p>
-<p>IP分片的过程中不知道顺序关系</p>
-<p>IP首部的相关字段用于表示分片以及确定分片的相对顺序</p>
-<p><strong>标识字段占16位：标识一个IP分组</strong></p>
-<p>IP协议利用一个计数器，没产生IP分组计数器加1，作为该IP分组的标识</p>
-<p>标志位字段占3位：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231013113324350.png" alt="image-20231013113324350" style="zoom:67%;" />
 
 
+<body>
+<div class="progress-bar-container">
+    
 
-<p>DF禁止分片 MF更多分片</p>
-<p>DF &#x3D; 1 禁止分片</p>
-<p>DF &#x3D; 0 允许分片</p>
-<p>MF &#x3D; 1 不是最后一片</p>
-<p>MF &#x3D; 0 最后一片</p>
-<p>片偏移字段占13位：一个IP分组分片封装原IP分组数据的相对偏移量</p>
-<p>片偏移字段是由8字节为单位（和首部长度一样的问题）</p>
-<p>在IP分组分片的过程中分片的数量一定是8的倍数</p>
-<p>加收原来的IP分组总长度为L，带转发链路的MTU为M，如果L&gt;M且DF&#x3D;0，则可以&#x2F;需要分片的时候每个分片的标识赋值原IP分组的标识</p>
-<p>分片出来的所有IP分组都是一样的标识</p>
-<p>通常分片的时候，除了最后一个分片，其他分片均分为MTU允许的最大分片</p>
-<p>一个最大分片可以封装的数据应该是8的倍数，因此，一个最大分片可以封装的数据是：$d &#x3D; [\frac{M-20}{8}]\times8$</p>
-<p>需要的总片数为：$n&#x3D;[\frac{L -20}{d}]+1$</p>
-<p>IP分片的过程</p>
-<p>每一篇的片偏移量的取值为：$F_i&#x3D;\frac{d}{8}\times (i-1) , 1 \leq i \leq n$</p>
-<p><strong>每一片的总长度字段</strong>：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231013121039621.png" alt="image-20231013121039621" style="zoom:50%;" />
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
 
-<p>每片的MF标志位为：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231013121128043.png" alt="image-20231013121128043" style="zoom:50%;" />
 
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231013121142845.png" alt="image-20231013121142845" style="zoom: 50%;" />
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.055Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-22T04:45:53.721Z" title="2023/10/22 12:45:53">2023-10-22</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约519个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-ICMP%E5%8D%8F%E8%AE%AE/">CN-ICMP协议</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
+<main class="page-container" id="swup">
 
-<h2 id="互联网控制报文协议（ICMP）"><a href="#互联网控制报文协议（ICMP）" class="headerlink" title="互联网控制报文协议（ICMP）"></a>互联网控制报文协议（ICMP）</h2><h3 id="互联网控制报文协议ICMP（Internet-Control-Message-Protocol）"><a href="#互联网控制报文协议ICMP（Internet-Control-Message-Protocol）" class="headerlink" title="互联网控制报文协议ICMP（Internet Control Message Protocol）"></a>互联网控制报文协议ICMP（Internet Control Message Protocol）</h3><p>支持主机和路由器：</p>
-<ul>
-<li><p>差错（或者异常）报告</p>
-</li>
-<li><p>网络查询</p>
-</li>
-</ul>
-<h3 id="两类ICMP报文"><a href="#两类ICMP报文" class="headerlink" title="两类ICMP报文"></a>两类ICMP报文</h3><h4 id="差错报告报文（5种）"><a href="#差错报告报文（5种）" class="headerlink" title="差错报告报文（5种）"></a>差错报告报文（5种）</h4><p>目的不可达 </p>
-<p>丢弃的报文可以通过ICMP协议来进行请求</p>
-<p>源抑制</p>
-<p>超时&#x2F;超期</p>
-<p>参数问题</p>
-<p>重定向（Redirect）</p>
-<h4 id="网络探寻报文-2组"><a href="#网络探寻报文-2组" class="headerlink" title="网络探寻报文(2组)"></a>网络探寻报文(2组)</h4><p>回声请求和应答报文</p>
-<p>时间戳请求和应答报文</p>
-<h2 id="ICMP报文"><a href="#ICMP报文" class="headerlink" title="ICMP报文"></a>ICMP报文</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231016222307.png" alt="image.png"></p>
-<h2 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h2><h3 id="几种不发送ICMP差错报告报文的特殊情况"><a href="#几种不发送ICMP差错报告报文的特殊情况" class="headerlink" title="几种不发送ICMP差错报告报文的特殊情况"></a>几种不发送ICMP差错报告报文的特殊情况</h3><ul>
-<li>对ICMP差错报告报文不再发送ICMP差错报告报文</li>
-<li>除了第一个IP数据报分片之外，对所有后续分片均不发送ICMP差错报告报文</li>
-<li>对所有多播IP数据报均不发送ICMP差错报告报文</li>
-<li>对具有特殊地址（127.0.0.0或者0.0.0.0）的IP数据报不发送ICMP差错报告报文</li>
-</ul>
-<h3 id="几种ICMP报文不再使用"><a href="#几种ICMP报文不再使用" class="headerlink" title="几种ICMP报文不再使用"></a>几种ICMP报文不再使用</h3><ul>
-<li>信息请求和应答报文</li>
-<li>子网掩码请求和应答报文</li>
-<li>路由器询问和通告报文</li>
-</ul>
-<h2 id="ICMP报文的格式"><a href="#ICMP报文的格式" class="headerlink" title="ICMP报文的格式"></a>ICMP报文的格式</h2><p>ICMP报文封装到IP数据报中传输</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231016222940.png" alt="image.png" style="zoom:50%;" />
+    
 
-<h2 id="ICMP差错报告报文数据封装"><a href="#ICMP差错报告报文数据封装" class="headerlink" title="ICMP差错报告报文数据封装"></a>ICMP差错报告报文数据封装</h2><p>差错IP数据报</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231016223503690.png" alt="image-20231016223503690" style="zoom:50%;" />
+    <div class="main-content-container">
 
-<h2 id="ICMP的应用举例：Traceroute"><a href="#ICMP的应用举例：Traceroute" class="headerlink" title="ICMP的应用举例：Traceroute"></a>ICMP的应用举例：Traceroute</h2><h3 id="源主机向目的主机发送一系列UDP数据报"><a href="#源主机向目的主机发送一系列UDP数据报" class="headerlink" title="源主机向目的主机发送一系列UDP数据报"></a>源主机向目的主机发送一系列UDP数据报</h3><p>第一组IP数据报TTL &#x3D; 1</p>
-<p>第二组IP数据报TTL &#x3D; 2，etc</p>
-<p>目的端口号为不可能使用的端口号</p>
-<h3 id="当第n组数据包（TTL-n）到达第n个路由器时"><a href="#当第n组数据包（TTL-n）到达第n个路由器时" class="headerlink" title="当第n组数据包（TTL &#x3D; n）到达第n个路由器时"></a>当第n组数据包（TTL &#x3D; n）到达第n个路由器时</h3><p>路由器丢弃数据包</p>
-<p>向源主机发送ICMP报文</p>
-<p>ICMP报文携带路由器名称和IP地址信息</p>
-<h3 id="当ICMP报文返回源主机的时候，记录RTT"><a href="#当ICMP报文返回源主机的时候，记录RTT" class="headerlink" title="当ICMP报文返回源主机的时候，记录RTT"></a>当ICMP报文返回源主机的时候，记录RTT</h3><p><strong>停止准则</strong></p>
-<p>UDP数据包最终到达目的主机</p>
-<p>目的主机返回目的端口不可达ICMP报文</p>
-<p>源主机停止</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.054Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:34.876Z" title="2023/10/12 17:05:34">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">5 分钟读完 (大约718个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-HTTP%E8%BF%9E%E6%8E%A5%E7%B1%BB%E5%9E%8B/">CN-HTTP连接类型</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[2023-09-17]]
-# HTTP连接
 
-<h2 id="非持久性连接（Nopersistent-HTTP）"><a href="#非持久性连接（Nopersistent-HTTP）" class="headerlink" title="非持久性连接（Nopersistent HTTP）"></a>非持久性连接（Nopersistent HTTP）</h2><ul>
-<li>每个TCP连接最多允许传输一个&#96;非持久性连接</li>
-</ul>
-<h2 id="持久性连接（Persitent-HTTP）"><a href="#持久性连接（Persitent-HTTP）" class="headerlink" title="持久性连接（Persitent HTTP）"></a>持久性连接（Persitent HTTP）</h2><ul>
-<li>每个TCP连接允许<code>传输多个对象</code></li>
-<li>HTTP 1.1 版本默认使用<strong>持久性连接</strong></li>
-</ul>
-<h2 id="非持久性连接"><a href="#非持久性连接" class="headerlink" title="非持久性连接"></a>非持久性连接</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230917102927.png" alt="Pasted image 20230917102927"><br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230917102939.png" alt="Pasted image 20230917102939"></p>
-<p><a target="_blank" rel="noopener" href="http://www.someschool.edu/someDepartment/home.index">www.someSchool.edu/someDepartment/home.index</a> $\rightarrow$ (包含文本和指向10个jepg图片的链接)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">    1A(&quot;1a:HTTP客户端向地址为\nwww.someSchool.edu/someDepartment/home.index\n的服务器上的HTTP服务器进程（端口80）\n发起TCP连接请求&quot;)--&gt;1B(&quot;1b:HTTP服务器在端口80等待TCP连接请求，接受链接并通知客户端&quot;)</span><br><span class="line">    1B--&gt; 2(&quot;2:HTTP客户端将HTTP请求消息（包含URL地址）\n通过TCP链接的套接字发出，\n消息中所含有的URL表明客户端需要对象\n someDepartment/home.index&quot;)</span><br><span class="line">    2--&gt;3(&quot;3:HTTP服务器收到请求消息，\n 解析，产生包含所需要对象的相应消息,\n并通过套接字发送给客户端&quot;)</span><br><span class="line">    3--&gt;4(&quot;4:HTTO服务器关闭TCP连接&quot;)</span><br><span class="line">    4--&gt;5(&quot;5:HTTP客户端收到响应消息，\n解析html文件，发现有10个指向jepg对象的超链接&quot;)</span><br><span class="line">    6(&quot;对每个jepg对象重复步骤1-5&quot;)</span><br></pre></td></tr></table></figure>
-<h2 id="响应时间分析和建模"><a href="#响应时间分析和建模" class="headerlink" title="响应时间分析和建模"></a>响应时间分析和建模</h2><h3 id="RTT-Round-Trip-Time"><a href="#RTT-Round-Trip-Time" class="headerlink" title="RTT(Round Trip Time)"></a>RTT(Round Trip Time)</h3><ul>
-<li>从客户端发送一个很小的数组包到服务器并返回所经历的时间</li>
-</ul>
-<h3 id="响应时间-Response-time"><a href="#响应时间-Response-time" class="headerlink" title="响应时间(Response time)"></a>响应时间(Response time)</h3><ul>
-<li><p>发起、建立TCP连接：<strong>一个RTT</strong></p>
-</li>
-<li><p>发送HTTP请求消息到HTTP响应消息的前几个字节到达：<strong>一个RTT</strong></p>
-</li>
-<li><p>响应消息中所含有的文件&#x2F;对象传输时间</p>
-</li>
-<li><p>Total &#x3D; 2RTT + 文件发送时间</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230911205654485.png" alt="image-20230911205654485" style="zoom:67%;" /></li>
-</ul>
-<h2 id="持久性HTTP"><a href="#持久性HTTP" class="headerlink" title="持久性HTTP"></a>持久性HTTP</h2><h3 id="非持久性连接的问题"><a href="#非持久性连接的问题" class="headerlink" title="非持久性连接的问题"></a>非持久性连接的问题</h3><ul>
-<li><p>每个对象都需要<code>2个RTT</code></p>
-</li>
-<li><p>操作系统需要为每个TCP连接开销资源(<em><strong>overhead</strong></em>)</p>
-</li>
-<li><p><strong>浏览器</strong>会怎么做：</p>
-<ul>
-<li>打开<strong>多个并行的TCP连接</strong>以获取网页所需要的对象</li>
-<li>给服务器端造成什么影响？<ul>
-<li>会造成很大的负担（是有代价的,<strong>TCP很宝贵</strong>）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="持久性连接"><a href="#持久性连接" class="headerlink" title="持久性连接"></a>持久性连接</h3><ul>
-<li><p>发送响应后，服务器<code>保持TCP连接的打开</code></p>
-</li>
-<li><p>后续的HTTP消息可以用通过这个直接连接发送</p>
-</li>
-</ul>
-<h4 id="无流水的持久性连接"><a href="#无流水的持久性连接" class="headerlink" title="无流水的持久性连接"></a>无流水的持久性连接</h4><ul>
-<li><p>客户端只有<strong>收到前一个响应之后才发送新的请求</strong></p>
-</li>
-<li><p>每个被应用对象耗时<strong>1RTT</strong></p>
-</li>
-</ul>
-<h4 id="带有流水机制的持续性连接"><a href="#带有流水机制的持续性连接" class="headerlink" title="带有流水机制的持续性连接"></a>带有流水机制的持续性连接</h4><ul>
-<li>HTTP 1.1的默认选项</li>
-<li>客户端只要<em>遇到一个应用对象就会</em>尽快发出请求</li>
-<li>理想情况下，收到所有应用对象只需要耗时大约一个RTT<br>[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.5 计算机网络的体系结构]]</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.053Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:05.443Z" title="2023/10/12 17:06:05">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约279个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/HTTP-a744e85e11644151b0085af219d860c1">CN-HTTP消息格式</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[2023-09-17]]
-# HTTP请求消息
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
 
-<h2 id="HTTP有两类消息"><a href="#HTTP有两类消息" class="headerlink" title="HTTP有两类消息"></a>HTTP有两类消息</h2><ul>
-<li>请求消息</li>
-<li>响应消息</li>
-</ul>
-<h2 id="请求消息"><a href="#请求消息" class="headerlink" title="请求消息"></a>请求消息</h2><p><strong>ASCII</strong>：人直接可读</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230917103514.png" alt="Pasted image 20230917103514"></p>
-<h2 id="HTTP请求消息的通用格式"><a href="#HTTP请求消息的通用格式" class="headerlink" title="HTTP请求消息的通用格式"></a>HTTP请求消息的通用格式</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230917104130.png" alt="Pasted image 20230917104130"></p>
-<h2 id="上传输入的方法"><a href="#上传输入的方法" class="headerlink" title="上传输入的方法"></a>上传输入的方法</h2><p><strong>POST方法</strong></p>
-<ul>
-<li>网页需要填写表格</li>
-<li>在请求消息的消息体（<strong>entity body</strong>）中上传客户端的输入</li>
-</ul>
-<p><strong>URL方法</strong></p>
-<ul>
-<li>使用GET方法</li>
-<li>输入信息通过request行的URL字段上传</li>
-</ul>
-<h2 id="方法的类型"><a href="#方法的类型" class="headerlink" title="方法的类型"></a>方法的类型</h2><p><em>HTTP</em>&#x2F;1.0</p>
-<ul>
-<li>GET&#x2F;POST&#x2F;[[CourseNotes&#x2F;计算机网络&#x2F;CN-HEAD]]</li>
-</ul>
-<p><em>HTTP</em>&#x2F;1.1</p>
-<ul>
-<li>GET,POST,HEAD</li>
-<li>[[CourseNotes&#x2F;计算机网络&#x2F;CN-PUT]]</li>
-<li>[[CourseNotes&#x2F;计算机网络&#x2F;CN-DELETE]]</li>
-</ul>
-<h2 id="HTTP的响应消息"><a href="#HTTP的响应消息" class="headerlink" title="HTTP的响应消息"></a>HTTP的响应消息</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230917104921.png" alt="Pasted image 20230917104921"></p>
-<h2 id="HTTP响应状态代码"><a href="#HTTP响应状态代码" class="headerlink" title="HTTP响应状态代码"></a>HTTP响应状态代码</h2><ul>
-<li><p>响应消息是第一行</p>
-</li>
-<li><p>示例</p>
-<ul>
-<li>200 OK</li>
-<li>301 Moved Permanently</li>
-<li>400 Bad Requeast</li>
-<li>404 Not Found</li>
-<li>505 HTTP Version Not Supported</li>
-</ul>
-</li>
-</ul>
-<h2 id="体验一下HTTP"><a href="#体验一下HTTP" class="headerlink" title="体验一下HTTP"></a>体验一下HTTP</h2><p>利用telnet 登录到某个Web服务器</p>
-<ul>
-<li>telnet <a target="_blank" rel="noopener" href="http://www.hit.edu.cn/">www.hit.edu.cn:80</a></li>
-</ul>
-<p>输入一个HTTP请求</p>
-<ul>
-<li>GET&#x2F;about&#x2F;profile.html <strong>HTTP&#x2F;1.1</strong></li>
-<li>Host: <a target="_blank" rel="noopener" href="http://www.hit.edu.cn/">www.hit.edu.cn</a></li>
-</ul>
-<p>查看HTTP服务器所返回的响应消息</p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/5/">上一页</a></div><div class="pagination-next"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/7/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/5/">5</a></li><li><a class="pagination-link is-current" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/6/">6</a></li><li><a class="pagination-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/7/">7</a></li><li><a class="pagination-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/8/">8</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="tag-container">
+	<div class="tag-name">
+		<i class="fa-solid fa-tag"></i>&nbsp;计算机网络
+	</div>
+	<div class="tag-post-list">
+		
+
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2023</span>
+                <span class="archive-year-post-count">[10]</span>
+            </div>
+            <ul class="article-list">
+              
+                
+                    
+                    <li class="article-item" date-is='11-24'>
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-lab2,3/">
+                        <span class="article-title"></span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E7%BC%96%E5%9D%80/">
+                        <span class="article-title">CN-IP编址</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Lab1/">
+                        <span class="article-title">CN-Lab1</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E6%95%B0%E6%8D%AE%E6%8A%A5/">
+                        <span class="article-title">CN-IP数据报</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/">
+                        <span class="article-title">CN-IP子网划分和子网掩码</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IPv6/">
+                        <span class="article-title">CN-IPv6</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%88%86%E7%89%87/">
+                        <span class="article-title">CN-IP分片</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-ICMP%E5%8D%8F%E8%AE%AE/">
+                        <span class="article-title">CN-ICMP协议</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-HTTP%E8%BF%9E%E6%8E%A5%E7%B1%BB%E5%9E%8B/">
+                        <span class="article-title">CN-HTTP连接类型</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-HTTP%E6%B6%88%E6%81%AF%E6%A0%BC%E5%BC%8F/">
+                        <span class="article-title">CN-HTTP消息格式</span>
+                    </a>
+                
+              
+            </ul>
+        </section>
+    
+</div>
+
+	</div>
+</div>
+
+<div class="tag-paginator">
+	<div class="paginator">
+    <a class="extend prev" rel="prev" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/5/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/4/">4</a><a class="page-number" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/7/">7</a><a class="page-number" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/8/">8</a><a class="extend next" rel="next" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/7/"><i class="fa-regular fa-angle-right"></i></a>
+</div>
+
+</div>
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

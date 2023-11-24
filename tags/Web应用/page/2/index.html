@@ -1,239 +1,487 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: Web应用 - SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="this is a personal notion keeper"><meta property="og:type" content="blog"><meta property="og:title" content="SlaterXu"><meta property="og:url" content="https://molaters.github.io/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="this is a personal notion keeper"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://molaters.github.io/img/og_image.png"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="Develope"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://molaters.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io"},"headline":"SlaterXu","image":["https://molaters.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"this is a personal notion keeper"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-          const id = '#' + CSS.escape(location.hash.substring(1));
-          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
-          if (!$tabMenu) {
-            return;
-          }
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/tags/web应用/page/2/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Molaters">
+<meta property="og:url" content="https://molaters.github.io/tags/Web%E5%BA%94%E7%94%A8/page/2/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="Lee">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            标签: Web应用 -
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(id);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">Web应用</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.046Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:45.645Z" title="2023/10/12 17:06:45">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">14 分钟读完 (大约2140个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/DNS-5f7f8e2ce5b94dbfa931633e7424b133">CN-DNS概述</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
 </head>
-#DNS
 
-<p>互联网中的核心服务</p>
-<p>[[2023-09-18]]</p>
-<h2 id="有关DNS基础资料查询"><a href="#有关DNS基础资料查询" class="headerlink" title="有关DNS基础资料查询"></a>有关DNS基础资料查询</h2><hr>
-<h2 id="DNSDomain-Name-System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：-通俗易懂，了解什么是DNS及查询过程？-介绍了DNS是什么、DNS的查询过程等基础知识。-DNS基础知识详解-对DNS基础知识进行详细解析。-什么是DNS以及DNS工作原理-介绍了DNS的工作原理和作用。-DNS原理简述-简要介绍了DNS的原理和查询过程。"><a href="#DNSDomain-Name-System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：-通俗易懂，了解什么是DNS及查询过程？-介绍了DNS是什么、DNS的查询过程等基础知识。-DNS基础知识详解-对DNS基础知识进行详细解析。-什么是DNS以及DNS工作原理-介绍了DNS的工作原理和作用。-DNS原理简述-简要介绍了DNS的原理和查询过程。" class="headerlink" title="DNSDomain Name System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：- 通俗易懂，了解什么是DNS及查询过程？ - 介绍了DNS是什么、DNS的查询过程等基础知识。- DNS基础知识详解 - 对DNS基础知识进行详细解析。- 什么是DNS以及DNS工作原理 - 介绍了DNS的工作原理和作用。- DNS原理简述 - 简要介绍了DNS的原理和查询过程。"></a>DNSDomain Name System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。<br>查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：<br>- <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/436199902#:~:text=%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82%EF%BC%8C%E4%BA%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFDNS%E5%8F%8A%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B%EF%BC%9F">通俗易懂，了解什么是DNS及查询过程？</a> - 介绍了DNS是什么、DNS的查询过程等基础知识。<br>- <a target="_blank" rel="noopener" href="https://www.cnblogs.com/guoxianqi2020/p/13740551.html">DNS基础知识详解</a> - 对DNS基础知识进行详细解析。<br>- <a target="_blank" rel="noopener" href="https://blog.csdn.net/bangshao1989/article/details/121913780">什么是DNS以及DNS工作原理</a> - 介绍了DNS的工作原理和作用。<br>- <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2022/08/dns-query.html">DNS原理简述</a> - 简要介绍了DNS的原理和查询过程。</h2><h2 id="DNS：Domain-Name-System"><a href="#DNS：Domain-Name-System" class="headerlink" title="DNS：Domain Name System"></a>DNS：Domain Name System</h2><hr>
-<h3 id="Internet-上主机、路由器的识别问题"><a href="#Internet-上主机、路由器的识别问题" class="headerlink" title="Internet 上主机、路由器的识别问题"></a>Internet 上主机、路由器的识别问题</h3><hr>
-<ul>
-<li>IP地址</li>
-<li>域名：<a target="_blank" rel="noopener" href="http://www.hit.edu.cn/">www.hit.edu.cn</a></li>
-</ul>
-<h3 id="问题：域名和IP地址之间如何映射？"><a href="#问题：域名和IP地址之间如何映射？" class="headerlink" title="问题：域名和IP地址之间如何映射？"></a>问题：域名和IP地址之间如何映射？</h3><p>💭<strong>资料查询</strong>：</p>
-<blockquote>
-<p>域名和IP地址之间的映射是通过DNS（Domain Name System）来实现的。DNS是一种分布式数据库系统，它将域名解析为相应的IP地址。当用户在浏览器中输入一个域名，比如”<a target="_blank" rel="noopener" href="http://www.example.com",浏览器会向dns服务器发送请求,以获取与该域名对应的ip地址.dns服务器会查询域名对应的ip地址并返回给浏览器,然后浏览器才能连接到该ip地址上的服务器.这样就实现了域名到ip地址的映射关系./">www.example.com&quot;，浏览器会向DNS服务器发送请求，以获取与该域名对应的IP地址。DNS服务器会查询域名对应的IP地址并返回给浏览器，然后浏览器才能连接到该IP地址上的服务器。这样就实现了域名到IP地址的映射关系。</a></p>
-</blockquote>
-<h3 id="域名解析DNS"><a href="#域名解析DNS" class="headerlink" title="域名解析DNS"></a>域名解析DNS</h3><hr>
-<ul>
-<li>多层命名服务器构成的分布式数据库</li>
-<li><strong>应用层协议</strong>：完成名字的解析<ul>
-<li>Internet核心共嗯那个，则应用层协议实现</li>
-<li>网络边界复杂</li>
-</ul>
-</li>
-</ul>
-<h3 id="DNS-服务"><a href="#DNS-服务" class="headerlink" title="DNS 服务"></a>DNS 服务</h3><hr>
-<ul>
-<li>域名向IP地址的翻译</li>
-<li>主机别名</li>
-<li>邮件服务器别名</li>
-<li><strong>负载均衡</strong>：Web服务器</li>
-</ul>
-<h3 id="问题：为什么不使用集中式的DNS？"><a href="#问题：为什么不使用集中式的DNS？" class="headerlink" title="问题：为什么不使用集中式的DNS？"></a>问题：为什么不使用集中式的DNS？</h3><blockquote>
-<p>☁️集中式DNS存在几个问题：</p>
-<ol>
-<li><strong>单点失败问题</strong>：如果唯一的一个服务点（可能有多台服务器）坏掉了，所有使用域名来提供网络服务的都需要请求DNS来做事情，那么整个互联网就会瘫痪。</li>
-<li><strong>流量问题</strong>：如果几十亿台主机都到这个服务器请求DNS查询，流量是巨大的，成本也是高昂的。<br>因此，为了解决这些问题，采用了分布式的DNS系统。这样可以提供高可用性和高伸缩性，减少了单点故障的风险，并且可以将负载均衡地分配到各个DNS服务器上。<br>来源：[CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/lovelyhonghong/article/details/114850420#:~:text=%E9%97%AE%E9%A2%98%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%9A%84DNS%EF%BC%9F">https://blog.csdn.net/lovelyhonghong/article/details/114850420#:~:text=问题：为什么不使用集中式的DNS？</a> 1.单点失败问题。,如果唯一的一个服务点（可能有多台服务器）坏掉了，所有使用域名来提供网络服务的，都需要请求DNS来做事情，那么整个互联网就坏掉了。 2.流量问题。 如果几十亿台主机都到这个服务器请求DNS查询，流量是巨大的，成本也是高昂的。)</li>
-</ol>
-</blockquote>
-<ol start="3">
-<li><strong>距离问题</strong>：在外国的服务器无法合理的访问</li>
-<li><strong>维护性问题</strong></li>
-</ol>
-<h2 id="分布式层次式的数据库"><a href="#分布式层次式的数据库" class="headerlink" title="分布式层次式的数据库"></a>分布式层次式的数据库</h2><hr>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918210818.png" alt="image.png"></p>
-<p>Level one ： 根服务器</p>
-<p>Level two ：顶级域名服务器</p>
-<p>Level three ：权威域名服务器</p>
-<h3 id="客户端想要查询www-amazon-com的IP"><a href="#客户端想要查询www-amazon-com的IP" class="headerlink" title="客户端想要查询www.amazon.com的IP"></a>客户端想要查询<a target="_blank" rel="noopener" href="http://www.amazon.com的ip/">www.amazon.com的IP</a></h3><ol>
-<li><p>客户端查询根服务器，找到com域名解析服务器</p>
-</li>
-<li><p>客户端查询com域名解析服务器，找到amazon.com域名解析服务器</p>
-</li>
-<li><p>客户端查询amazon.com域名解析服务器，获得<a target="_blank" rel="noopener" href="http://www.amazon.com的ip地址/">www.amazon.com的IP地址</a></p>
-</li>
-</ol>
-<h2 id="DNS根域名服务器"><a href="#DNS根域名服务器" class="headerlink" title="DNS根域名服务器"></a>DNS根域名服务器</h2><p><strong>本地域名解析服务器无法解析域名的时候，访问根域名服务器</strong></p>
-<h3 id="根域名服务器"><a href="#根域名服务器" class="headerlink" title="根域名服务器"></a>根域名服务器</h3><ul>
-<li>如果不知道映射，访问权威域名服务器</li>
-<li>获得映射</li>
-<li>向本地域名服务器返回映射</li>
-</ul>
-<h2 id="TLD和权威域名解析服务器"><a href="#TLD和权威域名解析服务器" class="headerlink" title="TLD和权威域名解析服务器"></a>TLD和权威域名解析服务器</h2><h3 id="顶级域名服务器（TLD，top-level-domain）"><a href="#顶级域名服务器（TLD，top-level-domain）" class="headerlink" title="顶级域名服务器（TLD，top-level domain）"></a>顶级域名服务器（TLD，top-level domain）</h3><hr>
-<p><strong>负责com,org,net,edu等顶级服务器和国家顶级域名，例如</strong>cn,uk,fr等</p>
-<ul>
-<li>Network Solution 维护com顶级域名服务器</li>
-<li>Educause维护edu顶级域名服务器</li>
-</ul>
-<h3 id="权威（Authoritative）域名服务器"><a href="#权威（Authoritative）域名服务器" class="headerlink" title="权威（Authoritative）域名服务器"></a>权威（Authoritative）域名服务器</h3><hr>
-<p><strong>组织的域名解析服务器，提供组织内部服务器的解析服务</strong></p>
-<ul>
-<li><code>组织负责维护</code></li>
-<li><code>服务提供商负责维护</code></li>
-</ul>
-<h2 id="本地域名解析服务器"><a href="#本地域名解析服务器" class="headerlink" title="本地域名解析服务器"></a>本地域名解析服务器</h2><hr>
-<ul>
-<li>不属于严格的层级体系</li>
-<li>每个ISP都有一个本地域名服务器<ul>
-<li>默认域名解析服务器</li>
-</ul>
-</li>
-<li>当主机进行DNS查询的时候，查询被发送到本地域名服务器<ul>
-<li>作为代理(proxy)，将查询转发给(层级式)域名解析服务器系统</li>
-</ul>
-</li>
-</ul>
-<p><strong>DNS服务器除了做代理之外会不会做缓存呢？</strong></p>
-<h2 id="DNS查询示例"><a href="#DNS查询示例" class="headerlink" title="DNS查询示例"></a>DNS查询示例</h2><hr>
-<p><strong>Cis.poly.edu的主机想要获得gaia.cs.umass.edu的IP地址</strong></p>
-<h3 id="迭代查询"><a href="#迭代查询" class="headerlink" title="迭代查询"></a>迭代查询</h3><p>被查询服务器返回域名解析服务器的名字<br><strong>我不认识这个域名，但是你可以访问这个服务器</strong><br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918212916.png" alt="image.png"></p>
-<h3 id="递归查询"><a href="#递归查询" class="headerlink" title="递归查询"></a>递归查询</h3><p>将域名解析的任务交给所联系的服务器<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918213045.png" alt="image.png"></p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为"><a href="#如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为" class="headerlink" title="如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为?"></a>如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为?</h3><blockquote>
-<p>一条，一条</p>
-</blockquote>
-<h2 id="DNS记录缓存和更新"><a href="#DNS记录缓存和更新" class="headerlink" title="DNS记录缓存和更新"></a>DNS记录缓存和更新</h2><h3 id="只要域名解析服务器获得了域名——IP映射，即缓存这一映射"><a href="#只要域名解析服务器获得了域名——IP映射，即缓存这一映射" class="headerlink" title="只要域名解析服务器获得了域名——IP映射，即缓存这一映射"></a>只要域名解析服务器获得了域名——IP映射，即缓存这一映射</h3><ul>
-<li>一段时间过后，缓存条目失效（删除）</li>
-<li>本地域名服务器一般会缓存顶级域名服务器的映射<ul>
-<li>因此根域名服务器不经常被访问</li>
-</ul>
-</li>
-</ul>
-<h3 id="记录的更新-通知机制"><a href="#记录的更新-通知机制" class="headerlink" title="记录的更新&#x2F;通知机制"></a>记录的更新&#x2F;通知机制</h3><p>RFC 2136</p>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>我国没有根域名服务器，是否会影响我国的网络安全，会有什么影响？ </p>
-<p>根域名服务器是DNS系统中最高级的服务器，主要负责将域名转换为IP地址。如果我国没有根域名服务器，那么本地DNS服务器需要依赖其他国家或地区的根域名服务器进行域名解析。<br>这可能会导致以下影响：</p>
-<ol>
-<li>域名解析延迟：由于需要通过其他国家或地区的根域名服务器进行域名解析，可能会增加域名解析的延迟时间，影响用户的访问速度。</li>
-<li>DNS污染的风险：如果依赖其他国家或地区的根域名服务器，存在被篡改或操纵的风险，可能会导致DNS污染问题，进而影响用户的网络安全。</li>
-<li>国内域名管理困难：没有根域名服务器可能会使国内域名管理难度增加，因为国内域名需要通过其他根域名服务器进行授权和解析。<br>需要注意的是，虽然我国没有根域名服务器，但我国仍然有多个顶级域名服务器，可以解析国内的顶级域名。此外，我国也有多个根域名服务器的备用节点，以确保网络安全和稳定性。<br>来源：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/51263554">zhihu.com</a></li>
-</ol>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.043Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:21.453Z" title="2023/10/12 17:06:21">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约497个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/Cookie-624bd170bbd043cdad48e92ff101f95d">CN-Cookie</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[2023-09-17]]
 
-<h2 id="为什么需要Cookie"><a href="#为什么需要Cookie" class="headerlink" title="为什么需要Cookie?"></a>为什么需要Cookie?</h2><p>HTTP协议无状态</p>
-<p>很多应用需要服务器掌握客户的状态：</p>
-<ul>
-<li><strong>网上购物</strong></li>
-</ul>
-<h2 id="Cookie技术"><a href="#Cookie技术" class="headerlink" title="Cookie技术"></a>Cookie技术</h2><p>某些网站为了辨别身份，进行session跟踪而存储在用户本地终端上的数据（<strong>通常经过加密</strong>）<br>RFC6265</p>
-<p><strong>Cookie的组件</strong></p>
-<ul>
-<li>HTTP响应消息的cookie头部行</li>
-<li>HTTP请求消息的cookie头部行</li>
-<li>保存在客户端主机上的cookie文件，由浏览器管理</li>
-<li>Web服务器端的后台数据库</li>
-</ul>
-<h2 id="Cookie的原理"><a href="#Cookie的原理" class="headerlink" title="Cookie的原理"></a>Cookie的原理</h2><p>Susan 首次PC上网，首次和Amazon.com取得联系。界定过去访问过eBay站点，当请求报文到达该Amazon Web服务器的时候，这个Web站点将产生一个唯一的识别码，并以此缩影在它的后端数据库中产生一个表项。接下来Amazon Web服务器用一个包含Set-cookie：首部的HTTP响应报文来对Susan的浏览器进行响应，其中Set-cookie:首部含有识别码。</p>
-<p>Susan浏览器收到了该HTTP的响应报文的时候，它会看到该Set-cookie:首部。该浏览器在它管理的特定cookie文件中添加一行，该行包含服务器的主机名和在Set-cookie：首部中的识别码。</p>
-<p>值得注意的是当前的cookie文件已经有了eBay的表项，因为Susan过去访问过该站点。之后的浏览都会从该cookie文件中获取她对这个网站的识别码，并放到HTTP请求报文中包括识别码的cookie首部行中。</p>
-<p>在这种方式下，Amazon服务器可以跟踪Susan在Amazon站点的活动。Amazon使用cookie来提供 <strong>购物车服务</strong> </p>
-<p>![[assets 1&#x2F;Pasted image 20230917115446.png]]</p>
-<h2 id="Cookie的作用"><a href="#Cookie的作用" class="headerlink" title="Cookie的作用"></a>Cookie的作用</h2><ul>
-<li><p>cookie能够用于：****</p>
-<ul>
-<li>身份认证</li>
-<li>购物车</li>
-<li>推荐</li>
-<li>Web e-mail</li>
-<li>……</li>
-</ul>
-</li>
-<li><p>隐私问题</p>
-</li>
-</ul>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/tags/Web%E5%BA%94%E7%94%A8/">上一页</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/tags/Web%E5%BA%94%E7%94%A8/page/3/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/tags/Web%E5%BA%94%E7%94%A8/">1</a></li><li><a class="pagination-link is-current" href="/tags/Web%E5%BA%94%E7%94%A8/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="tag-container">
+	<div class="tag-name">
+		<i class="fa-solid fa-tag"></i>&nbsp;Web应用
+	</div>
+	<div class="tag-post-list">
+		
+
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2023</span>
+                <span class="archive-year-post-count">[2]</span>
+            </div>
+            <ul class="article-list">
+              
+                
+                    
+                    <li class="article-item" date-is='11-24'>
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-DNS%E6%A6%82%E8%BF%B0/">
+                        <span class="article-title">CN-DNS概述</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Cookie/">
+                        <span class="article-title">CN-Cookie</span>
+                    </a>
+                
+              
+            </ul>
+        </section>
+    
+</div>
+
+	</div>
+</div>
+
+<div class="tag-paginator">
+	<div class="paginator">
+    <a class="extend prev" rel="prev" href="/tags/Web%E5%BA%94%E7%94%A8/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/tags/Web%E5%BA%94%E7%94%A8/">1</a><span class="page-number current">2</span>
+</div>
+
+</div>
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

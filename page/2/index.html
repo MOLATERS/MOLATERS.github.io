@@ -1,615 +1,1273 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="this is a personal notion keeper"><meta property="og:type" content="blog"><meta property="og:title" content="SlaterXu"><meta property="og:url" content="https://molaters.github.io/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="this is a personal notion keeper"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://molaters.github.io/img/og_image.png"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="Develope"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://molaters.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io"},"headline":"SlaterXu","image":["https://molaters.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"this is a personal notion keeper"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-          const id = '#' + CSS.escape(location.hash.substring(1));
-          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
-          if (!$tabMenu) {
-            return;
-          }
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/page/2/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Molaters">
+<meta property="og:url" content="https://molaters.github.io/page/2/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="Lee">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(id);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.092Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:07:02.774Z" title="2023/10/12 17:07:02">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">1 分钟读完 (大约120个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-2-85bb7214753349a19f096bc6f7905db7">CN-计算机网络传输层-2</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+        <style>
+    .home-article-item,
+    .sidebar-links,
+    .sidebar-content,
+    a.page-number,
+    a.extend,
+    .sidebar-links .links:hover,
+    .right-bottom-tools,
+    footer.footer {
+        background-color: var(--background-color-transparent-80) !important;
+    }
+    .right-bottom-tools:hover,
+    a.page-number:hover,
+    a.extend:hover {
+        background-color: var(--primary-color) !important;
+    }
+    .site-info,
+    .home-article-sticky-label {
+        background-color: var(--background-color-transparent-15) !important;
+    }
+    .home-article-sticky-label {
+        backdrop-filter: none !important;
+    }
+    .home-banner-background {
+        filter: blur(15px);
+    }
+</style>
+
+<div class="home-banner-background">
+</div>
+
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                <h1>
+                Theme Redefine
+                </h1>
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="active" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group active" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+                <div class="home-sidebar-container">
+    <div class="sticky-container sticky">
+        
+            
+            <div class="sidebar-content" >
+                <div class="avatar flex justify-center">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="author flex flex-col justify-center my-2.5 mx-0">
+                    <div class="name">The Redefine Team</div>
+                    
+                        <div class="label">Lv5</div>
+                    
+                </div>
+                <div class="statistics">
+                    <a class="item" href="/tags">
+                        <div class="number">11</div>
+                        <div class="label">标签</div>
+                    </a>
+                    <a class="item" href="/categories">
+                        <div class="number">1</div>
+                        <div class="label">分类</div>
+                    </a>
+                    <a class="item" href="/archives">
+                        <div class="number">76</div>
+                        <div class="label">文章</div>
+                    </a>
+                </div>
+            </div>
+        
+
+    </div>
+</div>
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82-2/">
+                            CN-计算机网络传输层-2
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>可靠数据传输原理 -&gt; TCP</p>
-<h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p>TCP是面向连接的，这是因为在一个应用进程可以开始向另一个应用进程发送数据之前，两个进程必须先相互握手。</p>
-<p>连接的双方都将初始化和TCP连接相关的许多TCP状态变量</p>
-<p><strong>全双工服务（full-duplex service）</strong></p>
-<p><strong>点对点(point-to-point)</strong></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.090Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:00.955Z" title="2023/10/12 17:06:00">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">4 分钟读完 (大约546个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-6f3b0216555145d0925a2c657cdeb889">CN-网络应用进程通信</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82-2/">阅读全文<span class="seo-reader-text">CN-计算机网络传输层-2</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/">
+                            CN-网络应用进程通信
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[2023-09-17]]
-# 网络应用进程通信
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a><strong><code>进程</code></strong></h2><ul>
-<li>主机上运行的程序</li>
-</ul>
-<h2 id="同一主机上运行的进程之间如何进行通信"><a href="#同一主机上运行的进程之间如何进行通信" class="headerlink" title="同一主机上运行的进程之间如何进行通信"></a>同一主机上运行的进程之间如何进行通信</h2><ul>
-<li>进程间的<code>**通讯机制**</code></li>
-<li>操作系统来提供</li>
-</ul>
-<h2 id="不同主机上运行的进程之间如何通信"><a href="#不同主机上运行的进程之间如何通信" class="headerlink" title="不同主机上运行的进程之间如何通信"></a>不同主机上运行的进程之间如何通信</h2><ul>
-<li><strong><code>消息交换</code></strong></li>
-</ul>
-<p><strong>客户机进程：发起通信的进程</strong></p>
-<p><strong>服务器进程：等待通信请求的进程</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p>
-<h2 id="套接字：Socket"><a href="#套接字：Socket" class="headerlink" title="套接字：Socket"></a>套接字：<em>Socket</em></h2><p>进程之间通信利用Socket发送和接受消息实现</p>
-<h3 id="类似于寄信"><a href="#类似于寄信" class="headerlink" title="类似于寄信"></a>类似于寄信</h3><ul>
-<li><strong>发送方</strong>将消息送到<strong>门外的邮箱</strong></li>
-<li><strong>发送方</strong>以来（门外的）传输基础设施将消息传输到<strong>接收方所在的主机</strong>，并且送到<strong>接受方的门外</strong></li>
-<li><strong>接收方从门外获取消息</strong></li>
-</ul>
-<h3 id="传输基础设施向进程提供API"><a href="#传输基础设施向进程提供API" class="headerlink" title="传输基础设施向进程提供API"></a>传输基础设施向进程提供API</h3><ul>
-<li>传输协议的选择</li>
-<li>参数的设置</li>
-</ul>
-<p>很自然的问题，底层的设施怎么就能正确无误的接收到传输到的进程呢？</p>
-<h2 id="如何寻址进程"><a href="#如何寻址进程" class="headerlink" title="如何寻址进程"></a>如何寻址进程</h2><h3 id="不同主机上的进程之间通信，那么每个进程都必须拥有标识符"><a href="#不同主机上的进程之间通信，那么每个进程都必须拥有标识符" class="headerlink" title="不同主机上的进程之间通信，那么每个进程都必须拥有标识符"></a>不同主机上的进程之间通信，那么每个进程都必须拥有标识符</h3><h3 id="如何寻址主机？——IP地址"><a href="#如何寻址主机？——IP地址" class="headerlink" title="如何寻址主机？——IP地址"></a>如何寻址主机？——IP地址</h3><ul>
-<li>Q：主机有了IP地址之后，是否<code>**足以</code> 定位进程？**</li>
-<li>A：不是，同一个主机可能同时有多个进程需要通信</li>
-</ul>
-<p><strong>端口号&#x2F;<em>Port Number</em></strong></p>
-<ul>
-<li>是主机上每个需要通信的进程都分配一个端口号</li>
-<li>HTTP Server：80</li>
-<li>Mail Server：25</li>
-</ul>
-<h3 id="进程的标识符"><a href="#进程的标识符" class="headerlink" title="进程的标识符"></a>进程的标识符</h3><ul>
-<li>IP地址+端口号</li>
-</ul>
-<h2 id="应用层的协议"><a href="#应用层的协议" class="headerlink" title="应用层的协议"></a>应用层的协议</h2><h3 id="网络应用都应该需要遵循应用层协议"><a href="#网络应用都应该需要遵循应用层协议" class="headerlink" title="网络应用都应该需要遵循应用层协议"></a>网络应用都应该需要遵循应用层协议</h3><h3 id="公开协议"><a href="#公开协议" class="headerlink" title="公开协议"></a>公开协议</h3><ul>
-<li>由RFC（<em><strong>Request For Comments</strong></em>）定义</li>
-<li>允许互相操作</li>
-<li>HTTP，SMTP，……</li>
-</ul>
-<h3 id="私有协议"><a href="#私有协议" class="headerlink" title="私有协议"></a>私有协议</h3><ul>
-<li>多数P2P文件共享应用</li>
-</ul>
-<h2 id="应用层协议的内容"><a href="#应用层协议的内容" class="headerlink" title="应用层协议的内容"></a>应用层协议的内容</h2><h3 id="消息的类型（type）"><a href="#消息的类型（type）" class="headerlink" title="消息的类型（type）"></a>消息的类型（type）</h3><ul>
-<li>请求消息</li>
-<li>响应消息</li>
-</ul>
-<h3 id="消息的语法（syntax）格式"><a href="#消息的语法（syntax）格式" class="headerlink" title="消息的语法（syntax）格式"></a>消息的语法（syntax）格式</h3><ul>
-<li>消息中由哪些字段</li>
-<li>每个字段如何描述</li>
-</ul>
-<h3 id="字段的语义（semantics）"><a href="#字段的语义（semantics）" class="headerlink" title="字段的语义（semantics）"></a>字段的语义（semantics）</h3><ul>
-<li>字段中信息的含义</li>
-</ul>
-<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
-<li>进程应该何时、如何发送消息</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.090Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-11-01T14:13:13.794Z" title="2023/11/1 22:13:13">2023-11-01</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约367个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/">CN-虚拟局域网</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<h2 id="VLANs：动机"><a href="#VLANs：动机" class="headerlink" title="VLANs：动机"></a>VLANs：动机</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220617.png" alt="image.png"></p>
-<p>考虑一下情形:CS用户迁移到EE，但是希望连接至CS交换机，怎么办?</p>
-<p>单一广播域:</p>
-<p>所有第2层广播流量(ARPDHCP,未知目的MAC地址位置)必须穿越整个LAN</p>
-<p>安全&#x2F;隐私，效率问题</p>
-<h3 id="虚拟局域网-VirtualLocal-Area-Network"><a href="#虚拟局域网-VirtualLocal-Area-Network" class="headerlink" title="虚拟局域网(VirtualLocal Area Network)"></a>虚拟局域网(VirtualLocal Area Network)</h3><p>支持VLAN划分的交换机，可以在一个物理LAN架构上配置定义多个VLAN</p>
-<p>基于端口的VLAN: 分组交换机端口(通过交换机管理软件)，于是，单一的物理交换机 …..</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101220735.png" alt="image.png"></p>
-<p><strong>流量隔离(traffic isolation)</strong>:去往&#x2F;来自端口1-8的倾只到达端口1-8</p>
-<ul>
-<li>也可以基于MAC地址定义VLAN,而不是交换端口</li>
-</ul>
-<p><strong>动态成员</strong>: 端口可以动态分配给不同VLAN</p>
-<p><strong>在VLAN间转发: 通过路由(就像在独立的交换机之间)</strong></p>
-<p>实践中，厂家会将交换机与路由器集成在一起</p>
-<h2 id="跨越多交换机的VLAN"><a href="#跨越多交换机的VLAN" class="headerlink" title="跨越多交换机的VLAN"></a>跨越多交换机的VLAN</h2><p><strong>多线缆连接</strong></p>
-<ul>
-<li>每个线缆连接一个VLAN</li>
-</ul>
-<p><strong>中继端口(trunk port)</strong>: 在跨越多个物理交换机定义的VLAN承载帧</p>
-<ul>
-<li><p>为多VLAN转发802.1顿容易产生歧义(必须携带VLAN ID信息)</p>
-</li>
-<li><p>802.1q协议为经过中继端口转发的顿增加&#x2F;去除额外的首部域</p>
-</li>
-</ul>
-<h2 id="802-1Q-VLAN帧格式"><a href="#802-1Q-VLAN帧格式" class="headerlink" title="802.1Q VLAN帧格式"></a>802.1Q VLAN帧格式</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101221243.png" alt="image.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.089Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:56.327Z" title="2023/10/12 17:05:56">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约493个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-fcc8ba0a4d9f4dccb46106ece1c74593">CN-网络应用的体系结构</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Web%E5%BA%94%E7%94%A8/">Web应用</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/">阅读全文<span class="seo-reader-text">CN-网络应用进程通信</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/">
+                            CN-虚拟局域网
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            [[CN-NotesView]]
+VLANs：动机
+考虑一下情形:CS用户迁移到EE，但是希望连接至CS交换机，怎么办?
+单一广播域:
+所有第2层广播流量(ARPDHCP,未知目的MAC地址位置)必须穿越整个LAN
+安全&#x2F;隐私，效率问题
+虚...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/">阅读全文<span class="seo-reader-text">CN-虚拟局域网</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">
+                            CN-网络应用的体系结构
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 网络应用的体系结构
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<h1 id="你使用过哪些网络应用？"><a href="#你使用过哪些网络应用？" class="headerlink" title="你使用过哪些网络应用？"></a>你使用过哪些网络应用？</h1><p>百度 QQ alipay weixin ……</p>
-<h1 id="网络应用有哪些特点呢？"><a href="#网络应用有哪些特点呢？" class="headerlink" title="网络应用有哪些特点呢？"></a>网络应用有哪些特点呢？</h1><p><strong>🤔和单机应用有什么不同？</strong></p>
-<p><strong>🤔网络应用应该有什么样的结构呢？</strong></p>
-<h1 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h1><p><code>**客户机、服务器**</code>结构（Client-Server,C）</p>
-<p><code>**点对点**</code>结构（Peer-to-peer,P2P）</p>
-<p><code>**混合**</code>结构</p>
-<h2 id="客户机-服务器结构"><a href="#客户机-服务器结构" class="headerlink" title="客户机&#x2F;服务器结构"></a>客户机&#x2F;服务器结构</h2><p><strong><strong><strong>客户机：</strong></strong></strong></p>
-<ul>
-<li>和服务器通信</li>
-<li><strong>间歇性</strong>接入网络</li>
-<li>可能有<strong>动态的IP地址</strong></li>
-<li>不会和其他的客户机通信</li>
-</ul>
-<p><strong>服务器：</strong></p>
-<ul>
-<li>需要不断提供服务</li>
-<li><code>永久性</code>的访问地址</li>
-<li>利用<strong>大量服务器</strong>实现可扩展性</li>
-</ul>
-<p><strong>例子</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p>
-<h2 id="纯P2P结构"><a href="#纯P2P结构" class="headerlink" title="纯P2P结构"></a>纯P2P结构</h2><p>基本上看不出来明显的服务器和客户机的差别了</p>
-<aside>
-🪶 **特点**
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Web%E5%BA%94%E7%94%A8/">Web应用</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
 
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png" alt="Untitled"></p>
-<ul>
-<li>没有永远在线的服务器</li>
-<li>任意端或者节点之间都可以直接通讯</li>
-<li>节点间歇性的接入网络</li>
-<li>节点可能改变IP地址</li>
-</ul>
-<p><strong>优点</strong></p>
-<p><strong>高度可伸缩的</strong></p>
-<p><strong>缺点</strong></p>
-<p><strong>难以管理</strong></p>
-</aside>
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">阅读全文<span class="seo-reader-text">CN-网络应用的体系结构</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
 
-<h2 id="混合结构"><a href="#混合结构" class="headerlink" title="混合结构"></a>混合结构</h2><p>🤔<strong>能否将两种结构混合在一起呢？并能够结合两者的优点？</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png" alt="可以避免服务器的资源过度使用"></p>
-<p>可以避免服务器的资源过度使用</p>
-<ul>
-<li><em><strong>Napster应用</strong></em><ul>
-<li><strong>文件传输</strong>使用P2P结构</li>
-<li><strong>文件的搜索</strong>采用C&#x2F;S结构——<code>**集中式**</code><ul>
-<li>每个节点<em>向中央服务器登记自己的内容</em></li>
-<li>每个节点向中央服务器<em>提交查询要求</em>，查找感兴趣的内容</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p><strong>每种网络体系结构找出5种以上的网络应用</strong></p>
-<p><strong>从多个方面&#x2F;角度对比三种体系结构的优缺点</strong></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.088Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:51.806Z" title="2023/10/12 17:05:51">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">几秒读完 (大约98个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/">CN-网络应用层概述</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/">
+                            CN-网络应用层概述
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 网络应用层概述
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<h2 id="本讲内容"><a href="#本讲内容" class="headerlink" title="本讲内容"></a>本讲内容</h2><h2 id="网络应用的体系结构"><a href="#网络应用的体系结构" class="headerlink" title="网络应用的体系结构"></a>网络应用的体系结构</h2><ul>
-<li>客户机和服务器</li>
-<li>P2P</li>
-<li>混合结构</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>application</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>transport</td>
-</tr>
-<tr>
-<td>network</td>
-</tr>
-<tr>
-<td>link</td>
-</tr>
-<tr>
-<td>physical</td>
-</tr>
-</tbody></table>
-<h2 id="网络应用的服务需求"><a href="#网络应用的服务需求" class="headerlink" title="网络应用的服务需求"></a>网络应用的服务需求</h2><ul>
-<li>可靠性</li>
-<li>带宽</li>
-<li>时延</li>
-</ul>
-<h2 id="Internet传输层服务模型"><a href="#Internet传输层服务模型" class="headerlink" title="Internet传输层服务模型"></a>Internet传输层服务模型</h2><ul>
-<li>TCP</li>
-<li>UDP</li>
-</ul>
-<h2 id="特定协议网络模型"><a href="#特定协议网络模型" class="headerlink" title="特定协议网络模型"></a>特定协议网络模型</h2><ul>
-<li>HTTP</li>
-<li>SMTP POP IMAP</li>
-<li>DNS</li>
-<li>P2P应用</li>
-</ul>
-<h2 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h2><ul>
-<li>TCP</li>
-<li>UDP</li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.087Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-30T05:58:16.515Z" title="2023/10/30 13:58:16">2023-10-30</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约371个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/">CN-网络层例题讲解</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<p>某网络拓扑如下图所示，路由器R1通过接口E1、E2分别连接局域网1、局域网2，通过接口LO连接路由器R2，并通过路由器R2连接域名服务器与互联网。R1的LO接口的IP地址是202.118.2.1;R2的LO接口的IP地址是202.118.2.2，L1接口的IP地址是130.11.120.1，EO接口的IP地址是202.118.3.1;域名服务器的IP地址是202.118.3.2。</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030134252.png" alt="image.png"></p>
-<p>R1和R2的路由表结构为：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231030134326.png" alt="image.png"></p>
-<p>(1)将IP地址空间202.118.1.0&#x2F;24划分为2个子网，分别分配给局域网1、局域网2，每个局域网需分配的IP地址数不少于120个。请给出子网划分结果，说明理由或给出必要的计算过程</p>
-<blockquote>
-<p>可以看出是标准的C网，202.118.1.0 ~ 202.118.1.254<br>划分结果为：<br>子网1：202.118.1.0，子网掩码为255.255.255.128<br>（202.118.1.0&#x2F;25）<br>子网2：202.118.1.128，子网掩码为255.255.255.128<br>（202.118.1.128&#x2F;25）</p>
-</blockquote>
-<p>(2)请给出R1的路由表，使其明确包括到局域网1的路由、局域网2的路由、域名服务器的主机路由和互联网的路由。</p>
-<table>
-<thead>
-<tr>
-<th align="center">目的网络IP地址</th>
-<th align="center">子网掩码</th>
-<th align="center">下一跳IP地址</th>
-<th align="center">接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">202.118.1.0</td>
-<td align="center">255.255.255.128</td>
-<td align="center">-</td>
-<td align="center">E1</td>
-</tr>
-<tr>
-<td align="center">202.118.1.128</td>
-<td align="center">255.255.255.128</td>
-<td align="center">-</td>
-<td align="center">E2</td>
-</tr>
-<tr>
-<td align="center"><div>202.118.3.2</div></td>
-<td align="center"><div>255.255.255.255</div></td>
-<td align="center">202.118.2.2</td>
-<td align="center">L0</td>
-</tr>
-<tr>
-<td align="center">0.0.0.0</td>
-<td align="center">0.0.0.0</td>
-<td align="center">202.118.2.2</td>
-<td align="center">L0</td>
-</tr>
-</tbody></table>
-<p>(3)请采用路由聚合技术，给出R2到局域网1和局域网2的路由。</p>
-<table>
-<thead>
-<tr>
-<th align="center">目的IP地址</th>
-<th align="center">子网掩码</th>
-<th align="center">下一跳IP地址</th>
-<th align="center">L0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">202.118.1.0</td>
-<td align="center">255.255.255.0</td>
-<td align="center">202.118.2.1</td>
-<td align="center">L0</td>
-</tr>
-</tbody></table>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.087Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:08:37.024Z" title="2023/10/12 17:08:37">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">5 分钟读完 (大约728个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-a7d9eaf00f9c454aad1c10c050d97151">CN-网络层服务</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Web%E5%BA%94%E7%94%A8/">Web应用</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E6%A6%82%E8%BF%B0/">阅读全文<span class="seo-reader-text">CN-网络应用层概述</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%9C%8D%E5%8A%A1/">
+                            CN-网络层服务
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>从发送主机像接受主机传送数据段</p>
-<p><strong>发送主机</strong>： 将数据段封装到数据报中</p>
-<p><strong>接收主机</strong>：向传输层交付数据段</p>
-<p><em><strong>每个</strong></em>主机和路由器都运行网络层协议</p>
-<p>路由器检验所有穿越它的IP数据报的头部域</p>
-<h2 id="网络层的核心功能-——-转发和路由"><a href="#网络层的核心功能-——-转发和路由" class="headerlink" title="网络层的核心功能 —— 转发和路由"></a>网络层的核心功能 —— 转发和路由</h2><p>路由器怎么把数据包转发到数据端口上最终送到目的地？</p>
-<blockquote>
-<p>[!转发（forwarding）]<br>将分组从路由器的输入端口转移到合适的输出端口</p>
-</blockquote>
-<p>转发表： 转发表确定在本路由器如何转发分组</p>
-<p>每一个地址来对应一个输出链路，通过转发表来进行寻找路线。</p>
-<p>必须事先建立起转发表，才能进行传输数据。</p>
-<blockquote>
-<p>[!路由(routing)]<br>确定分组从源到目的经过的路径</p>
-</blockquote>
-<p><strong>路由算法</strong> （routing algorithms）</p>
-<ul>
-<li><em>确定通过网络的端到端路径</em></li>
-</ul>
-<h2 id="网络层核心功能-——-连接建立"><a href="#网络层核心功能-——-连接建立" class="headerlink" title="网络层核心功能 —— 连接建立"></a>网络层核心功能 —— 连接建立</h2><p>某些网络的重要功能：</p>
-<ul>
-<li>ATM 帧中继 X.25</li>
-</ul>
-<p>数据分组传输之前两端主机需要<strong>首先</strong>建立虚拟&#x2F;逻辑连接</p>
-<ul>
-<li>网络设备（如路由器）参与连接的建立</li>
-</ul>
-<p>网络层连接和传输层连接的<strong>对比</strong></p>
-<ul>
-<li>网络层连接：两个主机之间（<em>路径上的路由器等网络设备参与其中</em>）</li>
-<li>传输层连接：两个应用进程之间（<em>对中间网络设备透明</em>）</li>
-</ul>
-<h2 id="网络层服务模型"><a href="#网络层服务模型" class="headerlink" title="网络层服务模型"></a>网络层服务模型</h2><p>Q： 网络层为发送端到接收端的数据包传送通道( channel )提供什么样的服务模型(service model)？</p>
-<p>Internet 网络层中提供的模型 Best effort model <code>尽力服务</code></p>
-<p>作为网络层，不需要进行拥塞控制或者拥塞信息的处理</p>
-<p><em>通过是否发生数据丢失来确定是否发生了数据的拥塞</em></p>
-<p>ATM 网络 :</p>
-<ul>
-<li>CBR  constant rate 固定比特率 所以带宽是保障的，不会出现拥塞。</li>
-<li>VBR  guaranteed rate 再拥塞的时候只能提供最低的传输数据带宽</li>
-<li>ABR</li>
-</ul>
-<h3 id="无连接服务-connection-less-service"><a href="#无连接服务-connection-less-service" class="headerlink" title="无连接服务 (connection-less service)"></a>无连接服务 (connection-less service)</h3><ul>
-<li>不事先为系列分组的传输确定传输路径</li>
-<li>每个分组独立确定传输路径（根据网络状况来动态的选择）</li>
-<li>不同的分组可能传输路径不相同<ul>
-<li>所以发到的数据顺序可能是不一样的</li>
-</ul>
-</li>
-<li><strong>数据报网络(datagram network)</strong></li>
-</ul>
-<h3 id="连接服务-connection-service"><a href="#连接服务-connection-service" class="headerlink" title="连接服务(connection service)"></a>连接服务(connection service)</h3><ul>
-<li>首先 为系列分组传输确定从源到目的的经过的路径(建立连接)</li>
-<li>然后沿该路径(连接)传输系列分组</li>
-<li>系列分组传输路径相同</li>
-<li>传输结束之后拆除连接</li>
-<li><strong>虚电路网络(virtual-sircuit network)</strong></li>
-</ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.086Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-15T12:51:45.753Z" title="2023/10/15 20:51:45">2023-10-15</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约461个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/">CN-有类IP地址</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/">网络层</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E6%9C%8D%E5%8A%A1/">阅读全文<span class="seo-reader-text">CN-网络层服务</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/">
+                            CN-网络层例题讲解
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            [[CN-NotesView]]
+某网络拓扑如下图所示，路由器R1通过接口E1、E2分别连接局域网1、局域网2，通过接口LO连接路由器R2，并通过路由器R2连接域名服务器与互联网。R1的LO接口的IP地址是202.118.2.1;R2的LO接口的IP...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/">网络层</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E7%BD%91%E7%BB%9C%E5%B1%82%E4%BE%8B%E9%A2%98%E8%AE%B2%E8%A7%A3/">阅读全文<span class="seo-reader-text">CN-网络层例题讲解</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/">
+                            CN-有类IP地址
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<p>IP子网 [[CourseNotes&#x2F;计算机体系结构&#x2F;CN-IP编址|CN-IP编址]]</p>
-<h2 id="IP地址（Addresses"><a href="#IP地址（Addresses" class="headerlink" title="IP地址（Addresses)"></a>IP地址（Addresses)</h2><p>“有类”编址</p>
-<p><strong>A类地址</strong>：</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015202955.png" alt="image.png"></p>
-<p>0.0.0.0 ~ 127.255.255.255</p>
-<p><strong>B类地址</strong>：<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015203137.png" alt="image.png"><br>128.0.0.0 ~ 191.255.255.255.255</p>
-<p><strong>C类地址</strong>：<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015203302.png" alt="image.png"><br>192.0.0.0 ~ 233.255.255.255</p>
-<p>定义C类地址前八位用于网络号，后面八位用于主机号</p>
-<p>对于剩余的八分之一的地址空间进行最后一次的二分，D类地址不再确认网络号和主机号，用于特殊的目的：</p>
-<p>用于标识一组主机，理论上可以在互联网中的所有地方。称为<strong>多播地址</strong>。</p>
-<p>E类地址保留作为研究使用	</p>
-<h2 id="特殊的IP地址"><a href="#特殊的IP地址" class="headerlink" title="特殊的IP地址"></a>特殊的IP地址</h2><table>
-<thead>
-<tr>
-<th align="center">NetID</th>
-<th align="center">HostID</th>
-<th align="center">作为IP分组源地址</th>
-<th align="center">作为IP分组目的地址</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">全0</td>
-<td align="center">全0</td>
-<td align="center">可以</td>
-<td align="center">不可以</td>
-<td>在本网范围内表示本机; 在路由表中用于表示默认路由相当于表示整个Internet网络</td>
-</tr>
-<tr>
-<td align="center">全0</td>
-<td align="center">特定值</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>标识本网内某个特定的主机</td>
-</tr>
-<tr>
-<td align="center">全1</td>
-<td align="center">全1</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>本网的广播地址（路由器不转发）  <strong>受限网络地址</strong></td>
-</tr>
-<tr>
-<td align="center">特定值</td>
-<td align="center">全0</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>网络地址，表示一个网络</td>
-</tr>
-<tr>
-<td align="center">特定值</td>
-<td align="center">全1</td>
-<td align="center">不可以</td>
-<td align="center">可以</td>
-<td>直接广播地址，对特定网络上的所有主机进行广播</td>
-</tr>
-<tr>
-<td align="center">127</td>
-<td align="center">非全0或者非全1的任何数</td>
-<td align="center">可以</td>
-<td align="center">可以</td>
-<td>用于本地软件环回测试</td>
-</tr>
-</tbody></table>
-<h2 id="私有（pivate）IP地址"><a href="#私有（pivate）IP地址" class="headerlink" title="私有（pivate）IP地址"></a>私有（pivate）IP地址</h2><p>只用于私有网络，在公共网络上这种地址是无效的</p>
-<table>
-<thead>
-<tr>
-<th align="center">Class</th>
-<th align="center">NetIDs</th>
-<th align="center">Blocks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">A</td>
-<td align="center">10</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">B</td>
-<td align="center">172.16 to 172.31</td>
-<td align="center">16</td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td align="center">192.168.0 to 192.168.255</td>
-<td align="center">256</td>
-</tr>
-</tbody></table>
-<p>这部分的私有地址使得IPv4的网络还能正常运行</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.085Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-30T02:39:34.315Z" title="2023/10/30 10:39:34">2023-10-30</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约231个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/">CN-数据链路层服务</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>术语：</p>
-<ul>
-<li><p>主机和路由器：结点（nodes）</p>
-</li>
-<li><p>连接相邻结点的通信信道：链路(links)</p>
-<ul>
-<li>有线链路(wired links)</li>
-<li>无线链路(wireless links)</li>
-<li>局域网(LANs)</li>
-</ul>
-</li>
-<li><p>链路层(第2层)数据分组：帧(frame),封装网络层数据报</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>数据链路层</strong>负责实现通过一条链路从一个结点向另一个物理链路直接相连的相邻结点传输数据报</p>
-</blockquote>
-<h2 id="链路层服务"><a href="#链路层服务" class="headerlink" title="链路层服务"></a>链路层服务</h2><p>组帧(framing)</p>
-<ul>
-<li><p>封装数据报文构成数据帧，加上首部和尾部</p>
-</li>
-<li><p>帧同步</p>
-</li>
-</ul>
-<p>在数据帧的首位加上特殊的字符</p>
-<p>链路接入(link access)</p>
-<p>如果是共享介质，需要解决信道接入(channel access)</p>
-<p>帧首部中的”MAC”地址，用于标识帧的源和目的</p>
-<ul>
-<li>不同于IP地址！</li>
-</ul>
-<p>相邻结点之间可靠交付</p>
-<p>无线链路: 误码率高，需要可靠交付</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.084Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-24T00:46:50.409Z" title="2023/10/24 08:46:50">2023-10-24</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约299个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-865d4a368698489cbba9b97d55086785">CN-应用层学习笔记</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%9C%89%E7%B1%BBIP%E5%9C%B0%E5%9D%80/">阅读全文<span class="seo-reader-text">CN-有类IP地址</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/">
+                            CN-数据链路层服务
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            [[CN-NotesView]]
+概述术语：
+
+主机和路由器：结点（nodes）
+
+连接相邻结点的通信信道：链路(links)
+
+有线链路(wired links)
+无线链路(wireless links)
+局域网(LANs)
+
+
+链路层(第2层)数...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%9C%8D%E5%8A%A1/">阅读全文<span class="seo-reader-text">CN-数据链路层服务</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%BA%94%E7%94%A8%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                            CN-应用层学习笔记
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 应用层 
-[[计算机网络]]
+            skipTags: ['script', 'noscript', 'style', 'textare...
+                        
+                    </div>
 
-<h2 id="章节分段"><a href="#章节分段" class="headerlink" title="章节分段"></a>章节分段</h2><ol>
-<li><p>C&#x2F;S模式，P2P模式</p>
-</li>
-<li><p>讨论客户-服务器模式的概念以及这个模式是如何为英特网用户提供服务的</p>
-</li>
-<li><p>讨论客户-服务器模式的预定义和标准应用。（万维网、文件传输、电子邮件）</p>
-</li>
-<li><p>对等模式中的概念以及协议。以及协议的流行应用</p>
-</li>
-<li><p>给出在客户-服务器模式下怎么通过C语言编写两个程序创建一个新的应用</p>
-</li>
-</ol>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>可以把应用层的功能看作是两个应用层之间假设存在一个<code>假想的直接连接</code>，通过这个链接可以发送和接收报文。</p>
-<p>因特网为全世界用户提供服务。<code>层次结构</code>使得因特网比其他网络更加灵活，在一层增加协议的时候要观察是不是使用了底层提供的服务；在一层删去协议的时候要关注上层是不是使用了该协议，并改写上一层的协议。</p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">上一页</a></div><div class="pagination-next"><a href="/page/3/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/8/">8</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Fri Nov 24 2023 10:14:50 GMT+0800">
+                
+                    2023-11-24
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Web%E5%BA%94%E7%94%A8/">Web应用</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E5%BA%94%E7%94%A8%E5%B1%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">阅读全文<span class="seo-reader-text">CN-应用层学习笔记</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator px-7 py-5">
+        <div class="paginator">
+    <a class="extend prev" rel="prev" href="/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa-regular fa-angle-right"></i></a>
+</div>
+
+    </div>
+</div>
+
+                    <div class="comment-container pjax"></div>
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

@@ -1,942 +1,543 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>分类: 计算机网络 - SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="this is a personal notion keeper"><meta property="og:type" content="blog"><meta property="og:title" content="SlaterXu"><meta property="og:url" content="https://molaters.github.io/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="this is a personal notion keeper"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://molaters.github.io/img/og_image.png"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="Develope"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://molaters.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io"},"headline":"SlaterXu","image":["https://molaters.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"this is a personal notion keeper"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-          const id = '#' + CSS.escape(location.hash.substring(1));
-          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
-          if (!$tabMenu) {
-            return;
-          }
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/categories/计算机网络/page/5/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Molaters">
+<meta property="og:url" content="https://molaters.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/5/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="For you, my love, I can devote everything.   -To Jianghan">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="Lee">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            分类: 计算机网络 -
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(id);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">分类</a></li><li class="is-active"><a href="#" aria-current="page">计算机网络</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.068Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-30T02:39:34.100Z" title="2023/10/30 10:39:34">2023-10-30</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约319个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-OSPF-5741b0ce2e084c01917e4c91e31e1e24">CN-OSPF协议</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<h2 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h2><p>“开放”：公众可用</p>
-<p>采用链路状态路由算法</p>
-<ul>
-<li>LS分组扩散（通告）</li>
-<li>每个路由器构造完整的网络拓扑图</li>
-</ul>
-<p>链路状态数据库</p>
-<p>每个入口对应一个邻居</p>
-<p>OSPF通告在整个AS范围内进行泛洪</p>
-<p>OSPF报文直接封装到IP数据报中</p>
-<p>和OSPF及其相似的一个路由协议：IS-IS路由协议</p>
-<h2 id="RIO不具备的优点"><a href="#RIO不具备的优点" class="headerlink" title="RIO不具备的优点"></a>RIO不具备的优点</h2><ol>
-<li><p><strong>安全</strong>：所有OSPF报文可以被认证（恶意入侵）</p>
-</li>
-<li><p>允许使用<strong>多条</strong>相同费用的<strong>路径</strong>（RIP只能选一条）</p>
-</li>
-<li><p>对于每一条链路，可以针对不同的TOS设置多个不同费用度量</p>
-</li>
-<li><p>继承单播路由和多播路由：</p>
-</li>
-</ol>
-<ul>
-<li>多播OSPF协议和OSPF利用相同的网络拓扑数据</li>
-</ul>
-<p>OSPF支持对大规模AS分层</p>
-<h2 id="分层的OSPF"><a href="#分层的OSPF" class="headerlink" title="分层的OSPF"></a>分层的OSPF</h2><p><strong>两级分层</strong></p>
-<p>局部区和主干区</p>
-<p>链路状态通告只限于区内</p>
-<p>每个路由器掌握所在区的详细拓扑</p>
-<p><strong>区边界路由器</strong>：汇总到达所在区的网络的距离，通告给其他区边界路由器</p>
-<p><strong>主干路由器</strong>：在主干区内运行</p>
-<p><strong>AS边界路由器</strong>：连接其他AS</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.068Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-11-01T14:27:17.015Z" title="2023/11/1 22:27:17">2023-11-01</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">4 分钟读完 (大约538个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-PPP%E5%8D%8F%E8%AE%AE/">CN-PPP协议</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<h2 id="点对点数据链路控制"><a href="#点对点数据链路控制" class="headerlink" title="点对点数据链路控制"></a>点对点数据链路控制</h2><p>一个发送端，一个接收端，一条链路: 比广播链路容易</p>
-<ul>
-<li><p>无需介质访问控制(Media Access Control)</p>
-</li>
-<li><p>无需明确的MAC寻址</p>
-</li>
-<li><p>e.g., 拨号链路,ISDN链路</p>
-</li>
-</ul>
-<p>HDLC： High Level Data Link Control</p>
-<p>PPP: (Point-to-Point Protocol)</p>
-<h2 id="PPP设计需求"><a href="#PPP设计需求" class="headerlink" title="PPP设计需求"></a>PPP设计需求</h2><p>组: 将网络层数据报封装到数据链路层帧中可以同时承载任何网络层协议分组(不仅IP数据报)可以向上层实现分用 (多路分解)</p>
-<p>比特透明传输:数据域必须支持承载任何比特模式</p>
-<p>差错检测:(无纠正)</p>
-<p>网络层地址协商: 端结点可以学习&#x2F;配置彼此网络地址</p>
-<h2 id="PPP无需支持的功能"><a href="#PPP无需支持的功能" class="headerlink" title="PPP无需支持的功能"></a>PPP无需支持的功能</h2><p>无需差错纠正&#x2F;恢复无需流量控制不存在乱序交付无需支持多点链路</p>
-<p>差错恢复、流量控制等由高层协议处理!</p>
-<h2 id="PPP数据帧"><a href="#PPP数据帧" class="headerlink" title="PPP数据帧"></a>PPP数据帧</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101222057.png" alt="image.png"></p>
-<p>标志(Flag): 定界符(delimiter)</p>
-<p>地址(Address): 无效(仅仅是一个选项)</p>
-<p>控制(Control): 无效; 未来可能的多种控制域</p>
-<p>协议(Protocol): 上层协议 (eg, PPP-LCP,IP,IPCP, tc)</p>
-<p>信息(info): 上层协议分组数据</p>
-<p>校验(check): CRC校验，用于差错检测</p>
-<h2 id="字节填充-Byte-Stuffing"><a href="#字节填充-Byte-Stuffing" class="headerlink" title="字节填充(Byte Stuffing)"></a>字节填充(Byte Stuffing)</h2><p>”数据透明传输“ 需求：数据域必须包含标志模式&lt;011110&gt;</p>
-<p>Q:如何判断该作为数据接收，还是作为标志处理？</p>
-<p>发送端: 在数据中的&lt;01111110&gt;和&lt;01111101&gt;字节前添加额外的字节&lt;01111101&gt;(“填充(stuffs)”)</p>
-<p>接收端:<br>单个字节&lt;01111101&gt;表示一个填充字节:<br>连续两个字节&lt;01111101&gt;: 丢弃第1个，第2个作为数据接收</p>
-<h2 id="PPP数据控制协议"><a href="#PPP数据控制协议" class="headerlink" title="PPP数据控制协议"></a>PPP数据控制协议</h2><p>在交换网络层数据之前，PPP数据链路两端必须:</p>
-<ol>
-<li><p>配置PPP链路</p>
-<ol>
-<li>最大帧长度</li>
-<li>身份认证</li>
-</ol>
-</li>
-<li><p>学习&#x2F;配置网络层信息</p>
-<ul>
-<li>对于IP协议: 通过交换IPCP协议(IP Control Protocol )报文(IP分组首部的“上层协议”字段取值: 8021)，完成IP地址等相关信息配置</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231101222711.png" alt="image.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.067Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:08.519Z" title="2023/10/12 17:05:08">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">5 分钟读完 (大约817个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.4%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD/">CN-No.4 计算机网络性能</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
 </head>
-# 速率
 
-<p>速率指的是数据率或者称为比特率</p>
-<ul>
-<li>单位时间传输信息量</li>
-<li>计算机网络中最重要的一个性能指标</li>
-<li>单位：b&#x2F;s(或bps)、kb&#x2F;s、Mb&#x2F;s、Gb&#x2F;s<ul>
-<li>$k&#x3D;10^3、M&#x3D;10^6、G&#x3D;10^9$</li>
-</ul>
-</li>
-<li>速率指的是<strong>额定速率</strong>或者<strong>标称速率</strong></li>
-</ul>
-<h1 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h1><p><strong>带宽</strong> 指的是信号具有的额频带宽度，也就是最高频率和最低频率之差，单位是Hz。</p>
-<p>网络的“带宽”指的是信道能传输的“最高数据率”，单位 b&#x2F;s （bps）</p>
-<p>常用的带宽单位：</p>
-<ul>
-<li>kb&#x2F;s </li>
-<li>Mb&#x2F;s</li>
-<li>Gb&#x2F;s</li>
-<li>Tb&#x2F;s</li>
-</ul>
-<h1 id="延迟-时延（delay）"><a href="#延迟-时延（delay）" class="headerlink" title="延迟&#x2F;时延（delay）"></a>延迟&#x2F;时延（delay）</h1><p>分组交换为什么会繁盛丢包和时延？</p>
-<img src=".\assets\image-20230807152535076.png" alt="$image-20230807152535076$" style="zoom:67%;" />
 
-<h2 id="d-proc-：节点处理延迟"><a href="#d-proc-：节点处理延迟" class="headerlink" title="$d_{proc}$：节点处理延迟"></a>$d_{proc}$：节点处理延迟</h2><p>（nodal processing delay）</p>
-<ul>
-<li>差错检测</li>
-<li>确定输出链路</li>
-<li>通常 &lt; m sec</li>
-</ul>
-<h2 id="d-queue-：排队延迟"><a href="#d-queue-：排队延迟" class="headerlink" title="$d_{queue}$：排队延迟"></a>$d_{queue}$：排队延迟</h2><p>（queuing delay）</p>
-<ul>
-<li>等待输出链路可用</li>
-<li>取决于路由器拥塞程度</li>
-</ul>
-<h2 id="d-trans-：传输延迟"><a href="#d-trans-：传输延迟" class="headerlink" title="$d_{trans}$：传输延迟"></a>$d_{trans}$：传输延迟</h2><img src="D:\MarkdownNotes\计算机网络\assets\image-20230807153108762.png" alt="image-20230807153108762" style="zoom: 67%;" />
+<body>
+<div class="progress-bar-container">
+    
 
-<ul>
-<li><p>L ： 分组宽度</p>
-</li>
-<li><p>R：链路带宽</p>
-</li>
-<li><p>$d_{trans}$ &#x3D; L&#x2F;R</p>
-</li>
-</ul>
-<h2 id="d-prop-：传播延迟"><a href="#d-prop-：传播延迟" class="headerlink" title="$d_{prop}$：传播延迟"></a>$d_{prop}$：传播延迟</h2><ul>
-<li>d ： 物理信号链路长度</li>
-<li>s ：信号传播速度</li>
-<li>$d_{prop}$ &#x3D; d&#x2F;s</li>
-</ul>
-<p><img src="D:\MarkdownNotes\计算机网络\assets\image-20230807153426289.png" alt="image-20230807153426289"></p>
-<blockquote>
-<p>车速为100 km&#x2F;hr~ 信号传播速度</p>
-<p>收费站放行一台车用时12 秒 ~ 比特传输时间</p>
-<p><code>车 ~ 比特</code>;<code>车队 ~ 分组</code></p>
-<p><strong>车队通过收费站时间 ~ 传输延迟 (120秒)</strong></p>
-<p><strong>每台车从第一个收费站跑到第二个收费站用时~ 传播延迟 (1小时)</strong></p>
-</blockquote>
-<h2 id="排队延迟"><a href="#排队延迟" class="headerlink" title="排队延迟"></a>排队延迟</h2><p>特殊的点在于<em>不确定</em></p>
-<p>R：链路带宽（bps）</p>
-<p>L：分组长度（bits）</p>
-<p>a：平均分组到达速率</p>
-<p>流量强度（traffic intensity &#x3D; $L \ a &#x2F; R$）</p>
-<ul>
-<li>~0  平均排队延迟很小</li>
-<li>→ 1 平均排队延迟很大</li>
-<li>$\gt$ 1 无限大</li>
-</ul>
-<h2 id="时延带宽积"><a href="#时延带宽积" class="headerlink" title="时延带宽积"></a>时延带宽积</h2><p>（<strong>带宽时延积</strong>）</p>
-<p><strong>时延带宽积 &#x3D; 传播时延 $\times$ 带宽</strong></p>
-<p><strong>时延带宽积 &#x3D; $d_{drop} \times R \ (bits)$.</strong></p>
-<p><strong>链路的时延带宽积又称为以比特为单位的链路长度</strong></p>
-<h2 id="分组丢失（丢包）"><a href="#分组丢失（丢包）" class="headerlink" title="分组丢失（丢包）"></a>分组丢失（丢包）</h2><ul>
-<li>队列缓存容量有限</li>
-<li>分组到达已满队列将被丢弃</li>
-<li>丢弃分组可能有前序结点或者源重发（也可能不重发）</li>
-</ul>
-<p>$丢包率 &#x3D; \frac{丢包数}{已发分组总数}$.</p>
-<h2 id="吞吐量（Throughput）"><a href="#吞吐量（Throughput）" class="headerlink" title="吞吐量（Throughput）"></a>吞吐量（Throughput）</h2><p>吞吐量： 表示在发送端与接收端之间传送数据速率（b&#x2F;s）</p>
-<ul>
-<li>即时吞吐量：给定时刻的速率。</li>
-<li>平均吞吐量：一段时间的平均速率。</li>
-</ul>
-<p>端到端的吞吐量决定于传播的各阶段吞吐量的最小值。</p>
-<p>若$R_s &lt; R_c$ 吞吐量就是 $R_s$.</p>
-<p>若$R_s &gt;R_c$ 吞吐量就是$R_c$.</p>
-<p> 🥈 瓶颈链路（<strong>bottleneck link</strong>）</p>
-<p>端到端路径上，限制端到端吞吐量的链路。</p>
-<p>考虑10条“连接”共享主干网瓶颈链路R bits&#x2F;sec</p>
-<p>每条连接的端到端的吞吐量： min($R_c,R_s,R&#x2F;10$)</p>
-<p>实际网络：$R_c$或$R_s$通常是瓶颈</p>
-<hr>
-<p>上一页： [[CourseNotes&#x2F;计算机网络&#x2F;CN-No.3 网络核心]]</p>
-<p>下一页：[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.5 计算机网络的体系结构]]</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.067Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:12.353Z" title="2023/10/12 17:05:12">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">13 分钟读完 (大约1907个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.5%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">CN-No.5 计算机网络的体系结构</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 计算机网络的体系结构
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
 
-<h2 id="计算机网络是一个非常复杂的系统"><a href="#计算机网络是一个非常复杂的系统" class="headerlink" title="计算机网络是一个非常复杂的系统"></a>计算机网络是一个非常复杂的系统</h2><ul>
-<li>主机</li>
-<li>路由器</li>
-<li>各种链路</li>
-<li>应用</li>
-<li>协议</li>
-<li>硬件、软件</li>
-</ul>
-<p>……</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>是否存在一种系统结构有效描述网络？<br>利用什么样的结构？</p>
-<p>……</p>
-<p>至少用于讨论网络？</p>
-<p>A：分层结构</p>
-<h2 id="复杂系统的分层结构"><a href="#复杂系统的分层结构" class="headerlink" title="复杂系统的分层结构"></a>复杂系统的分层结构</h2><p>类比：航空旅行</p>
-<p><img src="D:\MarkdownNotes\计算机网络\assets\Untitled-1692438417405-38.png" alt="Untitled"></p>
-<ul>
-<li>每层完成一种（类）特定服务&#x2F;功能</li>
-</ul>
-<h2 id="计算积网络的体系结构"><a href="#计算积网络的体系结构" class="headerlink" title="计算积网络的体系结构"></a>计算积网络的体系结构</h2><p>网络体系结构是从功能上描述计算机网络结构</p>
-<p>计算机网络体系结构简称网络体系结构（network architecture）是分层结构</p>
-<p>每层遵勖某个 &#x2F; 某些网络协议完成本层功能</p>
-<p><strong>计算机网络体系结构是计算机网络的各层及其协议的集合</strong></p>
-<p>体系结构是一个网络功能层次及其关系的<code>定义</code></p>
-<p>体系结构是<strong>抽象的</strong></p>
-<h2 id="为什么采用分层结构？"><a href="#为什么采用分层结构？" class="headerlink" title="为什么采用分层结构？"></a>为什么采用分层结构？</h2><h3 id="结构清晰-有利于识别复杂系统不见及其关系"><a href="#结构清晰-有利于识别复杂系统不见及其关系" class="headerlink" title="结构清晰 有利于识别复杂系统不见及其关系"></a><code>结构清晰</code> 有利于识别复杂系统不见及其关系</h3><ul>
-<li>分层的参考模型(reference model)</li>
-</ul>
-<h3 id="模块化的分成易于系统更新维护"><a href="#模块化的分成易于系统更新维护" class="headerlink" title="模块化的分成易于系统更新维护"></a>模块化的分成易于系统更新维护</h3><ul>
-<li>任何一层服务实现的改变对于其它系统其他层都是透明的。</li>
-<li>例如，登机过程的改变并不影响航空系统的其他部分。</li>
-</ul>
-<h3 id="有利于标准化"><a href="#有利于标准化" class="headerlink" title="有利于标准化"></a><strong>有利于标准化</strong></h3><p><code>分层是否有不利之处？</code> 会导致效率不足</p>
-<h2 id="分层网络的基本概念"><a href="#分层网络的基本概念" class="headerlink" title="分层网络的基本概念"></a>分层网络的基本概念</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 1-1692438417405-40.png)</p>
-<p><code>实体</code> <strong>(entity)</strong> 表示任何可以发送或者接收信息的硬件或者软件进程</p>
-<p><code>协议</code>是控制两个对等实体进行通信的规则的集合，协议是<code>水平的</code> 。</p>
-<p>任一层实体需要使用下层服务，遵循本层协议，实现本层功能，向上层提供<code>服务</code>，服务是垂直的。</p>
-<p>下层协议的实现对上层的服务用户是<strong>透明</strong>的。</p>
-<p>同系统的相邻层实体之间通过接口进行交互，通过服务访问点（SAP），交换原语，指定请求的特定服务。</p>
-<hr>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 2-1692438417406-44.png)</p>
-<h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><p>开放系统互连（OSI）参考模型 $\rightarrow$ 分层网络体系结构模型（1984）</p>
-<p>目的是支持 异构网络系统的互联互通。</p>
-<p>异构网络系统互联的国际标准</p>
-<p>理解网络通信的最佳<code>学习工具</code>（理论模型）</p>
-<p>✅理论成功 市场失败</p>
-<p>7层 （功能）， 每层完成特定的网络功能。</p>
-<h2 id="OSI参考模型的通信过程"><a href="#OSI参考模型的通信过程" class="headerlink" title="OSI参考模型的通信过程"></a>OSI参考模型的通信过程</h2><p>主机从应用层发出信息，通过七个层到达物理层，通过传输介质传输到路由器的物理层，通过遵循各层的协议，经过物理层 $\rightarrow$ 数据链路层 $\rightarrow$ 网络层 $\rightarrow$ 数据链路层 $\rightarrow$ 物理层的转换再进入传输介质，然后再通过七层进入下一个主机的应用层。</p>
-<p><strong>实线表示的是信息的<code>物理传输</code></strong></p>
-<ul>
-<li>通过接口实现</li>
-</ul>
-<p><strong>虚线表示的是<code>协议传输</code></strong></p>
-<ul>
-<li>和写信一样，无关传输过程，只看数据的交换</li>
-</ul>
-<p><strong>端-端层（end - end）</strong></p>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 3-1692438417406-42.png)</p>
-<h2 id="OSI参考模型数据封装与通信过程"><a href="#OSI参考模型数据封装与通信过程" class="headerlink" title="OSI参考模型数据封装与通信过程"></a>OSI参考模型数据封装与通信过程</h2><p>用户数据从主机A出发</p>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 4-1692438417406-46.png)</p>
-<h2 id="为什么要进行数据封装？"><a href="#为什么要进行数据封装？" class="headerlink" title="为什么要进行数据封装？"></a>为什么要进行数据封装？</h2><h3 id="增加控制信息"><a href="#增加控制信息" class="headerlink" title="增加控制信息"></a>增加控制信息</h3><ul>
-<li>构造协议单元（PDU）</li>
-</ul>
-<h3 id="控制信息主要包括"><a href="#控制信息主要包括" class="headerlink" title="控制信息主要包括"></a>控制信息主要包括</h3><ul>
-<li>地址（Address）：表示发送端、接收端</li>
-<li>差错检测编码（Error-detecting code）：用于差错检测或纠正</li>
-<li>协议控制（Protocol control）:实现协议功能的附加信息，如：<strong>优先级（priority） 、服务质量(QoS)、安全控制等</strong></li>
-</ul>
-<hr>
-<h2 id="物理层功能"><a href="#物理层功能" class="headerlink" title="物理层功能"></a>物理层功能</h2><p>就是实现每一个bit的传输，具体的来讲：</p>
-<ul>
-<li><strong>接口特性</strong><ul>
-<li><code>机械特性</code>  、<code>电气特性</code> 、<code>功能特性</code>、<code>规程特性</code></li>
-</ul>
-</li>
-<li><strong>比特编码问题</strong></li>
-<li><strong>数据率</strong></li>
-<li><strong>比特同步</strong><ul>
-<li>时钟同步,在发送设备和接受设备之间的信号同步</li>
-</ul>
-</li>
-<li><strong>传输模式</strong><ul>
-<li>单工<strong>（Simplex）</strong>也就是只能单向的通信</li>
-<li>半双工<strong>（half-duplex）****对讲机</strong></li>
-<li>全双工<em>（full-duplex）</em></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="数据链路层功能"><a href="#数据链路层功能" class="headerlink" title="数据链路层功能"></a>数据链路层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 5-1692438417406-48.png)</p>
-<p>作为数据链路层解决的主要是<strong>节点到节点</strong>的数据传输</p>
-<p><strong>组帧（Framing）构成帧的主要目的是能够成功的切分出数据帧</strong></p>
-<p><strong>物理寻址（Physical addressing）</strong></p>
-<ul>
-<li>在帧头中增加发送端和接收端的物理地址标识数据帧的发送端和接收端</li>
-</ul>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 6-1692438417406-50.png)</p>
-<p><strong>流量控制（Flow control）</strong></p>
-<ul>
-<li>避免淹没接收端</li>
-</ul>
-<p><strong>差错控制（Error control）</strong></p>
-<ul>
-<li>检测并重传损坏或丢失帧，并避免重复帧</li>
-</ul>
-<p><strong>访问(接入)控制（Access control）</strong></p>
-<ul>
-<li>在任一给定时刻决定那个设备具有链路（物理介质）控制使用权</li>
-</ul>
-<hr>
-<h2 id="网络层功能"><a href="#网络层功能" class="headerlink" title="网络层功能"></a>网络层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 7-1692438417406-52.png)</p>
-<ul>
-<li>负责从<strong>源主机到目的主机</strong>数据分组（packet）交付<ul>
-<li>可能穿越多个网络</li>
-</ul>
-</li>
-<li><strong>逻辑寻址（Logical addressing）</strong><ul>
-<li>全局唯一逻辑地址，确保数据分组被送往目的主机，比如IP地址。</li>
-</ul>
-</li>
-<li><strong>路由（Routing）</strong><ul>
-<li>路径选择</li>
-<li>互联网络并由路由分组☞目的主机</li>
-</ul>
-</li>
-<li><strong>分组转发</strong></li>
-</ul>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 8-1692438417406-54.png)</p>
-<hr>
-<h2 id="传输层的功能"><a href="#传输层的功能" class="headerlink" title="传输层的功能"></a>传输层的功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 9-1692438417406-56.png)</p>
-<p>负责源-目的（端-端）（进程间）完整报文传输</p>
-<ul>
-<li><strong>分段和重组</strong></li>
-<li><strong>SAP寻址</strong><ul>
-<li>确保将完整的报文提交给正确进程比如<code>端口号</code></li>
-</ul>
-</li>
-</ul>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 10-1692438417406-58.png)</p>
-<ul>
-<li><strong>连接控制</strong></li>
-<li><strong>流量控制</strong></li>
-<li><strong>差错控制</strong></li>
-</ul>
-<hr>
-<h2 id="会话层功能"><a href="#会话层功能" class="headerlink" title="会话层功能"></a>会话层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 11-1692438417406-60.png)</p>
-<ul>
-<li><strong>对话控制（dialog controling）</strong><ul>
-<li>建立 维护</li>
-</ul>
-</li>
-<li><strong>同步（synchronization）</strong></li>
-<li>最<code>薄</code> 的一层</li>
-</ul>
-<hr>
-<h2 id="表示层功能"><a href="#表示层功能" class="headerlink" title="表示层功能"></a>表示层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 12-1692438417406-62.png)</p>
-<p>处理两个系统之间交换信息的语法和语义<em>（syntax and semantics）</em>问题</p>
-<ul>
-<li><strong>数据表示转化</strong><ul>
-<li>转换为主机独立的编码</li>
-</ul>
-</li>
-<li><strong>加密&#x2F;解密</strong></li>
-<li><strong>压缩&#x2F;解压缩</strong></li>
-</ul>
-<hr>
-<h2 id="应用层问题"><a href="#应用层问题" class="headerlink" title="应用层问题"></a>应用层问题</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 13-1692438417406-64.png)</p>
-<p>支持用户通过用户代理（如浏览器）或者网络接口使用网络（服务）</p>
-<p>典型应用层服务：</p>
-<ul>
-<li>文件传输（FTP）</li>
-<li>电子邮件（SMTP）</li>
-<li>Web（HTTP）</li>
-<li>……</li>
-</ul>
-<p><strong>TCP&#x2F;IP参考模型</strong></p>
-<p>![*IP over Everything*](D:\MarkdownNotes\计算机网络\assets\Untitled 14-1692438417406-66.png)</p>
-<p><em>IP over Everything</em></p>
-<hr>
-<h2 id="五层参考模型"><a href="#五层参考模型" class="headerlink" title="五层参考模型"></a>五层参考模型</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 15-1692438417406-68.png)</p>
-<p>综合OSI和TCP&#x2F;IP的优点</p>
-<p>大部分都是这样的参考模型</p>
-<p>在功能上基本类似之前的7层</p>
-<p><strong>应用层：支持网络应用</strong></p>
-<p><strong>传输层：进程-进程的数据传输</strong></p>
-<p><strong>网络层：相邻网络元素（主机、交换机、路由器）的数据传输</strong></p>
-<p><strong>物理层：比特传输</strong></p>
-<p><strong>报文</strong>（message）的传播过程如下：</p>
-<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 16-1692438417406-70.png)</p>
-<p>💬可以看到交换机和路由器的本质区别是一个只有两层而一个是三层。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.066Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:04:51.310Z" title="2023/10/12 17:04:51">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">15 分钟读完 (大约2285个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.3%20%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83/">CN-No.3 网络核心</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 网络核心
 
-<h2 id="为什么需要数据交换"><a href="#为什么需要数据交换" class="headerlink" title="为什么需要数据交换"></a>为什么需要数据交换</h2><ul>
-<li>$N^2$ 链路问题</li>
-<li>将主机和交换设备连接</li>
-<li>连通性</li>
-<li>网络规模</li>
-</ul>
-<h2 id="交换？"><a href="#交换？" class="headerlink" title="交换？"></a>交换？</h2><ul>
-<li>动态转接</li>
-</ul>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="dynamic connect" style="zoom:67%;" />
+<main class="page-container" id="swup">
 
-<ul>
-<li>动态分配传输资源</li>
-</ul>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png" alt="dynamic sourse" style="zoom:67%;" />
+    
 
-<h2 id="数据交换的类型"><a href="#数据交换的类型" class="headerlink" title="数据交换的类型"></a>数据交换的类型</h2><h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><p>电路交换的特点</p>
-<ul>
-<li>最典型的电路交换网络：<strong>电话网络</strong></li>
-</ul>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png" alt="Untitled" style="zoom:67%;" />W</p>
-<ul>
-<li>所以电路交换过程可以分为三个阶段：<ul>
-<li>建立连接（呼叫&#x2F;电路建立）</li>
-<li>通信</li>
-<li>释放连接</li>
-</ul>
-</li>
-<li>独占资源（比如信道资源）是不能被第三方共享的</li>
-</ul>
-<h3 id="电路交换网络的链路共享"><a href="#电路交换网络的链路共享" class="headerlink" title="电路交换网络的链路共享"></a>电路交换网络的链路共享</h3><p>→ 电路交换网络如何共享中继线？</p>
-<hr>
-<h2 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h2><ul>
-<li>多路复用简称复用，是通信技术的基本概念</li>
-<li>传输能力大于单路的信息，所以要实现多路复用技术</li>
-</ul>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%203.png" alt="复用器进行组合，分用器来进行拆分" style="zoom:67%;" />
+    <div class="main-content-container">
 
-<p>复用器进行组合，分用器来进行拆分</p>
-<p><strong>多路复用：</strong>链路、网络资源 划分为<strong>资源片</strong></p>
-<p>将资源片分配给各路“呼叫”</p>
-<p>每路呼叫独占分配到的资源篇进行通信</p>
-<p>资源片可能闲置</p>
-<h3 id="典型多路复用方法"><a href="#典型多路复用方法" class="headerlink" title="典型多路复用方法"></a>典型多路复用方法</h3><ul>
-<li><p><strong>频分多路复用</strong></p>
-  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%204.png" alt="最具代表性的就是有线电视网络" style="zoom:67%;" />
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="category-container">
+    <div class="category-name">
+        <i class="fa-solid fa-folder"></i>&nbsp;计算机网络
+    </div>
+    <div class="category-post-list">
+        
+
+<div class="archive-list-container">
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2023</span>
+                <span class="archive-year-post-count">[10]</span>
+            </div>
+            <ul class="article-list">
+              
+                
+                    
+                    <li class="article-item" date-is='11-24'>
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-PPP%E5%8D%8F%E8%AE%AE/">
+                        <span class="article-title">CN-PPP协议</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-OSPF%E5%8D%8F%E8%AE%AE/">
+                        <span class="article-title">CN-OSPF协议</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.4%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD/">
+                        <span class="article-title">CN-No.4 计算机网络性能</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.5%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">
+                        <span class="article-title">CN-No.5 计算机网络的体系结构</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.3%20%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83/">
+                        <span class="article-title">CN-No.3 网络核心</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+                        <span class="article-title">CN-No.1 计算机网络基本概念</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.2%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%93%E6%9E%84/">
+                        <span class="article-title">CN-No.2 计算机网络的结构</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-NetworkLayer-Reading/">
+                        <span class="article-title">CN-NetworkLayer-Reading</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-NAT/">
+                        <span class="article-title">CN-NAT</span>
+                    </a>
+                
+              
+                
+                
+                    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Lab4/">
+                        <span class="article-title">CN-Lab4</span>
+                    </a>
+                
+              
+            </ul>
+        </section>
+    
+</div>
+
+    </div>
+</div>
+<div class="category-paginator">
+    <div class="paginator">
+    <a class="extend prev" rel="prev" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/4/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/3/">3</a><a class="page-number" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/6/">6</a><a class="page-number" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/7/">7</a><a class="page-number" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/8/">8</a><a class="extend next" rel="next" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/6/"><i class="fa-regular fa-angle-right"></i></a>
+</div>
+
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
   
-<p>  最具代表性的就是有线电视网络</p>
-<p>  每个用户占用不同的带宽资源</p>
-<p>  用户在分配到一定的频带后，那自始自终都占用这个频带</p>
-<p>  频分多路技术</p>
-</li>
-<li><p><strong>时分多路复用</strong></p>
-<p>  划分为<strong>帧</strong> 每个用户占据固定序号的时间间隙</p>
-<p>  每个用户占用的时间间隙是周期性出现的</p>
-  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%206.png" alt="Untitled" style="zoom:50%;" />
+<script src="/js/libs/Typed.min.js"></script>
+
   
-<p>  在频率上是不分割的</p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%207.png" alt="时分多路复用"></p>
-<p>  时分多路复用</p>
-</li>
-<li><p><strong>波分多路复用</strong></p>
-<p>  光的频分复用</p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%208.png" alt="Untitled"></p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%209.png" alt="中间的链路是可以共享的，称为中继线"></p>
-<p>  中间的链路是可以共享的，称为中继线</p>
-</li>
-<li><p><strong>码分多路复用</strong></p>
-<p>  广泛应用于无线链路共享（蜂窝网，卫星通信）</p>
-<p>  每个用户分配一个唯一的m bit的<strong>码片序列<em>chipping sequence</em></strong></p>
-<p>  用户使用相同频率载波，利用各自码片序列编码数据</p>
-<p>  $编码信号 &#x3D; (原始数据)\times (码片序列)$。</p>
-<ul>
-<li><p>如发送比特1(+1），则发送自己的m bit码片序列</p>
-</li>
-<li><p>如发送比特0(-1)，则发送该码片序列的m bit码片序列的反码</p>
-</li>
-<li><p>各个用户码片序列相互正交</p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2010.png" alt="Untitled"></p>
-</li>
-<li><p><strong>解码</strong>：码片序列和编码信号的<strong>内积</strong></p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2011.png" alt="Untitled"></p>
-</li>
-</ul>
-<p>  <strong>具体的实现步骤</strong></p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2012.png" alt="在发送端和接收端的信号传输"></p>
-<p>  在发送端和接收端的信号传输</p>
-<p>  <strong>如果是多个用户向信道发送数据</strong></p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2013.png" alt="需要保证码片之间是正交的"></p>
-<p>  需要保证码片之间是正交的</p>
-<h2 id="数据交换：报文交换，分组交换"><a href="#数据交换：报文交换，分组交换" class="headerlink" title="数据交换：报文交换，分组交换"></a>数据交换：报文交换，分组交换</h2><h3 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h3><p>  电路交换资源是独占的，报文指的是发送的信息的整体</p>
-<p>  比如：一个文件</p>
-<h3 id="分组交换（package-switch）"><a href="#分组交换（package-switch）" class="headerlink" title="分组交换（package switch）"></a>分组交换（<em><strong>package switch</strong></em>）</h3><p>  分组：报文分叉出来的一系列相对较小的数据包</p>
-<p>  <strong>头 + 数据</strong></p>
-<p>  分组交换需要保温的拆分和重组</p>
-<p>  产生额外开销（因为要消费额外开销）</p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2014.png" alt="Untitled"></p>
-</li>
-</ul>
-<p>作为分组交换网络，这样的共享不是事先就分配一部分，而是两个的数据分别都是用完整带宽进行转发，具有很强的随机性。所以也称为统计多路复用统计多路复用最大的特点就是按需共享链路。</p>
-<p>每一个分组从上一个节点完整的转发分组，然后存储之后转发走。称为<strong>存储转发操作</strong>。</p>
-<p>这里能保证是有效的数据，有且仅有当两个向量正交的时候才有效，可以通用数学推导出来。主要原因是因为可以去除S1信道和S2信道的交叉乘积的影响，达到隔离的目的：</p>
-<p> $P&#x3D; \underset{1}{\overset{2}{\sum}}d_i \cdot S_i$</p>
-<p>所以可以推导出</p>
-<p>$d_1&#x3D;\frac{1}{m}\cdot S_i \cdot \underset{1}{\overset{2}{\sum}}d_i \cdot S_i &#x3D; \frac{(S_1)^2}{m} \cdot d$。</p>
-<p>可以看出和上面的表达式是相同的</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2015.png" alt="Untitled"></p>
-<hr>
-<p>区别：</p>
-<ul>
-<li>报文交换用完整的报文</li>
-<li>分组交换用较小的分组</li>
-</ul>
-<h3 id="所以哪种方式更好呢？"><a href="#所以哪种方式更好呢？" class="headerlink" title="所以哪种方式更好呢？"></a>所以哪种方式更好呢？</h3><p><strong>分组交换：传输延迟</strong></p>
-<p>场景假设，源主机有两个分组信息需要发射，每个分组L bit大小</p>
-<p>发送主机：</p>
-<ul>
-<li>接受应用报文（消息）</li>
-<li>拆分为较小长度为L bits的分组</li>
-<li>在传输速率为R的链路上进行传输</li>
-</ul>
-<h3 id="报文交换-vs-分组交换"><a href="#报文交换-vs-分组交换" class="headerlink" title="报文交换 vs 分组交换"></a>报文交换 vs 分组交换</h3><p>报文交换：</p>
-<ul>
-<li>报文长度为M bits</li>
-<li>链路带宽为R bps</li>
-<li>每次传输报文需要M&#x2F;R秒</li>
-</ul>
-<p>分组交换：</p>
-<ul>
-<li>报文被拆分为多个组</li>
-<li>分组长度为L bits</li>
-<li>每个分组传输时延为L&#x2F;R秒</li>
-</ul>
-<p>举例：</p>
-<blockquote>
-<p>M &#x3D; 7.5 Mbits</p>
-<p>L &#x3D; 1500 bits</p>
-<p>M &#x3D; 5000L</p>
-<p>R &#x3D; 1.5 Mbps</p>
-</blockquote>
-<p>如果使用报文交换的时候，路由器的缓存就至少需要一个报文的大小</p>
-<p>分组交换中，原来的主机是要把报文进行拆分拆分成分组，5000个分组</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">	title 报文交换</span><br><span class="line">	section 时间分布</span><br><span class="line">    dateFormat YYYY-MM-DD</span><br><span class="line">    axisFormat %d</span><br><span class="line">	empty:2023-1-1,9d</span><br><span class="line">	M/R=7.5/1.5=5:2023-1-10,9d</span><br><span class="line">	empty:2023-1-19,10d</span><br></pre></td></tr></table></figure>
-
-<p>主要都采用分组交换技术</p>
-<h1 id="分组交换的交付时间"><a href="#分组交换的交付时间" class="headerlink" title="分组交换的交付时间"></a>分组交换的交付时间</h1><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807113712816.png" alt="image-20230807113712816" style="zoom:50%;" />
-
-<p>报文：M bits</p>
-<p>链路带宽：（数据传输速率）：R bits</p>
-<p>分组长度（大小）：L bits；</p>
-<p>跳步数量：h</p>
-<p>路由器数量：n &#x3D; h-1</p>
-<p>$T_{传输时间}&#x3D;M&#x2F;R+(h-1)L&#x2F;R&#x3D;M&#x2F;R+nL&#x2F;R$</p>
-<p>跳步指的是从一点到下一个相邻一点就叫做跳步（一个跳步等于链路数量）</p>
-<p><strong><code>M/R</code> 是 整个报文的传输时间</strong></p>
-<p><strong><code>L/R</code> 是 一个路由器的转发时间</strong> </p>
-<h2 id="试题举例"><a href="#试题举例" class="headerlink" title="试题举例"></a>试题举例</h2><blockquote>
-<p> 在下图所示的采用“存储-转发”方式的分组交换网络中，所有链路的数据传输速率为100 M bps，分组大小为1 000 B，其中分组头大小为20 B。若主机H 1向主机H 2发送一个大小为980 000 B的文件，则在不考虑分组拆装时间和传播延迟的情况下，从H 1发送开始到H 2接收完为止，需要的时间至少是多少?</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807114528393.png" alt="image-20230807114528393"></p>
-</blockquote>
-<p>分组大小是1000 B，分组头占其中的20 B，所以有980 B携带的是报文数据；</p>
-<p>至少是什么时间，指的是走最近的链路；</p>
-<p>980 KB大小 的文件需要分1000个分组，每个分组1000 B。H 1发送整个文件需要的传输延迟为（980 000 + 20 * 1000 ）* <strong>8</strong> &#x2F; 100 000 000 &#x3D; 80 ms<strong>（注意单位换算）</strong>; <strong>根据路由选择基本定理</strong>，所有数据分组应该经过两个路由器的转发，所以再加上最后一个分组的两次转发的传输延迟，也就是 2 * 1000 * 8 &#x2F; 100 000 000 &#x3D; 0.16 ms。 所以，H 2接受完整个文件至少需要80 + 0.16 &#x3D; 80.16 ms</p>
-<p><em>两次转发的延迟，因为是两个路由器，所以要加上。</em></p>
-<p>例如：1 Mb&#x2F;s 链路</p>
-<p>每个用户：</p>
-<p>:heavy_check_mark: “活动” 时间需要100 Kb&#x2F;s</p>
-<p>:heavy_check_mark: 每个用户的平均活动时间为10 %</p>
-<h3 id="电路交换："><a href="#电路交换：" class="headerlink" title="电路交换："></a>电路交换：</h3><p>电路交换的特点是不能共享，虽然不传输数据但是其他用户是不能使用的，所以在这种情况下的效率很低。:togo:10个用户</p>
-<h3 id="分组交换："><a href="#分组交换：" class="headerlink" title="分组交换："></a>分组交换：</h3><p>当一个用户活动的时候恰好赶上了另一个用户活动，可以将活动错开。:heavy_check_mark:对于35个用户，大于10个用户同时活动的概率&lt;0.0004</p>
-<blockquote>
-<p>分组交换允许更多用户同时使用网络！——网络资源充分共享</p>
-</blockquote>
-<h2 id="分组交换绝对由于电路交换？"><a href="#分组交换绝对由于电路交换？" class="headerlink" title="分组交换绝对由于电路交换？"></a>分组交换绝对由于电路交换？</h2><ul>
-<li>适用于<strong>突发</strong>数据传输网络。<ul>
-<li>资源充分共享</li>
-<li>简单、无需呼叫建立  $\Rightarrow$ 可能产生拥塞：分组延迟和丢失</li>
-<li>需要协议处理可靠数据传输和拥塞控制</li>
-</ul>
-</li>
-<li>现在使用的计算机网络具备突发的数据传输特点。</li>
-<li>但是视频传输和通话的传输不具备突发性。</li>
-</ul>
-<p>Q：如何提供电路级性能保障？打电话会出现停顿现象，所以需要使用协议来进行传输</p>
-<hr>
-<p>上一页：[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.2 计算机网络的结构]]</p>
-<p>下一页:  [[CourseNotes&#x2F;计算机网络&#x2F;CN-No.4 计算机网络性能]]</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.064Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-25T01:10:45.867Z" title="2023/10/25 09:10:45">2023-10-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约509个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">CN-No.1 计算机网络基本概念</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
-# 计算机网络基本概念
-
-<h2 id="什么是计算机网络"><a href="#什么是计算机网络" class="headerlink" title="什么是计算机网络"></a>什么是计算机网络</h2><p>计算机网络 &#x3D; 通信技术 + 计算机技术</p>
-<ul>
-<li>计算机网络是通信系统和计算机技术紧密结合的产物</li>
-<li>通信系统模型</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"> A(&quot;信源&quot;)</span><br><span class="line"> B(&quot;发送设备&quot;)</span><br><span class="line"> C(&quot;信道&quot;)</span><br><span class="line"> D(&quot;噪声源&quot;)</span><br><span class="line"> E(&quot;接受设备&quot;)</span><br><span class="line"> F(&quot;信宿&quot;)</span><br><span class="line"> A--&gt; B--&gt;C--&gt;E--&gt;F</span><br><span class="line"> D--&gt;C</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>计算机网络就是一种通信网络</li>
-</ul>
-<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>计算机网络就是互联的自治的计算机集合</p>
-<p>自治  → 没有主从关系</p>
-<p>互联 → 互联互通</p>
-<ul>
-<li>通信链路</li>
-<li>各个节点叫做主机，连接主机的叫做通信链路</li>
-<li>距离远数量大的时候怎么保证互联</li>
-</ul>
-<p>通过<strong>交换网络</strong>互联主机</p>
-<p>中间一个交换网络，主机连在交换网络上，交换网络里面的节点叫做交换节点</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Screenshot_20230713_151648.jpg" alt="Screenshot_20230713_151648.jpg"></p>
-<h3 id="什么是Internet-组成细节角度"><a href="#什么是Internet-组成细节角度" class="headerlink" title="什么是Internet? - 组成细节角度"></a>什么是Internet? - 组成细节角度</h3><ul>
-<li>全球的最大互联网络<ul>
-<li>ISP( Internet Service Provider )网络互联的“网络的网络”</li>
-<li>数以百万计的互联的计算设备集合：<ul>
-<li>主机（host）&#x3D; 端系统（end system）</li>
-<li><strong>运行各种网络应用</strong></li>
-</ul>
-</li>
-<li>通信链路<ul>
-<li>光纤，铜缆无线电等</li>
-</ul>
-</li>
-<li>分组交换：转发分组(数据包)<ul>
-<li>路由器（routers）和交换器（switches）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="什么是Internet？-服务角度"><a href="#什么是Internet？-服务角度" class="headerlink" title="什么是Internet？ - 服务角度"></a>什么是Internet？ - 服务角度</h3><ul>
-<li>为网络应用提供通信服务的通信基础设施：<ul>
-<li>Web,VolP,email,网络游戏，电子商务，社交网络，……</li>
-</ul>
-</li>
-<li>为网络应用提供编程接口（API）：<ul>
-<li>支持应用程序“连接”Internet，发送&#x2F;接受数据</li>
-</ul>
-</li>
-</ul>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>Q： 仅有硬件链接Internet能否顺畅运行？能保证应用数据的有序交付吗？</p>
-<p>A：No！ </p>
-<p><strong>还需要协议！</strong></p>
-<hr>
-<p>下一页[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.2 计算机网络的结构]]</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.064Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:04.228Z" title="2023/10/12 17:05:04">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">6 分钟读完 (大约878个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.2%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%93%E6%9E%84/">CN-No.2 计算机网络的结构</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-# 计算机网络的结构
-
-<h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><ul>
-<li>主机</li>
-<li>网络应用</li>
-</ul>
-<h2 id="接入网络、物理介质"><a href="#接入网络、物理介质" class="headerlink" title="接入网络、物理介质"></a>接入网络、物理介质</h2><ul>
-<li>有限或者无线通信链路</li>
-</ul>
-<h2 id="核心网络（网络核心）"><a href="#核心网络（网络核心）" class="headerlink" title="核心网络（网络核心）"></a>核心网络（网络核心）</h2><ul>
-<li>互联的路由器（或者分组转发设备）</li>
-<li>网络之网络</li>
-</ul>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="Untitled"></p>
-<h1 id="网络边缘-1"><a href="#网络边缘-1" class="headerlink" title="网络边缘"></a>网络边缘</h1><hr>
-<h2 id="主机端系统"><a href="#主机端系统" class="headerlink" title="主机端系统"></a>主机端系统</h2><ul>
-<li>位于网络边缘</li>
-<li>运行网络应用程序</li>
-</ul>
-<h2 id="客户、服务器应用模型"><a href="#客户、服务器应用模型" class="headerlink" title="客户、服务器应用模型"></a>客户、服务器应用模型</h2><ul>
-<li>客户端发送请求，服务端接受请求并作出响应</li>
-<li>Web应用，文件传输FTP应用</li>
-<li>所有的通信是在客户和服务器之间进行</li>
-</ul>
-<h2 id="对等应用模型"><a href="#对等应用模型" class="headerlink" title="对等应用模型"></a>对等应用模型</h2><ul>
-<li>没有专用服务器</li>
-<li>通信在对等实体之间相互进行</li>
-<li>QQ</li>
-</ul>
-<h1 id="接入网络"><a href="#接入网络" class="headerlink" title="接入网络"></a>接入网络</h1><hr>
-<ul>
-<li>居民接入网络</li>
-<li>机构接入网络</li>
-<li>移动接入网络</li>
-</ul>
-<p><strong>用户关心的是</strong> </p>
-<ul>
-<li>带宽（bps）</li>
-<li>接入方式是独占的还是共享的</li>
-</ul>
-<h2 id="代表性的接入网络"><a href="#代表性的接入网络" class="headerlink" title="代表性的接入网络"></a><strong>代表性的接入网络</strong></h2><aside>
-    <img src="https://www.notion.so/icons/merge_yellow.svg" alt="https://www.notion.so/icons/merge_yellow.svg" width="40px" /> <strong>Example 1： 数字用户线路</strong></aside>
+<script src="/js/plugins/typed.js" type="module"></script>
 
 
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png" alt="Untitled"></p>
-<ul>
-<li>利用已有的电话网络来进行接入中心局的DSLAM<ul>
-<li>数据通信通过DSL线接入internet</li>
-<li>语音通过DLS线接入电话网络</li>
-</ul>
-</li>
-<li>上行速率低，下行速率快</li>
-<li>下行：&gt;50KHz ~ 1MHz<br>上行：4KHz ~ 50KHz<br>传统电话：0KHz ~ 4KHz</li>
-</ul>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png" alt="Untitled"></p>
-<ul>
-<li>频分多路复用技术：在不同的载波上传输不同的频道<ul>
-<li>HFC 混合光纤同轴电缆</li>
-<li>下行大于上行</li>
-</ul>
-</li>
-</ul>
-<p><strong>典型家庭网络的接入</strong></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%203.png" alt="Untitled"></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%204.png" alt="Untitled"></p>
-<ul>
-<li>主要用于高校、企业、公司等机构</li>
-<li>目前端系统通常直接连接以太网交换机（switch）</li>
-</ul>
-<h2 id="无线接入网络"><a href="#无线接入网络" class="headerlink" title="无线接入网络"></a>无线接入网络</h2><p>通过共享的无线接入网络连接端系统和路由器</p>
-<ul>
-<li>通过基站或者称为”接入点”</li>
-</ul>
-<h3 id="无线局域网"><a href="#无线局域网" class="headerlink" title="无线局域网"></a>无线局域网</h3><ul>
-<li>同一建筑物内（30m）</li>
-</ul>
-<h3 id="广域无线接入"><a href="#广域无线接入" class="headerlink" title="广域无线接入"></a>广域无线接入</h3><ul>
-<li>3G 4G 5G</li>
-</ul>
-<h1 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h1><hr>
-<ul>
-<li><p>互联的路由器网络</p>
-</li>
-<li><p>网络的核心功能：路由+转发</p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%205.png" alt="Untitled"></p>
-<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>  确定分组从源到目的传播路径</p>
-<h3 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h3><p>  将分组从路由器的输入端口交换至正确的输出端口</p>
-</li>
-</ul>
-<h1 id="Internet-网络结构：网络之网络"><a href="#Internet-网络结构：网络之网络" class="headerlink" title="Internet 网络结构：网络之网络"></a>Internet 网络结构：网络之网络</h1><ul>
-<li><p>端系统通过接入ISP（access ISP）连接到internet</p>
-</li>
-<li><p>接入ISP必须进一步互联</p>
-</li>
-<li><p>构成复杂的网络互连的网络：经济和国家政策是网络演进的主要推动力</p>
-</li>
-<li><p>当前的Internet网络结构是什么样的呢？动态性很强，无法给出描述</p>
-</li>
-<li><p>数以百万计的ISP是如何互联在一起的呢</p>
-<p>  方案1： 全连接</p>
-<p>  但是当基数过大会导致连接数量指数级增长</p>
-<p>  方案2：构建一个全球的大ISP</p>
-<p>  实际上不可能只有一个ISP</p>
-<p>  最终情况：有多个大型的ISP来进行互联，再将大型的ISP进行互联 → 互联的方式：对等链路</p>
-<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%206.png" alt="Untitled"></p>
-<p>  最后会用区域性的局域网络来连接每一部分的ISP，就构建好了整个的Internet网络</p>
-</li>
-</ul>
-<hr>
-<p>上一页：[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.1 计算机网络基本概念]]<br>下一页：[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.3 网络核心]]</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.063Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:08:27.766Z" title="2023/10/12 17:08:27">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">几秒读完 (大约17个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-NetworkLayer-Reading/">CN-NetworkLayer-Reading</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.062Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-31T03:09:19.874Z" title="2023/10/31 11:09:19">2023-10-31</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">几秒读完 (大约79个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Lab4/">CN-Lab4</a></p><div class="content"><p>[[CN-NotesView]]</p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/697ba05420e5977359d220437080785.png" alt="697ba05420e5977359d220437080785.png"></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/6daf8280a4deff66b6f1e719217d621.png" alt="6daf8280a4deff66b6f1e719217d621.png"></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/872afc88738ffb252b96e868938e6e6.png" alt="872afc88738ffb252b96e868938e6e6.png"></p>
-<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231031110917.png" alt="image.png"></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.062Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-16T14:03:23.448Z" title="2023/10/16 22:03:23">2023-10-16</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">4 分钟读完 (大约638个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/CN-NAT-d26f063464524a51b93c9938e04aae3d">CN-NAT</a></p><div class="content"><head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-[[计算机网络]]
 
-<p>网络地址转换（NAT）</p>
-<h2 id="网络地址转换"><a href="#网络地址转换" class="headerlink" title="网络地址转换"></a>网络地址转换</h2><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231016213809.png" alt="image.png" style="zoom: 67%;" />
 
-<p>本地网络内通信的IP数据包的源和目的IP地址均在子网10.0.0&#x2F;24内</p>
-<p><strong>所有离开</strong>本地网络去往Internet的数据报的<strong>源IP地址</strong>需要替换成<strong>相同</strong>的NATIP地址：138.76.29.7以及<strong>不同</strong>的端口号。</p>
-<h2 id="网络地址转换NAT"><a href="#网络地址转换NAT" class="headerlink" title="网络地址转换NAT"></a>网络地址转换NAT</h2><h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>只能&#x2F;需要从ISP中申请一个IP地址，IPv4地址耗尽。</p>
-<p>本地网络设备IP地址的变更，无需通告外界网络。</p>
-<p>无论怎么变对外界来说都是一样的。</p>
-<p>变更ISP的时候，无需修改内部网络设备IP地址</p>
-<p>内部网络设备对外界网络不可见，也就是不可直接寻址（安全）</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><p>利用（NAT IP地址，新端口号）替换每个外出IP数据报的（源IPD地址，源端口号）</p>
-<h4 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h4><p>将每对（NAT IP地址，新端口号）和（源IP地址，源端口号）的替换信息存储到NAT转换表中</p>
-<h4 id="替换-1"><a href="#替换-1" class="headerlink" title="替换"></a>替换</h4><p>根据NAT转换表，利用（源IP地址，源端口号）替换每个进入内网IP数据报的（目的IP地址，目的端口号），也就是（NAT IP地址，新端口号）</p>
-<p><strong>16-bit端口号字段</strong>：65536 可以同时支持60，000多个并行连接</p>
-<p><strong>NAT的主要争议</strong>：</p>
-<ul>
-<li><p>路由器应该只处理第三层功能</p>
-</li>
-<li><p>违背端到端的通信原则</p>
-<ul>
-<li>应用开发者必须考虑到NAT的存在，e.g P2P应用</li>
-</ul>
-</li>
-<li><p>地址短缺问题应该由IPv6来解决</p>
-</li>
-</ul>
-<h2 id="NAT穿透问题"><a href="#NAT穿透问题" class="headerlink" title="NAT穿透问题"></a>NAT穿透问题</h2><p>穿透问题：</p>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231016215448627.png" alt="image-20231016215448627" style="zoom: 67%;" />
-10.0.0.1的服务器
 
-<ul>
-<li><p>客户并不能直接利用地址10.0.0.1直接访问服务器</p>
-</li>
-<li><p>对外唯一课件的地址是NAT地址138.76.29.7</p>
-</li>
-</ul>
-<p><strong>解决方案1：</strong> 静态配置NAT，将特定端口的连接请求转发给服务器</p>
-<p>e.g.,(138.76.29.7,2500)总是转发给(10.0.0.1,25000)</p>
-<p><strong>解决方案2</strong>：利用UPnP互联网网关设备协议（IGD-Internet Gateway Device）</p>
-<ul>
-<li><p>学习到NAT公共IP地址(138.76.29.7)</p>
-</li>
-<li><p>到NAT转发表中，增删端口映射</p>
-</li>
-</ul>
-<p><strong>解决方案3</strong>：中继（e.g. Skype）</p>
-<ul>
-<li><p>NAT内部的客户和中继服务器建立连接</p>
-</li>
-<li><p>外部的客户也和中继服务器建立连接</p>
-</li>
-<li><p>中继服务器桥接两个连接的分组</p>
-</li>
-</ul>
-<ol>
-<li>connection to relay initiated byu NATed host</li>
-<li>connection to relay initiated by client</li>
-<li>relaying established</li>
-</ol>
-<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231016220212.png" alt="image.png" style="zoom:67%;" />
 
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/4/">上一页</a></div><div class="pagination-next"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/6/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/4/">4</a></li><li><a class="pagination-link is-current" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/5/">5</a></li><li><a class="pagination-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/6/">6</a></li><li><a class="pagination-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/7/">7</a></li><li><a class="pagination-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/page/8/">8</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

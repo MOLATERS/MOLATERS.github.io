@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>CN-计算机网络传输层 - SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;],             inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;]]             }         });"><meta property="og:type" content="blog"><meta property="og:title" content="CN-计算机网络传输层"><meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;],             inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;]]             }         });"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694605856597.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607845406.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694606950930.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607649470.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609096055.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609108885.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694611617018.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612237418.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612260649.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612273475.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612283387.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612449445.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612519572.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736520687.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736529915.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764764860.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764776396.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694765185191.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766165886.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766219749.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766226555.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766471113.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766548272.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694767041067.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768215316.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768312234.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768451060.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768609208.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768789786.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769021950.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769484914.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769749622.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770256143.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770984071.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771172608.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771259880.png"><meta property="article:published_time" content="2023-11-24T02:14:50.093Z"><meta property="article:modified_time" content="2023-10-12T09:05:47.646Z"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="计算机网络"><meta property="article:tag" content="传输层"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694605856597.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82/"},"headline":"CN-计算机网络传输层","image":["https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694605856597.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607845406.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694606950930.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607649470.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609096055.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609108885.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694611617018.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612237418.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612260649.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612273475.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612283387.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612449445.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612519572.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736520687.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736529915.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764764860.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764776396.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694765185191.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766165886.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766219749.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766226555.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766471113.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766548272.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694767041067.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768215316.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768312234.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768451060.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768609208.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768789786.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769021950.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769484914.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769749622.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770256143.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770984071.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771172608.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771259880.png"],"datePublished":"2023-11-24T02:14:50.093Z","dateModified":"2023-10-12T09:05:47.646Z","author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });"}</script><link rel="canonical" href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.093Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:47.646Z" title="2023/10/12 17:05:47">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">23 分钟读完 (大约3426个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">CN-计算机网络传输层</h1><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+# 计算机网络传输层
+
+<h2 id="传输层服务概述"><a href="#传输层服务概述" class="headerlink" title="传输层服务概述"></a>传输层服务概述</h2><h3 id="传输层服务和协议"><a href="#传输层服务和协议" class="headerlink" title="传输层服务和协议"></a>传输层服务和协议</h3><p>传输层协议为运行在不同的host上的进程提供了一种<strong>逻辑通信机制</strong></p>
+<p>端系统运行传输层协议</p>
+<ul>
+<li><p><strong>发送方</strong>：将应用递交的消息分成一个或者多个的Segment,并向下传递给网络层</p>
+</li>
+<li><p><strong>接收方</strong>：将接收到的Segment组装成消息，并上交给应用层</p>
+</li>
+</ul>
+<p>传输层可以为应用提供<em><strong>多种协议</strong></em></p>
+<ul>
+<li><p>Internet上的TCP</p>
+</li>
+<li><p>Internet上的UDP</p>
+</li>
+</ul>
+<h3 id="传输层-vs-网络层"><a href="#传输层-vs-网络层" class="headerlink" title="传输层 vs 网络层"></a>传输层 vs 网络层</h3><p><strong>网络层</strong>： 提供主机之间的逻辑通信机制</p>
+<p><strong>传输层</strong>：提供应用进程之间的逻辑通信机制</p>
+<ul>
+<li><p>位于网络层之上</p>
+</li>
+<li><p>依赖于网络服务</p>
+</li>
+<li><p>对网络层服务进行（可能的）增强</p>
+</li>
+</ul>
+<p><u>家庭类比</u></p>
+<ul>
+<li>12个孩子给12个孩子写信</li>
+<li>应用进程 &#x3D; 孩子</li>
+<li>应用消息 &#x3D; 信封里面的信</li>
+<li>主机 &#x3D; 房子</li>
+<li>传输层协议 &#x3D; 李雷和韩梅梅</li>
+<li>网络层协议 &#x3D; 邮政服务</li>
+</ul>
+<h3 id="Internet传输层协议"><a href="#Internet传输层协议" class="headerlink" title="Internet传输层协议"></a>Internet传输层协议</h3><ul>
+<li><p><code>可靠</code>、<code>按序</code>的交付服务(TCP)</p>
+<ul>
+<li>拥塞控制</li>
+<li>流量控制</li>
+<li>连接建立</li>
+</ul>
+</li>
+<li><p><code>不可靠的</code>交付服务(UDP)</p>
+<ul>
+<li>基于 <em>“尽力而为(Best-effort)”</em> 的网路，没有做可靠性方面的拓展</li>
+</ul>
+</li>
+<li><p>两种服务均不保证</p>
+<ul>
+<li>延迟</li>
+<li>带宽</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="多路复用和多路分用"><a href="#多路复用和多路分用" class="headerlink" title="多路复用和多路分用"></a>多路复用和多路分用</h2><p>Why? $\rightarrow$ 如果<strong>某层的一个协议对应直接上层的多个协议&#x2F;实体</strong>，那么就需要<code>复用/分用</code></p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694605856597.png" alt="1694605856597" style="zoom:67%;" />
+
+<p><u>接收端进行多路分用</u></p>
+<p>传输层依据头部信息将收到的Segment交给正确的Socket，即不同的进程</p>
+<p><u>发送端进行多路复用</u></p>
+<p>从多个Socket接受数据，为每块数据封装上头部信息，交给网络层</p>
+<h3 id="分用如何工作"><a href="#分用如何工作" class="headerlink" title="分用如何工作"></a>分用如何工作</h3><ul>
+<li><p>主机接收到<code>IP数据报（datagram）</code></p>
+<ul>
+<li><p>每个数据报携带<code>源IP地址</code>、<code>目的IP地址</code></p>
+</li>
+<li><p>每个数据报携带一个<u>传输层的端</u>（Segment）</p>
+</li>
+<li><p>每个段携带<code>源端口号</code>和<code>目的端口号</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607845406.png" 
+alt="1694607845406" style="zoom:67%;" /></p>
+<ul>
+<li>主机收到Segment之后，传输层协议提取IP地址和端口号信息，将Segment导向相应的Socket</li>
+</ul>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694606950930.png" alt="1694606950930" style="zoom:67%;" />
+
+<h3 id="无连接分用"><a href="#无连接分用" class="headerlink" title="无连接分用"></a>无连接分用</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 利用端口号创建Socket  [completion:: 2023-09-26]</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket mySocket1 = <span class="keyword">new</span> <span class="built_in">DatagramSocket</span>(<span class="number">99111</span>);</span><br><span class="line">DatagramSocket mySocket2 = <span class="keyword">new</span> <span class="built_in">DatagramSocket</span>(<span class="number">99222</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input disabled="" type="checkbox"> UDP的Socket用二元组标识<ul>
+<li>UDP的Socket用二元组标识</li>
+</ul>
+</li>
+</ul>
+<p>主机收到UDP段之后</p>
+<ul>
+<li><p>检查段中的目的端口号</p>
+</li>
+<li><p>将UDP段导向绑定在该端口号的Socket</p>
+</li>
+</ul>
+<p>来自不同源IP地址和&#x2F;或源端口号的IP数据包被导向同一个<code>Socket</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DatagramSocket serverSocket = <span class="keyword">new</span> <span class="built_in">DatagramSocket</span>(<span class="number">6428</span>);</span><br></pre></td></tr></table></figure>
+
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694607649470.png" alt="1694607649470" style="zoom:67%;" />
+
+<p><strong>SP</strong>提供<code>返回地址</code></p>
+<h3 id="面向连接的分用"><a href="#面向连接的分用" class="headerlink" title="面向连接的分用"></a>面向连接的分用</h3><p> <code>TCP</code>的Socket用四元组标识<br>    - 源IP地址<br>    - 源端口号<br>    - 目的IP地址<br>    - 目的端口号</p>
+<p> 接收端利用所有的四个值将Segment导向合适的Socket</p>
+<p> 服务器可能同时支持多个TCPSocket<br>    - 每个人Socket用自己的四元组标识</p>
+<p><strong>Web服务器</strong>为每个客户端开不同的<code>Socket</code></p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609096055.png" alt="1694609096055" style="zoom:67%;" />
+
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694609108885.png" alt="1694609108885" style="zoom:67%;" />
+
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h3 id="UDP-User-Datagram-Protocol-RFC-768"><a href="#UDP-User-Datagram-Protocol-RFC-768" class="headerlink" title="UDP :User Datagram Protocol [RFC 768]"></a>UDP :User Datagram Protocol [RFC 768]</h3><ul>
+<li><p>基于Internet IP协议</p>
+<ul>
+<li><p>复用&#x2F;分用</p>
+</li>
+<li><p>简单的错误校验</p>
+</li>
+</ul>
+</li>
+<li><p>“Best effort”服务，UDP段可能</p>
+<ul>
+<li><p><strong>丢失</strong></p>
+</li>
+<li><p><strong>非按序到达</strong></p>
+</li>
+</ul>
+</li>
+<li><p><code>无连接</code></p>
+<ul>
+<li><p>UDP发送方和接收方之间不需要握手</p>
+</li>
+<li><p>每个UDP段的处理独立于其他段</p>
+</li>
+</ul>
+</li>
+<li><p>常用于<strong>流媒体应用</strong></p>
+<ul>
+<li><p>容忍丢失</p>
+</li>
+<li><p>速率敏感</p>
+</li>
+</ul>
+</li>
+<li><p>UDP还用于</p>
+<ul>
+<li><p>DNS</p>
+</li>
+<li><p>SNMP</p>
+</li>
+</ul>
+</li>
+<li><p>在UDP上实现<code>可靠数据传输</code></p>
+<ul>
+<li><p>在应用层增加可靠性机制</p>
+</li>
+<li><p>应用特定的错误恢复机制</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="UDP检验和-Checksum"><a href="#UDP检验和-Checksum" class="headerlink" title="UDP检验和(Checksum)"></a>UDP检验和(Checksum)</h3><p>目的:<strong>检测UDP段是否发生错误,比如位翻转</strong></p>
+<ul>
+<li><p><strong>发送方</strong></p>
+<ul>
+<li><p>将段的内容视为16-bit整数</p>
+</li>
+<li><p><strong>检验和计算</strong>:计算所有整数的和,进位加在和的后面,将得到得知安慰囚犯,得到校验和</p>
+</li>
+<li><p>发送方将校验和放入校验和字段</p>
+</li>
+</ul>
+</li>
+<li><p><strong>接收方</strong></p>
+<ul>
+<li>计算所受到段的校验和</li>
+<li>将其与校验和字段进行对比<ul>
+<li>不相等:<strong>检测出错误</strong></li>
+<li>相等:<strong>没有检测出错误</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="校验和计算实例"><a href="#校验和计算实例" class="headerlink" title="校验和计算实例"></a>校验和计算实例</h3><p>注意: <strong>最高位必须被加进去</strong></p>
+<p>示例:</p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694611617018.png" alt="1694611617018" style="zoom:67%;" />
+
+<h2 id="可靠数据传输原理"><a href="#可靠数据传输原理" class="headerlink" title="可靠数据传输原理"></a>可靠数据传输原理</h2><p>❓什么是可靠<br>    - 不错,不乱,不丢</p>
+<p><strong>可靠数据传输协议</strong></p>
+<ul>
+<li>可靠数据传输对应用层&#x2F;传输层&#x2F;链路层都很重要</li>
+<li>网络的Top10问题</li>
+<li>信道的不可靠特性决定了可靠数据传输协议(rdt)的复杂性</li>
+</ul>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612237418.png" alt="1694612237418" style="zoom: 80%;" />
+
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612260649.png" alt="1694612260649" style="zoom: 80%;" />
+
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612273475.png" alt="1694612273475" style="zoom:80%;" />
+
+<h3 id="可靠数据传输协议基本结构-接口"><a href="#可靠数据传输协议基本结构-接口" class="headerlink" title="可靠数据传输协议基本结构:接口"></a>可靠数据传输协议基本结构:接口</h3><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612283387.png" alt="1694612283387" style="zoom:80%;" />
+
+<h3 id="可靠数据传输协议"><a href="#可靠数据传输协议" class="headerlink" title="可靠数据传输协议"></a>可靠数据传输协议</h3><ul>
+<li>渐进的设计可靠数据传输协议的<strong>发送方</strong>和<strong>接收方</strong></li>
+<li>只考虑单项数据传输</li>
+<li>但是控制信息双向流动</li>
+<li>利用状态机(Fnite State Machine,FSM)刻画传输协议</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612449445.png" alt="1694612449445"></p>
+<p>Rdt1.0:可靠信道上的可靠数据传输</p>
+<p>底层信道<strong>完全可靠</strong></p>
+<ul>
+<li>不会发生错误(bit error)</li>
+<li>不会丢弃分组<br>发送方和接收方的FSM独立</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694612519572.png" alt="1694612519572"></p>
+<h2 id="Rdt-2-0"><a href="#Rdt-2-0" class="headerlink" title="Rdt 2.0"></a>Rdt 2.0</h2><h4 id="Rdt-2-0-产生位错误的信道"><a href="#Rdt-2-0-产生位错误的信道" class="headerlink" title="Rdt 2.0: 产生位错误的信道"></a>Rdt 2.0: 产生位错误的信道</h4><p>底层信道可能反转分组中的位</p>
+<ul>
+<li>利用<strong>校验</strong>和检测为错误</li>
+</ul>
+<p>如何从错误中回复？</p>
+<ul>
+<li><p>**确认机制(Acknowledgements,ACK):**接收方<code>显式的</code>告知发送方分组已经正确接收</p>
+</li>
+<li><p>NAK：接收方<code>显式的</code>告知发送方的分组有错误</p>
+</li>
+<li><p>发送方收到NAK之后，<code>重发</code>分组</p>
+</li>
+</ul>
+<p>基于这种重传机制的rdt协议称为<em>ARQ(Automatic Repeat reQuest)</em> 协议</p>
+<p>Rdt 2.0中引入的新机制</p>
+<ul>
+<li><p>差错检测(校验和的方式)</p>
+</li>
+<li><p>接收方反馈控制信息：<strong>ACK&#x2F;NAK</strong></p>
+</li>
+<li><p>重传</p>
+</li>
+</ul>
+<p>Rdt 2.0:<code>FSM规约</code></p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736520687.png" alt="1694736520687"></p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694736529915.png" alt="1694736529915"></p>
+<h2 id="Rdt-2-1-和-2-2"><a href="#Rdt-2-1-和-2-2" class="headerlink" title="Rdt 2.1 和 2.2"></a>Rdt 2.1 和 2.2</h2><p>对Rst 2.0的改进，先要知道Rdt 2.0有什么缺陷？</p>
+<p><strong>如果ACK和NAK消息发生错误了怎么办</strong>？</p>
+<p><code>Solution 1</code>:为NAK和NCK增加校验和，检错并纠错</p>
+<p><code>Solution 2</code>:发送方收到被破坏的ACK&#x2F;NAK的时候不知道接收方发生了什么，添加额外的<code>控制消息</code> </p>
+<p><code>Solution 3</code>:如果ACK&#x2F;NAK坏掉，就重传。但是不能简单的重传，因为会产生重复分组。</p>
+<p><strong>怎么解决重复分组问题</strong>？</p>
+<p><strong>序列号(Sequance number)</strong>:发送方给每个分组增加序列号</p>
+<p>接收方丢弃重复分组</p>
+<p><strong>stop and wait</strong>:<br>  Sender sends one packet, then waits for reciever response.</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764764860.png" alt="1694764764860"></p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694764776396.png" alt="1694764776396"></p>
+<h3 id="Rdt-2-1-vs-Rdt-2-0"><a href="#Rdt-2-1-vs-Rdt-2-0" class="headerlink" title="Rdt 2.1 vs Rdt 2.0"></a>Rdt 2.1 vs Rdt 2.0</h3><h4 id="发送方"><a href="#发送方" class="headerlink" title="发送方"></a>发送方</h4><p>为每个分组增加了序列号</p>
+<p>两个序号（0，1）就够用，为什么？</p>
+<p>需要检验ACK&#x2F;NAK消息是否发生错误</p>
+<p>状态数量翻倍<br>  状态必须<strong>记住</strong>当前的分组序列号</p>
+<h4 id="接收方"><a href="#接收方" class="headerlink" title="接收方"></a>接收方</h4><p>需要判断分组<code>是不是重复</code><br>  当前所处的状态提供了<u><em>期望收到分组的序列号</em></u></p>
+<p>注意：接收方无法知道ACK&#x2F;NAK是否被正确接收到</p>
+<h4 id="Rdt-2-2-无NAK消息协议"><a href="#Rdt-2-2-无NAK消息协议" class="headerlink" title="Rdt 2.2: 无NAK消息协议"></a>Rdt 2.2: 无NAK消息协议</h4><p>我们真的需要两种确认消息(<code>ACK</code>+<code>NAK</code>)?</p>
+<p>和rdt2.1 的功能相同，但是只使用NAK</p>
+<p>🧐怎么实现？</p>
+<ul>
+<li><p>接收方通过ACK告知最后一个被正确接收的分组</p>
+</li>
+<li><p>在<strong>ACK</strong>消息中<strong>显式的加入被确认分组的序列号</strong></p>
+</li>
+</ul>
+<p>发送方收到重复的ACK之后，采取与收到NAK消息相同的动作</p>
+<ul>
+<li>重传当前的分组</li>
+</ul>
+<h3 id="Rdt-2-2-FSM片段"><a href="#Rdt-2-2-FSM片段" class="headerlink" title="Rdt 2.2 FSM片段"></a>Rdt 2.2 FSM片段</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694765185191.png" alt="1694765185191"></p>
+<h2 id="Rdt-3-0"><a href="#Rdt-3-0" class="headerlink" title="Rdt 3.0"></a>Rdt 3.0</h2><p>如果信道极可能发生错误，也可能丢失分组，怎么办</p>
+<p>“校验和+序列号+ACK+重传”<strong>够用吗</strong>？</p>
+<p>方法：发送方等待”<code>合理</code>“时间</p>
+<p>如果timeout，有没有收到ACK就可以采取动作了 $\rightarrow$ <strong>重传</strong></p>
+<p>☹但是时间是很难设定的，如果只是延迟了，就会引起重复的问题</p>
+<ul>
+<li>但是序列号能够处理</li>
+<li>接收方需要在ACK中显式的告知所确认的分组</li>
+<li>需要<strong>定时器</strong></li>
+</ul>
+<h3 id="Rdt-3-0-发送方FSM"><a href="#Rdt-3-0-发送方FSM" class="headerlink" title="Rdt 3.0 发送方FSM"></a>Rdt 3.0 <strong>发送方FSM</strong></h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766165886.png" alt="1694766165886"></p>
+<h3 id="Rdt-3-0-运行实例"><a href="#Rdt-3-0-运行实例" class="headerlink" title="Rdt 3.0 运行实例"></a>Rdt 3.0 运行实例</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766219749.png" alt="1694766219749"></p>
+<p>⬆ 发送方和接收方在传输过程中没有丢包的存在</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766226555.png" alt="1694766226555"></p>
+<p>⬆ 在发送过程当中发生丢失的情况，执行停-等协议，造成超时，所以重新传输分组</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766471113.png" alt="1694766471113"></p>
+<p>⬆ 标识收到了两个分组（相同序列号），那就丢掉一个然后进行传输ACK</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694766548272.png" alt="1694766548272"></p>
+<p>⬆ 标识两次都发送了，表明第一次正确接收了，但是返回ACK的过程当中触发执行停等协议然后重新发送了一次。收到了ACK1之后会传换成发送pkt0，第二次发的ACK1到达的时候正好有了ACK0。<br>称之为<code>计时器时间过短</code>、<code>timeout早熟</code></p>
+<h3 id="Rdt-3-0-性能分析"><a href="#Rdt-3-0-性能分析" class="headerlink" title="Rdt 3.0 性能分析"></a>Rdt 3.0 性能分析</h3><p>Rdt 3.0能够正常工作，但是性能很差</p>
+<p>示例：1Gbps链路，15ms端到端传输延迟，1kB分组</p>
+<p>$T_{transmit}&#x3D;\frac{L(packet \ length \ in \ bits)}{R(transmission \  rate, \ bps)}&#x3D;\frac{8kb&#x2F;pkt}{10^9b&#x2F;sec}&#x3D;8 ms$</p>
+<p>发送方的利用率：发送方发送时间百分比</p>
+<p>$U_{sender}&#x3D;\frac{L&#x2F;R}{RTT+L&#x2F;R}&#x3D;0.008&#x2F;30.008&#x3D;0.00027$</p>
+<p>在1Gbps链路上每30毫秒才能发送一个分组 $\Rightarrow$ 33KB&#x2F;s</p>
+<p><strong>网络协议限制了物理资源的利用</strong></p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694767041067.png" alt="1694767041067"></p>
+<p>$U_{sender}&#x3D;\frac{L&#x2F;R}{RTT+L&#x2F;R}&#x3D;0.008&#x2F;30.008&#x3D;0.00027$</p>
+<h2 id="流水线的机制和滑动窗口协议"><a href="#流水线的机制和滑动窗口协议" class="headerlink" title="流水线的机制和滑动窗口协议"></a>流水线的机制和滑动窗口协议</h2><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768215316.png" alt="1694768215316"></p>
+<p>回顾最初的Rdt 3.0操作</p>
+<p>可以更改为同时发多个分组，这样就能有更好的性能</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768312234.png" alt="1694768312234"></p>
+<p>$U_{sender}&#x3D;\frac{3*L&#x2F;R}{RTT+L&#x2F;R}&#x3D;\frac{0.024}{30.008}&#x3D; 0.0008$</p>
+<p>允许发送方在收到ACK之前连续发送多个分组</p>
+<ul>
+<li><p>更大的序列号范围</p>
+</li>
+<li><p>发送方和&#x2F;或接收方需要更大的存储空间以<strong>缓存分组</strong></p>
+</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768451060.png" alt="1694768451060"></p>
+<p>很明显可以看出效率有明显提高</p>
+<h3 id="滑动窗口协议"><a href="#滑动窗口协议" class="headerlink" title="滑动窗口协议"></a>滑动窗口协议</h3><p><strong>滑动窗口协议</strong>：Sliding-window protocol</p>
+<ul>
+<li><p>窗口</p>
+<ul>
+<li>允许使用的序列号范围      </li>
+<li>窗口尺寸为N：最多有N个等待确认的消息</li>
+</ul>
+</li>
+<li><p><strong>滑动窗口</strong></p>
+<ul>
+<li>随着协议的运行，窗口在序列号空间内向前滑动</li>
+</ul>
+</li>
+</ul>
+<p><strong>滑动窗口协议</strong>：GBN，SR</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768609208.png" alt="1694768609208"></p>
+<h2 id="GBN-Go-Back-N"><a href="#GBN-Go-Back-N" class="headerlink" title="GBN(Go-Back-N)"></a>GBN(Go-Back-N)</h2><h3 id="发送方-1"><a href="#发送方-1" class="headerlink" title="发送方"></a>发送方</h3><ul>
+<li>分组头部包含k-bit序列号</li>
+<li>窗口尺寸为<strong>N</strong>，最多允许<strong>N</strong>个分组未确认</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694768789786.png" alt="1694768789786"></p>
+<ul>
+<li><p>ACK(n):确认到序列号n(包含n)的分组<code>均已经被正确接收</code></p>
+<ul>
+<li>可能收到重复的ACK</li>
+</ul>
+</li>
+<li><p>为空中的分组设置计时器</p>
+</li>
+<li><p>超时<strong>Timeout</strong>事件：重传序列号<strong>大于等于n</strong>，还没有收到ACK的所有分组</p>
+</li>
+</ul>
+<h3 id="GBN：发送方扩展FSM"><a href="#GBN：发送方扩展FSM" class="headerlink" title="GBN：发送方扩展FSM"></a>GBN：发送方扩展FSM</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769021950.png" alt="1694769021950"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nextseqnum &lt; base + N)&#123; <span class="comment">//意味着还有可用的seqnum意味着还可以接着发送分组</span></span><br><span class="line">  sndpkt[nextseqnum]=<span class="built_in">make_pkt</span>(nextseqnum.data.chksum);</span><br><span class="line">  <span class="built_in">udt_send</span>(sndpkt[nextseqnum]);</span><br><span class="line">  <span class="keyword">if</span> (base == nextseqnum)&#123;<span class="comment">//如果base和nextseqnum相等的话，就启动定时器</span></span><br><span class="line">    <span class="built_in">start_timer</span>();</span><br><span class="line">    nextseqnum++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> </span><br><span class="line">    <span class="built_in">refuse_data</span>(data);<span class="comment">//如果窗口里面的序列号已经用光了，就可以refuse掉当前的数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Timeout事件出现的操作"><a href="#Timeout事件出现的操作" class="headerlink" title="Timeout事件出现的操作"></a>Timeout事件出现的操作</h4><p>Timeout $\rightarrow$ start_timer()<br>udt_send(sndpkt[base])<br>……<br>udt_send(sndpkt[nextseqsum-1])</p>
+<h3 id="GBN：接收方扩展FSM"><a href="#GBN：接收方扩展FSM" class="headerlink" title="GBN：接收方扩展FSM"></a>GBN：接收方扩展FSM</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769484914.png" alt="1694769484914"></p>
+<ul>
+<li>ACK机制：发送拥有最高序列号的、已经被正确的接收的分组的ACK<ul>
+<li>可能产生重复的ACK</li>
+<li>只需要记住唯一的expectedseqnum</li>
+</ul>
+</li>
+<li>乱序到达的分组：<ul>
+<li>直接丢弃 $\rightarrow$ 接收方<code>没有缓存</code></li>
+<li>重新确认<code>序列号最大</code>的<code>按照序列到达</code>的分组</li>
+</ul>
+</li>
+</ul>
+<h3 id="GBN的实例"><a href="#GBN的实例" class="headerlink" title="GBN的实例"></a>GBN的实例</h3><p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694769749622.png" alt="1694769749622"></p>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p>数据量链路层采用后退N帧的协议，发送方已经发送了编号为0~7的帧，当计时器超市的时候，如果发送方只收到了0，2，3号帧的确认，那么发送方需要重发的帧数是多少，分别是哪几个帧？</p>
+<blockquote>
+<p>根据GBN的工作原理，GBN协议的确认是累计确认，所以此时发送端需要重发的帧数是4个，依次次分别是4、5、6、7</p>
+</blockquote>
+<h2 id="SR协议"><a href="#SR协议" class="headerlink" title="SR协议"></a>SR协议</h2><h3 id="Select-Repeat协议"><a href="#Select-Repeat协议" class="headerlink" title="Select Repeat协议"></a>Select Repeat协议</h3><p>GBN有什么缺陷？</p>
+<ul>
+<li>不使用累积确认机制，接收方对每个分组单独进行确认<ul>
+<li><strong>设置缓存机制</strong>，缓存乱序到达的分组</li>
+</ul>
+</li>
+<li>发送方只用重传哪些没收到ACK的分组<ul>
+<li>为每个分组设置计时器</li>
+</ul>
+</li>
+<li><strong>发送方窗口</strong><ul>
+<li>N个连续的序列号</li>
+<li>限制已经发送且未发送的分组</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770256143.png" alt="1694770256143"></p>
+<p><strong>分布式系统的网络</strong></p>
+<h4 id="Sender"><a href="#Sender" class="headerlink" title="Sender"></a>Sender</h4><ul>
+<li><strong>data from above</strong>:<ul>
+<li>if next available seq # in window, send pkt</li>
+</ul>
+</li>
+<li><strong>timeout (n)</strong>:<ul>
+<li>resend pkt n, restart timer</li>
+</ul>
+</li>
+<li><strong>ACK(n) in [sendbase,sendBase+N]</strong>:<ul>
+<li>mark pkt n as recieved</li>
+<li>if n smallest unACKed pkt, advanced window base to next unACKed seq #</li>
+</ul>
+</li>
+</ul>
+<h4 id="recevier"><a href="#recevier" class="headerlink" title="recevier"></a>recevier</h4><ul>
+<li><strong>pkt n in [revbase, revbase+N-1]</strong><ul>
+<li>send ACK(n)</li>
+<li>out-of-order:buffer</li>
+<li>in-order:deliver(also deliver buffered, in-order pkts), advance window to next not-yet-recieved pkt</li>
+</ul>
+</li>
+<li><strong>pkt n in [rcvbase-N,rcvbase-1]</strong><ul>
+<li>ACK(n)</li>
+</ul>
+</li>
+<li><strong>otherwise:</strong><ul>
+<li>ignore</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694770984071.png" alt="1694770984071"></p>
+<h3 id="SR协议：困境"><a href="#SR协议：困境" class="headerlink" title="SR协议：困境"></a>SR协议：困境</h3><ul>
+<li>序列号：0，1，2，3</li>
+<li>窗口尺寸：3</li>
+<li>接收方能够区分开两种不同的场景吗？<ul>
+<li>(a)中发送方重发<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771172608.png" alt="1694771172608"></li>
+<li>(b)中发送了第五个分组<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/1694771259880.png" alt="1694771259880"></li>
+</ul>
+</li>
+</ul>
+<h4 id="问题：序列号空间大小和窗口尺寸需要满足什么关系？"><a href="#问题：序列号空间大小和窗口尺寸需要满足什么关系？" class="headerlink" title="问题：序列号空间大小和窗口尺寸需要满足什么关系？"></a>问题：序列号空间大小和窗口尺寸需要满足什么关系？</h4><blockquote>
+<p>$N_S+N_R \leq 2^k$</p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>CN-计算机网络传输层</p><p><a href="https://molaters.github.io/2023/11/24/计算机网络/CN-计算机网络传输层/">https://molaters.github.io/2023/11/24/计算机网络/CN-计算机网络传输层/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Molaters Lee</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-11-24</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-10-12</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><a class="link-muted mr-2" rel="tag" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/">传输层</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">CN-计算机网络分层结构</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%99%9A%E7%94%B5%E8%B7%AF%E7%BD%91%E7%BB%9C/"><span class="level-item">CN-虚电路网络</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

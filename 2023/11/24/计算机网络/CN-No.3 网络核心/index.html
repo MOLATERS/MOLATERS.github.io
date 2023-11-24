@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>CN-No.3 网络核心 - SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;],             inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;]]             }         });"><meta property="og:type" content="blog"><meta property="og:title" content="CN-No.3 网络核心"><meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.3%20%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;],             inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;]]             }         });"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%203.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%204.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%206.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%207.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%208.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%209.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2010.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2011.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2012.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2013.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2014.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2015.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807113712816.png"><meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807114528393.png"><meta property="article:published_time" content="2023-11-24T02:14:50.066Z"><meta property="article:modified_time" content="2023-10-12T09:04:51.310Z"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="计算机网络"><meta property="article:tag" content="计算机网络概述"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.3%20%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83/"},"headline":"CN-No.3 网络核心","image":["https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%203.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%204.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%206.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%207.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%208.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%209.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2010.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2011.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2012.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2013.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2014.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2015.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807113712816.png","https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807114528393.png"],"datePublished":"2023-11-24T02:14:50.066Z","dateModified":"2023-10-12T09:04:51.310Z","author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });"}</script><link rel="canonical" href="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.3%20%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.066Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:04:51.310Z" title="2023/10/12 17:04:51">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">15 分钟读完 (大约2285个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">CN-No.3 网络核心</h1><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+# 网络核心
+
+<h2 id="为什么需要数据交换"><a href="#为什么需要数据交换" class="headerlink" title="为什么需要数据交换"></a>为什么需要数据交换</h2><ul>
+<li>$N^2$ 链路问题</li>
+<li>将主机和交换设备连接</li>
+<li>连通性</li>
+<li>网络规模</li>
+</ul>
+<h2 id="交换？"><a href="#交换？" class="headerlink" title="交换？"></a>交换？</h2><ul>
+<li>动态转接</li>
+</ul>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled.png" alt="dynamic connect" style="zoom:67%;" />
+
+<ul>
+<li>动态分配传输资源</li>
+</ul>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%201.png" alt="dynamic sourse" style="zoom:67%;" />
+
+<h2 id="数据交换的类型"><a href="#数据交换的类型" class="headerlink" title="数据交换的类型"></a>数据交换的类型</h2><h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><p>电路交换的特点</p>
+<ul>
+<li>最典型的电路交换网络：<strong>电话网络</strong></li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%202.png" alt="Untitled" style="zoom:67%;" />W</p>
+<ul>
+<li>所以电路交换过程可以分为三个阶段：<ul>
+<li>建立连接（呼叫&#x2F;电路建立）</li>
+<li>通信</li>
+<li>释放连接</li>
+</ul>
+</li>
+<li>独占资源（比如信道资源）是不能被第三方共享的</li>
+</ul>
+<h3 id="电路交换网络的链路共享"><a href="#电路交换网络的链路共享" class="headerlink" title="电路交换网络的链路共享"></a>电路交换网络的链路共享</h3><p>→ 电路交换网络如何共享中继线？</p>
+<hr>
+<h2 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h2><ul>
+<li>多路复用简称复用，是通信技术的基本概念</li>
+<li>传输能力大于单路的信息，所以要实现多路复用技术</li>
+</ul>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%203.png" alt="复用器进行组合，分用器来进行拆分" style="zoom:67%;" />
+
+<p>复用器进行组合，分用器来进行拆分</p>
+<p><strong>多路复用：</strong>链路、网络资源 划分为<strong>资源片</strong></p>
+<p>将资源片分配给各路“呼叫”</p>
+<p>每路呼叫独占分配到的资源篇进行通信</p>
+<p>资源片可能闲置</p>
+<h3 id="典型多路复用方法"><a href="#典型多路复用方法" class="headerlink" title="典型多路复用方法"></a>典型多路复用方法</h3><ul>
+<li><p><strong>频分多路复用</strong></p>
+  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%204.png" alt="最具代表性的就是有线电视网络" style="zoom:67%;" />
+  
+<p>  最具代表性的就是有线电视网络</p>
+<p>  每个用户占用不同的带宽资源</p>
+<p>  用户在分配到一定的频带后，那自始自终都占用这个频带</p>
+<p>  频分多路技术</p>
+</li>
+<li><p><strong>时分多路复用</strong></p>
+<p>  划分为<strong>帧</strong> 每个用户占据固定序号的时间间隙</p>
+<p>  每个用户占用的时间间隙是周期性出现的</p>
+  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%206.png" alt="Untitled" style="zoom:50%;" />
+  
+<p>  在频率上是不分割的</p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%207.png" alt="时分多路复用"></p>
+<p>  时分多路复用</p>
+</li>
+<li><p><strong>波分多路复用</strong></p>
+<p>  光的频分复用</p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%208.png" alt="Untitled"></p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%209.png" alt="中间的链路是可以共享的，称为中继线"></p>
+<p>  中间的链路是可以共享的，称为中继线</p>
+</li>
+<li><p><strong>码分多路复用</strong></p>
+<p>  广泛应用于无线链路共享（蜂窝网，卫星通信）</p>
+<p>  每个用户分配一个唯一的m bit的<strong>码片序列<em>chipping sequence</em></strong></p>
+<p>  用户使用相同频率载波，利用各自码片序列编码数据</p>
+<p>  $编码信号 &#x3D; (原始数据)\times (码片序列)$。</p>
+<ul>
+<li><p>如发送比特1(+1），则发送自己的m bit码片序列</p>
+</li>
+<li><p>如发送比特0(-1)，则发送该码片序列的m bit码片序列的反码</p>
+</li>
+<li><p>各个用户码片序列相互正交</p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2010.png" alt="Untitled"></p>
+</li>
+<li><p><strong>解码</strong>：码片序列和编码信号的<strong>内积</strong></p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2011.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>  <strong>具体的实现步骤</strong></p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2012.png" alt="在发送端和接收端的信号传输"></p>
+<p>  在发送端和接收端的信号传输</p>
+<p>  <strong>如果是多个用户向信道发送数据</strong></p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2013.png" alt="需要保证码片之间是正交的"></p>
+<p>  需要保证码片之间是正交的</p>
+<h2 id="数据交换：报文交换，分组交换"><a href="#数据交换：报文交换，分组交换" class="headerlink" title="数据交换：报文交换，分组交换"></a>数据交换：报文交换，分组交换</h2><h3 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h3><p>  电路交换资源是独占的，报文指的是发送的信息的整体</p>
+<p>  比如：一个文件</p>
+<h3 id="分组交换（package-switch）"><a href="#分组交换（package-switch）" class="headerlink" title="分组交换（package switch）"></a>分组交换（<em><strong>package switch</strong></em>）</h3><p>  分组：报文分叉出来的一系列相对较小的数据包</p>
+<p>  <strong>头 + 数据</strong></p>
+<p>  分组交换需要保温的拆分和重组</p>
+<p>  产生额外开销（因为要消费额外开销）</p>
+<p>  <img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2014.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>作为分组交换网络，这样的共享不是事先就分配一部分，而是两个的数据分别都是用完整带宽进行转发，具有很强的随机性。所以也称为统计多路复用统计多路复用最大的特点就是按需共享链路。</p>
+<p>每一个分组从上一个节点完整的转发分组，然后存储之后转发走。称为<strong>存储转发操作</strong>。</p>
+<p>这里能保证是有效的数据，有且仅有当两个向量正交的时候才有效，可以通用数学推导出来。主要原因是因为可以去除S1信道和S2信道的交叉乘积的影响，达到隔离的目的：</p>
+<p> $P&#x3D; \underset{1}{\overset{2}{\sum}}d_i \cdot S_i$</p>
+<p>所以可以推导出</p>
+<p>$d_1&#x3D;\frac{1}{m}\cdot S_i \cdot \underset{1}{\overset{2}{\sum}}d_i \cdot S_i &#x3D; \frac{(S_1)^2}{m} \cdot d$。</p>
+<p>可以看出和上面的表达式是相同的</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Untitled%2015.png" alt="Untitled"></p>
+<hr>
+<p>区别：</p>
+<ul>
+<li>报文交换用完整的报文</li>
+<li>分组交换用较小的分组</li>
+</ul>
+<h3 id="所以哪种方式更好呢？"><a href="#所以哪种方式更好呢？" class="headerlink" title="所以哪种方式更好呢？"></a>所以哪种方式更好呢？</h3><p><strong>分组交换：传输延迟</strong></p>
+<p>场景假设，源主机有两个分组信息需要发射，每个分组L bit大小</p>
+<p>发送主机：</p>
+<ul>
+<li>接受应用报文（消息）</li>
+<li>拆分为较小长度为L bits的分组</li>
+<li>在传输速率为R的链路上进行传输</li>
+</ul>
+<h3 id="报文交换-vs-分组交换"><a href="#报文交换-vs-分组交换" class="headerlink" title="报文交换 vs 分组交换"></a>报文交换 vs 分组交换</h3><p>报文交换：</p>
+<ul>
+<li>报文长度为M bits</li>
+<li>链路带宽为R bps</li>
+<li>每次传输报文需要M&#x2F;R秒</li>
+</ul>
+<p>分组交换：</p>
+<ul>
+<li>报文被拆分为多个组</li>
+<li>分组长度为L bits</li>
+<li>每个分组传输时延为L&#x2F;R秒</li>
+</ul>
+<p>举例：</p>
+<blockquote>
+<p>M &#x3D; 7.5 Mbits</p>
+<p>L &#x3D; 1500 bits</p>
+<p>M &#x3D; 5000L</p>
+<p>R &#x3D; 1.5 Mbps</p>
+</blockquote>
+<p>如果使用报文交换的时候，路由器的缓存就至少需要一个报文的大小</p>
+<p>分组交换中，原来的主机是要把报文进行拆分拆分成分组，5000个分组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">	title 报文交换</span><br><span class="line">	section 时间分布</span><br><span class="line">    dateFormat YYYY-MM-DD</span><br><span class="line">    axisFormat %d</span><br><span class="line">	empty:2023-1-1,9d</span><br><span class="line">	M/R=7.5/1.5=5:2023-1-10,9d</span><br><span class="line">	empty:2023-1-19,10d</span><br></pre></td></tr></table></figure>
+
+<p>主要都采用分组交换技术</p>
+<h1 id="分组交换的交付时间"><a href="#分组交换的交付时间" class="headerlink" title="分组交换的交付时间"></a>分组交换的交付时间</h1><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807113712816.png" alt="image-20230807113712816" style="zoom:50%;" />
+
+<p>报文：M bits</p>
+<p>链路带宽：（数据传输速率）：R bits</p>
+<p>分组长度（大小）：L bits；</p>
+<p>跳步数量：h</p>
+<p>路由器数量：n &#x3D; h-1</p>
+<p>$T_{传输时间}&#x3D;M&#x2F;R+(h-1)L&#x2F;R&#x3D;M&#x2F;R+nL&#x2F;R$</p>
+<p>跳步指的是从一点到下一个相邻一点就叫做跳步（一个跳步等于链路数量）</p>
+<p><strong><code>M/R</code> 是 整个报文的传输时间</strong></p>
+<p><strong><code>L/R</code> 是 一个路由器的转发时间</strong> </p>
+<h2 id="试题举例"><a href="#试题举例" class="headerlink" title="试题举例"></a>试题举例</h2><blockquote>
+<p> 在下图所示的采用“存储-转发”方式的分组交换网络中，所有链路的数据传输速率为100 M bps，分组大小为1 000 B，其中分组头大小为20 B。若主机H 1向主机H 2发送一个大小为980 000 B的文件，则在不考虑分组拆装时间和传播延迟的情况下，从H 1发送开始到H 2接收完为止，需要的时间至少是多少?</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20230807114528393.png" alt="image-20230807114528393"></p>
+</blockquote>
+<p>分组大小是1000 B，分组头占其中的20 B，所以有980 B携带的是报文数据；</p>
+<p>至少是什么时间，指的是走最近的链路；</p>
+<p>980 KB大小 的文件需要分1000个分组，每个分组1000 B。H 1发送整个文件需要的传输延迟为（980 000 + 20 * 1000 ）* <strong>8</strong> &#x2F; 100 000 000 &#x3D; 80 ms<strong>（注意单位换算）</strong>; <strong>根据路由选择基本定理</strong>，所有数据分组应该经过两个路由器的转发，所以再加上最后一个分组的两次转发的传输延迟，也就是 2 * 1000 * 8 &#x2F; 100 000 000 &#x3D; 0.16 ms。 所以，H 2接受完整个文件至少需要80 + 0.16 &#x3D; 80.16 ms</p>
+<p><em>两次转发的延迟，因为是两个路由器，所以要加上。</em></p>
+<p>例如：1 Mb&#x2F;s 链路</p>
+<p>每个用户：</p>
+<p>:heavy_check_mark: “活动” 时间需要100 Kb&#x2F;s</p>
+<p>:heavy_check_mark: 每个用户的平均活动时间为10 %</p>
+<h3 id="电路交换："><a href="#电路交换：" class="headerlink" title="电路交换："></a>电路交换：</h3><p>电路交换的特点是不能共享，虽然不传输数据但是其他用户是不能使用的，所以在这种情况下的效率很低。:togo:10个用户</p>
+<h3 id="分组交换："><a href="#分组交换：" class="headerlink" title="分组交换："></a>分组交换：</h3><p>当一个用户活动的时候恰好赶上了另一个用户活动，可以将活动错开。:heavy_check_mark:对于35个用户，大于10个用户同时活动的概率&lt;0.0004</p>
+<blockquote>
+<p>分组交换允许更多用户同时使用网络！——网络资源充分共享</p>
+</blockquote>
+<h2 id="分组交换绝对由于电路交换？"><a href="#分组交换绝对由于电路交换？" class="headerlink" title="分组交换绝对由于电路交换？"></a>分组交换绝对由于电路交换？</h2><ul>
+<li>适用于<strong>突发</strong>数据传输网络。<ul>
+<li>资源充分共享</li>
+<li>简单、无需呼叫建立  $\Rightarrow$ 可能产生拥塞：分组延迟和丢失</li>
+<li>需要协议处理可靠数据传输和拥塞控制</li>
+</ul>
+</li>
+<li>现在使用的计算机网络具备突发的数据传输特点。</li>
+<li>但是视频传输和通话的传输不具备突发性。</li>
+</ul>
+<p>Q：如何提供电路级性能保障？打电话会出现停顿现象，所以需要使用协议来进行传输</p>
+<hr>
+<p>上一页：[[CourseNotes&#x2F;计算机网络&#x2F;CN-No.2 计算机网络的结构]]</p>
+<p>下一页:  [[CourseNotes&#x2F;计算机网络&#x2F;CN-No.4 计算机网络性能]]</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>CN-No.3 网络核心</p><p><a href="https://molaters.github.io/2023/11/24/计算机网络/CN-No.3 网络核心/">https://molaters.github.io/2023/11/24/计算机网络/CN-No.3 网络核心/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Molaters Lee</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-11-24</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-10-12</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><a class="link-muted mr-2" rel="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/">计算机网络概述</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.5%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">CN-No.5 计算机网络的体系结构</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.1%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"><span class="level-item">CN-No.1 计算机网络基本概念</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

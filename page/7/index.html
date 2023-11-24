@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>SlaterXu</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="SlaterXu"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SlaterXu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="this is a personal notion keeper"><meta property="og:type" content="blog"><meta property="og:title" content="SlaterXu"><meta property="og:url" content="https://molaters.github.io/"><meta property="og:site_name" content="SlaterXu"><meta property="og:description" content="this is a personal notion keeper"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://molaters.github.io/img/og_image.png"><meta property="article:author" content="Molaters Lee"><meta property="article:tag" content="Develope"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://molaters.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://molaters.github.io"},"headline":"SlaterXu","image":["https://molaters.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Molaters Lee"},"publisher":{"@type":"Organization","name":"SlaterXu","logo":{"@type":"ImageObject","url":"https://molaters.github.io/img/logo.svg"}},"description":"this is a personal notion keeper"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.053Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:07:31.138Z" title="2023/10/12 17:07:31">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">1 分钟读完 (大约208个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Homework5-1/">CN-Homework5-1</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+[[计算机网络]]
+
+<p>#task<br><strong>如图所示网络。</strong></p>
+<p>​</p>
+<p><img src="https://edu-image.nosdn.127.net/9C515BE4A654FA395BE5952B80162EDE.png?imageView&thumbnail=520x520&quality=100"></p>
+<p>请回答下列问题：<br>(1)主机在配置IP地址时，其正确的子网掩码和默认网关分别是多少？</p>
+<p>​</p>
+<p>(2)若路由器R在向互联网转发一个由主机192.168.1.5发送、ID&#x3D;12345、length&#x3D;500B、DF&#x3D;1的IP分组时，则该IP分组首部的哪些字段会被修改？如何修改？</p>
+<p>​</p>
+<p>(3)若主机192.168.1.10向互联网ID&#x3D;6789、length&#x3D;1500B、DF&#x3D;0的IP分组时，路由器需要将该IP分组分为几片（每片尽可能封装为最大片）？给出分片结果，包括每片的ID、DF、MF、length、offset的取值。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.052Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:07:28.083Z" title="2023/10/12 17:07:28">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约230个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Homework4-1/">CN-Homework4-1</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+[[计算机网络]]
+
+<p>#task 假设A、B两个端系统通过唯一的一条8Mbps链路连接（M&#x3D;10^6），该链路的双向传播时延是150ms；A通过一个TCP连接向B发送一个大文件，B的接收缓存足够大，每个TCP段最大段长度（MSS）为1500字节，TCP采用Reno版本，且总是处于拥塞避免阶段（即忽略慢启动）。请回答下列问题：</p>
+<ol>
+<li>该TCP连接能够获得的最大窗口尺寸（以TCP段数计）是多少？</li>
+</ol>
+<p>‏<br>2. 该TCP连接的平均窗口尺寸（以TCP段数计）和平均吞吐量（以bps计）是多少？</p>
+<p>‏<br>3. 该TCP连接的拥塞窗口从发生丢包到恢复到最大窗口尺寸要经历多长时间？</p>
+<p>‏</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.051Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:29.505Z" title="2023/10/12 17:06:29">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">3 分钟读完 (大约477个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/Homework2-1-0e0e97da4ce74bfc9b8f81deebce546b">CN-Homework2-1</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+假设你在浏览某网页时点击了一个超链接，URL为“https://www.kicker.com.cn/index.html”，且该URL对应的IP地址在你的计算机上没有缓存；文件index.html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题： 
+
+<p>‍1）你的浏览器解析到URL对应的IP地址的最短时间是多少？最长时间是多少？</p>
+<p><strong>浏览器解析到URL对应的IP地址最短时间是RTTd，最长时间是5RTTd。</strong></p>
+<p>‍2）若浏览器没有配置并行TCP连接，则基于HTTP1.0获取URL链接Web页完整内容（包括引用的图像，下同）需要多长时间（不包括域名解析时间，下同）？</p>
+<p><strong>如果浏览器没有配置并行TCP连接，则基于HTTP1.0获取链接Web页面完整内容所需要的时间为18RTTh</strong><br>‏<br>‍3) 若浏览器配置5个并行TCP连接，则基于HTTP1.0获取URL链接Web页完整内容需要多长时间？</p>
+<p><strong>如果浏览器配置5个并行TCP连接，那么基于HTTP1.0获取URL链接Web页面时间为6RTTh</strong>*</p>
+<p>‍4) 若浏览器没有配置并行TCP连接，则基于非流水模式的HTTP1.1获取URL链接Web页完整内容需要多长时间？基于流水模式的HTTP1.1获取URL链接Web页完整内容需要多长时间？</p>
+<p><strong>如果浏览器没有配置并行TCP连接，基于非流水模式的HTTP1.1获取URL链接Web页完整内容需要的时间为3RTTh</strong><br>‏</p>
+<p>‍</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.051Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:07:24.217Z" title="2023/10/12 17:07:24">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">1 分钟读完 (大约183个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Homework3-1/">CN-Homework3-1</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+[[计算机网络]]
+
+<p>(18 分） 考虑向 N 个对等方（用户）分发 F&#x3D;15Gb 的一个文件。该服务器具有 us&#x3D;30Mbps 的上传速率，每个对等方的下载速率 di&#x3D;2Mbps，上传速率为 u。请分别针对客户-服务器分发模式和 P2P 分发模式两种情况，对于 N&#x3D;10、 100 和 1000 以及 u&#x3D;500kbps、 1Mbps 和 2Mbps 的每种组合，绘制最小分发时间图表。（注： k&#x3D;10^3、 M&#x3D;10^6、 G&#x3D;10^9）</p>
+<p><strong>列表如下所示：</strong></p>
+<table>
+<thead>
+<tr>
+<th>C&#x2F;S Mode</th>
+<th>N&#x3D;10</th>
+<th>N&#x3D;100</th>
+<th>N&#x3D;1000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>500kbps</td>
+<td>7500s</td>
+<td>50000s</td>
+<td>500000s</td>
+</tr>
+<tr>
+<td>1Mbps</td>
+<td>7500s</td>
+<td>50000s</td>
+<td>500000s</td>
+</tr>
+<tr>
+<td>2Mbps</td>
+<td>7500s</td>
+<td>50000s</td>
+<td>500000s</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>P2P Mode</th>
+<th>N&#x3D;10</th>
+<th>N&#x3D;100</th>
+<th>N&#x3D;1000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>500kbps</td>
+<td>7500s</td>
+<td>18750s</td>
+<td>28302s</td>
+</tr>
+<tr>
+<td>1Mbps</td>
+<td>7500s</td>
+<td>11538s</td>
+<td>14563s</td>
+</tr>
+<tr>
+<td>2Mbps</td>
+<td>7500s</td>
+<td>7500s</td>
+<td>7500s</td>
+</tr>
+</tbody></table>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.050Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:30.719Z" title="2023/10/12 17:05:30">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">1 分钟读完 (大约158个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/Homework1-3-f5140198f63543c79aaaee4a8a918556">CN-Homework1-3</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+## 题目3
+
+<p>假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1&#x3D;500kbps，R2&#x3D;2Mbps，R3&#x3D;1Mbps。试求：</p>
+<ol>
+<li>假设网络没有其他流量，则传送该文件的吞吐量是多少？</li>
+</ol>
+<blockquote>
+<p>吞吐量选择其中传输速率最小的链路：500kbps</p>
+</blockquote>
+<ol start="2">
+<li>假设文件大小为4MB，则传输该文件到主机B大约需要多少时间？</li>
+</ol>
+<blockquote>
+<p>$T &#x3D; 4MB&#x2F;R &#x3D; 4*10^3&#x2F;500kbps &#x3D; 64s$</p>
+</blockquote>
+<h2 id="注：1k-10-3-1M-10-6"><a href="#注：1k-10-3-1M-10-6" class="headerlink" title="(注：1k&#x3D;10^3^,1M&#x3D;10^6^)"></a><strong>(注：1k&#x3D;10^3^,1M&#x3D;10^6^)</strong></h2></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.049Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:26.844Z" title="2023/10/12 17:05:26">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">2 分钟读完 (大约278个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/Homework1-2-27022d6ff3274f5a8cb27fd43b9514fe">CN-Homework1-2</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+## 题目2
+
+<p>( 10分 )</p>
+<p>考虑两台主机A和主机B由一条带宽为R bps、长度为M米的链路互连，信号传播速率为V m&#x2F;s。假设主机A从t&#x3D;0时刻开始向主机B发送分组，分组长度为L比特。试求：</p>
+<ol>
+<li>传播延迟（时延）dp；</li>
+</ol>
+<blockquote>
+<p>dp &#x3D; M &#x2F; V</p>
+</blockquote>
+<ol start="2">
+<li>传输延迟dt；</li>
+</ol>
+<blockquote>
+<p>dt &#x3D; L &#x2F; R</p>
+</blockquote>
+<ol start="3">
+<li>若忽略结点处理延迟和排队延迟，则端到端延迟de是多少？</li>
+</ol>
+<blockquote>
+<p>de &#x3D; dt + dp</p>
+</blockquote>
+<ol start="4">
+<li>若dp&gt;dt，则t&#x3D;dt时刻，分组的第一个比特在哪里？</li>
+</ol>
+<blockquote>
+<p>此时还没有到达主机，所以第一个比特在距离A主机 $\frac{M}{V} \times dt$ 的位置处</p>
+</blockquote>
+<ol start="5">
+<li>若V&#x3D;250000km&#x2F;s，L&#x3D;512比特，R&#x3D;100 Mbps，则使带宽时延积刚好为一个分组长度（即512比特）的链路长度M是多少？</li>
+</ol>
+<blockquote>
+<p>带宽时延积 &#x3D; $dp \times R$</p>
+<p>代入带宽时延积为512bit，$dp &#x3D; \frac{512bit}{100Mbps} &#x3D; 5.12 \times 10^{-6} s&#x3D;\frac{M}{V}&#x3D;\frac{M}{250000km&#x2F;s}$</p>
+<p>可以解得dp &#x3D; 1024m</p>
+</blockquote>
+<p><strong>(注：1k&#x3D;10^3^,1M&#x3D;10^6^)</strong></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.048Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:10.327Z" title="2023/10/12 17:06:10">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">几秒读完 (大约30个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-HEAD/">CN-HEAD</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+[[2023-09-17]]
+请Server不要将所请求的对象放入响应消息中</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.048Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:05:23.239Z" title="2023/10/12 17:05:23">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">4 分钟读完 (大约584个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/Homework1-1-2d2abd722c3342f2aa90b63545784a20">CN-Homework1-1</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+## 题目1
+
+<p>( 14分 )</p>
+<p>如图所示网络。A在t&#x3D;0时刻开始向C发送一个2Mbits的文件；B在t&#x3D;0.1+e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。</p>
+<p>请回答下列问题：</p>
+<ol>
+<li>如果图中网络采用存储-转发方式的报文交换，则A将2Mbits的文件交付给C需要多长时间？B将1Mbits的文件交付给D需要多长时间？</li>
+</ol>
+<blockquote>
+<p>（1）500ms。由于采用报文交换，只有A来进行传输，B的传输不会影响A的传输。设左边的路由器为F，右边的路由器为E，那么从A到F之间的时间为2&#x2F;10&#x3D;0.2s，此后从F到E的传输则为2&#x2F;20&#x3D;0.1s，此时实现从F到E，最后从E到C所用的时间为0.2s，所以总的时间就是0.5s的时间。</p>
+<p>（2）350ms。在从B到F的过程中不受影响，传输的时间为1&#x2F;10&#x3D;0.1s; 从F传输到E的过程中，需要等待A传输完成，A传输时间为0.1s，B端的传输时间就为0.1+0.05&#x3D;0.15s；从E传到D的时候需要0.1s。A不会影响传输所以一共为0.35s。</p>
+</blockquote>
+<ol start="2">
+<li>如果图中网络采用存储-转发方式的分组交换，分组长度为等长的1kbits，且忽略分组头开销以及报文的拆装开销，则A将2Mbits的文件交付给C需要大约多长时间？B将1Mbits的文件交付给D需要大约多长时间？</li>
+</ol>
+<blockquote>
+<p>(1)  0.200015s。只需要考虑A的第一个分组的传输方式，$T&#x3D;T_{first}+T_{rest}&#x3D;\frac{2 \times 1kb}{10Mb&#x2F;s}+\frac{1kb}{20Mb&#x2F;s}+\frac{1999 \times 1kb}{10Mb&#x2F;s}&#x3D;0.200015s$</p>
+<p>(2) 0.10002s。同样只需要考虑B的第一个传输和剩下的传输，B的第一个传输是全为10Mb&#x2F;s，$T&#x3D;M&#x2F;R+2L&#x2F;R&#x3D;\frac{1Mb}{10Mb&#x2F;s}+2 \times \frac{1kb}{10Mb&#x2F;s}&#x3D;1.0002s$</p>
+</blockquote>
+<ol start="3">
+<li>报文交换与分组交换相比，哪种交换方式更公平？（即传输数据量小用时少，传输数据量大用时长）</li>
+</ol>
+<blockquote>
+<p>分组交换更公平</p>
+</blockquote>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.047Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:38.485Z" title="2023/10/12 17:06:38">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">6 分钟读完 (大约828个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/Email-POP3-1c35b15179a544aca4d9a31f01834ab0">CN-Email消息格式和POP3协议</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+## Email消息格式
+
+<p><strong>SMTP</strong>:  email 消息的传输&#x2F;交换协议</p>
+<p><strong>RFC 822</strong>: 文本消息格式标准</p>
+<ul>
+<li>头部行<ul>
+<li>To</li>
+<li>From</li>
+<li>Subject</li>
+</ul>
+</li>
+<li>消息体<ul>
+<li>消息本身</li>
+<li>只能是ASCII字符</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230917171336.png" alt="image.png"></p>
+<h2 id="Email消息格式：多媒体扩展"><a href="#Email消息格式：多媒体扩展" class="headerlink" title="Email消息格式：多媒体扩展"></a>Email消息格式：多媒体扩展</h2><p>MIME：多媒体邮件扩展RFC 2045，2056</p>
+<ul>
+<li>通过邮件头部增加额外的行以声明MIME的内容类型</li>
+</ul>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230917171352.png" alt="image.png"></p>
+<h2 id="邮件访问协议"><a href="#邮件访问协议" class="headerlink" title="邮件访问协议"></a>邮件访问协议</h2><p>邮件访问协议：从服务器获取邮件</p>
+<ul>
+<li><strong>POP</strong> ：Post Office Protocol [RFC 1939]<ul>
+<li>认证&#x2F;授权（客户端 $\iff$ 服务器）和下载</li>
+</ul>
+</li>
+<li><strong>IMAP</strong>: Internet Mail Access Protocol [RFC 1730]<ul>
+<li>更多功能</li>
+<li>更加复杂</li>
+<li>能够操纵服务器上存储的信息</li>
+</ul>
+</li>
+<li><strong>HTTP</strong>：163，QQ Mail等</li>
+</ul>
+<h2 id="POP协议"><a href="#POP协议" class="headerlink" title="POP协议"></a>POP协议</h2><h3 id="认证过程"><a href="#认证过程" class="headerlink" title="认证过程"></a>认证过程</h3><ul>
+<li>客户端命令：<ul>
+<li>User: 声明用户名</li>
+<li>Pass：声明密码</li>
+</ul>
+</li>
+<li>服务器响应<ul>
+<li>+OK</li>
+<li>-ERR</li>
+</ul>
+</li>
+</ul>
+<h3 id="事务阶段"><a href="#事务阶段" class="headerlink" title="事务阶段"></a>事务阶段</h3><p>List : 列出消息数量<br>Retr : 用编号获取消息<br>Dele : 删除消息<br>Quit</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918202545.png" alt="image.png"></p>
+<p>“<strong>下载并删除模式</strong>“</p>
+<ul>
+<li>用户如果换了客户端软件，就没有办法重新读这个邮件</li>
+</ul>
+<p>“<strong>下载并保持模式</strong>” </p>
+<ul>
+<li>不同客户端都可以保留消息的拷贝</li>
+</ul>
+<h3 id="POP3是无状态的"><a href="#POP3是无状态的" class="headerlink" title="POP3是无状态的"></a><em>POP3是无状态的</em></h3><h2 id="IMAP协议"><a href="#IMAP协议" class="headerlink" title="IMAP协议"></a>IMAP协议</h2><p>所有消息统一保存在同一个地方：服务器</p>
+<p>允许用户利用文件夹组织消息</p>
+<p>IMAP支持跨会话（Session）的用户状态：</p>
+<ul>
+<li>文件夹的名字</li>
+<li>文件夹和消息ID之间的映射等等</li>
+</ul>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><p><strong>MAP和POP3协议有什么不同？调研一下主流Email服务对IMAP协议的支持情况</strong> </p>
+<p>IMAP（Internet Mail Access Protocol）和POP3（Post Office Protocol）都是用于获取和管理电子邮件的协议，但存在一些区别。</p>
+<ol>
+<li>差异：<ul>
+<li>IMAP允许用户在本地和远程邮件客户端之间同步邮件状态，包括已读、删除等操作。而POP3只是简单地从服务器上下载邮件到本地，不对邮件状态进行同步。</li>
+<li>IMAP在服务器上保留邮件的副本，用户可以在不同的设备上访问和管理邮件。而POP3将邮件下载到本地后，通常会删除服务器上的副本。</li>
+<li>IMAP支持文件夹和子文件夹的管理，可以方便地组织和管理邮件。而POP3通常只有一个收件箱。</li>
+</ul>
+</li>
+<li>关于主流Email服务对IMAP协议的支持情况，我们可以进行调研：<ul>
+<li>根据Cloudflare的文章<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/learning/email-security/what-is-imap/">What is IMAP? IMAP vs. POP3</a>，几乎所有的主流Email服务都支持IMAP协议。这包括Gmail、Outlook、Yahoo Mail等。</li>
+<li>另外，根据知乎的回答<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24605584">POP3, SMTP, IMAP 大相径庭—详解邮箱相关知识</a>，POP3协议通常用于普通邮件客户端，比如Outlook，而IMAP协议更适合移动设备和Web邮件界面。<br>综上所述，IMAP和POP3协议在邮件管理和访问方式上存在一些差异，主流Email服务一般都支持IMAP协议。</li>
+</ul>
+</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-11-24T02:14:50.046Z" title="2023/11/24 10:14:50">2023-11-24</time>发表</span><span class="level-item"><time dateTime="2023-10-12T09:06:45.645Z" title="2023/10/12 17:06:45">2023-10-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span><span class="level-item">14 分钟读完 (大约2140个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" target="_blank" rel="noopener" href="https://www.notion.so/DNS-5f7f8e2ce5b94dbfa931633e7424b133">CN-DNS概述</a></p><div class="content"><head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+#DNS
+
+<p>互联网中的核心服务</p>
+<p>[[2023-09-18]]</p>
+<h2 id="有关DNS基础资料查询"><a href="#有关DNS基础资料查询" class="headerlink" title="有关DNS基础资料查询"></a>有关DNS基础资料查询</h2><hr>
+<h2 id="DNSDomain-Name-System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：-通俗易懂，了解什么是DNS及查询过程？-介绍了DNS是什么、DNS的查询过程等基础知识。-DNS基础知识详解-对DNS基础知识进行详细解析。-什么是DNS以及DNS工作原理-介绍了DNS的工作原理和作用。-DNS原理简述-简要介绍了DNS的原理和查询过程。"><a href="#DNSDomain-Name-System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：-通俗易懂，了解什么是DNS及查询过程？-介绍了DNS是什么、DNS的查询过程等基础知识。-DNS基础知识详解-对DNS基础知识进行详细解析。-什么是DNS以及DNS工作原理-介绍了DNS的工作原理和作用。-DNS原理简述-简要介绍了DNS的原理和查询过程。" class="headerlink" title="DNSDomain Name System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：- 通俗易懂，了解什么是DNS及查询过程？ - 介绍了DNS是什么、DNS的查询过程等基础知识。- DNS基础知识详解 - 对DNS基础知识进行详细解析。- 什么是DNS以及DNS工作原理 - 介绍了DNS的工作原理和作用。- DNS原理简述 - 简要介绍了DNS的原理和查询过程。"></a>DNSDomain Name System，域名系统）是互联网的一项服务，用于将域名转换成与之相对应的IP地址。DNS的作用是通过域名，将用户能够记忆的域名转化为计算机能够识别的IP地址，以便进行网络通信。DNS服务运行在域名服务器上，当用户发起域名解析请求时，通过查询域名服务器上的缓存，将域名解析为对应的IP地址。<br>查询DNS基础资料可以了解DNS的工作原理、域名解析过程以及DNS的作用等。以下是一些有关DNS基础资料的参考链接：<br>- <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/436199902#:~:text=%E9%80%9A%E4%BF%97%E6%98%93%E6%87%82%EF%BC%8C%E4%BA%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFDNS%E5%8F%8A%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B%EF%BC%9F">通俗易懂，了解什么是DNS及查询过程？</a> - 介绍了DNS是什么、DNS的查询过程等基础知识。<br>- <a target="_blank" rel="noopener" href="https://www.cnblogs.com/guoxianqi2020/p/13740551.html">DNS基础知识详解</a> - 对DNS基础知识进行详细解析。<br>- <a target="_blank" rel="noopener" href="https://blog.csdn.net/bangshao1989/article/details/121913780">什么是DNS以及DNS工作原理</a> - 介绍了DNS的工作原理和作用。<br>- <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2022/08/dns-query.html">DNS原理简述</a> - 简要介绍了DNS的原理和查询过程。</h2><h2 id="DNS：Domain-Name-System"><a href="#DNS：Domain-Name-System" class="headerlink" title="DNS：Domain Name System"></a>DNS：Domain Name System</h2><hr>
+<h3 id="Internet-上主机、路由器的识别问题"><a href="#Internet-上主机、路由器的识别问题" class="headerlink" title="Internet 上主机、路由器的识别问题"></a>Internet 上主机、路由器的识别问题</h3><hr>
+<ul>
+<li>IP地址</li>
+<li>域名：<a target="_blank" rel="noopener" href="http://www.hit.edu.cn/">www.hit.edu.cn</a></li>
+</ul>
+<h3 id="问题：域名和IP地址之间如何映射？"><a href="#问题：域名和IP地址之间如何映射？" class="headerlink" title="问题：域名和IP地址之间如何映射？"></a>问题：域名和IP地址之间如何映射？</h3><p>💭<strong>资料查询</strong>：</p>
+<blockquote>
+<p>域名和IP地址之间的映射是通过DNS（Domain Name System）来实现的。DNS是一种分布式数据库系统，它将域名解析为相应的IP地址。当用户在浏览器中输入一个域名，比如”<a target="_blank" rel="noopener" href="http://www.example.com",浏览器会向dns服务器发送请求,以获取与该域名对应的ip地址.dns服务器会查询域名对应的ip地址并返回给浏览器,然后浏览器才能连接到该ip地址上的服务器.这样就实现了域名到ip地址的映射关系./">www.example.com&quot;，浏览器会向DNS服务器发送请求，以获取与该域名对应的IP地址。DNS服务器会查询域名对应的IP地址并返回给浏览器，然后浏览器才能连接到该IP地址上的服务器。这样就实现了域名到IP地址的映射关系。</a></p>
+</blockquote>
+<h3 id="域名解析DNS"><a href="#域名解析DNS" class="headerlink" title="域名解析DNS"></a>域名解析DNS</h3><hr>
+<ul>
+<li>多层命名服务器构成的分布式数据库</li>
+<li><strong>应用层协议</strong>：完成名字的解析<ul>
+<li>Internet核心共嗯那个，则应用层协议实现</li>
+<li>网络边界复杂</li>
+</ul>
+</li>
+</ul>
+<h3 id="DNS-服务"><a href="#DNS-服务" class="headerlink" title="DNS 服务"></a>DNS 服务</h3><hr>
+<ul>
+<li>域名向IP地址的翻译</li>
+<li>主机别名</li>
+<li>邮件服务器别名</li>
+<li><strong>负载均衡</strong>：Web服务器</li>
+</ul>
+<h3 id="问题：为什么不使用集中式的DNS？"><a href="#问题：为什么不使用集中式的DNS？" class="headerlink" title="问题：为什么不使用集中式的DNS？"></a>问题：为什么不使用集中式的DNS？</h3><blockquote>
+<p>☁️集中式DNS存在几个问题：</p>
+<ol>
+<li><strong>单点失败问题</strong>：如果唯一的一个服务点（可能有多台服务器）坏掉了，所有使用域名来提供网络服务的都需要请求DNS来做事情，那么整个互联网就会瘫痪。</li>
+<li><strong>流量问题</strong>：如果几十亿台主机都到这个服务器请求DNS查询，流量是巨大的，成本也是高昂的。<br>因此，为了解决这些问题，采用了分布式的DNS系统。这样可以提供高可用性和高伸缩性，减少了单点故障的风险，并且可以将负载均衡地分配到各个DNS服务器上。<br>来源：[CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/lovelyhonghong/article/details/114850420#:~:text=%E9%97%AE%E9%A2%98%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BD%BF%E7%94%A8%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%9A%84DNS%EF%BC%9F">https://blog.csdn.net/lovelyhonghong/article/details/114850420#:~:text=问题：为什么不使用集中式的DNS？</a> 1.单点失败问题。,如果唯一的一个服务点（可能有多台服务器）坏掉了，所有使用域名来提供网络服务的，都需要请求DNS来做事情，那么整个互联网就坏掉了。 2.流量问题。 如果几十亿台主机都到这个服务器请求DNS查询，流量是巨大的，成本也是高昂的。)</li>
+</ol>
+</blockquote>
+<ol start="3">
+<li><strong>距离问题</strong>：在外国的服务器无法合理的访问</li>
+<li><strong>维护性问题</strong></li>
+</ol>
+<h2 id="分布式层次式的数据库"><a href="#分布式层次式的数据库" class="headerlink" title="分布式层次式的数据库"></a>分布式层次式的数据库</h2><hr>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918210818.png" alt="image.png"></p>
+<p>Level one ： 根服务器</p>
+<p>Level two ：顶级域名服务器</p>
+<p>Level three ：权威域名服务器</p>
+<h3 id="客户端想要查询www-amazon-com的IP"><a href="#客户端想要查询www-amazon-com的IP" class="headerlink" title="客户端想要查询www.amazon.com的IP"></a>客户端想要查询<a target="_blank" rel="noopener" href="http://www.amazon.com的ip/">www.amazon.com的IP</a></h3><ol>
+<li><p>客户端查询根服务器，找到com域名解析服务器</p>
+</li>
+<li><p>客户端查询com域名解析服务器，找到amazon.com域名解析服务器</p>
+</li>
+<li><p>客户端查询amazon.com域名解析服务器，获得<a target="_blank" rel="noopener" href="http://www.amazon.com的ip地址/">www.amazon.com的IP地址</a></p>
+</li>
+</ol>
+<h2 id="DNS根域名服务器"><a href="#DNS根域名服务器" class="headerlink" title="DNS根域名服务器"></a>DNS根域名服务器</h2><p><strong>本地域名解析服务器无法解析域名的时候，访问根域名服务器</strong></p>
+<h3 id="根域名服务器"><a href="#根域名服务器" class="headerlink" title="根域名服务器"></a>根域名服务器</h3><ul>
+<li>如果不知道映射，访问权威域名服务器</li>
+<li>获得映射</li>
+<li>向本地域名服务器返回映射</li>
+</ul>
+<h2 id="TLD和权威域名解析服务器"><a href="#TLD和权威域名解析服务器" class="headerlink" title="TLD和权威域名解析服务器"></a>TLD和权威域名解析服务器</h2><h3 id="顶级域名服务器（TLD，top-level-domain）"><a href="#顶级域名服务器（TLD，top-level-domain）" class="headerlink" title="顶级域名服务器（TLD，top-level domain）"></a>顶级域名服务器（TLD，top-level domain）</h3><hr>
+<p><strong>负责com,org,net,edu等顶级服务器和国家顶级域名，例如</strong>cn,uk,fr等</p>
+<ul>
+<li>Network Solution 维护com顶级域名服务器</li>
+<li>Educause维护edu顶级域名服务器</li>
+</ul>
+<h3 id="权威（Authoritative）域名服务器"><a href="#权威（Authoritative）域名服务器" class="headerlink" title="权威（Authoritative）域名服务器"></a>权威（Authoritative）域名服务器</h3><hr>
+<p><strong>组织的域名解析服务器，提供组织内部服务器的解析服务</strong></p>
+<ul>
+<li><code>组织负责维护</code></li>
+<li><code>服务提供商负责维护</code></li>
+</ul>
+<h2 id="本地域名解析服务器"><a href="#本地域名解析服务器" class="headerlink" title="本地域名解析服务器"></a>本地域名解析服务器</h2><hr>
+<ul>
+<li>不属于严格的层级体系</li>
+<li>每个ISP都有一个本地域名服务器<ul>
+<li>默认域名解析服务器</li>
+</ul>
+</li>
+<li>当主机进行DNS查询的时候，查询被发送到本地域名服务器<ul>
+<li>作为代理(proxy)，将查询转发给(层级式)域名解析服务器系统</li>
+</ul>
+</li>
+</ul>
+<p><strong>DNS服务器除了做代理之外会不会做缓存呢？</strong></p>
+<h2 id="DNS查询示例"><a href="#DNS查询示例" class="headerlink" title="DNS查询示例"></a>DNS查询示例</h2><hr>
+<p><strong>Cis.poly.edu的主机想要获得gaia.cs.umass.edu的IP地址</strong></p>
+<h3 id="迭代查询"><a href="#迭代查询" class="headerlink" title="迭代查询"></a>迭代查询</h3><p>被查询服务器返回域名解析服务器的名字<br><strong>我不认识这个域名，但是你可以访问这个服务器</strong><br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918212916.png" alt="image.png"></p>
+<h3 id="递归查询"><a href="#递归查询" class="headerlink" title="递归查询"></a>递归查询</h3><p>将域名解析的任务交给所联系的服务器<br><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230918213045.png" alt="image.png"></p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为"><a href="#如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为" class="headerlink" title="如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为?"></a>如果本地域名服务器无缓存，当采用递归方法解析另一个网络某主机域名的时候，用户主机、本地域名服务器发送的域名请求消息数分别为?</h3><blockquote>
+<p>一条，一条</p>
+</blockquote>
+<h2 id="DNS记录缓存和更新"><a href="#DNS记录缓存和更新" class="headerlink" title="DNS记录缓存和更新"></a>DNS记录缓存和更新</h2><h3 id="只要域名解析服务器获得了域名——IP映射，即缓存这一映射"><a href="#只要域名解析服务器获得了域名——IP映射，即缓存这一映射" class="headerlink" title="只要域名解析服务器获得了域名——IP映射，即缓存这一映射"></a>只要域名解析服务器获得了域名——IP映射，即缓存这一映射</h3><ul>
+<li>一段时间过后，缓存条目失效（删除）</li>
+<li>本地域名服务器一般会缓存顶级域名服务器的映射<ul>
+<li>因此根域名服务器不经常被访问</li>
+</ul>
+</li>
+</ul>
+<h3 id="记录的更新-通知机制"><a href="#记录的更新-通知机制" class="headerlink" title="记录的更新&#x2F;通知机制"></a>记录的更新&#x2F;通知机制</h3><p>RFC 2136</p>
+<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>我国没有根域名服务器，是否会影响我国的网络安全，会有什么影响？ </p>
+<p>根域名服务器是DNS系统中最高级的服务器，主要负责将域名转换为IP地址。如果我国没有根域名服务器，那么本地DNS服务器需要依赖其他国家或地区的根域名服务器进行域名解析。<br>这可能会导致以下影响：</p>
+<ol>
+<li>域名解析延迟：由于需要通过其他国家或地区的根域名服务器进行域名解析，可能会增加域名解析的延迟时间，影响用户的访问速度。</li>
+<li>DNS污染的风险：如果依赖其他国家或地区的根域名服务器，存在被篡改或操纵的风险，可能会导致DNS污染问题，进而影响用户的网络安全。</li>
+<li>国内域名管理困难：没有根域名服务器可能会使国内域名管理难度增加，因为国内域名需要通过其他根域名服务器进行授权和解析。<br>需要注意的是，虽然我国没有根域名服务器，但我国仍然有多个顶级域名服务器，可以解析国内的顶级域名。此外，我国也有多个根域名服务器的备用节点，以确保网络安全和稳定性。<br>来源：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/51263554">zhihu.com</a></li>
+</ol>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/6/">上一页</a></div><div class="pagination-next"><a href="/page/8/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/6/">6</a></li><li><a class="pagination-link is-current" href="/page/7/">7</a></li><li><a class="pagination-link" href="/page/8/">8</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">76</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="level-start"><span class="level-item">计算机网络</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.099Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.098Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-363d4a3068db49bf8d4a15db21678a30">CN-链路状态路由算法</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.097Z">2023-11-24</time></p><p class="title"><a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-11-24T02:14:50.096Z">2023-11-24</time></p><p class="title"><a target="_blank" rel="noopener" href="https://www.notion.so/CN-0b57c4a55e1047aab693b65e9c22fefe">CN-路由和转发</a></p><p class="categories"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">76</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cookie/"><span class="tag">Cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web%E5%BA%94%E7%94%A8/"><span class="tag">Web应用</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/"><span class="tag">传输层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BD%9C%E4%B8%9A/"><span class="tag">作业</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"><span class="tag">数据链路层</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%9D%BF/"><span class="tag">模板</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/"><span class="tag">知识卡片</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/"><span class="tag">网络层</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><span class="tag">计算机网络</span><span class="tag">76</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/"><span class="tag">计算机网络概述</span><span class="tag">8</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="SlaterXu" height="28"></a><p class="is-size-7"><span>&copy; 2023 Molaters Lee</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

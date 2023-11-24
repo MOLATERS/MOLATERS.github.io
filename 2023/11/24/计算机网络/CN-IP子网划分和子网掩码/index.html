@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CN-IP子网划分和子网掩码 | SlaterXu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CN-IP子网划分和子网掩码">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/index.html">
+<meta property="og:site_name" content="SlaterXu">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205436105.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205608325.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205750642.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205827679.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015210018797.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015210455295.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015211156.png">
+<meta property="article:published_time" content="2023-11-24T02:13:28.351Z">
+<meta property="article:modified_time" content="2023-10-15T13:13:20.517Z">
+<meta property="article:author" content="Molaters Lee">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205436105.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SlaterXu" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SlaterXu</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Micheal Slater Lee</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://molaters.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-计算机网络/CN-IP子网划分和子网掩码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/" class="article-date">
+  <time class="dt-published" datetime="2023-11-24T02:13:28.351Z" itemprop="datePublished">2023-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CN-IP子网划分和子网掩码
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+[[计算机网络]]
+
+<p>A类网络的网络数量很少，C类网络的网络数量太多，B类网络编址的网络也容易被浪费掉。</p>
+<h2 id="子网划分（Subnetting）？"><a href="#子网划分（Subnetting）？" class="headerlink" title="子网划分（Subnetting）？"></a>子网划分（Subnetting）？</h2><p>有类地址在描述的过程中会出现的问题</p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205436105.png" alt="image-20231015205436105" style="zoom: 50%;" />
+
+<p>在实际网络中A类网络和B类网络肯定不可能</p>
+<p>就需要对大的网络区分成更小的网络范围：<strong>子网划分</strong></p>
+<p>怎么划分？  – <strong>IP地址上做文章</strong></p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205608325.png" alt="image-20231015205608325" style="zoom: 67%;" />
+
+<p>使用主机里面的IP比特之间进行划分</p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205750642.png" alt="image-20231015205750642" style="zoom:67%;" />
+
+<p>其他的子网就不会受到通信的影响</p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015205827679.png" alt="image-20231015205827679" style="zoom:67%;" />
+
+<p>通过<strong>路由器</strong>来进行转发</p>
+<h3 id="Q：如何确定是否划分了子网？利用多少位来划分子网？"><a href="#Q：如何确定是否划分了子网？利用多少位来划分子网？" class="headerlink" title="Q：如何确定是否划分了子网？利用多少位来划分子网？"></a>Q：如何确定是否划分了子网？利用多少位来划分子网？</h3><p>区分的越多，地址空间就会小，所以子网的方式也很重要。</p>
+<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>形如IP地址：</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015210018797.png" alt="image-20231015210018797"></p>
+<p>32位</p>
+<p>点分十进制形式</p>
+<p>取值：</p>
+<p>NetID、SubID位全部取1</p>
+<p>HostID位全取0</p>
+<p>例如：</p>
+<p>A网的默认子网掩码为：255.0.0.0</p>
+<p>B网的默认子网掩码为：255.255.0.0</p>
+<p>C网的默认子网掩码为：255.255.255.0</p>
+<p>借用3bit划分子网的B网的子网掩码为255.255.224.0</p>
+<blockquote>
+<p>[!子网地址 + 子网掩码]</p>
+<p>准确确定子网大小</p>
+</blockquote>
+<p><strong>For example</strong></p>
+<p>子网：201.2.3.0，255.255.255.0</p>
+<p>划分为登场的4个子网</p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/image-20231015210455295.png" alt="image-20231015210455295" style="zoom:67%;" />
+
+<p>利用路由器来互联在一起</p>
+<p><strong>路由器怎么确定应该将IP分组进行转发</strong>?</p>
+<blockquote>
+<p>将IP分组的目的IP地址和子网掩码 按位与运算，提取紫菀地址子网地址</p>
+</blockquote>
+<p>例如：</p>
+<ul>
+<li>目的IP地址：172.32.1.112，子网掩码：255.255.254.0</li>
+</ul>
+<p>172.32.1.112 &#x3D; 10101100 001000000 00000001 01110000<br>255.255.255.254.0 &#x3D; 11111111 11111111 11111110 00000000</p>
+<p>子网地址：172.32.0.0（子网掩码：255.255.254.0）<br>地址范围：172.32.0.0 ~ 172.32.1.255<br>可分配地址范围：172.32.0.1 ~ 172.32.1.254<br>广播地址：172.32.1.255</p>
+<p><strong>一个C类网络划分子网举例</strong>：</p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20231015211156.png" alt="image.png" style="zoom:67%;" />
+
+<p>最左侧的列对应的是每一侧子网的子网地址，最右侧代表的是广播地址</p>
+<p>会造成一部分的浪费</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/" data-id="clpbznkyh0091kkisdqjkftxr" data-title="CN-IP子网划分和子网掩码" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IP%E5%88%86%E7%89%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          CN-IP分片
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-IPv6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">CN-IPv6</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GPU%E8%AE%A1%E7%AE%97/">GPU计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU%E8%AE%BE%E8%AE%A1/" rel="tag">CPU设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU%E8%AE%A1%E7%AE%97/" rel="tag">GPU计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" rel="tag">并行计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" rel="tag">指令系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" rel="tag">指令集并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" rel="tag">流水线技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" rel="tag">知识卡片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">计算机体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag">计算理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" rel="tag">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">CPU设计</a> <a href="/tags/Cookie/" style="font-size: 11.25px;">Cookie</a> <a href="/tags/GPU%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">GPU计算</a> <a href="/tags/HTTP/" style="font-size: 13.75px;">HTTP</a> <a href="/tags/Web%E5%BA%94%E7%94%A8/" style="font-size: 18.75px;">Web应用</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" style="font-size: 16.25px;">传输层</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">作业</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">实验</a> <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">并行计算</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">指令系统</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">指令集并行</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" style="font-size: 11.25px;">数据链路层</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.75px;">模板</a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">流水线技术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" style="font-size: 12.5px;">知识卡片</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" style="font-size: 16.25px;">网络层</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" style="font-size: 10px;">计算机体系结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" style="font-size: 17.5px;">计算机网络概述</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 10px;">计算理论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" style="font-size: 10px;">高分子物理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/">CN-链路状态路由算法</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/">CN-路由和转发</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Molaters Lee<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

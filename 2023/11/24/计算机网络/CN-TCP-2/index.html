@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CN-TCP-2 | SlaterXu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CN-TCP-2">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-TCP-2/index.html">
+<meta property="og:site_name" content="SlaterXu">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230924210206.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230926193703.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230926195559.png">
+<meta property="article:published_time" content="2023-11-24T02:13:28.372Z">
+<meta property="article:modified_time" content="2023-10-12T09:07:09.469Z">
+<meta property="article:author" content="Molaters Lee">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="传输层">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230924210206.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SlaterXu" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SlaterXu</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Micheal Slater Lee</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://molaters.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-计算机网络/CN-TCP-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-TCP-2/" class="article-date">
+  <time class="dt-published" datetime="2023-11-24T02:13:28.372Z" itemprop="datePublished">2023-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  <h1 itemprop="name">
+    <a class="p-name article-title" href="https://www.notion.so/CN-TCP-2-af3c9cb1d92d498e86fc0a0a8ee0268f" target="_blank" itemprop="url">CN-TCP-2</a>
+  </h1>
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+[[计算机网络]]
+
+<h2 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h2><p>接收方为TCP连接分配buffer</p>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230924210206.png"></p>
+<p>蓝色表示空出来的可以接受数据的</p>
+<p>上层应用可能处理buffer中数据的速度较慢就会导致buffer溢出，淹没接收方。</p>
+<p><strong>所以这就是buffer control</strong></p>
+<p><strong>所以怎么做流量控制？</strong></p>
+<p>Buffer中的可用空间(spare room)</p>
+<p>&#x3D; RcvWindow</p>
+<p>&#x3D; RcvBuffer - (LastByteRcvd - LastByteRead)</p>
+<p>Reciever通过在Segment头部字段将RcvWindow告诉Sender</p>
+<p>Sender限制自己已经发送的但是还没有收到ACK的数据不超过接收方的空闲RcvWindow尺寸</p>
+<p>Receiver告知Sender RcvWindow &#x3D; 0 , 会出现什么情况？</p>
+<blockquote>
+<p>[!TIP]<br>会增加一个额外的处理，即使是Window &#x3D; 0 ，仍然可以有很小一部分的数据可以进行传输</p>
+</blockquote>
+<h2 id="TCP的连接管理"><a href="#TCP的连接管理" class="headerlink" title="TCP的连接管理"></a>TCP的连接管理</h2><p>面向连接的连接协议</p>
+<p>TCP sender &amp; reciever 会建立连接</p>
+<p><em><strong>初始化TCP变量</strong></em></p>
+<p>Seq  #<br>Buffer 和流量控制信息</p>
+<p>Client : 连接的发起者</p>
+<blockquote>
+<p>创建一个套接字Socket，将Socket设置主机名和端口号</p>
+</blockquote>
+<p>Server : 等待客户连接请求</p>
+<blockquote>
+<p>接受客户机发起的请求并建立连接</p>
+</blockquote>
+<p>“<em><strong>三次握手机制</strong></em>”</p>
+<blockquote>
+<p>[!Step1]<br>Client host send TCP SYN (标志段) segment to server</p>
+<ul>
+<li>specifies initial seq #（选择自己的序列号并告诉服务器）</li>
+<li>no data （不携带任何数据）</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>[!Step2]<br>Server host recieves SYN , replies with SYN &amp; ACK segment<br>服务器接收到服务器的标志段，用标志段确认段来作为回复</p>
+<ul>
+<li>server allocates buffers (为连接建立缓存)</li>
+<li>specifies server initial seq #(选择自己的初始的序列号并告知客户端)</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>[!Step3]<br>client receives SYNACK, replies with ACK segment, which may contain data.接收到标志段确认段，客户机发送ACK报文段同意连接</p>
+</blockquote>
+<p><img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230926193703.png" alt="image.png"></p>
+<blockquote>
+<p>[!INFO]<br>如果在三次握手的第二步服务器分配资源，最后一次握手如果没有发过来，服务端会保留连接，一段时间没有收到ACK才会关闭连接</p>
+</blockquote>
+<p><em><strong>关闭连接</strong></em></p>
+<p>Closing a connection:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// client closes socket</span></span><br><span class="line">clientSocket.<span class="built_in">close</span>();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[!Step1]<br>client向server发送TCP发送TCP FIN控制segment</p>
+</blockquote>
+<blockquote>
+<p>[!Step2]<br>server收到FIN，回复ACK，关闭连接，发送FIN</p>
+</blockquote>
+<blockquote>
+<p>[!Step3]<br>client收到FIN，回复ACK。</p>
+<ul>
+<li>进入<strong>等待</strong> —— 如果收到FIN，就会重新发送ACK</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>[!Step4]<br>server收到ACK，连接关闭</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A[&quot;Closed&quot;]--&gt;|client application initiates a TCP connection| B[&quot;SYN_SENT&quot;]</span><br><span class="line">B--&gt;|recieve SYN &amp; ACK send ACK| C[&quot;ESTABLISHED&quot;]</span><br><span class="line">C--&gt;|client application initiates close connection \n Send FIN|D[&quot;FIN_WAIT_1&quot;]--&gt;|receive ACK send nothing|E[&quot;FIN_WAIT_2&quot;]--&gt;|recieve FIN send ACK| F[&quot;TIME_WAIT&quot;]--&gt;|30s|A</span><br></pre></td></tr></table></figure>
+
+
+<p><em><strong>同理可以给出服务端的生命周期图</strong></em></p>
+<img src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230926195559.png" alt="image.png" style="zoom:50%;" />
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-TCP-2/" data-id="clpbznkyv00azkkis2eos5zpd" data-title="CN-TCP-2" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-TCP-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          CN-TCP-3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-TCP-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">CN-TCP-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GPU%E8%AE%A1%E7%AE%97/">GPU计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU%E8%AE%BE%E8%AE%A1/" rel="tag">CPU设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU%E8%AE%A1%E7%AE%97/" rel="tag">GPU计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" rel="tag">并行计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" rel="tag">指令系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" rel="tag">指令集并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" rel="tag">流水线技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" rel="tag">知识卡片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">计算机体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag">计算理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" rel="tag">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">CPU设计</a> <a href="/tags/Cookie/" style="font-size: 11.25px;">Cookie</a> <a href="/tags/GPU%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">GPU计算</a> <a href="/tags/HTTP/" style="font-size: 13.75px;">HTTP</a> <a href="/tags/Web%E5%BA%94%E7%94%A8/" style="font-size: 18.75px;">Web应用</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" style="font-size: 16.25px;">传输层</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">作业</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">实验</a> <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">并行计算</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">指令系统</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">指令集并行</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" style="font-size: 11.25px;">数据链路层</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.75px;">模板</a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">流水线技术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" style="font-size: 12.5px;">知识卡片</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" style="font-size: 16.25px;">网络层</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" style="font-size: 10px;">计算机体系结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" style="font-size: 17.5px;">计算机网络概述</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 10px;">计算理论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" style="font-size: 10px;">高分子物理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/">CN-链路状态路由算法</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/">CN-路由和转发</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Molaters Lee<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

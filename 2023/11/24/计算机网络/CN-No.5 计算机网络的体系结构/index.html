@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CN-No.5 计算机网络的体系结构 | SlaterXu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CN-No.5 计算机网络的体系结构">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.5%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="SlaterXu">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\MarkdownNotes\%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\assets\Untitled-1692438417405-38.png">
+<meta property="article:published_time" content="2023-11-24T02:13:28.365Z">
+<meta property="article:modified_time" content="2023-10-12T09:05:12.353Z">
+<meta property="article:author" content="Molaters Lee">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="计算机网络概述">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\MarkdownNotes\%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\assets\Untitled-1692438417405-38.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SlaterXu" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SlaterXu</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Micheal Slater Lee</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://molaters.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-计算机网络/CN-No.5 计算机网络的体系结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.5%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="article-date">
+  <time class="dt-published" datetime="2023-11-24T02:13:28.365Z" itemprop="datePublished">2023-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CN-No.5 计算机网络的体系结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+# 计算机网络的体系结构
+
+<h2 id="计算机网络是一个非常复杂的系统"><a href="#计算机网络是一个非常复杂的系统" class="headerlink" title="计算机网络是一个非常复杂的系统"></a>计算机网络是一个非常复杂的系统</h2><ul>
+<li>主机</li>
+<li>路由器</li>
+<li>各种链路</li>
+<li>应用</li>
+<li>协议</li>
+<li>硬件、软件</li>
+</ul>
+<p>……</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>是否存在一种系统结构有效描述网络？<br>利用什么样的结构？</p>
+<p>……</p>
+<p>至少用于讨论网络？</p>
+<p>A：分层结构</p>
+<h2 id="复杂系统的分层结构"><a href="#复杂系统的分层结构" class="headerlink" title="复杂系统的分层结构"></a>复杂系统的分层结构</h2><p>类比：航空旅行</p>
+<p><img src="D:\MarkdownNotes\计算机网络\assets\Untitled-1692438417405-38.png" alt="Untitled"></p>
+<ul>
+<li>每层完成一种（类）特定服务&#x2F;功能</li>
+</ul>
+<h2 id="计算积网络的体系结构"><a href="#计算积网络的体系结构" class="headerlink" title="计算积网络的体系结构"></a>计算积网络的体系结构</h2><p>网络体系结构是从功能上描述计算机网络结构</p>
+<p>计算机网络体系结构简称网络体系结构（network architecture）是分层结构</p>
+<p>每层遵勖某个 &#x2F; 某些网络协议完成本层功能</p>
+<p><strong>计算机网络体系结构是计算机网络的各层及其协议的集合</strong></p>
+<p>体系结构是一个网络功能层次及其关系的<code>定义</code></p>
+<p>体系结构是<strong>抽象的</strong></p>
+<h2 id="为什么采用分层结构？"><a href="#为什么采用分层结构？" class="headerlink" title="为什么采用分层结构？"></a>为什么采用分层结构？</h2><h3 id="结构清晰-有利于识别复杂系统不见及其关系"><a href="#结构清晰-有利于识别复杂系统不见及其关系" class="headerlink" title="结构清晰 有利于识别复杂系统不见及其关系"></a><code>结构清晰</code> 有利于识别复杂系统不见及其关系</h3><ul>
+<li>分层的参考模型(reference model)</li>
+</ul>
+<h3 id="模块化的分成易于系统更新维护"><a href="#模块化的分成易于系统更新维护" class="headerlink" title="模块化的分成易于系统更新维护"></a>模块化的分成易于系统更新维护</h3><ul>
+<li>任何一层服务实现的改变对于其它系统其他层都是透明的。</li>
+<li>例如，登机过程的改变并不影响航空系统的其他部分。</li>
+</ul>
+<h3 id="有利于标准化"><a href="#有利于标准化" class="headerlink" title="有利于标准化"></a><strong>有利于标准化</strong></h3><p><code>分层是否有不利之处？</code> 会导致效率不足</p>
+<h2 id="分层网络的基本概念"><a href="#分层网络的基本概念" class="headerlink" title="分层网络的基本概念"></a>分层网络的基本概念</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 1-1692438417405-40.png)</p>
+<p><code>实体</code> <strong>(entity)</strong> 表示任何可以发送或者接收信息的硬件或者软件进程</p>
+<p><code>协议</code>是控制两个对等实体进行通信的规则的集合，协议是<code>水平的</code> 。</p>
+<p>任一层实体需要使用下层服务，遵循本层协议，实现本层功能，向上层提供<code>服务</code>，服务是垂直的。</p>
+<p>下层协议的实现对上层的服务用户是<strong>透明</strong>的。</p>
+<p>同系统的相邻层实体之间通过接口进行交互，通过服务访问点（SAP），交换原语，指定请求的特定服务。</p>
+<hr>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 2-1692438417406-44.png)</p>
+<h2 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h2><p>开放系统互连（OSI）参考模型 $\rightarrow$ 分层网络体系结构模型（1984）</p>
+<p>目的是支持 异构网络系统的互联互通。</p>
+<p>异构网络系统互联的国际标准</p>
+<p>理解网络通信的最佳<code>学习工具</code>（理论模型）</p>
+<p>✅理论成功 市场失败</p>
+<p>7层 （功能）， 每层完成特定的网络功能。</p>
+<h2 id="OSI参考模型的通信过程"><a href="#OSI参考模型的通信过程" class="headerlink" title="OSI参考模型的通信过程"></a>OSI参考模型的通信过程</h2><p>主机从应用层发出信息，通过七个层到达物理层，通过传输介质传输到路由器的物理层，通过遵循各层的协议，经过物理层 $\rightarrow$ 数据链路层 $\rightarrow$ 网络层 $\rightarrow$ 数据链路层 $\rightarrow$ 物理层的转换再进入传输介质，然后再通过七层进入下一个主机的应用层。</p>
+<p><strong>实线表示的是信息的<code>物理传输</code></strong></p>
+<ul>
+<li>通过接口实现</li>
+</ul>
+<p><strong>虚线表示的是<code>协议传输</code></strong></p>
+<ul>
+<li>和写信一样，无关传输过程，只看数据的交换</li>
+</ul>
+<p><strong>端-端层（end - end）</strong></p>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 3-1692438417406-42.png)</p>
+<h2 id="OSI参考模型数据封装与通信过程"><a href="#OSI参考模型数据封装与通信过程" class="headerlink" title="OSI参考模型数据封装与通信过程"></a>OSI参考模型数据封装与通信过程</h2><p>用户数据从主机A出发</p>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 4-1692438417406-46.png)</p>
+<h2 id="为什么要进行数据封装？"><a href="#为什么要进行数据封装？" class="headerlink" title="为什么要进行数据封装？"></a>为什么要进行数据封装？</h2><h3 id="增加控制信息"><a href="#增加控制信息" class="headerlink" title="增加控制信息"></a>增加控制信息</h3><ul>
+<li>构造协议单元（PDU）</li>
+</ul>
+<h3 id="控制信息主要包括"><a href="#控制信息主要包括" class="headerlink" title="控制信息主要包括"></a>控制信息主要包括</h3><ul>
+<li>地址（Address）：表示发送端、接收端</li>
+<li>差错检测编码（Error-detecting code）：用于差错检测或纠正</li>
+<li>协议控制（Protocol control）:实现协议功能的附加信息，如：<strong>优先级（priority） 、服务质量(QoS)、安全控制等</strong></li>
+</ul>
+<hr>
+<h2 id="物理层功能"><a href="#物理层功能" class="headerlink" title="物理层功能"></a>物理层功能</h2><p>就是实现每一个bit的传输，具体的来讲：</p>
+<ul>
+<li><strong>接口特性</strong><ul>
+<li><code>机械特性</code>  、<code>电气特性</code> 、<code>功能特性</code>、<code>规程特性</code></li>
+</ul>
+</li>
+<li><strong>比特编码问题</strong></li>
+<li><strong>数据率</strong></li>
+<li><strong>比特同步</strong><ul>
+<li>时钟同步,在发送设备和接受设备之间的信号同步</li>
+</ul>
+</li>
+<li><strong>传输模式</strong><ul>
+<li>单工<strong>（Simplex）</strong>也就是只能单向的通信</li>
+<li>半双工<strong>（half-duplex）****对讲机</strong></li>
+<li>全双工<em>（full-duplex）</em></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="数据链路层功能"><a href="#数据链路层功能" class="headerlink" title="数据链路层功能"></a>数据链路层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 5-1692438417406-48.png)</p>
+<p>作为数据链路层解决的主要是<strong>节点到节点</strong>的数据传输</p>
+<p><strong>组帧（Framing）构成帧的主要目的是能够成功的切分出数据帧</strong></p>
+<p><strong>物理寻址（Physical addressing）</strong></p>
+<ul>
+<li>在帧头中增加发送端和接收端的物理地址标识数据帧的发送端和接收端</li>
+</ul>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 6-1692438417406-50.png)</p>
+<p><strong>流量控制（Flow control）</strong></p>
+<ul>
+<li>避免淹没接收端</li>
+</ul>
+<p><strong>差错控制（Error control）</strong></p>
+<ul>
+<li>检测并重传损坏或丢失帧，并避免重复帧</li>
+</ul>
+<p><strong>访问(接入)控制（Access control）</strong></p>
+<ul>
+<li>在任一给定时刻决定那个设备具有链路（物理介质）控制使用权</li>
+</ul>
+<hr>
+<h2 id="网络层功能"><a href="#网络层功能" class="headerlink" title="网络层功能"></a>网络层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 7-1692438417406-52.png)</p>
+<ul>
+<li>负责从<strong>源主机到目的主机</strong>数据分组（packet）交付<ul>
+<li>可能穿越多个网络</li>
+</ul>
+</li>
+<li><strong>逻辑寻址（Logical addressing）</strong><ul>
+<li>全局唯一逻辑地址，确保数据分组被送往目的主机，比如IP地址。</li>
+</ul>
+</li>
+<li><strong>路由（Routing）</strong><ul>
+<li>路径选择</li>
+<li>互联网络并由路由分组☞目的主机</li>
+</ul>
+</li>
+<li><strong>分组转发</strong></li>
+</ul>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 8-1692438417406-54.png)</p>
+<hr>
+<h2 id="传输层的功能"><a href="#传输层的功能" class="headerlink" title="传输层的功能"></a>传输层的功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 9-1692438417406-56.png)</p>
+<p>负责源-目的（端-端）（进程间）完整报文传输</p>
+<ul>
+<li><strong>分段和重组</strong></li>
+<li><strong>SAP寻址</strong><ul>
+<li>确保将完整的报文提交给正确进程比如<code>端口号</code></li>
+</ul>
+</li>
+</ul>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 10-1692438417406-58.png)</p>
+<ul>
+<li><strong>连接控制</strong></li>
+<li><strong>流量控制</strong></li>
+<li><strong>差错控制</strong></li>
+</ul>
+<hr>
+<h2 id="会话层功能"><a href="#会话层功能" class="headerlink" title="会话层功能"></a>会话层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 11-1692438417406-60.png)</p>
+<ul>
+<li><strong>对话控制（dialog controling）</strong><ul>
+<li>建立 维护</li>
+</ul>
+</li>
+<li><strong>同步（synchronization）</strong></li>
+<li>最<code>薄</code> 的一层</li>
+</ul>
+<hr>
+<h2 id="表示层功能"><a href="#表示层功能" class="headerlink" title="表示层功能"></a>表示层功能</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 12-1692438417406-62.png)</p>
+<p>处理两个系统之间交换信息的语法和语义<em>（syntax and semantics）</em>问题</p>
+<ul>
+<li><strong>数据表示转化</strong><ul>
+<li>转换为主机独立的编码</li>
+</ul>
+</li>
+<li><strong>加密&#x2F;解密</strong></li>
+<li><strong>压缩&#x2F;解压缩</strong></li>
+</ul>
+<hr>
+<h2 id="应用层问题"><a href="#应用层问题" class="headerlink" title="应用层问题"></a>应用层问题</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 13-1692438417406-64.png)</p>
+<p>支持用户通过用户代理（如浏览器）或者网络接口使用网络（服务）</p>
+<p>典型应用层服务：</p>
+<ul>
+<li>文件传输（FTP）</li>
+<li>电子邮件（SMTP）</li>
+<li>Web（HTTP）</li>
+<li>……</li>
+</ul>
+<p><strong>TCP&#x2F;IP参考模型</strong></p>
+<p>![*IP over Everything*](D:\MarkdownNotes\计算机网络\assets\Untitled 14-1692438417406-66.png)</p>
+<p><em>IP over Everything</em></p>
+<hr>
+<h2 id="五层参考模型"><a href="#五层参考模型" class="headerlink" title="五层参考模型"></a>五层参考模型</h2><p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 15-1692438417406-68.png)</p>
+<p>综合OSI和TCP&#x2F;IP的优点</p>
+<p>大部分都是这样的参考模型</p>
+<p>在功能上基本类似之前的7层</p>
+<p><strong>应用层：支持网络应用</strong></p>
+<p><strong>传输层：进程-进程的数据传输</strong></p>
+<p><strong>网络层：相邻网络元素（主机、交换机、路由器）的数据传输</strong></p>
+<p><strong>物理层：比特传输</strong></p>
+<p><strong>报文</strong>（message）的传播过程如下：</p>
+<p>![Untitled](D:\MarkdownNotes\计算机网络\assets\Untitled 16-1692438417406-70.png)</p>
+<p>💬可以看到交换机和路由器的本质区别是一个只有两层而一个是三层。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.5%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" data-id="clpbznkyn00a3kkisd2oo9l17" data-title="CN-No.5 计算机网络的体系结构" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-OSPF%E5%8D%8F%E8%AE%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          CN-OSPF协议
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-No.4%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">CN-No.4 计算机网络性能</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GPU%E8%AE%A1%E7%AE%97/">GPU计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU%E8%AE%BE%E8%AE%A1/" rel="tag">CPU设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU%E8%AE%A1%E7%AE%97/" rel="tag">GPU计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" rel="tag">并行计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" rel="tag">指令系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" rel="tag">指令集并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" rel="tag">流水线技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" rel="tag">知识卡片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">计算机体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag">计算理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" rel="tag">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">CPU设计</a> <a href="/tags/Cookie/" style="font-size: 11.25px;">Cookie</a> <a href="/tags/GPU%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">GPU计算</a> <a href="/tags/HTTP/" style="font-size: 13.75px;">HTTP</a> <a href="/tags/Web%E5%BA%94%E7%94%A8/" style="font-size: 18.75px;">Web应用</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" style="font-size: 16.25px;">传输层</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">作业</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">实验</a> <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">并行计算</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">指令系统</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">指令集并行</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" style="font-size: 11.25px;">数据链路层</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.75px;">模板</a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">流水线技术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" style="font-size: 12.5px;">知识卡片</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" style="font-size: 16.25px;">网络层</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" style="font-size: 10px;">计算机体系结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" style="font-size: 17.5px;">计算机网络概述</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 10px;">计算理论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" style="font-size: 10px;">高分子物理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/">CN-链路状态路由算法</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/">CN-路由和转发</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Molaters Lee<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

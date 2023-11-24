@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CN-Week9-Class | SlaterXu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="[[CN-NotesView]] 以太网中采用二进制指数后推算法处理冲突问题。 链路层能够提供的可能服务有哪些？其中可靠传输服务，在传输层也同样提供，那么链路层的可靠传输服务是不是必要？传输层的可靠传输理论以及方法是否适用于链路层？  链路层能够提供的可能服务包括以下几个方面：  提供透明可靠的数据传输服务：链路层向网络层提供了透明可靠的数据传输服务，确保数据能够从发送方传输到接收方。  差错检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CN-Week9-Class">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week9-Class/index.html">
+<meta property="og:site_name" content="SlaterXu">
+<meta property="og:description" content="[[CN-NotesView]] 以太网中采用二进制指数后推算法处理冲突问题。 链路层能够提供的可能服务有哪些？其中可靠传输服务，在传输层也同样提供，那么链路层的可靠传输服务是不是必要？传输层的可靠传输理论以及方法是否适用于链路层？  链路层能够提供的可能服务包括以下几个方面：  提供透明可靠的数据传输服务：链路层向网络层提供了透明可靠的数据传输服务，确保数据能够从发送方传输到接收方。  差错检测">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-24T02:13:28.383Z">
+<meta property="article:modified_time" content="2023-10-30T02:39:34.159Z">
+<meta property="article:author" content="Molaters Lee">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="SlaterXu" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SlaterXu</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Micheal Slater Lee</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://molaters.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-计算机网络/CN-Week9-Class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week9-Class/" class="article-date">
+  <time class="dt-published" datetime="2023-11-24T02:13:28.383Z" itemprop="datePublished">2023-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CN-Week9-Class
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[[CN-NotesView]]</p>
+<p>以太网中采用二进制指数后推算法处理冲突问题。</p>
+<p>链路层能够提供的可能服务有哪些？其中可靠传输服务，在传输层也同样提供，那么链路层的可靠传输服务是不是必要？传输层的可靠传输理论以及方法是否适用于链路层？ </p>
+<p>链路层能够提供的可能服务包括以下几个方面：</p>
+<ol>
+<li><p>提供透明可靠的数据传输服务：链路层向网络层提供了透明可靠的数据传输服务，确保数据能够从发送方传输到接收方。</p>
+</li>
+<li><p>差错检测和纠正：链路层通过使用差错检测和纠正方法，对传输过程中可能出现的错误进行检测和纠正，从而保证数据传输的可靠性。</p>
+</li>
+<li><p>帧同步和流量控制：链路层在数据传输过程中能够进行帧同步和流量控制，确保数据的顺序和速率统一。</p>
+</li>
+</ol>
+<p>传输层也可以提供可靠传输服务，但链路层的可靠传输服务并不是必要的。传输层的可靠传输服务更加高级和复杂，可以处理端到端的可靠传输问题。</p>
+<p>传输层的可靠传输理论和方法并不一定适用于链路层。链路层的可靠传输服务更加专注于在链路层中处理数据传输的可靠性，与传输层的可靠传输服务有所不同。链路层使用的纠错方法和协议可能与传输层不同，具体取决于传输介质和网络需求。</p>
+<p>为什么同时使用MAC地址和IP地址？为什么不止使用MAC地址或者只使用IP地址？</p>
+<p>如何实现差错控制(差错纠正策略)？可以采用哪些协议？ </p>
+<p>差错控制是为了处理在数据传输过程中可能发生的差错，包括差错检测和差错纠正。可以采用以下策略实现差错控制：</p>
+<ol>
+<li><p>差错检测：通过添加冗余信息来判断数据是否遭到损坏。</p>
+<ul>
+<li><p>校验和：将数据划分为多个块，并计算每个块的和，将和值附加到数据中。</p>
+</li>
+<li><p>循环冗余检验 (CRC)：使用多项式除法来计算校验码，并将其附加到数据中。</p>
+</li>
+</ul>
+</li>
+<li><p>差错纠正：不仅能检测出差错，还能进行纠正。</p>
+<ul>
+<li><p>汉明码：通过在数据中添加冗余位来纠正错误，并检测出多位错误。</p>
+</li>
+<li><p>奇偶校验：通过添加一个奇偶位来检测和纠正单个比特错误。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>差错控制可以应用于不同的协议和通信网络中，包括：</p>
+<ul>
+<li><p>TCP (传输控制协议)：在数据通信过程中通过使用序列号、确认应答和重传机制来实现差错控制。</p>
+</li>
+<li><p>UDP (用户数据报协议)：提供差错检测功能，但不支持差错纠正。</p>
+</li>
+<li><p>ARQ (自动重传请求)：一种协议，通过请求重传错误的数据包来实现差错控制。</p>
+</li>
+</ul>
+<p>来源：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF/16382947">TCP、UDP与ARQ错误控制</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/abbcdc/article/details/108737703#pn%EF%BC%81M">差错控制的方法与技术</a></p>
+</li>
+</ul>
+<p>随机访问MAC怎么检测冲突？ </p>
+<p>要检测随机访问MAC的冲突，可以采取以下方法：</p>
+<ol>
+<li><p>使用MAC地址检测工具：可以使用专门的MAC地址检测工具来检测MAC冲突。这些工具可以扫描局域网上的设备，并检查是否有重复的MAC地址。一旦发现重复的MAC地址，就可以确定发生了冲突。</p>
+</li>
+<li><p>查看网络设备日志：路由器或交换机上的日志记录可能会显示有关MAC地址冲突的信息。通过查看日志，可以了解到是否发生了冲突以及冲突的具体信息。</p>
+</li>
+<li><p>使用网络分析工具：可以使用网络分析工具来监测网络流量和活动。这些工具可以检测到连续的MAC冲突，通过分析网络流量，可以确定冲突的设备和触发冲突的原因。</p>
+</li>
+</ol>
+<p>以上是一些常见的检测随机访问MAC冲突的方法，可以根据具体的需求和网络环境选择合适的方法进行检测。</p>
+<p>总结两个轮转访问MAC协议，轮询和令牌传递的共同点和不同点，并设计一个轮转访问的MAC协议？ </p>
+<p>轮询和令牌传递是两种常见的轮转访问MAC协议。它们的共同点是都采用了轮流访问的方式来协调多个设备之间的数据传输。然而，它们在实现细节和工作原理上有一些区别。</p>
+<p>共同点：</p>
+<ol>
+<li><p>轮询和令牌传递都是使用轮流访问的方式，按照特定的顺序依次控制设备的访问，使每个设备都能有机会传输数据。</p>
+</li>
+<li><p>两种协议都能避免设备之间的冲突和碰撞，提高网络的效率。</p>
+</li>
+</ol>
+<p>不同点：</p>
+<ol>
+<li><p>轮询协议是由一个中心设备（通常是主机或主控器）负责控制访问顺序，按照预定的顺序对每个设备进行轮询。而令牌传递协议则是通过传递令牌的方式来控制设备的访问顺序，只有拥有令牌的设备才能传输数据。</p>
+</li>
+<li><p>在轮询协议中，当一个设备完成数据传输后，控制权会立即转移到下一个设备。而在令牌传递协议中，只有拥有令牌的设备才能传输数据，其他设备需要等待令牌传递到自己才能进行传输。</p>
+</li>
+<li><p>轮询协议可以更灵活地控制设备的访问顺序，可以根据设备的优先级或其他因素来调整轮询顺序。而令牌传递协议的访问顺序是固定的，由令牌的传递顺序决定。</p>
+</li>
+</ol>
+<p>设计一个轮转访问的MAC协议：</p>
+<p>以下是一个简单的轮转访问的MAC协议设计示例：</p>
+<ol>
+<li><p>定义一个主控设备，负责控制轮询顺序。</p>
+</li>
+<li><p>所有参与传输的设备按照预定顺序排列，每个设备分配一个唯一的标识符。</p>
+</li>
+<li><p>主控设备按照设备的顺序轮询，依次给每个设备分配传输时间窗口。</p>
+</li>
+<li><p>在每个时间窗口内，设备可以传输数据或请求传输数据。</p>
+</li>
+<li><p>设备根据自己的需求在分配的时间窗口内进行数据传输。</p>
+</li>
+<li><p>主控设备根据轮询顺序不断循环，确保每个设备都有机会传输数据。</p>
+</li>
+<li><p>如果有新设备接入或有设备离开，主控设备需要更新轮询顺序。</p>
+</li>
+</ol>
+<p>这个设计示例基于轮询的方式，通过主控设备控</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-Week9-Class/" data-id="clpbznkyy00bkkkisga1d3c90" data-title="CN-Week9-Class" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BB%A5%E5%A4%AA%E7%BD%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          CN-以太网
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E4%BA%A4%E6%8D%A2%E6%9C%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">CN-交换机</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/GPU%E8%AE%A1%E7%AE%97/">GPU计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">并行计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">计算理论</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU%E8%AE%BE%E8%AE%A1/" rel="tag">CPU设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPU%E8%AE%A1%E7%AE%97/" rel="tag">GPU计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web%E5%BA%94%E7%94%A8/" rel="tag">Web应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" rel="tag">传输层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" rel="tag">并行计算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" rel="tag">指令系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" rel="tag">指令集并行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="tag">数据链路层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" rel="tag">流水线技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" rel="tag">知识卡片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" rel="tag">网络层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">计算机体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" rel="tag">计算机网络概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" rel="tag">计算理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" rel="tag">高分子物理</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">CPU设计</a> <a href="/tags/Cookie/" style="font-size: 11.25px;">Cookie</a> <a href="/tags/GPU%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">GPU计算</a> <a href="/tags/HTTP/" style="font-size: 13.75px;">HTTP</a> <a href="/tags/Web%E5%BA%94%E7%94%A8/" style="font-size: 18.75px;">Web应用</a> <a href="/tags/%E4%BC%A0%E8%BE%93%E5%B1%82/" style="font-size: 16.25px;">传输层</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 15px;">作业</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 10px;">实验</a> <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 10px;">并行计算</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">指令系统</a> <a href="/tags/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C/" style="font-size: 10px;">指令集并行</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" style="font-size: 11.25px;">数据链路层</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 13.75px;">模板</a> <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">流水线技术</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%8D%A1%E7%89%87/" style="font-size: 12.5px;">知识卡片</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B1%82/" style="font-size: 16.25px;">网络层</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" style="font-size: 10px;">计算机体系结构</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">计算机网络</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" style="font-size: 17.5px;">计算机网络概述</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" style="font-size: 10px;">计算理论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E9%AB%98%E5%88%86%E5%AD%90%E7%89%A9%E7%90%86/" style="font-size: 10px;">高分子物理</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-随机访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95/">CN-链路状态路由算法</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%BD%AE%E8%BD%AC%E8%AE%BF%E9%97%AEMAC%E5%8D%8F%E8%AE%AE/">CN-轮转访问MAC协议</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">CN-路由器的工作原理</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/CN-%E8%B7%AF%E7%94%B1%E5%92%8C%E8%BD%AC%E5%8F%91/">CN-路由和转发</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Molaters Lee<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

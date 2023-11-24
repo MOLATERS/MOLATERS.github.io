@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/2023/11/24/计算机体系结构/ca-模块体系/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CA-模块体系">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E6%A8%A1%E5%9D%97%E4%BD%93%E7%B3%BB/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-24T03:30:49.023Z">
+<meta property="article:modified_time" content="2023-10-12T09:02:26.707Z">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="计算机体系结构">
+<meta property="article:tag" content="CPU设计">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            CA-模块体系 -
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">CA-模块体系</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">The Redefine Team</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-24 11:30:49</span>
+        <span class="mobile">2023-11-24 11:30:49</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-12 17:02:26</span>
+            <span class="mobile">2023-10-12 17:02:26</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/">CPU设计</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<ol>
+<li><p><code>IMEM</code>模块用于指令存储器的读取，将PC地址传递给存储器，读取当前指令到<code>IRin</code>。</p>
+</li>
+<li><p><code>PC</code>模块用于管理程序计数器，包括在时钟上升沿时选择下一条指令的地址，以及处理复位信号。</p>
+</li>
+<li><p><code>ADD</code>模块用于计算下一条指令的地址，将当前PC地址传递给<code>PC</code>模块。</p>
+</li>
+<li><p><code>NPC</code>模块用于存储下一条指令的地址。</p>
+</li>
+<li><p><code>IR</code>模块用于指令寄存器的加载，将当前指令传递给<code>IRout</code>。</p>
+</li>
+</ol>
+<p><strong>ID (Instruction Decode) 模块:</strong></p>
+<ol>
+<li><p><code>Regfile</code>模块用于管理寄存器堆的读和写操作，根据指令选择寄存器读取和写入。</p>
+</li>
+<li><p><code>CU</code>模块用于控制单元，解析指令并生成相应的控制信号，例如ALU操作码、写寄存器使能等。</p>
+</li>
+<li><p><code>A</code>和<code>B</code>模块用于选择和加载寄存器A和B的数据。</p>
+</li>
+<li><p><code>Extender</code>模块用于符号扩展立即数。</p>
+</li>
+<li><p><code>Imm</code>模块用于加载立即数。</p>
+</li>
+</ol>
+<p><strong>EX (Execution) 模块:</strong></p>
+<ol>
+<li><p><code>A_MUX</code>和<code>B_MUX</code>模块用于选择ALU的输入数据，可以选择寄存器数据、NPC、基址或立即数。</p>
+</li>
+<li><p><code>ALU</code>模块执行ALU操作，并生成结果和零标志。</p>
+</li>
+</ol>
+<p><strong>MEM (Memory) 模块:</strong></p>
+<ol>
+<li><p><code>ALU_out</code>模块用于加载ALU的结果。</p>
+</li>
+<li><p><code>PC_MUX</code>模块用于选择下一个PC地址，可以选择NPC、ALU结果或分支指令的目标地址。</p>
+</li>
+<li><p><code>WB_Reg_MUX</code>模块用于选择写回数据，可以选择ALU结果、内存读取结果或寄存器A的数据。</p>
+</li>
+<li><p><code>WB_Reg_Addr_MUX</code>模块用于选择写回寄存器的地址。</p>
+</li>
+<li><p><code>DMEM</code>模块用于数据存储器的读写操作。</p>
+</li>
+<li><p><code>LDM</code>模块用于加载内存数据。</p>
+</li>
+</ol>
+<p><strong>其他：</strong></p>
+<ul>
+<li><code>debug_wb_pc</code>、<code>debug_wb_rf_wen</code>、<code>debug_wb_rf_addr</code>、<code>debug_wb_rf_wdata</code>用于调试目的，输出当前执行指令的信息。</li>
+</ul>
+<p>这个CPU的基本架构是一个五级流水线，包括IF、ID、EX、MEM和WB（写回）阶段。每个阶段由不同的模块负责执行特定的任务，并在时钟上升沿进行数据传递。各个模块之间通过信号进行通信，根据指令的不同，选择不同的数据路径和操作。</p>
+<p>以下是在前面的叙述中添加了原始Verilog代码的版本：</p>
+<p><strong>IF (Instruction Fetch) 模块:</strong></p>
+<ol>
+<li><code>IMEM</code>模块用于指令存储器的读取，将PC地址传递给存储器，读取当前指令到<code>IRin</code>。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IMEM U_IMEM (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                <span class="comment">// 时钟信号</span></span><br><span class="line">    <span class="variable">.imem_addr</span>(PCout[<span class="number">7</span>:<span class="number">0</span>]),   <span class="comment">// 选定存储地址</span></span><br><span class="line">    <span class="variable">.imem_rdata</span>(IRin)         <span class="comment">// 读出的指令</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li><code>PC</code>模块用于管理程序计数器，包括在时钟上升沿时选择下一条指令的地址，以及处理复位信号。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PC U_PC (</span><br><span class="line">    <span class="variable">.Reset</span>(!resetn),</span><br><span class="line">    <span class="variable">.Clk</span>(clk),</span><br><span class="line">    <span class="variable">.PCwen</span>(<span class="number">1&#x27;b1</span>),</span><br><span class="line">    <span class="variable">.NPC</span>(PC_chosen),          <span class="comment">// 是由选择器给出的</span></span><br><span class="line">    <span class="variable">.PC</span>(PCout)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li><code>ADD</code>模块用于计算下一条指令的地址，将当前PC地址传递给<code>PC</code>模块。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ADD U_ADD (</span><br><span class="line">    <span class="variable">.PC</span>(PCout),</span><br><span class="line">    <span class="variable">.NextPC</span>(NewPC)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li><code>NPC</code>模块用于存储下一条指令的地址。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NPC U_NPC (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                 <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),             <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.NPCin</span>(NewPC),</span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),               <span class="comment">// 载入使能</span></span><br><span class="line">    <span class="variable">.NPCout</span>(NPC)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="5">
+<li><code>IR</code>模块用于指令寄存器的加载，将当前指令传递给<code>IRout</code>。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">IR U_IR (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                 <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),             <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.IRin</span>(IRin),</span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),               <span class="comment">// 载入使能</span></span><br><span class="line">    <span class="variable">.IRout</span>(IRout)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>ID (Instruction Decode) 模块:</strong></p>
+<ol>
+<li><code>Regfile</code>模块用于管理寄存器堆的读和写操作，根据指令选择寄存器读取和写入。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Regfile U_regfile (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                <span class="comment">// 时钟信号</span></span><br><span class="line">    <span class="variable">.raddr1</span>(IRout[<span class="number">25</span>:<span class="number">21</span>]),    <span class="comment">// 寄存器堆读地址1</span></span><br><span class="line">    <span class="variable">.rdata1</span>(reg_a_out),       <span class="comment">// 返回数据1</span></span><br><span class="line">    <span class="variable">.raddr2</span>(IRout[<span class="number">20</span>:<span class="number">16</span>]),    <span class="comment">// 寄存器堆读地址2</span></span><br><span class="line">    <span class="variable">.rdata2</span>(reg_b_out),       <span class="comment">// 返回数据2</span></span><br><span class="line">    <span class="variable">.we</span>(reg_w &amp;&amp; IRout),      <span class="comment">// 写使能</span></span><br><span class="line">    <span class="variable">.waddr</span>(reg_addr_choose[<span class="number">4</span>:<span class="number">0</span>]), <span class="comment">// 写地址</span></span><br><span class="line">    <span class="variable">.wdata</span>(reg_mux_out)       <span class="comment">// 写数据</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li><code>CU</code>模块用于控制单元，解析指令并生成相应的控制信号，例如ALU操作码、写寄存器使能等。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CU U_CU (</span><br><span class="line">    <span class="variable">.Instruct</span>(IRout),          <span class="comment">// 输入指令</span></span><br><span class="line">    <span class="variable">.Zero</span>(zero),               <span class="comment">// 零标志位</span></span><br><span class="line">    <span class="variable">.ram_w</span>(ram_w),             <span class="comment">// 存储器写使能</span></span><br><span class="line">    <span class="variable">.reg_w</span>(reg_w),             <span class="comment">// 寄存器写使能</span></span><br><span class="line">    <span class="variable">.Card</span>(Card),               <span class="comment">// ALU 功能码</span></span><br><span class="line">    <span class="variable">.PC_s</span>(PC_s),               <span class="comment">// PC 数据来源选择</span></span><br><span class="line">    <span class="variable">.regfile_s</span>(regfile_s),     <span class="comment">// 寄存器文件数据来源选择</span></span><br><span class="line">    <span class="variable">.regfile_addr_s</span>(regfile_addr_s), <span class="comment">// 寄存器文件地址来源选择</span></span><br><span class="line">    <span class="variable">.ALU_As</span>(A_s),              <span class="comment">// ALU 输入 A 来源选择</span></span><br><span class="line">    <span class="variable">.ALU_Bs</span>(B_s)               <span class="comment">// ALU 输入 B 来源选择</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li><code>A</code>和<code>B</code>模块用于选择和加载寄存器A和B的数据。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">A U_A (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                  <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),              <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.din</span>(reg_a_out),            <span class="comment">// 数据输入</span></span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),                <span class="comment">// 载入控制输入</span></span><br><span class="line">    <span class="variable">.dout</span>(A_out)                <span class="comment">// 数据输出</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">B U_B (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                  <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),              <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.din</span>(reg_b_out),            <span class="comment">// 数据输入</span></span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),                <span class="comment">// 载入控制输入</span></span><br><span class="line">    <span class="variable">.dout</span>(B_out)                <span class="comment">// 数据输出</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li><code>Extender</code>模块用于符号扩展立即数。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Extender U_Extender (</span><br><span class="line">    <span class="variable">.Immin</span>(IRout[<span class="number">15</span>:<span class="number">0</span>]),</span><br><span class="line">    <span class="variable">.Immout</span>(Imm)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="5">
+<li><code>Imm</code>模块用于加载立即数。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Imm U_Imm (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                  <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),              <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.din</span>(Imm),                  <span class="comment">// 数据输入</span></span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),                <span class="comment">// 载入控制输入</span></span><br><span class="line">    <span class="variable">.dout</span>(Imm_out)              <span class="comment">// 数据输出</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<p>这些Verilog模块构成了IF和ID阶段的核心逻辑，负责指令的获取、寄存器堆的读写、控制信号的生成等任务。</p>
+<p><strong>EX (Execution) 模块:</strong></p>
+<ol>
+<li><code>A_MUX</code>和<code>B_MUX</code>模块用于选择ALU的输入数据，可以选择寄存器数据、NPC、基址或立即数。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">A_MUX A_MUX (</span><br><span class="line">    <span class="variable">.A_data1</span>(A_out),                  <span class="comment">// A寄存器的输出</span></span><br><span class="line">    <span class="variable">.A_data2</span>(NPC),                    <span class="comment">// 根据现在的PC产生的NPC值</span></span><br><span class="line">    <span class="variable">.A_data3</span>(A_out),                  <span class="comment">// 代表base的值</span></span><br><span class="line">    <span class="variable">.A_data4</span>(&#123;<span class="number">27&#x27;b0</span>,IRout[<span class="number">10</span>:<span class="number">6</span>]&#125;),    <span class="comment">// 代表左移的偏置量sa</span></span><br><span class="line">    <span class="variable">.A_select</span>(A_s),</span><br><span class="line">    <span class="variable">.A_data_chosen</span>(ALU_A_in)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">B_MUX B_MUX (</span><br><span class="line">    <span class="variable">.B_data1</span>(B_out),              <span class="comment">// B寄存器的输出</span></span><br><span class="line">    <span class="variable">.B_data2</span>(Imm_out),            <span class="comment">// 立即数扩展符号位之后的输出</span></span><br><span class="line">    <span class="variable">.B_data3</span>(<span class="number">32&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.B_data4</span>(<span class="number">32&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.B_select</span>(B_s),</span><br><span class="line">    <span class="variable">.B_data_chosen</span>(ALU_B_in)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">ALU U_ALU (</span><br><span class="line">    <span class="variable">.A</span>(ALU_A_in),</span><br><span class="line">    <span class="variable">.B</span>(ALU_B_in),</span><br><span class="line">    <span class="variable">.Cin</span>(<span class="number">1&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.Card</span>(Card),</span><br><span class="line">    <span class="variable">.F</span>(alu_out),</span><br><span class="line">    <span class="variable">.Cout</span>(cout),</span><br><span class="line">    <span class="variable">.Zero</span>(zero)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<p>这些模块构成了EX阶段的核心逻辑，负责执行ALU操作、选择ALU输入数据等任务。</p>
+<p><strong>MEM (Memory) 模块:</strong></p>
+<ol>
+<li><code>ALU_out</code>模块用于加载ALU的结果。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ALU_out U_ALU_output (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                  <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),              <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.din</span>(alu_out),              <span class="comment">// 数据输入</span></span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),                <span class="comment">// 载入控制输入</span></span><br><span class="line">    <span class="variable">.dout</span>(result)               <span class="comment">// 数据输出</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li><code>PC_MUX</code>模块用于选择下一个PC地址，可以选择NPC、ALU结果或分支指令的目标地址。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PC_MUX PC_MUX (</span><br><span class="line">    <span class="variable">.data1</span>(NPC),</span><br><span class="line">    <span class="variable">.data2</span>(result),</span><br><span class="line">    <span class="variable">.data3</span>(&#123;NPC[<span class="number">31</span>:<span class="number">28</span>],IRout[<span class="number">25</span>:<span class="number">0</span>],<span class="number">2&#x27;b0</span>&#125;),</span><br><span class="line">    <span class="variable">.data4</span>(<span class="number">32&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.select</span>(PC_s),</span><br><span class="line">    <span class="variable">.data_chosen</span>(PC_chosen)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li><code>WB_Reg_MUX</code>模块用于选择写回数据，可以选择ALU结果、内存读取结果或寄存器A的数据。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WB_DATA_MUX WB_Reg_MUX (</span><br><span class="line">    <span class="variable">.data1</span>(result),</span><br><span class="line">    <span class="variable">.data2</span>(ldm_out),</span><br><span class="line">    <span class="variable">.data3</span>(A_out),</span><br><span class="line">    <span class="variable">.data4</span>(<span class="number">32&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.select</span>(regfile_s),</span><br><span class="line">    <span class="variable">.data_chosen</span>(reg_mux_out)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li><code>WB_Reg_Addr_MUX</code>模块用于选择写回寄存器的地址。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WB_ADDR_MUX WB_Reg_Addr_MUX (</span><br><span class="line">    <span class="variable">.data1</span>(&#123;<span class="number">27&#x27;b0</span>,IRout[<span class="number">15</span>:<span class="number">11</span>]&#125;),</span><br><span class="line">    <span class="variable">.data2</span>(&#123;<span class="number">27&#x27;b0</span>,IRout[<span class="number">20</span>:<span class="number">16</span>]&#125;),</span><br><span class="line">    <span class="variable">.data3</span>(<span class="number">32&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.data4</span>(<span class="number">32&#x27;b0</span>),</span><br><span class="line">    <span class="variable">.select</span>(regfile_addr_s),</span><br><span class="line">    <span class="variable">.data_chosen</span>(reg_addr_choose)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="5">
+<li><code>DMEM</code>模块用于数据存储器的读写操作。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DMEM U_DMEM (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                  <span class="comment">// 时钟信号</span></span><br><span class="line">    <span class="variable">.dmem_addr</span>(result[<span class="number">7</span>:<span class="number">0</span>]),    <span class="comment">// 选定存储地址</span></span><br><span class="line">    <span class="variable">.dmem_wdata</span>(reg_b_out),     <span class="comment">// 输入的数据</span></span><br><span class="line">    <span class="variable">.dmem_wen</span>(ram_w),           <span class="comment">// 写使能</span></span><br><span class="line">    <span class="variable">.dmem_rdata</span>(ldm_in)         <span class="comment">// 读出的数据</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<ol start="6">
+<li><code>LDM</code>模块用于加载内存数据。</li>
+</ol>
+<p>verilog</p>
+<div class="highlight-container" data-rel="Verilog"><figure class="iseeu highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LDM LDM (</span><br><span class="line">    <span class="variable">.clk</span>(clk),                  <span class="comment">// 时钟输入</span></span><br><span class="line">    <span class="variable">.rst</span>(!resetn),              <span class="comment">// 复位输入</span></span><br><span class="line">    <span class="variable">.din</span>(ldm_in),               <span class="comment">// 数据输入</span></span><br><span class="line">    <span class="variable">.load</span>(<span class="number">1&#x27;b1</span>),                <span class="comment">// 载入控制输入</span></span><br><span class="line">    <span class="variable">.dout</span>(ldm_out)              <span class="comment">// 数据输出</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></div>
+
+<p>这些模块构成了MEM阶段的核心逻辑，负责执行内存操作、选择写回数据和地址等任务。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> CA-模块体系</li>
+        <li><strong>作者:</strong> The Redefine Team</li>
+        <li><strong>创建于
+                :</strong> 2023-11-24 11:30:49</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2023-10-12 17:02:26
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2023/11/24/计算机体系结构/CA-模块体系/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">#计算机体系结构</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/CPU%E8%AE%BE%E8%AE%A1/">#CPU设计</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E6%94%B9%E8%BF%9BCache%E7%9A%84%E6%80%A7%E8%83%BD/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CA-改进Cache的性能</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%A4%A7%E5%B0%8F/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CA-操作类型和大小</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail']
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">CA-模块体系</div>
+        
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

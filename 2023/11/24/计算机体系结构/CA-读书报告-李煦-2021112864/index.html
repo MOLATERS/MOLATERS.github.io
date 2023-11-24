@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/2023/11/24/计算机体系结构/ca-读书报告-李煦-2021112864/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CA-读书报告-李煦-2021112864">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A-%E6%9D%8E%E7%85%A6-2021112864/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230921182614.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230923145827.png">
+<meta property="article:published_time" content="2023-11-24T03:30:49.039Z">
+<meta property="article:modified_time" content="2023-10-12T09:04:02.788Z">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="计算机体系结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230921182614.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            CA-读书报告-李煦-2021112864 -
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">CA-读书报告-李煦-2021112864</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">The Redefine Team</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-24 11:30:49</span>
+        <span class="mobile">2023-11-24 11:30:49</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-12 17:04:02</span>
+            <span class="mobile">2023-10-12 17:04:02</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+# 需求、瓶颈和好运:微处理器进化的动因
+## Part 1 基础架构
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230921182614.png"
+                      alt="image.png" style="zoom: 67%;" 
+                >
+
+<h3 id="A-计算机体系结构是一门权衡的科学"><a href="#A-计算机体系结构是一门权衡的科学" class="headerlink" title="A. 计算机体系结构是一门权衡的科学"></a>A. 计算机体系结构是一门权衡的科学</h3><p>计算机体系结构更多地是一门“艺术”而不是“科学”。</p>
+<p>计算机如果真的是一门科学，那就是一门权衡的科学。计算机架构师不断发展知识基础，这样就能够来更好的进行权衡；这个过程尤其表现在微处理器的演变过程中。</p>
+<h3 id="B-转化的级别"><a href="#B-转化的级别" class="headerlink" title="B. 转化的级别"></a>B. 转化的级别</h3><p>在问题的解决过程中，需要通过一系列的转换过程来逐步将问题转化到电子（或设备）级别。转换的级别可以分为算法、机械语言、指令集架构（ISA）、微架构和电子数字电路。每个微处理器都由实现硬件结构（微架构）的电路组成，为软件提供一个接口（ISA）。不同的ISA会影响编译器开发的接口质量以及微架构执行的工作方式。在层次结构的每个步骤中，从算法的选择到语言、ISA、微架构和电路的选择都需要在性能和成本之间进行权衡。这些转换的选择都是基于性能和经济之间的权衡。</p>
+<p>以下是按照转化的方法来构建的流程图：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">A(算法) --&gt; B(机械语言)</span><br><span class="line"></span><br><span class="line">B --&gt; C(指令集架构)</span><br><span class="line"></span><br><span class="line">C --&gt; D(微架构)</span><br><span class="line"></span><br><span class="line">D --&gt; E(电子数字电路)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<p>从算法的选择到语言、ISA架构、电路的选择，每个层级都存在选择和权衡。通常情况下，但并非总是如此，选择是在更高的性能和更低的成本之间进行。</p>
+<h3 id="C-设计的关键点"><a href="#C-设计的关键点" class="headerlink" title="C. 设计的关键点"></a>C. 设计的关键点</h3><p>设计处理器涉及到做出权衡，所以要考虑微处理器里面最重要的特征。强烈影响设计的有性能、成本、散热和功耗；同时另一个设计点是高可用性，也就是不会产生错误；追求高性能和低功耗。</p>
+<h3 id="D-应用空间"><a href="#D-应用空间" class="headerlink" title="D. 应用空间"></a>D. 应用空间</h3><p>应用程序的空间越来越大，是因为人们对计算机的用途也越来越广泛，也就导致了对微处理器的需求和每个需求所做的权衡就会不断扩展。</p>
+<p>计算机和微处理器的使用方面可以在<strong>科学应用</strong>，<strong>基于交易的应用</strong>、<strong>网络应用</strong>、<strong>确保交付应用</strong>、<strong>嵌入式应用</strong>、<strong>媒体应用</strong>、<strong>随机软件包</strong>等地方发挥作用。</p>
+<p>每一个这样的应用都有他们的不同的地方、每一个应用区域都针对微处理器需要不同程度的统筹协调的进行特殊处理，以完成对应的工作。</p>
+<h3 id="E-处理的基础"><a href="#E-处理的基础" class="headerlink" title="E. 处理的基础"></a>E. 处理的基础</h3><p>简单的把一个微处理器的行为定义为执行命令。为了做到这一点，处理器需要做到下面三件事：</p>
+<ul>
+<li>为能够让每个指令正确运行的处理器核心提供命令</li>
+<li>为每一条指令提供所需要的数据</li>
+<li>运行每一个被要求的指令</li>
+</ul>
+<h3 id="F-指令的提供"><a href="#F-指令的提供" class="headerlink" title="F. 指令的提供"></a>F. 指令的提供</h3><p>在过去的取指方案里，一条指令被提取，解码并传送给处理器核心进行处理。现在随着技术的发展，从一次性提取一条指令变成了一次性可以提取四条指令，甚至现在有可能已经能够一次性提取六条或者八条。有三件事情会阻碍我们将指令完全传输给内核并执行：</p>
+<ul>
+<li>指令Cache的不命中</li>
+<li>取指暂停（fetch misses）</li>
+<li>条件预测错误。</li>
+</ul>
+<h3 id="G-数据的提供"><a href="#G-数据的提供" class="headerlink" title="G. 数据的提供"></a>G. 数据的提供</h3><p>为了提供有效的数据，需要满足三个条件：</p>
+<ul>
+<li><p>具备提供无线的所需要的数据的能力</p>
+</li>
+<li><p>能够以极快的速度提供数据的能力</p>
+</li>
+<li><p>能够用合理的成本提供数据的能力</p>
+</li>
+</ul>
+<p>现在使用的是存储的层次结构，一小部分数据能够在一到三个时间周期获取，更多的程序能够在十到十六个时钟周期获取，这些都是在芯片内的存储的情况；更多的数据是在芯片以外的方式进行存储，获取数据可能需要到数百个时间周期。</p>
+<p>实际上，在作者的那个年代，外部芯片的延迟还很糟糕，作者提出，在几年内在外部内存访问数据可能需要数千个处理器周期。</p>
+<h3 id="H-指令处理"><a href="#H-指令处理" class="headerlink" title="H. 指令处理"></a>H. 指令处理</h3><p>要执行这些指令所需的操作，需要足够数量的功能单元来处理数据，一旦数据可用，即时提供结果到需要它作为源操作数的功能单元。然而，足够的互连并不足够。随着芯片周期时间的减小，将一个部分芯片中的功能单元产生的结果转发到另一个部分芯片中需要这些结果作为源操作数的功能单元的延迟也会变得更糟。</p>
+<h2 id="Part-2-处理器发展的推动因素"><a href="#Part-2-处理器发展的推动因素" class="headerlink" title="Part 2 处理器发展的推动因素"></a>Part 2 处理器发展的推动因素</h2><p>许多因素帮助了微处理器的发展：</p>
+<ol>
+<li>购买大众的意愿抢购供应商生产的产品——如果没有市场，任何产品都无法产生。</li>
+<li>工程师在遇到问题时想出答案的创造力——没有解决方案，就不会有进化。</li>
+<li>❗进化的动因则是：新的需求、瓶颈和好运。</li>
+</ol>
+<h3 id="A-新的需求"><a href="#A-新的需求" class="headerlink" title="A. 新的需求"></a>A. 新的需求</h3><p>早期处理器限制在每个周期获取一条指令，对指令进行解码并交给核心中的单元进行处理。 </p>
+<p>对高性能的需求。有一个演变方向是变成了宽问题处理器，能够每个周期提取、解码和发送多个指令到执行核心。有另外一个演变方向，能够在执行核心中包含多个功能单元，一次可以做多个指令的操作。</p>
+<p>又出现了新的功耗需求。要求是提供先前相同的计算机性能，但是能够降低先前的功耗。</p>
+<p>预测未来的需求是人机交互的需求。</p>
+<h3 id="B-瓶颈"><a href="#B-瓶颈" class="headerlink" title="B. 瓶颈"></a>B. 瓶颈</h3><p>我们已经在上面确定了指令处理的三个组成部分(指令提供、数据提供和执行指令的操作)，以及它们各自需要做什么。到目前为止，微处理器的大部分改进都是由于试图消除阻碍这三个组件工作的瓶颈。</p>
+<p><strong>解决取指周期太长的问题</strong></p>
+<p>解决方法：指令缓存。</p>
+<p><strong>由条件分支导致取指令的过程当中不能取到的指令</strong></p>
+<p>解决方法：条件分支预测器</p>
+<h3 id="C-好运气"><a href="#C-好运气" class="headerlink" title="C. 好运气"></a>C. 好运气</h3><p>能够使用之前没有优化的剩余空间来做更多的优化，这就是作者所陈述的好运气（Good Furtune）的内容。作者给出的例子是引入了片上浮点加速器和片商多媒体指令扩展功能。</p>
+<h2 id="Part-3-演化：从1971到如今（2001）"><a href="#Part-3-演化：从1971到如今（2001）" class="headerlink" title="Part 3 演化：从1971到如今（2001）"></a>Part 3 演化：从1971到如今（2001）</h2><p>微处理器已经从Intel 4004的2300个晶体管发展到今天的样子。这种进化是由上面所说的几个因素造成的。最后演变出来的结果就是，奔腾IV与1971年的英特尔4004几乎没有相似之处。下面是这种进化的一些例子。</p>
+<h3 id="A-流水线"><a href="#A-流水线" class="headerlink" title="A. 流水线"></a>A. 流水线</h3><p>早期的微处理器在开始处理下一条指令之前先处理一条指令从取到执行结束。流水线，至少从20世纪60年代开始就出现在大型计算机中，是解决性能瓶颈的一个明显的解决方案。商业上可行的微处理器，如英特尔8086，在20世纪70年代末通过在当前指令执行时预取下一条指令，向流水线迈出了第一步。</p>
+<h3 id="B-芯片内缓存"><a href="#B-芯片内缓存" class="headerlink" title="B. 芯片内缓存"></a>B. 芯片内缓存</h3><p>芯片内缓存的发展过程</p>
+<ul>
+<li>1984年摩托罗拉推出了一个具有商业可行性的芯片缓存处理器。</li>
+<li>1986年，摩托罗拉公司推出了首款包含独立片上指令和数据缓存的微处理器。</li>
+<li>1994年开始出现拥有两级缓存的高性能微处理器。</li>
+</ul>
+<h3 id="C-分支预测"><a href="#C-分支预测" class="headerlink" title="C. 分支预测"></a>C. 分支预测</h3><p>如果需要等待上一条指令产生条件跳转所需要的结果，那么条件跳转的线路的优势就会丢失。硬件(运行时)<strong>分支预测器</strong>直到20世纪90年代初才出现在微处理器芯片上。一些早期引入运行时分支预测器的微处理器是摩托罗拉的MC88110、Digital的Alpha 21064和英特尔的Pentium。</p>
+<h3 id="D-片上的浮点单元"><a href="#D-片上的浮点单元" class="headerlink" title="D. 片上的浮点单元"></a>D. 片上的浮点单元</h3><p>片上浮点单元早期的微处理器有一个<u>单独的芯片来处理浮点运算</u>。随着晶体管越来越小，芯片越来越大，晶体管数量达到了浮点单元可以与主处理单元放在同一芯片上的程度，利用了“新的”备用容量，节省了不必要的片外通信。摩托罗拉MC88100和英特尔486是20世纪80年代末在主处理器芯片上采用浮点单元的两种早期芯片</p>
+<h3 id="E-额外特殊功能单元"><a href="#E-额外特殊功能单元" class="headerlink" title="E. 额外特殊功能单元"></a>E. 额外特殊功能单元</h3><p>早期的微处理器只有一个或者很少的功能单元。但是人们发现可以<strong>利用多个单元来并发执行提高效率</strong>。后面先后引入了单独地址的<code>ALU</code>、更复杂的LOAD&#x2F;STORE存储单元、辅助图形处理单元等。</p>
+<h3 id="F-乱序执行"><a href="#F-乱序执行" class="headerlink" title="F. 乱序执行"></a>F. 乱序执行</h3><p>最初，指令只能顺序执行，如果有数据正在执行，且下一条指令需要上一条指令产生的结果，就会产生瓶颈。<br>从20世纪60年代以来，IBM就饶过了这个瓶颈，使用了<strong>乱序处理</strong>。后来出现了乱序处理和精确异常处理的结合。为了适应乱序执行，就使用了大量的寄存器混叠和保留站。<strong>遵循的思想就是，只要指令的资源可用，指令就被允许执行。</strong> 但是它们在退出的时候还是严格按照顺序。要做大这一点就要一个在发生异常恢复状态的结构，这在现在大多数微处理器上表现的就是Recorder Buffer。</p>
+<h3 id="G-集群处理器"><a href="#G-集群处理器" class="headerlink" title="G. 集群处理器"></a>G. 集群处理器</h3><p>由于片上的频率增加，导致芯片内一个功能单元产生的数值不能传递到对应的接受单元，所以有了将执行核心划分为多个<strong>集群</strong>的概念。一个集群的功能单元产生的结果将由同一个集群中的另一个单元来使用。</p>
+<h3 id="H-芯片内的多处理器"><a href="#H-芯片内的多处理器" class="headerlink" title="H. 芯片内的多处理器"></a>H. 芯片内的多处理器</h3><p>问题出现：当指令缓存访问导致缓存缺失的时候，指令供应就会受到影响，在等待缓存确实被满足的过程中会浪费大量的容量。所以出现了<strong>备用容量</strong>的概念，在20世纪90年代出现之后，它被扩展到允许在交替的周期中从单个指令流里面单独获取。</p>
+<h3 id="I-高频率内核"><a href="#I-高频率内核" class="headerlink" title="I. 高频率内核"></a>I. 高频率内核</h3><p>在计算密集型任务中，等待早期指令生成结果的源操作数的流依赖关系可能是一个重要的瓶颈。一个解决方案——以比微处理器其他部分快得多的频率运行执行核。奔腾IV芯片于2000年推出，其工作频率为1.7 GHz，但ALU的工作频率为3.4 GHz。</p>
+<h2 id="Part-4-十亿晶体管芯片的未来"><a href="#Part-4-十亿晶体管芯片的未来" class="headerlink" title="Part 4 十亿晶体管芯片的未来"></a>Part 4 十亿晶体管芯片的未来</h2><p>讨论了在未来的十年里（指的是2001到2011），如何利用10亿个晶体管的技术能力来涉及计算机架构。作者介绍了几种不同的设计方案，包括CMP，SMT、单处理器、简单核心和片上系统，并且表达了自己对最高性能处理器的偏好。所以作者接下来进行更加细致的讲解：</p>
+<h3 id="A-新型微处理器"><a href="#A-新型微处理器" class="headerlink" title="A. 新型微处理器"></a>A. 新型微处理器</h3><p>也就是将原来在软件层面实现的算法和程序放在硬件上来实现，真正的成为一个能够解决问题的处理器，就是新型处理器的进化方向。可以采用的形式是：使用可重构的逻辑、在ISA中设置特殊的专用指令，或者是在芯片上提供的集成功能单元。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/20230923145827.png"
+                      alt="image.png" style="zoom:50%;" 
+                >
+
+<h3 id="B-新型数据通路"><a href="#B-新型数据通路" class="headerlink" title="B. 新型数据通路"></a>B. 新型数据通路</h3><p>新型数据通路的挑战就在于根据新的导线长度限制重新设计数据路径。</p>
+<h3 id="C-软错误的纠错机制"><a href="#C-软错误的纠错机制" class="headerlink" title="C. 软错误的纠错机制"></a>C. 软错误的纠错机制</h3><p>另外一个需要考虑的因素就是那些容易受到时钟频率影响的材质问题，会不经意的让处理器出现错误。所以未来的处理器需要能够纠正这样的错误功能。</p>
+<h3 id="D-异步和同步单元的共存问题"><a href="#D-异步和同步单元的共存问题" class="headerlink" title="D. 异步和同步单元的共存问题"></a>D. 异步和同步单元的共存问题</h3><p>由于部分模块同步和异步的性质，当时钟周期在六千兆赫的时候情况就会更糟。作者的期望是能看到在一定的固定时间内进行异步运行的结构，同时和全局的时钟进行同步。不同的结构将要不同的时间，所以就更需要异步操作来解决独特的倾斜问题。</p>
+<h3 id="E-不同功能的不同周期时间"><a href="#E-不同功能的不同周期时间" class="headerlink" title="E. 不同功能的不同周期时间"></a>E. 不同功能的不同周期时间</h3><p>因为不同的模块功能所需要时间（时钟周期数）不同，所以可以例如通过让不需要快速运行的部件设计为慢速运行来达到优化时钟分配的作用，为了解决不同功能的不同周期时间，作者提出希望未来的处理器能够只能的使用时钟，在需要的提放提高速度，在不需要的地方降低速度。这样就能动态的分配资源，节约资源。</p>
+<h3 id="F-新材料"><a href="#F-新材料" class="headerlink" title="F. 新材料"></a>F. 新材料</h3><p>作者不了解未来的材料怎么出现，但是根据摩尔定律，每隔五年就会有关键材料的提升，作者希望未来的材料能够胜任够优秀处理器的功率要求和散热问题。</p>
+<h3 id="G-扩展使用微程序"><a href="#G-扩展使用微程序" class="headerlink" title="G. 扩展使用微程序"></a>G. 扩展使用微程序</h3><p>作者基于离片带宽和片上带宽的成本和丰富性，提出未来的处理器需要更有效的利用片上的带宽。使用扩展的微程序是实现设一个目标的方式。这些微代码能够进行动态的重新编译，计算一些符合指令，调整缓存的替换策略或者用其他的方式来执行计算从而使得主要指令流速度更快。</p>
+<h3 id="H-可重构逻辑"><a href="#H-可重构逻辑" class="headerlink" title="H. 可重构逻辑"></a>H. 可重构逻辑</h3><p>未来的微处理器可能会采用较高粒度的可重构逻辑结构。这种结构可以根据不同应用的需求动态调整，使得微处理器能够更有效地满足特定应用的要求。</p>
+<h3 id="I-展望综合"><a href="#I-展望综合" class="headerlink" title="I. 展望综合"></a>I. 展望综合</h3><p>作者根据自己对未来处理器的设想提出了如下的清单内容：</p>
+<ol>
+<li>类似于块结构的ISA或者重播机制</li>
+<li>利用核心的剩余能力来调整硬件结构的片上微程序</li>
+<li>动态编译正在执行程序</li>
+<li>三级缓存</li>
+<li>用于数值预测的硬件</li>
+<li>监视和影响芯片能源使用的片上结构</li>
+</ol>
+<h2 id="Part-5-总结"><a href="#Part-5-总结" class="headerlink" title="Part 5 总结"></a>Part 5 总结</h2><p>自1971年被发明以来，微处理器经历了一段激动人心的旅程。很少有技术能像它那样取得如此巨大的进步。不幸的是，有些人认为这个黄金时代即将结束。但这种唱反调的人以前也有过。他们说MIPS R2000是1986年所有人都需要的微处理器，十年后，他们说英特尔奔腾Pro是所有人都需要的微处理器。该行业继续做得更好，该技术的用户继续使用“更好”。这并不是说事情不会改变，不再需要新的创造力。在下游，我们可能需要一个彻底的范式转变，比如量子计算来拯救我们，但我们现在几乎没有受到限制。当然，我们需要开发更好的CAD工具。当前的CAD工具在验证当今的微处理器方面存在困难，更不用说本文中的建议了。当然，我们需要更广泛地思考微处理器的概念。但最重要的是，摩尔定律仍然存在，而且仍然提供了大量的机会。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> CA-读书报告-李煦-2021112864</li>
+        <li><strong>作者:</strong> The Redefine Team</li>
+        <li><strong>创建于
+                :</strong> 2023-11-24 11:30:49</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2023-10-12 17:04:02
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2023/11/24/计算机体系结构/CA-读书报告-李煦-2021112864/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">#计算机体系结构</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E9%87%8F%E5%8C%96%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CA-量化设计的基本原则</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BD%9C%E4%B8%9A/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CA-计算机体系结构第一章作业</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail']
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">CA-读书报告-李煦-2021112864</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%98%AF%E4%B8%80%E9%97%A8%E6%9D%83%E8%A1%A1%E7%9A%84%E7%A7%91%E5%AD%A6"><span class="nav-text">A. 计算机体系结构是一门权衡的科学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-%E8%BD%AC%E5%8C%96%E7%9A%84%E7%BA%A7%E5%88%AB"><span class="nav-text">B. 转化的级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9"><span class="nav-text">C. 设计的关键点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-%E5%BA%94%E7%94%A8%E7%A9%BA%E9%97%B4"><span class="nav-text">D. 应用空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-%E5%A4%84%E7%90%86%E7%9A%84%E5%9F%BA%E7%A1%80"><span class="nav-text">E. 处理的基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F-%E6%8C%87%E4%BB%A4%E7%9A%84%E6%8F%90%E4%BE%9B"><span class="nav-text">F. 指令的提供</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G-%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8F%90%E4%BE%9B"><span class="nav-text">G. 数据的提供</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H-%E6%8C%87%E4%BB%A4%E5%A4%84%E7%90%86"><span class="nav-text">H. 指令处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-2-%E5%A4%84%E7%90%86%E5%99%A8%E5%8F%91%E5%B1%95%E7%9A%84%E6%8E%A8%E5%8A%A8%E5%9B%A0%E7%B4%A0"><span class="nav-text">Part 2 处理器发展的推动因素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-%E6%96%B0%E7%9A%84%E9%9C%80%E6%B1%82"><span class="nav-text">A. 新的需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-%E7%93%B6%E9%A2%88"><span class="nav-text">B. 瓶颈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E5%A5%BD%E8%BF%90%E6%B0%94"><span class="nav-text">C. 好运气</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-3-%E6%BC%94%E5%8C%96%EF%BC%9A%E4%BB%8E1971%E5%88%B0%E5%A6%82%E4%BB%8A%EF%BC%882001%EF%BC%89"><span class="nav-text">Part 3 演化：从1971到如今（2001）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">A. 流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-%E8%8A%AF%E7%89%87%E5%86%85%E7%BC%93%E5%AD%98"><span class="nav-text">B. 芯片内缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B"><span class="nav-text">C. 分支预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-%E7%89%87%E4%B8%8A%E7%9A%84%E6%B5%AE%E7%82%B9%E5%8D%95%E5%85%83"><span class="nav-text">D. 片上的浮点单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-%E9%A2%9D%E5%A4%96%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD%E5%8D%95%E5%85%83"><span class="nav-text">E. 额外特殊功能单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F-%E4%B9%B1%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="nav-text">F. 乱序执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G-%E9%9B%86%E7%BE%A4%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-text">G. 集群处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H-%E8%8A%AF%E7%89%87%E5%86%85%E7%9A%84%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-text">H. 芯片内的多处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-%E9%AB%98%E9%A2%91%E7%8E%87%E5%86%85%E6%A0%B8"><span class="nav-text">I. 高频率内核</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-4-%E5%8D%81%E4%BA%BF%E6%99%B6%E4%BD%93%E7%AE%A1%E8%8A%AF%E7%89%87%E7%9A%84%E6%9C%AA%E6%9D%A5"><span class="nav-text">Part 4 十亿晶体管芯片的未来</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-%E6%96%B0%E5%9E%8B%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-text">A. 新型微处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-%E6%96%B0%E5%9E%8B%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="nav-text">B. 新型数据通路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E8%BD%AF%E9%94%99%E8%AF%AF%E7%9A%84%E7%BA%A0%E9%94%99%E6%9C%BA%E5%88%B6"><span class="nav-text">C. 软错误的纠错机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-%E5%BC%82%E6%AD%A5%E5%92%8C%E5%90%8C%E6%AD%A5%E5%8D%95%E5%85%83%E7%9A%84%E5%85%B1%E5%AD%98%E9%97%AE%E9%A2%98"><span class="nav-text">D. 异步和同步单元的共存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-%E4%B8%8D%E5%90%8C%E5%8A%9F%E8%83%BD%E7%9A%84%E4%B8%8D%E5%90%8C%E5%91%A8%E6%9C%9F%E6%97%B6%E9%97%B4"><span class="nav-text">E. 不同功能的不同周期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F-%E6%96%B0%E6%9D%90%E6%96%99"><span class="nav-text">F. 新材料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G-%E6%89%A9%E5%B1%95%E4%BD%BF%E7%94%A8%E5%BE%AE%E7%A8%8B%E5%BA%8F"><span class="nav-text">G. 扩展使用微程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H-%E5%8F%AF%E9%87%8D%E6%9E%84%E9%80%BB%E8%BE%91"><span class="nav-text">H. 可重构逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-%E5%B1%95%E6%9C%9B%E7%BB%BC%E5%90%88"><span class="nav-text">I. 展望综合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-5-%E6%80%BB%E7%BB%93"><span class="nav-text">Part 5 总结</span></a>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Lee">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://molaters.github.io/2023/11/24/计算机体系结构/ca-第七讲 流水线技术/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CA-第七讲 流水线技术">
+<meta property="og:url" content="https://molaters.github.io/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E7%AC%AC%E4%B8%83%E8%AE%B2%20%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="Molaters">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918101255.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918101705.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918102435.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918103607.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918103804.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918103815.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918104742.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918111702.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918112327.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918112749.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918113024.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918113156.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918114008.png">
+<meta property="og:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918113739.png">
+<meta property="article:published_time" content="2023-11-24T03:30:49.025Z">
+<meta property="article:modified_time" content="2023-10-12T09:03:02.202Z">
+<meta property="article:author" content="Michael Slater">
+<meta property="article:tag" content="计算机体系结构">
+<meta property="article:tag" content="流水线技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918101255.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            CA-第七讲 流水线技术 -
+        
+        Theme Redefine
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"molaters.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.6","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="Molaters" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">CA-第七讲 流水线技术</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">The Redefine Team</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-24 11:30:49</span>
+        <span class="mobile">2023-11-24 11:30:49</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-12 17:03:02</span>
+            <span class="mobile">2023-10-12 17:03:02</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">计算机体系结构</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">流水线技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="流水线概述"><a href="#流水线概述" class="headerlink" title="流水线概述"></a>流水线概述</h1><h2 id="流水线的基本概念"><a href="#流水线的基本概念" class="headerlink" title="流水线的基本概念"></a>流水线的基本概念</h2><h3 id="产品生产流水线"><a href="#产品生产流水线" class="headerlink" title="产品生产流水线"></a>产品生产流水线</h3><p>一个问题</p>
+<p>假设某个产品需要四道工序；1工人，1机器，8小时可以生产120件</p>
+<p><strong>要将该产品8小时提高到480件</strong>，怎么实现目标</p>
+<h4 id="两种解决方法"><a href="#两种解决方法" class="headerlink" title="两种解决方法"></a>两种解决方法</h4><p><strong>方案一</strong>：增加3名工人、三套设备</p>
+<p><strong>方案二</strong>：产品生产采用流水线的方式，分为4道工序；增加3名工人，每人一道工序</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918101255.png"
+                      alt="Pasted image 20230918101255"
+                ></p>
+<h4 id="两种方案的工作过程对比"><a href="#两种方案的工作过程对比" class="headerlink" title="两种方案的工作过程对比"></a>两种方案的工作过程对比</h4><p>两种方案中每一件生产时间不变</p>
+<p><strong>但是在稳定情况下</strong>：</p>
+<p>方案一：需要三套设备</p>
+<p>方案二：不需要增加任何设备</p>
+<p>使得每件产品的产出时间从表面上来看是从原来的4分钟缩减到1分钟</p>
+<h3 id="计算机中的流水线"><a href="#计算机中的流水线" class="headerlink" title="计算机中的流水线"></a>计算机中的流水线</h3><h4 id="指令流水线"><a href="#指令流水线" class="headerlink" title="指令流水线"></a>指令流水线</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918101705.png"
+                      alt="Pasted image 20230918101705"
+                ></p>
+<h4 id="功能部件流水线"><a href="#功能部件流水线" class="headerlink" title="功能部件流水线"></a>功能部件流水线</h4><h3 id="流水技术的定义"><a href="#流水技术的定义" class="headerlink" title="流水技术的定义"></a>流水技术的定义</h3><p>将一重复的时序过程分解为若干子过程，每个子过程都可有效地在其专用功能段上与其它子过程同时执行这种技术称为流水技术。</p>
+<h3 id="时空图"><a href="#时空图" class="headerlink" title="时空图"></a>时空图</h3><p>从时间和空间两个方面来描述流水线的工作流程，横坐标表示时间，纵坐标表示各个流水段。</p>
+<p><strong>流水线需要改造的话需要考虑的原则</strong>：</p>
+<p><strong>1. Repetition of identical operations</strong><br>Repetition of identical operations refers to the practice of carrying out the same set of tasks multiple times. This can be done intentionally to achieve a specific goal or unintentionally due to errors or inefficiencies in a process. Repetition of identical operations can be seen in various domains, including manufacturing, software development, data entry, and administrative tasks.</p>
+<p><strong>2. Repetition of independent operations</strong><br>Repetition of independent operations refers to the process of repeatedly carrying out the same operations on different elements or data sets. </p>
+<p>For example, if you have a list of numbers and you want to multiply each number by 2, you can use repetition of independent operations to apply the same multiplication operation to each number in the list. This can be achieved through looping or iterating over the data set and performing the operation on each element.</p>
+<p>By utilizing repetition of independent operations, you can save time and effort by avoiding the need to manually perform the operation on each element individually. Instead, you can automate the process and apply the operation to all the elements in a more efficient manner.</p>
+<h4 id="流水线技术原理"><a href="#流水线技术原理" class="headerlink" title="流水线技术原理"></a>流水线技术原理</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918102435.png"
+                      alt="Pasted image 20230918102435"
+                ></p>
+<p>左边的三角表示的是<strong>载入时间</strong></p>
+<p>右边的三角叫做<strong>排空时间</strong></p>
+<h3 id="流水线的特点"><a href="#流水线的特点" class="headerlink" title="流水线的特点"></a>流水线的特点</h3><ul>
+<li><p>流水过程由多个相关的子过程组成，这些子过程称为流水线的“级” 和 “段” 。 </p>
+</li>
+<li><p>每个子过程由专用的功能段实现</p>
+</li>
+<li><p>各个功能段的时间应该基本相等，通常为一个时钟周期</p>
+</li>
+<li><p>流水线需要一定的 <strong>通过时间</strong>才能稳定</p>
+</li>
+<li><p>流水技术适合于<strong>大量重复的时序过程</strong></p>
+</li>
+</ul>
+<h2 id="流水线分类"><a href="#流水线分类" class="headerlink" title="流水线分类"></a>流水线分类</h2><h3 id="单功能流水线和多功能流水线"><a href="#单功能流水线和多功能流水线" class="headerlink" title="单功能流水线和多功能流水线"></a>单功能流水线和多功能流水线</h3><ul>
+<li>按照流水线所完成的功能分类</li>
+<li><strong>单功能流水线</strong></li>
+</ul>
+<p>A single-function pipeline refers to a type of manufacturing or production system where each stage of the process is dedicated to performing a specific task. This means that the different stages of the pipeline are set up to carry out only one particular function or operation. Single-function pipelines are commonly used in industries such as assembly lines, where each stage focuses on a specific task to achieve efficiency and specialization.<br>Source: <a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Assembly_line" >Wikipedia - Assembly line <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li><strong>多功能流水线</strong><br>多功能流水线是一种在制造过程中用于完成多种任务的系统。它可以自动化地将产品从一个工作站传递到另一个工作站，实现高效的生产和制造。</li>
+</ul>
+<p>加工、装配或检测操作。这样，同一条流水线可以生产多种不同的产品，实现灵活的生产线调整。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918103607.png"
+                      alt="Pasted image 20230918103607"
+                ></p>
+<h3 id="静态流水线和动态流水线"><a href="#静态流水线和动态流水线" class="headerlink" title="静态流水线和动态流水线"></a><em>静态流水线和动态流水线</em></h3><p><strong>静态流水线</strong>和<strong>动态流水线</strong>是计算机体系结构中常见的两种流水线设计方式。静态流水线是指在工作期间固定不变的流水线，而动态流水线则允许流水线结构在运行过程中进行改变。</p>
+<p><code>静态流水线</code>的特点是流水线的各个阶段的<strong>功能和顺序是固定不变的</strong>。这种设计适用于执行时间相对稳定且操作相对简单的任务。静态流水线的优点是结构简单，并且可以通过合理安排各个阶段的操作来达到最小化时钟周期的效果。但是，静态流水线的缺点是对于执行时间不稳定的任务不太适用，并且无法处理<br>控制流转移和异常。</p>
+<p><code>动态流水线</code>允许在运行过程中根据需要改变流水线结构。这种设计更适用于执行时间波动较大或包含复杂分支转移的任务。动态流水线的优点是可以根据任务的要求动态地修改流水线的结构，以充分利用各个阶段的处理能力。但是，动态流水线的缺点是在改变流水线结构时会带来额外的开销，并且可能导致流水线中的指令乱序执行，影响性能。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918103804.png"
+                      alt="Pasted image 20230918103804"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918103815.png"
+                      alt="Pasted image 20230918103815"
+                ></p>
+<h3 id="部件级、处理机级以及处理机之间的流水线"><a href="#部件级、处理机级以及处理机之间的流水线" class="headerlink" title="部件级、处理机级以及处理机之间的流水线"></a>部件级、处理机级以及处理机之间的流水线</h3><ul>
+<li><p>按照流水的级别划分</p>
+</li>
+<li><p>部件级流水线 <strong>运算操作流水线</strong></p>
+</li>
+<li><p>处理机级流水线 <strong>指令流水线</strong></p>
+</li>
+<li><p>处理机间流水线 <strong>宏流水线</strong></p>
+</li>
+</ul>
+<h3 id="标量流水处理机和向量流水处理机"><a href="#标量流水处理机和向量流水处理机" class="headerlink" title="标量流水处理机和向量流水处理机"></a>标量流水处理机和向量流水处理机</h3><ul>
+<li><p>按照数据来表示分类</p>
+</li>
+<li><p>标量流水处理机</p>
+</li>
+<li><p>向量流水处理机</p>
+</li>
+</ul>
+<blockquote>
+<p>According to my knowledge, there are several ways to classify processors based on their data representation and processing methods. Two common classifications are scalar pipeline processing and vector pipeline processing.</p>
+</blockquote>
+<blockquote>
+<p>Scalar pipeline processing, also known as scalar processing, operates on one data element at a time. It follows a single instruction stream and performs sequential execution of instructions.</p>
+</blockquote>
+<blockquote>
+<p>Vector pipeline processing, on the other hand, operates on multiple data elements simultaneously. It uses vector instructions that can perform the same operation on multiple data elements in parallel.</p>
+</blockquote>
+<blockquote>
+<p>For more detailed information and examples of these classifications, you can refer to the following source: [source URL]</p>
+</blockquote>
+<h3 id="线性流水线和非线性流水线"><a href="#线性流水线和非线性流水线" class="headerlink" title="线性流水线和非线性流水线"></a>线性流水线和非线性流水线</h3><ul>
+<li><p>按照是否有回馈回路来进行分类</p>
+</li>
+<li><p><strong>线性流水线</strong>是指流水线的隔断串行连接，没有反馈回路</p>
+</li>
+<li><p><strong>非线性流水线</strong>指的是流水线中除了有串行连接的通路之外，还有反馈回路</p>
+</li>
+</ul>
+<p><strong>存在流水线调度问题</strong></p>
+<p>确定什么时候想流水线引进新的输入，从而使得新输入的数据和先前操作的反馈数据在流水线中不产生冲突，这就是 <strong>流水线调度的问题</strong></p>
+<h1 id="MIPS基本流水线"><a href="#MIPS基本流水线" class="headerlink" title="MIPS基本流水线"></a>MIPS基本流水线</h1><h2 id="基本MIPS流水线"><a href="#基本MIPS流水线" class="headerlink" title="基本MIPS流水线"></a>基本MIPS流水线</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918104742.png"
+                      alt="Pasted image 20230918104742"
+                ></p>
+<p>要好好讲一讲上面这个图 ⬆</p>
+<ol>
+<li>I类 SW&#x2F;LW ADDI&#x2F;SUBI</li>
+<li>R类 AND&#x2F;OR</li>
+<li>J类 J name</li>
+</ol>
+<p>这几类指令在上图中都有什么操作？</p>
+<hr>
+<p><strong>取指</strong>：IR $\leftarrow$ IMem[PC] NPC $\leftarrow$ PC+4<br><strong>译码</strong>：A $\leftarrow$ $Regs[IR_{6…10}]$ B $\leftarrow Regs[IR_{11…15}]$ Imm $\leftarrow$ $Regs[(IR_{16})^{16}# #IR_{17…32}]$<br><strong>执行</strong>：SW&#x2F;LW ALUoutput $\leftarrow$ A+Imm<br><strong>ALU</strong>：<br>ADDI&#x2F;SUBI ALUoutput $\leftarrow$ A op Imm<br>ADD&#x2F;OR ALUoutput $\leftarrow$ A Func B<br>BEQZ ALUoutput $\leftarrow$ NPC + Imm, Cond $\leftarrow$ A op 0<br><strong>访存</strong>：<br>SW DMEM[ALUoutput] $\leftarrow$ B<br>LW LDM $\leftarrow$ DMEM[ALUoutput]<br>BEQZ if(Cond) PC $\leftarrow$ ALUoutput else PC $\leftarrow$ NPC<br><strong>写回</strong>：<br>ADDI&#x2F;SUBI  $Regs[IR_{11…15}]$ $\leftarrow$ ALUoutput<br>AWB&#x2F;OR $Regs[IR_{16…20}]$ $\leftarrow$ ALUoutput<br>LW $Regs[IR_{11…15}]$ $\leftarrow$ LMD</p>
+<hr>
+<h3 id="MIPS32的一种简单实现"><a href="#MIPS32的一种简单实现" class="headerlink" title="MIPS32的一种简单实现"></a>MIPS32的一种简单实现</h3><p>性能分析</p>
+<p>在数据通路商，分支指令需要4个时钟周期</p>
+<p>其他指令需要5个时钟周期</p>
+<p>假设分支指令占总指令数量的12%，问CPI &#x3D; ？</p>
+<p>$CPI &#x3D; 4 \times 12% + 5 \times(1-12%)&#x3D;4.88$</p>
+<p><strong>结论：就性能和硬件开销而言，上述实现不是一种优化实现</strong>！</p>
+<h4 id="改进方法"><a href="#改进方法" class="headerlink" title="改进方法"></a>改进方法</h4><p>在Mem周期完成ALU指令</p>
+<blockquote>
+<p>假设ALU指令数占指令总数的44%，则在时钟周期不变的同时，CPI可以降低至4.44</p>
+</blockquote>
+<p>如果要进一步降低CPI，可能需要延长时钟周期时间，使得每个时钟周期能够完成更多的工作</p>
+<p>采用单周期实现，可以将CPI降低为1，但是时钟周期时间却会增加为原来的5倍</p>
+<p><strong>一般不采用这种方法，为什么？</strong></p>
+<h3 id="一种简单的MIPS流水线"><a href="#一种简单的MIPS流水线" class="headerlink" title="一种简单的MIPS流水线"></a>一种简单的MIPS流水线</h3><p>数据通路流水画<br>数据通路中的每一个周期就成为流水线的一段<br>每个时钟周期启动一条指令<br><strong>——得到了一条简单的MIPS流水线</strong><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918111702.png"
+                      alt="Pasted image 20230918111702"
+                ></p>
+<h3 id="实现流水技术应该解决的一些问题"><a href="#实现流水技术应该解决的一些问题" class="headerlink" title="实现流水技术应该解决的一些问题"></a>实现流水技术应该解决的一些问题</h3><h4 id="应该保证流水线各个段不会在同一周期内使用相同的通路资源"><a href="#应该保证流水线各个段不会在同一周期内使用相同的通路资源" class="headerlink" title="应该保证流水线各个段不会在同一周期内使用相同的通路资源"></a>应该保证流水线各个段不会在同一周期内使用相同的通路资源</h4><ul>
+<li>例如，不能要求一个ALU既做有效地址结算，又做减法操作</li>
+<li>IF和Mem两个阶段都要访问存储器，怎样避免访存冲突</li>
+<li>ID和WB两个阶段都要访问存储器，<strong>是否存在冲突</strong>？<strong>怎样避免</strong>？</li>
+</ul>
+<h4 id="PC计算问题"><a href="#PC计算问题" class="headerlink" title="PC计算问题"></a>PC计算问题</h4><p>为了能够在每个时钟周期启动一条新的指令，流水线必须在IF段获得下一条指令的地址，并保存在PC中</p>
+<p>但是，分支指令会改变PC的值，而且只有在Mem结束时，这个新的值才会被写入PC，出现矛盾</p>
+<p>对于顺序执行，<strong>可以修改数据通路</strong>在IF段完成PC计算，但是分支指令怎么处理？</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918112327.png"
+                      alt="Pasted image 20230918112327"
+                ></p>
+<h4 id="合理划分流水段，每段内的操作都必须在一个时钟周期内完成"><a href="#合理划分流水段，每段内的操作都必须在一个时钟周期内完成" class="headerlink" title="合理划分流水段，每段内的操作都必须在一个时钟周期内完成"></a>合理划分流水段，每段内的操作都必须在一个时钟周期内完成</h4><h4 id="流水线寄存器设计"><a href="#流水线寄存器设计" class="headerlink" title="流水线寄存器设计"></a>流水线寄存器设计</h4><ul>
+<li>设置<strong>流水线寄存器文件</strong></li>
+<li>流水线寄存器文件的命名</li>
+<li>段A和段B之间的流水线寄存器称为A&#x2F;B</li>
+<li>[[#流水线寄存器的作用]]</li>
+<li>[[#流水线寄存器文件的构成]]</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918112749.png"
+                      alt="Pasted image 20230918112749"
+                ></p>
+<h3 id="MIPS流水线的操作"><a href="#MIPS流水线的操作" class="headerlink" title="MIPS流水线的操作"></a>MIPS流水线的操作</h3><p>在任意时刻，流水中的指令旨在流水线中的某一段内执行操作。</p>
+<p>因此，只要知道了每一个流水段在各个至零下进行何种操作，就知道了整个流水线的操作</p>
+<ul>
+<li>[[#MIPS流水线每个流水段的操作]]</li>
+</ul>
+<h3 id="MIPS流水线中多路选择器的控制"><a href="#MIPS流水线中多路选择器的控制" class="headerlink" title="MIPS流水线中多路选择器的控制"></a>MIPS流水线中多路选择器的控制</h3><p>主要是确定如何 <strong>控制那四个多路选择器</strong></p>
+<p>ALU输入端的两个MUX由ID&#x2F;EX.IR所指出的指令类型限制</p>
+<p>IF段的MUX由EX&#x2F;MEM。Cond域的值控制<br>WB段的MUX由当前指令类型Load&#x2F;ALU控制</p>
+<h2 id="流水线性能分析"><a href="#流水线性能分析" class="headerlink" title="流水线性能分析"></a>流水线性能分析</h2><hr>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h4 id="流水线寄存器的作用"><a href="#流水线寄存器的作用" class="headerlink" title="流水线寄存器的作用"></a>流水线寄存器的作用</h4><p>[[#流水线寄存器设计]]</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918113024.png"
+                      alt="Pasted image 20230918113024"
+                ></p>
+<h4 id="流水线寄存器文件的构成"><a href="#流水线寄存器文件的构成" class="headerlink" title="流水线寄存器文件的构成"></a>流水线寄存器文件的构成</h4><p>[[#流水线寄存器设计]]</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918113156.png"
+                      alt="Pasted image 20230918113156"
+                ></p>
+<h4 id="MIPS流水线每个流水段的操作"><a href="#MIPS流水线每个流水段的操作" class="headerlink" title="MIPS流水线每个流水段的操作"></a>MIPS流水线每个流水段的操作</h4><p>[[#MIPS流水线的操作]]</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918114008.png"
+                      alt="Pasted image 20230918114008"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://typora-slater.oss-cn-beijing.aliyuncs.com/picture/Pasted%20image%2020230918113739.png"
+                      alt="Pasted image 20230918113739"
+                ></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> CA-第七讲 流水线技术</li>
+        <li><strong>作者:</strong> The Redefine Team</li>
+        <li><strong>创建于
+                :</strong> 2023-11-24 11:30:49</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2023-10-12 17:03:02
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://redefine.ohevan.com/2023/11/24/计算机体系结构/CA-第七讲 流水线技术/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">#计算机体系结构</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">#流水线技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E7%AC%AC%E4%B9%9D%E8%AE%B2%20%E6%B5%81%E6%B0%B4%E7%BA%BF%E4%B8%AD%E7%9A%84%E5%86%B2%E7%AA%81/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CA-第九讲 流水线中的冲突</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/11/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/CA-%E6%94%B9%E8%BF%9BCache%E7%9A%84%E6%80%A7%E8%83%BD/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CA-改进Cache的性能</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;评论
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail']
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">CA-第七讲 流水线技术</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%A6%82%E8%BF%B0"><span class="nav-text">流水线概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">流水线的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E7%94%9F%E4%BA%A7%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">产品生产流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">计算机中的流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E6%8A%80%E6%9C%AF%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">流水技术的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E7%A9%BA%E5%9B%BE"><span class="nav-text">时空图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">流水线的特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%88%86%E7%B1%BB"><span class="nav-text">流水线分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%8A%9F%E8%83%BD%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%92%8C%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">单功能流水线和多功能流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%92%8C%E5%8A%A8%E6%80%81%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">静态流水线和动态流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E4%BB%B6%E7%BA%A7%E3%80%81%E5%A4%84%E7%90%86%E6%9C%BA%E7%BA%A7%E4%BB%A5%E5%8F%8A%E5%A4%84%E7%90%86%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">部件级、处理机级以及处理机之间的流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%87%8F%E6%B5%81%E6%B0%B4%E5%A4%84%E7%90%86%E6%9C%BA%E5%92%8C%E5%90%91%E9%87%8F%E6%B5%81%E6%B0%B4%E5%A4%84%E7%90%86%E6%9C%BA"><span class="nav-text">标量流水处理机和向量流水处理机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%92%8C%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">线性流水线和非线性流水线</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MIPS%E5%9F%BA%E6%9C%AC%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">MIPS基本流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%ACMIPS%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">基本MIPS流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MIPS32%E7%9A%84%E4%B8%80%E7%A7%8D%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="nav-text">MIPS32的一种简单实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%A7%8D%E7%AE%80%E5%8D%95%E7%9A%84MIPS%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-text">一种简单的MIPS流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%B5%81%E6%B0%B4%E6%8A%80%E6%9C%AF%E5%BA%94%E8%AF%A5%E8%A7%A3%E5%86%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-text">实现流水技术应该解决的一些问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIPS%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-text">MIPS流水线的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MIPS%E6%B5%81%E6%B0%B4%E7%BA%BF%E4%B8%AD%E5%A4%9A%E8%B7%AF%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="nav-text">MIPS流水线中多路选择器的控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-text">流水线性能分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-text">附录</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.6</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
